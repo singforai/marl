@@ -14,13 +14,13 @@
 
 """Google Research Football."""
 
-from gfootball.env import scenario_builder
+from .env import scenario_builder
 
 import gym
 from gym.envs.registration import register
 
-
 for env_name in scenario_builder.all_scenarios():
+  print(f"========{env_name}========")
   register(
       id='GFootball-{env_name}-SMM-v0'.format(env_name=env_name),
       entry_point='gfootball.env:create_environment',
