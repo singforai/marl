@@ -38,7 +38,7 @@ def get_config():
 
     #학습을 위한 알고리즘 전처리
     parser.add_argument("--algorithm_name", type=str,
-                        default='rmappo', choices=["rmappo", "mappo", "ippo"])
+                        default='rmappo', choices=["rmappo", "mappo", "ippo", "jrpo"])
     parser.add_argument("--use_xt", action='store_false', default=True, help="xT score를 사용해 reward shaping을 수행할 것인가?")
     parser.add_argument("--use_additional_obs", action='store_false', default=True, help="xT score를 사용해 reward shaping을 수행할 것인가?")
     parser.add_argument("--xt_type", type=str, default='compound_xt', choices=["base_xt", "compound_xt"])
@@ -100,7 +100,7 @@ def get_config():
                         action='store_false', default=True, help="by default, clip loss value. If set, do not clip loss value.")
     parser.add_argument("--clip_param", type=float, default=0.2,
                         help='ppo clip parameter (default: 0.2)')
-    parser.add_argument("--num_mini_batch", type=int, default=10,
+    parser.add_argument("--num_mini_batch", type=int, default=1,
                         help='number of batches for ppo (default: 1)')
     parser.add_argument("--entropy_coef", type=float, default=0.01,
                         help='entropy term coefficient (default: 0.01)')

@@ -2,6 +2,17 @@
 #! /bin/bash
 
 
+#=============================== compound xT jrpo ==========================
+command="python train_grf.py --seed {0} --experiment_name compound_xT --group_name compound_xT --xt_type compound_xt --use_wandb"
+
+args_gpu0="--num_gpu 0"
+args_gpu1="--num_gpu 1"
+
+parallel -j 10 $command $args_gpu0 ::: 0 1 &
+parallel -j 10 $command $args_gpu1 ::: 2 3 4
+
+wait
+
 #=============================== compound xT ==========================
 # command="python train_grf.py --seed {0} --experiment_name compound_xT --group_name compound_xT --xt_type compound_xt --use_wandb"
 

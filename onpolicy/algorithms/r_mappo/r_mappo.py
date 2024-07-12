@@ -130,7 +130,6 @@ class R_MAPPO():
             adv_targ = adv_targ.reshape(-1, self.num_agents, 1)
             adv_targ = adv_targ[:, 0, :]
 
-        # Reshape to do in a single forward pass for all steps
         else:
             critic_masks_batch = masks_batch
 
@@ -145,7 +144,6 @@ class R_MAPPO():
             active_masks = active_masks_batch,
             critic_masks_batch=critic_masks_batch,
         )
-
         if self.use_joint_action_loss:
             action_log_probs_copy = (
                 action_log_probs.reshape(-1, self.num_agents, action_log_probs.shape[-1])

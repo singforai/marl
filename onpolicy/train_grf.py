@@ -12,7 +12,7 @@ from config import get_config
 
 from pathlib import Path
 
-from envs.football.Football_Env import FootballEnv
+from envs.football.Football_Environment import FootballEnv
 from envs.env_wrappers import SubprocVecEnv, DummyVecEnv
 from runner.shared.football_runner import FootballRunner as Runner
 
@@ -105,6 +105,7 @@ def main(args):
         print("u are choosing to use rmappo, we set use_recurrent_policy to be True")
         all_args.use_recurrent_policy = True
         all_args.use_naive_recurrent_policy = False
+
     elif all_args.algorithm_name == "mappo":
         print("u are choosing to use mappo, we set use_recurrent_policy & use_naive_recurrent_policy to be False")
         all_args.use_recurrent_policy = False 
@@ -112,6 +113,8 @@ def main(args):
     elif all_args.algorithm_name == "ippo":
         print("u are choosing to use ippo, we set use_centralized_V to be False. Note that GRF is a fully observed game, so ippo is rmappo.")
         all_args.use_centralized_V = False
+    elif all_args.algorithm_name == "jrpo":
+        all_args.use_joint_action_loss = True
     else:
         raise NotImplementedError
 
@@ -173,7 +176,6 @@ def main(args):
         all_args.algorithm_name, 
         all_args.experiment_name
     ]) + "@" + all_args.user_name)
-
     envs = make_train_env(all_args)
     eval_envs = make_eval_env(all_args) if all_args.use_eval else None
     print(f"사용 가능한 CPU Thread: {os.cpu_count()}")
