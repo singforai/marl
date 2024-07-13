@@ -24,7 +24,7 @@ def get_config():
                         action='store_false', default=True, help="by default, make sure random seed effective. if set, bypass such function.")
     parser.add_argument("--n_torch_threads", type=int,
                         default=24, help="Number of torch threads for training")
-    parser.add_argument("--n_rollout_threads", type=int, default=10,
+    parser.add_argument("--n_rollout_threads", type=int, default=1,
                         help="Number of parallel envs for training rollouts")
     parser.add_argument("--n_eval_rollout_threads", type=int, default=10,
                         help="Number of parallel envs for evaluating rollouts")
@@ -39,7 +39,7 @@ def get_config():
     #학습을 위한 알고리즘 전처리
     parser.add_argument("--algorithm_name", type=str,
                         default='rmappo', choices=["rmappo", "mappo", "ippo", "jrpo"])
-    parser.add_argument("--use_xt", action='store_false', default=True, help="xT score를 사용해 reward shaping을 수행할 것인가?")
+    parser.add_argument("--use_xt", action='store_true', default=False, help="xT score를 사용해 reward shaping을 수행할 것인가?")
     parser.add_argument("--use_additional_obs", action='store_false', default=True, help="xT score를 사용해 reward shaping을 수행할 것인가?")
     parser.add_argument("--xt_type", type=str, default='compound_xt', choices=["base_xt", "compound_xt"])
     parser.add_argument("--use_obs_instead_of_state", action='store_true',

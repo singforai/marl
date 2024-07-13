@@ -42,14 +42,14 @@ class FootballRunner(Runner):
                 obs, rewards, dones, infos = self.envs.step(actions_env)
                 scores = self.infos_processing(infos = infos)
                 if self.use_xt:
-
                     rewards = self.cal_xt.controller(
                         step = step,
                         rewards = rewards,
                         obs = obs,
                         score = scores,
                     )
-
+                if rewards[0][0][0] != 0.0:
+                    print(rewards)
                 data = obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic 
                 
                 # insert data into buffer

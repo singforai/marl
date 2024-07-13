@@ -1,6 +1,6 @@
 import random
-from .gfootball import env as football_env
-# import gfootball.env as football_env
+# from gfootball import env as football_env
+import gfootball.env as football_env
 from gym import spaces
 import numpy as np
 
