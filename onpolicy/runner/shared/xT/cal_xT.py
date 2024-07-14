@@ -3,7 +3,6 @@ import numpy as np
 
 from collections import defaultdict, deque
 
-
 class xT():
     def __init__(self, args):
         self.args = args
@@ -57,3 +56,4 @@ class xT():
                 self.initialize_xt(idx = idx)
         self.score = score
         return rewards
+    

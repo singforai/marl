@@ -1,0 +1,22 @@
+
+사용 가능한 CPU Thread: 24
+Traceback (most recent call last):
+  File "/home/uosai/Desktop/marl/onpolicy/train_grf.py", line 209, in <module>
+    main(args = sys.argv[1:])
+  File "/home/uosai/Desktop/marl/onpolicy/train_grf.py", line 200, in main
+    runner.run()
+  File "/home/uosai/Desktop/marl/onpolicy/runner/shared/football_runner.py", line 25, in run
+    self.warmup()
+  File "/home/uosai/Desktop/marl/onpolicy/runner/shared/football_runner.py", line 129, in warmup
+    obs = self.envs.reset()
+  File "/home/uosai/Desktop/marl/onpolicy/envs/env_wrappers.py", line 271, in reset
+    obs = [remote.recv() for remote in self.remotes]
+  File "/home/uosai/Desktop/marl/onpolicy/envs/env_wrappers.py", line 271, in <listcomp>
+    obs = [remote.recv() for remote in self.remotes]
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
+    buf = self._recv(4)
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/multiprocessing/connection.py", line 383, in _recv
+    raise EOFError
+EOFError

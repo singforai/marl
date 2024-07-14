@@ -1,0 +1,385 @@
+/home/uosai/Desktop/marl/onpolicy/envs/package/gym/core.py:317: DeprecationWarning: [33mWARN: Initializing wrapper in old step API which returns one bool instead of two. It is recommended to set `new_step_api=True` to use new step API. This will be the default behaviour in future.
+  deprecation(
+사용 가능한 CPU Thread: 24
+difficulty_level: 1
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+전체 걸린 시간: 0시간 0분 22.30초
+Env Football Algo rmappo Exp check updates 0/333333 episodes total num timesteps 3000/1000000000.0
+average episode rewards is -20.00000048428774
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+전체 걸린 시간: 0시간 0분 22.59초
+Env Football Algo rmappo Exp check updates 1/333333 episodes total num timesteps 6000/1000000000.0
+average episode rewards is -20.00000048428774
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+전체 걸린 시간: 0시간 0분 22.76초
+Env Football Algo rmappo Exp check updates 2/333333 episodes total num timesteps 9000/1000000000.0
+average episode rewards is -40.00000096857548
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+전체 걸린 시간: 0시간 0분 23.11초
+Env Football Algo rmappo Exp check updates 3/333333 episodes total num timesteps 12000/1000000000.0
+average episode rewards is -10.00000024214387
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+전체 걸린 시간: 0시간 0분 23.52초
+Env Football Algo rmappo Exp check updates 4/333333 episodes total num timesteps 15000/1000000000.0
+average episode rewards is -29.999999329447746
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+전체 걸린 시간: 0시간 0분 23.21초
+Env Football Algo rmappo Exp check updates 5/333333 episodes total num timesteps 18000/1000000000.0
+average episode rewards is -29.999999329447746
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+전체 걸린 시간: 0시간 0분 22.32초
+Env Football Algo rmappo Exp check updates 6/333333 episodes total num timesteps 21000/1000000000.0
+average episode rewards is -20.00000048428774
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+전체 걸린 시간: 0시간 0분 22.59초
+Env Football Algo rmappo Exp check updates 7/333333 episodes total num timesteps 24000/1000000000.0
+average episode rewards is -29.999999329447746
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+difficulty_level: 1
+[[[10.]
+  [10.]
+  [10.]
+  [10.]
+  [10.]
+  [10.]
+  [10.]
+  [10.]
+  [10.]
+  [10.]]]
+difficulty_level: 1
+[[[10.]
+  [10.]
+  [10.]
+  [10.]
+  [10.]
+  [10.]
+  [10.]
+  [10.]
+  [10.]
+  [10.]]]
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+전체 걸린 시간: 0시간 0분 23.24초
+Env Football Algo rmappo Exp check updates 8/333333 episodes total num timesteps 27000/1000000000.0
+average episode rewards is -40.00000096857548
+difficulty_level: 1
+[[[-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]
+  [-10.]]]
+difficulty_level: 1
+[[[10.]
+  [10.]
+  [10.]
+  [10.]
+  [10.]
+  [10.]
+  [10.]
+  [10.]
+  [10.]
+  [10.]]]
+Traceback (most recent call last):
+  File "/home/uosai/Desktop/marl/onpolicy/train_grf.py", line 209, in <module>
+    main(args = sys.argv[1:])
+  File "/home/uosai/Desktop/marl/onpolicy/train_grf.py", line 200, in main
+    runner.run()
+  File "/home/uosai/Desktop/marl/onpolicy/runner/shared/football_runner.py", line 42, in run
+    obs, rewards, dones, infos = self.envs.step(actions_env)
+  File "/home/uosai/Desktop/marl/onpolicy/envs/env_wrappers.py", line 107, in step
+    return self.step_wait()
+  File "/home/uosai/Desktop/marl/onpolicy/envs/env_wrappers.py", line 673, in step_wait
+    results = [env.step(a) for (a, env) in zip(self.actions, self.envs)]
+  File "/home/uosai/Desktop/marl/onpolicy/envs/env_wrappers.py", line 673, in <listcomp>
+    results = [env.step(a) for (a, env) in zip(self.actions, self.envs)]
+  File "/home/uosai/Desktop/marl/onpolicy/envs/football/Football_Environment.py", line 80, in step
+    obs, reward, done, info = self.env.step(action)
+  File "/home/uosai/Desktop/marl/onpolicy/envs/package/gym/core.py", line 411, in step
+    return step_api_compatibility(self.env.step(action), self.new_step_api)
+  File "/home/uosai/Desktop/marl/onpolicy/envs/package/gym/core.py", line 483, in step
+    step_returns = self.env.step(action)
+  File "/home/uosai/Desktop/marl/onpolicy/envs/package/gfootball/env/football_env.py", line 176, in step
+    _, reward, done, info = self._env.step(self._get_actions())
+  File "/home/uosai/Desktop/marl/onpolicy/envs/package/gfootball/env/football_env_core.py", line 193, in step
+    self._env.step()
+KeyboardInterrupt

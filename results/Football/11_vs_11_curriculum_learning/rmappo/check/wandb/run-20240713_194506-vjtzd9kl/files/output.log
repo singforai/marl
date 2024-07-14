@@ -1,0 +1,142 @@
+
+사용 가능한 CPU Thread: 24
+전체 걸린 시간: 0시간 0분 58.12초
+Env Football Algo rmappo Exp check updates 0/16666 episodes total num timesteps 60000/1000000000.0
+average episode rewards is -27.9999990016222
+전체 걸린 시간: 0시간 0분 57.81초
+Env Football Algo rmappo Exp check updates 1/16666 episodes total num timesteps 120000/1000000000.0
+average episode rewards is -26.49999875575304
+전체 걸린 시간: 0시간 0분 58.11초
+Env Football Algo rmappo Exp check updates 2/16666 episodes total num timesteps 180000/1000000000.0
+average episode rewards is -24.500001221895218
+전체 걸린 시간: 0시간 0분 56.65초
+Env Football Algo rmappo Exp check updates 3/16666 episodes total num timesteps 240000/1000000000.0
+average episode rewards is -25.50000138580799
+전체 걸린 시간: 0시간 0분 56.70초
+Env Football Algo rmappo Exp check updates 4/16666 episodes total num timesteps 300000/1000000000.0
+average episode rewards is -24.500001221895218
+| eval_goal 0.05 | eval_possession_rate 0.12016666666666667 | eval_goal_diff -1.6 | eval_WDL -0.7 |
+전체 걸린 시간: 0시간 0분 57.15초
+Env Football Algo rmappo Exp check updates 5/16666 episodes total num timesteps 360000/1000000000.0
+average episode rewards is -25.000001303851604
+전체 걸린 시간: 0시간 0분 55.55초
+Env Football Algo rmappo Exp check updates 6/16666 episodes total num timesteps 420000/1000000000.0
+average episode rewards is -26.999998837709427
+전체 걸린 시간: 0시간 0분 55.87초
+Env Football Algo rmappo Exp check updates 7/16666 episodes total num timesteps 480000/1000000000.0
+average episode rewards is -23.500001057982445
+전체 걸린 시간: 0시간 0분 56.24초
+Env Football Algo rmappo Exp check updates 8/16666 episodes total num timesteps 540000/1000000000.0
+average episode rewards is -28.999999165534973
+전체 걸린 시간: 0시간 0분 56.30초
+Env Football Algo rmappo Exp check updates 9/16666 episodes total num timesteps 600000/1000000000.0
+average episode rewards is -24.00000113993883
+| eval_goal 0.0 | eval_possession_rate 0.17895 | eval_goal_diff -2.0 | eval_WDL -0.9 |
+전체 걸린 시간: 0시간 0분 56.75초
+Env Football Algo rmappo Exp check updates 10/16666 episodes total num timesteps 660000/1000000000.0
+average episode rewards is -25.000001303851604
+전체 걸린 시간: 0시간 0분 56.32초
+Env Football Algo rmappo Exp check updates 11/16666 episodes total num timesteps 720000/1000000000.0
+average episode rewards is -27.9999990016222
+전체 걸린 시간: 0시간 0분 57.59초
+Env Football Algo rmappo Exp check updates 12/16666 episodes total num timesteps 780000/1000000000.0
+average episode rewards is -24.500001221895218
+전체 걸린 시간: 0시간 0분 57.50초
+Env Football Algo rmappo Exp check updates 13/16666 episodes total num timesteps 840000/1000000000.0
+average episode rewards is -30.99999949336052
+전체 걸린 시간: 0시간 0분 57.63초
+Env Football Algo rmappo Exp check updates 14/16666 episodes total num timesteps 900000/1000000000.0
+average episode rewards is -21.000000648200512
+| eval_goal 0.0 | eval_possession_rate 0.19865000000000002 | eval_goal_diff -2.6 | eval_WDL -0.95 |
+전체 걸린 시간: 0시간 0분 56.81초
+Env Football Algo rmappo Exp check updates 15/16666 episodes total num timesteps 960000/1000000000.0
+average episode rewards is -25.999998673796654
+전체 걸린 시간: 0시간 0분 57.42초
+Env Football Algo rmappo Exp check updates 16/16666 episodes total num timesteps 1020000/1000000000.0
+average episode rewards is -22.999999579042196
+전체 걸린 시간: 0시간 0분 57.18초
+Env Football Algo rmappo Exp check updates 17/16666 episodes total num timesteps 1080000/1000000000.0
+average episode rewards is -26.49999875575304
+전체 걸린 시간: 0시간 0분 57.21초
+Env Football Algo rmappo Exp check updates 18/16666 episodes total num timesteps 1140000/1000000000.0
+average episode rewards is -24.00000113993883
+전체 걸린 시간: 0시간 0분 57.04초
+Env Football Algo rmappo Exp check updates 19/16666 episodes total num timesteps 1200000/1000000000.0
+average episode rewards is -26.49999875575304
+| eval_goal 0.0 | eval_possession_rate 0.18403333333333335 | eval_goal_diff -2.4 | eval_WDL -0.9 |
+전체 걸린 시간: 0시간 0분 56.42초
+Env Football Algo rmappo Exp check updates 20/16666 episodes total num timesteps 1260000/1000000000.0
+average episode rewards is -22.49999949708581
+전체 걸린 시간: 0시간 0분 55.83초
+Env Football Algo rmappo Exp check updates 21/16666 episodes total num timesteps 1320000/1000000000.0
+average episode rewards is -21.000000648200512
+전체 걸린 시간: 0시간 0분 57.24초
+Env Football Algo rmappo Exp check updates 22/16666 episodes total num timesteps 1380000/1000000000.0
+average episode rewards is -19.500000402331352
+전체 걸린 시간: 0시간 0분 56.22초
+Env Football Algo rmappo Exp check updates 23/16666 episodes total num timesteps 1440000/1000000000.0
+average episode rewards is -29.49999924749136
+전체 걸린 시간: 0시간 0분 56.72초
+Env Football Algo rmappo Exp check updates 24/16666 episodes total num timesteps 1500000/1000000000.0
+average episode rewards is -26.999998837709427
+| eval_goal 0.0 | eval_possession_rate 0.18476666666666666 | eval_goal_diff -2.3 | eval_WDL -0.9 |
+전체 걸린 시간: 0시간 0분 56.92초
+Env Football Algo rmappo Exp check updates 25/16666 episodes total num timesteps 1560000/1000000000.0
+average episode rewards is -21.000000648200512
+전체 걸린 시간: 0시간 0분 56.77초
+Env Football Algo rmappo Exp check updates 26/16666 episodes total num timesteps 1620000/1000000000.0
+average episode rewards is -31.499999575316906
+전체 걸린 시간: 0시간 0분 56.56초
+Env Football Algo rmappo Exp check updates 27/16666 episodes total num timesteps 1680000/1000000000.0
+average episode rewards is -21.999999415129423
+전체 걸린 시간: 0시간 0분 57.21초
+Env Football Algo rmappo Exp check updates 28/16666 episodes total num timesteps 1740000/1000000000.0
+average episode rewards is -22.49999949708581
+전체 걸린 시간: 0시간 0분 57.30초
+Env Football Algo rmappo Exp check updates 29/16666 episodes total num timesteps 1800000/1000000000.0
+average episode rewards is -21.000000648200512
+| eval_goal 0.05 | eval_possession_rate 0.20609999999999998 | eval_goal_diff -2.65 | eval_WDL -1.0 |
+전체 걸린 시간: 0시간 0분 56.25초
+Env Football Algo rmappo Exp check updates 30/16666 episodes total num timesteps 1860000/1000000000.0
+average episode rewards is -29.49999924749136
+전체 걸린 시간: 0시간 0분 56.23초
+Env Football Algo rmappo Exp check updates 31/16666 episodes total num timesteps 1920000/1000000000.0
+average episode rewards is -20.00000048428774
+전체 걸린 시간: 0시간 0분 56.84초
+Env Football Algo rmappo Exp check updates 32/16666 episodes total num timesteps 1980000/1000000000.0
+average episode rewards is -24.00000113993883
+전체 걸린 시간: 0시간 0분 55.64초
+Env Football Algo rmappo Exp check updates 33/16666 episodes total num timesteps 2040000/1000000000.0
+average episode rewards is -22.49999949708581
+전체 걸린 시간: 0시간 0분 57.70초
+Env Football Algo rmappo Exp check updates 34/16666 episodes total num timesteps 2100000/1000000000.0
+average episode rewards is -29.999999329447746
+| eval_goal 0.0 | eval_possession_rate 0.18901666666666664 | eval_goal_diff -2.25 | eval_WDL -0.9 |
+전체 걸린 시간: 0시간 0분 56.87초
+Env Football Algo rmappo Exp check updates 35/16666 episodes total num timesteps 2160000/1000000000.0
+average episode rewards is -25.50000138580799
+전체 걸린 시간: 0시간 0분 57.24초
+Env Football Algo rmappo Exp check updates 36/16666 episodes total num timesteps 2220000/1000000000.0
+average episode rewards is -25.50000138580799
+전체 걸린 시간: 0시간 0분 57.40초
+Env Football Algo rmappo Exp check updates 37/16666 episodes total num timesteps 2280000/1000000000.0
+average episode rewards is -20.00000048428774
+전체 걸린 시간: 0시간 0분 58.02초
+Traceback (most recent call last):
+  File "/home/uosai/Desktop/marl/onpolicy/train_grf.py", line 209, in <module>
+    main(args = sys.argv[1:])
+  File "/home/uosai/Desktop/marl/onpolicy/train_grf.py", line 200, in main
+    runner.run()
+  File "/home/uosai/Desktop/marl/onpolicy/runner/shared/football_runner.py", line 69, in run
+    train_infos = self.train()
+  File "/home/uosai/Desktop/marl/onpolicy/runner/shared/base_runner.py", line 144, in train
+    train_infos = self.trainer.train(self.buffer)
+  File "/home/uosai/Desktop/marl/onpolicy/algorithms/r_mappo/r_mappo.py", line 249, in train
+    = self.ppo_update(sample, update_actor)
+  File "/home/uosai/Desktop/marl/onpolicy/algorithms/r_mappo/r_mappo.py", line 198, in ppo_update
+    (value_loss * self.value_loss_coef).backward()
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/site-packages/torch/_tensor.py", line 492, in backward
+    torch.autograd.backward(
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/site-packages/torch/autograd/__init__.py", line 251, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt

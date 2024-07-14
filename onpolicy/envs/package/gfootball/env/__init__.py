@@ -103,8 +103,8 @@ def create_environment(env_name='',
                            observation_preprocessing.SMM_WIDTH,
                            observation_preprocessing.SMM_HEIGHT),
                        other_config_options={}):
+  
   """Creates a Google Research Football environment.
-
   Args:
     env_name: a name of a scenario to run, e.g. "11_vs_11_stochastic".
       The list of scenarios can be found in directory "scenarios".

@@ -7,7 +7,7 @@ import setproctitle
 
 import numpy as np
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), './envs/package')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '/home/uosai/Desktop/marl/onpolicy/envs/package/')))
 
 from config import get_config
 
@@ -117,6 +117,12 @@ def main(args):
         all_args.use_centralized_V = False
     elif all_args.algorithm_name == "jrpo":
         all_args.use_joint_action_loss = True
+    elif all_args.algorithm_name == "tizero":
+        if "11_vs_11" not in all_args.scenario_name and all_args.representation != "simple115v2" :
+            raise ValueError("Tizero는 11 vs 11 simple115v2 관찰 환경에서만 실행가능합니다.")
+        print("u are choosing to use Tizero, we set use_joint_action_loss to be True and use_obs_encoder to be True")
+        all_args.use_joint_action_loss = True
+        all_args.use_obs_encoder = True
     else:
         raise NotImplementedError
 

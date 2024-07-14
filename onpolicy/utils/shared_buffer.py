@@ -49,6 +49,8 @@ class SharedReplayBuffer(object):
         self.algo = args.algorithm_name
         self.num_agents = num_agents
 
+        self.use_additional_obs = args.use_additional_obs
+        
         obs_shape = get_shape_from_obs_space(obs_space)
         share_obs_shape = get_shape_from_obs_space(cent_obs_space)
 

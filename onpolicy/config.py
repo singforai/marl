@@ -7,7 +7,11 @@ def get_config():
         description='onpolicy', formatter_class=argparse.RawDescriptionHelpFormatter)
     
     #JRPO
-    parser.add_argument("--use_joint_action_loss", action='store_true', default=False, help="whether to use joint action loss for JRPO")
+    parser.add_argument("--use_joint_action_loss", action='store_true', default=False, help="whether to use joint action loss for JRPO or TiZero")
+    
+    # Tizero
+    parser.add_argument("--use_additional_obs", action='store_true', default=False, help="whether to use addtional obs for replicating the TiZero")
+    parser.add_argument("--use_obs_encoder", action='store_true', default=False, help="whether to use obs encoder for replicating the TiZero")
     
     # Wandb
     parser.add_argument("--use_wandb", action='store_true', default=False, help="[for wandb usage], by default True, will log date to wandb server. or else will use tensorboard to log data.")
@@ -24,7 +28,7 @@ def get_config():
                         action='store_false', default=True, help="by default, make sure random seed effective. if set, bypass such function.")
     parser.add_argument("--n_torch_threads", type=int,
                         default=24, help="Number of torch threads for training")
-    parser.add_argument("--n_rollout_threads", type=int, default=1,
+    parser.add_argument("--n_rollout_threads", type=int, default=10,
                         help="Number of parallel envs for training rollouts")
     parser.add_argument("--n_eval_rollout_threads", type=int, default=10,
                         help="Number of parallel envs for evaluating rollouts")
@@ -38,9 +42,8 @@ def get_config():
 
     #학습을 위한 알고리즘 전처리
     parser.add_argument("--algorithm_name", type=str,
-                        default='rmappo', choices=["rmappo", "mappo", "ippo", "jrpo"])
+                        default='rmappo', choices=["rmappo", "mappo", "ippo", "tizero", "jrpo"])
     parser.add_argument("--use_xt", action='store_true', default=False, help="xT score를 사용해 reward shaping을 수행할 것인가?")
-    parser.add_argument("--use_additional_obs", action='store_false', default=True, help="xT score를 사용해 reward shaping을 수행할 것인가?")
     parser.add_argument("--xt_type", type=str, default='compound_xt', choices=["base_xt", "compound_xt"])
     parser.add_argument("--use_obs_instead_of_state", action='store_true',
                         default=False, help="Whether to use global state or concatenated obs")

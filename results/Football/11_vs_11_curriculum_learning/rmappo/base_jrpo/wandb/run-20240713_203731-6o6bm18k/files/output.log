@@ -1,0 +1,1587 @@
+
+사용 가능한 CPU Thread: 24
+전체 걸린 시간: 0시간 1분 25.67초
+Env Football Algo rmappo Exp base_jrpo updates 0/33333 episodes total num timesteps 30000/1000000000.0
+average episode rewards is -29.999999329447746
+전체 걸린 시간: 0시간 1분 25.90초
+Env Football Algo rmappo Exp base_jrpo updates 1/33333 episodes total num timesteps 60000/1000000000.0
+average episode rewards is -26.999998837709427
+전체 걸린 시간: 0시간 1분 23.83초
+Env Football Algo rmappo Exp base_jrpo updates 2/33333 episodes total num timesteps 90000/1000000000.0
+average episode rewards is -22.999999579042196
+전체 걸린 시간: 0시간 1분 22.11초
+Env Football Algo rmappo Exp base_jrpo updates 3/33333 episodes total num timesteps 120000/1000000000.0
+average episode rewards is -29.999999329447746
+전체 걸린 시간: 0시간 1분 21.15초
+Env Football Algo rmappo Exp base_jrpo updates 4/33333 episodes total num timesteps 150000/1000000000.0
+average episode rewards is -26.999998837709427
+전체 걸린 시간: 0시간 1분 20.63초
+Env Football Algo rmappo Exp base_jrpo updates 5/33333 episodes total num timesteps 180000/1000000000.0
+average episode rewards is -16.99999999254942
+전체 걸린 시간: 0시간 1분 22.72초
+Env Football Algo rmappo Exp base_jrpo updates 6/33333 episodes total num timesteps 210000/1000000000.0
+average episode rewards is -25.999998673796654
+전체 걸린 시간: 0시간 1분 20.74초
+Env Football Algo rmappo Exp base_jrpo updates 7/33333 episodes total num timesteps 240000/1000000000.0
+average episode rewards is -31.999999657273293
+전체 걸린 시간: 0시간 1분 20.18초
+Env Football Algo rmappo Exp base_jrpo updates 8/33333 episodes total num timesteps 270000/1000000000.0
+average episode rewards is -25.999998673796654
+전체 걸린 시간: 0시간 1분 20.45초
+Env Football Algo rmappo Exp base_jrpo updates 9/33333 episodes total num timesteps 300000/1000000000.0
+average episode rewards is -25.000001303851604
+| eval_goal 0.2 | eval_possession_rate 0.3450666666666667 | eval_goal_diff -2.1 | eval_WDL -0.8 |
+전체 걸린 시간: 0시간 1분 29.73초
+Env Football Algo rmappo Exp base_jrpo updates 10/33333 episodes total num timesteps 330000/1000000000.0
+average episode rewards is -38.00000064074993
+전체 걸린 시간: 0시간 1분 23.98초
+Env Football Algo rmappo Exp base_jrpo updates 11/33333 episodes total num timesteps 360000/1000000000.0
+average episode rewards is -25.000001303851604
+전체 걸린 시간: 0시간 1분 26.54초
+Env Football Algo rmappo Exp base_jrpo updates 12/33333 episodes total num timesteps 390000/1000000000.0
+average episode rewards is -24.00000113993883
+전체 걸린 시간: 0시간 1분 24.54초
+Env Football Algo rmappo Exp base_jrpo updates 13/33333 episodes total num timesteps 420000/1000000000.0
+average episode rewards is -27.9999990016222
+전체 걸린 시간: 0시간 1분 24.49초
+Env Football Algo rmappo Exp base_jrpo updates 14/33333 episodes total num timesteps 450000/1000000000.0
+average episode rewards is -19.000000320374966
+전체 걸린 시간: 0시간 1분 29.26초
+Env Football Algo rmappo Exp base_jrpo updates 15/33333 episodes total num timesteps 480000/1000000000.0
+average episode rewards is -27.9999990016222
+전체 걸린 시간: 0시간 1분 25.79초
+Env Football Algo rmappo Exp base_jrpo updates 16/33333 episodes total num timesteps 510000/1000000000.0
+average episode rewards is -22.999999579042196
+전체 걸린 시간: 0시간 1분 35.85초
+Env Football Algo rmappo Exp base_jrpo updates 17/33333 episodes total num timesteps 540000/1000000000.0
+average episode rewards is -25.999998673796654
+전체 걸린 시간: 0시간 1분 32.58초
+Env Football Algo rmappo Exp base_jrpo updates 18/33333 episodes total num timesteps 570000/1000000000.0
+average episode rewards is -22.999999579042196
+전체 걸린 시간: 0시간 1분 31.95초
+Env Football Algo rmappo Exp base_jrpo updates 19/33333 episodes total num timesteps 600000/1000000000.0
+average episode rewards is -24.00000113993883
+| eval_goal 0.0 | eval_possession_rate 0.36726666666666663 | eval_goal_diff -2.0 | eval_WDL -1.0 |
+전체 걸린 시간: 0시간 1분 24.47초
+Env Football Algo rmappo Exp base_jrpo updates 20/33333 episodes total num timesteps 630000/1000000000.0
+average episode rewards is -27.9999990016222
+전체 걸린 시간: 0시간 1분 23.33초
+Env Football Algo rmappo Exp base_jrpo updates 21/33333 episodes total num timesteps 660000/1000000000.0
+average episode rewards is -22.999999579042196
+전체 걸린 시간: 0시간 1분 22.16초
+Env Football Algo rmappo Exp base_jrpo updates 22/33333 episodes total num timesteps 690000/1000000000.0
+average episode rewards is -26.999998837709427
+전체 걸린 시간: 0시간 1분 21.98초
+Env Football Algo rmappo Exp base_jrpo updates 23/33333 episodes total num timesteps 720000/1000000000.0
+average episode rewards is -21.000000648200512
+전체 걸린 시간: 0시간 1분 23.03초
+Env Football Algo rmappo Exp base_jrpo updates 24/33333 episodes total num timesteps 750000/1000000000.0
+average episode rewards is -22.999999579042196
+전체 걸린 시간: 0시간 1분 22.37초o Exp base_jrpo updates 24/33333 episodes total num timesteps 750000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 25/33333 episodes total num timesteps 780000/1000000000.0
+average episode rewards is -30.99999949336052
+전체 걸린 시간: 0시간 1분 23.06초o Exp base_jrpo updates 25/33333 episodes total num timesteps 780000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 26/33333 episodes total num timesteps 810000/1000000000.0
+average episode rewards is -25.999998673796654
+전체 걸린 시간: 0시간 1분 22.76초o Exp base_jrpo updates 26/33333 episodes total num timesteps 810000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 27/33333 episodes total num timesteps 840000/1000000000.0
+average episode rewards is -21.000000648200512
+전체 걸린 시간: 0시간 1분 21.98초o Exp base_jrpo updates 27/33333 episodes total num timesteps 840000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 28/33333 episodes total num timesteps 870000/1000000000.0
+average episode rewards is -35.00000014901161
+전체 걸린 시간: 0시간 1분 22.67초o Exp base_jrpo updates 28/33333 episodes total num timesteps 870000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 29/33333 episodes total num timesteps 900000/1000000000.0
+average episode rewards is -25.000001303851604
+| eval_goal 0.0 | eval_possession_rate 0.4194666666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+| eval_goal 0.0 | eval_possession_rate 0.4194666666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -22.99999957904219666666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -22.99999957904219666666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -21.00000064820051266666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -21.00000064820051266666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -22.99999957904219666666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -22.99999957904219666666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -21.00000064820051266666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -21.00000064820051266666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -29.99999932944774666666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -29.99999932944774666666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -27.99999900162224666666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -27.99999900162224666666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -24.00000113993883666666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -24.00000113993883666666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -25.99999867379665466666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -25.99999867379665466666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -25.99999867379665466666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -22.99999957904219666666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -22.99999957904219666666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -27.99999900162229666666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+average episode rewards is -27.99999900162229666666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+전체 걸린 시간: 0시간 1분 25.32초 is -27.99999900162229666666666667 | eval_goal_diff -2.75 | eval_WDL -0.9 | 000.0
+Env Football Algo rmappo Exp base_jrpo updates 40/33333 episodes total num timesteps 1230000/1000000000.0
+전체 걸린 시간: 0시간 1분 24.25초o Exp base_jrpo updates 40/33333 episodes total num timesteps 1230000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 41/33333 episodes total num timesteps 1260000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.96초o Exp base_jrpo updates 41/33333 episodes total num timesteps 1260000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 42/33333 episodes total num timesteps 1290000/1000000000.0
+전체 걸린 시간: 0시간 1분 26.32초o Exp base_jrpo updates 42/33333 episodes total num timesteps 1290000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 43/33333 episodes total num timesteps 1320000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.68초o Exp base_jrpo updates 43/33333 episodes total num timesteps 1320000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 44/33333 episodes total num timesteps 1350000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.86초o Exp base_jrpo updates 44/33333 episodes total num timesteps 1350000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 45/33333 episodes total num timesteps 1380000/1000000000.0
+전체 걸린 시간: 0시간 1분 27.52초o Exp base_jrpo updates 45/33333 episodes total num timesteps 1380000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 46/33333 episodes total num timesteps 1410000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.36초o Exp base_jrpo updates 46/33333 episodes total num timesteps 1410000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 47/33333 episodes total num timesteps 1440000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.89초o Exp base_jrpo updates 47/33333 episodes total num timesteps 1440000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 48/33333 episodes total num timesteps 1470000/1000000000.0
+전체 걸린 시간: 0시간 1분 26.02초o Exp base_jrpo updates 48/33333 episodes total num timesteps 1470000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 49/33333 episodes total num timesteps 1500000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.3794666666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+| eval_goal 0.0 | eval_possession_rate 0.3794666666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -24.00000113993883666666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -24.00000113993883666666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -25.99999867379665466666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -25.99999867379665466666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -26.99999883770942766666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -26.99999883770942766666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -27.99999900162222766666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -27.99999900162222766666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -16.99999999254942766666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -16.99999999254942766666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -29.99999932944774666666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -29.99999932944774666666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -30.99999949336052666666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -30.99999949336052666666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -18.00000015646219366666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -18.00000015646219366666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -25.00000130385160466666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -25.00000130385160466666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -18.00000015646219366666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+average episode rewards is -18.00000015646219366666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+전체 걸린 시간: 0시간 1분 20.06초 is -18.00000015646219366666666667 | eval_goal_diff -2.15 | eval_WDL -0.95 | 000.0
+Env Football Algo rmappo Exp base_jrpo updates 60/33333 episodes total num timesteps 1830000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.39초o Exp base_jrpo updates 60/33333 episodes total num timesteps 1830000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 61/33333 episodes total num timesteps 1860000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.50초o Exp base_jrpo updates 61/33333 episodes total num timesteps 1860000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 62/33333 episodes total num timesteps 1890000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.70초o Exp base_jrpo updates 62/33333 episodes total num timesteps 1890000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 63/33333 episodes total num timesteps 1920000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.41초o Exp base_jrpo updates 63/33333 episodes total num timesteps 1920000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 64/33333 episodes total num timesteps 1950000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.93초o Exp base_jrpo updates 64/33333 episodes total num timesteps 1950000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 65/33333 episodes total num timesteps 1980000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.52초o Exp base_jrpo updates 65/33333 episodes total num timesteps 1980000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 66/33333 episodes total num timesteps 2010000/1000000000.0
+전체 걸린 시간: 0시간 1분 19.96초o Exp base_jrpo updates 66/33333 episodes total num timesteps 2010000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 67/33333 episodes total num timesteps 2040000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.16초o Exp base_jrpo updates 67/33333 episodes total num timesteps 2040000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 68/33333 episodes total num timesteps 2070000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.00초o Exp base_jrpo updates 68/33333 episodes total num timesteps 2070000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 69/33333 episodes total num timesteps 2100000/1000000000.0
+| eval_goal 0.05 | eval_possession_rate 0.4130333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+| eval_goal 0.05 | eval_possession_rate 0.4130333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -22.999999579042196333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -22.999999579042196333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -25.000001303851604333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -25.000001303851604333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -19.000000320374966333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -19.000000320374966333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -21.999999415129423333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -21.999999415129423333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -22.999999579042196333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -22.999999579042196333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -25.999998673796654333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -25.999998673796654333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -29.999999329447746333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -29.999999329447746333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -15.999999828636646333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -15.999999828636646333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -27.999999001622246333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -27.999999001622246333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -20.000000484287746333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+average episode rewards is -20.000000484287746333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+전체 걸린 시간: 0시간 1분 20.99초 is -20.000000484287746333333333333 | eval_goal_diff -2.55 | eval_WDL -0.85 | 00.0
+Env Football Algo rmappo Exp base_jrpo updates 80/33333 episodes total num timesteps 2430000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.15초o Exp base_jrpo updates 80/33333 episodes total num timesteps 2430000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 81/33333 episodes total num timesteps 2460000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.74초o Exp base_jrpo updates 81/33333 episodes total num timesteps 2460000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 82/33333 episodes total num timesteps 2490000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.54초o Exp base_jrpo updates 82/33333 episodes total num timesteps 2490000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 83/33333 episodes total num timesteps 2520000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.17초o Exp base_jrpo updates 83/33333 episodes total num timesteps 2520000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 84/33333 episodes total num timesteps 2550000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.27초o Exp base_jrpo updates 84/33333 episodes total num timesteps 2550000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 85/33333 episodes total num timesteps 2580000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.23초o Exp base_jrpo updates 85/33333 episodes total num timesteps 2580000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 86/33333 episodes total num timesteps 2610000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.18초o Exp base_jrpo updates 86/33333 episodes total num timesteps 2610000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 87/33333 episodes total num timesteps 2640000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.00초o Exp base_jrpo updates 87/33333 episodes total num timesteps 2640000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 88/33333 episodes total num timesteps 2670000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.52초o Exp base_jrpo updates 88/33333 episodes total num timesteps 2670000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 89/33333 episodes total num timesteps 2700000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.37496666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+| eval_goal 0.0 | eval_possession_rate 0.37496666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -21.000000648200512666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -21.000000648200512666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -14.999999664723873666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -14.999999664723873666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -24.000001139938833666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -24.000001139938833666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -27.999999001622233666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -27.999999001622233666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -27.999999001622233666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -27.999999001622233666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -27.999999001622233666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -27.999999001622233666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -30.999999493360523666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -30.999999493360523666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -25.000001303851604666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -25.000001303851604666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -26.999998837709427666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -26.999998837709427666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -24.000001139938837666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+average episode rewards is -24.000001139938837666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+전체 걸린 시간: 0시간 1분 21.20초 is -24.000001139938837666666666667 | eval_goal_diff -1.9 | eval_WDL -0.8 | 0000.0
+Env Football Algo rmappo Exp base_jrpo updates 100/33333 episodes total num timesteps 3030000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.47초o Exp base_jrpo updates 100/33333 episodes total num timesteps 3030000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 101/33333 episodes total num timesteps 3060000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.27초o Exp base_jrpo updates 101/33333 episodes total num timesteps 3060000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 102/33333 episodes total num timesteps 3090000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.06초o Exp base_jrpo updates 102/33333 episodes total num timesteps 3090000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 103/33333 episodes total num timesteps 3120000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.46초o Exp base_jrpo updates 103/33333 episodes total num timesteps 3120000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 104/33333 episodes total num timesteps 3150000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.78초o Exp base_jrpo updates 104/33333 episodes total num timesteps 3150000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 105/33333 episodes total num timesteps 3180000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.55초o Exp base_jrpo updates 105/33333 episodes total num timesteps 3180000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 106/33333 episodes total num timesteps 3210000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.77초o Exp base_jrpo updates 106/33333 episodes total num timesteps 3210000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 107/33333 episodes total num timesteps 3240000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.05초o Exp base_jrpo updates 107/33333 episodes total num timesteps 3240000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 108/33333 episodes total num timesteps 3270000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.00초o Exp base_jrpo updates 108/33333 episodes total num timesteps 3270000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.00초o Exp base_jrpo updates 108/33333 episodes total num timesteps 3270000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 109/33333 episodes total num timesteps 3300000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.40336666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+| eval_goal 0.0 | eval_possession_rate 0.40336666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -15.999999828636646666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -15.999999828636646666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -15.999999828636646666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -15.999999828636646666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -25.000001303851604666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -25.000001303851604666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -29.999999329447746666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -29.999999329447746666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -26.999998837709427666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -26.999998837709427666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -22.999999579042196666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -22.999999579042196666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -25.000001303851604666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -25.000001303851604666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -22.999999579042196666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -22.999999579042196666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -25.999998673796654666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -25.999998673796654666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -25.000001303851604666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+average episode rewards is -25.000001303851604666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+전체 걸린 시간: 0시간 1분 21.64초 is -25.000001303851604666666666665 | eval_goal_diff -2.85 | eval_WDL -0.9 | 0000.0
+Env Football Algo rmappo Exp base_jrpo updates 120/33333 episodes total num timesteps 3630000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.99초o Exp base_jrpo updates 120/33333 episodes total num timesteps 3630000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 121/33333 episodes total num timesteps 3660000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.96초o Exp base_jrpo updates 121/33333 episodes total num timesteps 3660000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 122/33333 episodes total num timesteps 3690000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.56초o Exp base_jrpo updates 122/33333 episodes total num timesteps 3690000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 123/33333 episodes total num timesteps 3720000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.82초o Exp base_jrpo updates 123/33333 episodes total num timesteps 3720000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 124/33333 episodes total num timesteps 3750000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.32초o Exp base_jrpo updates 124/33333 episodes total num timesteps 3750000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 125/33333 episodes total num timesteps 3780000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.14초o Exp base_jrpo updates 125/33333 episodes total num timesteps 3780000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 126/33333 episodes total num timesteps 3810000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.89초o Exp base_jrpo updates 126/33333 episodes total num timesteps 3810000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 127/33333 episodes total num timesteps 3840000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.07초o Exp base_jrpo updates 127/33333 episodes total num timesteps 3840000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 128/33333 episodes total num timesteps 3870000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.14초o Exp base_jrpo updates 128/33333 episodes total num timesteps 3870000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 129/33333 episodes total num timesteps 3900000/1000000000.0
+| eval_goal 0.05 | eval_possession_rate 0.4246 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+| eval_goal 0.05 | eval_possession_rate 0.4246 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -18.000000156462193 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -18.000000156462193 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -27.999999001622293 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -27.999999001622293 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -26.999998837709427 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -26.999998837709427 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -26.999998837709427 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -26.999998837709427 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -25.000001303851604 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -25.000001303851604 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -20.000000484287744 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -20.000000484287744 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -19.000000320374966 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -19.000000320374966 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -21.999999415129423 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -21.999999415129423 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -26.999998837709427 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -26.999998837709427 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -27.999999001622227 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+average episode rewards is -27.999999001622227 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.64초 is -27.999999001622227 | eval_goal_diff -2.35 | eval_WDL -0.85 | 0000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 140/33333 episodes total num timesteps 4230000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.68초o Exp base_jrpo updates 140/33333 episodes total num timesteps 4230000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 141/33333 episodes total num timesteps 4260000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.70초o Exp base_jrpo updates 141/33333 episodes total num timesteps 4260000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 142/33333 episodes total num timesteps 4290000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.59초o Exp base_jrpo updates 142/33333 episodes total num timesteps 4290000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 143/33333 episodes total num timesteps 4320000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.55초o Exp base_jrpo updates 143/33333 episodes total num timesteps 4320000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 144/33333 episodes total num timesteps 4350000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.88초o Exp base_jrpo updates 144/33333 episodes total num timesteps 4350000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 145/33333 episodes total num timesteps 4380000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.05초o Exp base_jrpo updates 145/33333 episodes total num timesteps 4380000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 146/33333 episodes total num timesteps 4410000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.63초o Exp base_jrpo updates 146/33333 episodes total num timesteps 4410000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 147/33333 episodes total num timesteps 4440000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.03초o Exp base_jrpo updates 147/33333 episodes total num timesteps 4440000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 148/33333 episodes total num timesteps 4470000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.58초o Exp base_jrpo updates 148/33333 episodes total num timesteps 4470000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 149/33333 episodes total num timesteps 4500000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.40326666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+| eval_goal 0.0 | eval_possession_rate 0.40326666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -26.999998837709427666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -26.999998837709427666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -27.999999001622227666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -27.999999001622227666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -29.999999329447746666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -29.999999329447746666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -24.000001139938836666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -24.000001139938836666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -19.000000320374966666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -19.000000320374966666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -22.999999579042196666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -22.999999579042196666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -21.999999415129423666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -21.999999415129423666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -21.999999415129423666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -21.999999415129423666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -25.999998673796654666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -25.999998673796654666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -25.000001303851604666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+average episode rewards is -25.000001303851604666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+전체 걸린 시간: 0시간 1분 21.58초 is -25.000001303851604666666666666 | eval_goal_diff -2.25 | eval_WDL -0.95 | 000.0
+Env Football Algo rmappo Exp base_jrpo updates 160/33333 episodes total num timesteps 4830000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.45초o Exp base_jrpo updates 160/33333 episodes total num timesteps 4830000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 161/33333 episodes total num timesteps 4860000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.59초o Exp base_jrpo updates 161/33333 episodes total num timesteps 4860000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 162/33333 episodes total num timesteps 4890000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.24초o Exp base_jrpo updates 162/33333 episodes total num timesteps 4890000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 163/33333 episodes total num timesteps 4920000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.89초o Exp base_jrpo updates 163/33333 episodes total num timesteps 4920000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 164/33333 episodes total num timesteps 4950000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.17초o Exp base_jrpo updates 164/33333 episodes total num timesteps 4950000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 165/33333 episodes total num timesteps 4980000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.93초o Exp base_jrpo updates 165/33333 episodes total num timesteps 4980000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 166/33333 episodes total num timesteps 5010000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.53초o Exp base_jrpo updates 166/33333 episodes total num timesteps 5010000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 167/33333 episodes total num timesteps 5040000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.32초o Exp base_jrpo updates 167/33333 episodes total num timesteps 5040000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 168/33333 episodes total num timesteps 5070000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.14초o Exp base_jrpo updates 168/33333 episodes total num timesteps 5070000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 169/33333 episodes total num timesteps 5100000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.4001 | eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.4001 | eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -21.999999415129423| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -21.999999415129423| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -18.000000156462193| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -18.000000156462193| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -25.000001303851604| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -25.000001303851604| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -25.000001303851604| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -25.000001303851604| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -36.000000312924385| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -36.000000312924385| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -21.000000648200512| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -21.000000648200512| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -22.999999579042196| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -22.999999579042196| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -22.999999579042196| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -14.999999664723873| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -14.999999664723873| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -16.999999992549423| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -16.999999992549423| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -25.000001303851604| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+average episode rewards is -25.000001303851604| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.50초 is -25.000001303851604| eval_goal_diff -1.85 | eval_WDL -0.85 | 00000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 180/33333 episodes total num timesteps 5430000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.05초o Exp base_jrpo updates 180/33333 episodes total num timesteps 5430000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 181/33333 episodes total num timesteps 5460000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.80초o Exp base_jrpo updates 181/33333 episodes total num timesteps 5460000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 182/33333 episodes total num timesteps 5490000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.66초o Exp base_jrpo updates 182/33333 episodes total num timesteps 5490000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 183/33333 episodes total num timesteps 5520000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.20초o Exp base_jrpo updates 183/33333 episodes total num timesteps 5520000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 184/33333 episodes total num timesteps 5550000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.40초o Exp base_jrpo updates 184/33333 episodes total num timesteps 5550000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 185/33333 episodes total num timesteps 5580000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.32초o Exp base_jrpo updates 185/33333 episodes total num timesteps 5580000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 186/33333 episodes total num timesteps 5610000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.32초o Exp base_jrpo updates 186/33333 episodes total num timesteps 5610000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 187/33333 episodes total num timesteps 5640000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.64초o Exp base_jrpo updates 187/33333 episodes total num timesteps 5640000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 188/33333 episodes total num timesteps 5670000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.37초o Exp base_jrpo updates 188/33333 episodes total num timesteps 5670000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 189/33333 episodes total num timesteps 5700000/1000000000.0
+| eval_goal 0.05 | eval_possession_rate 0.39690000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+| eval_goal 0.05 | eval_possession_rate 0.39690000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -18.0000001564621930000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -18.0000001564621930000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -25.0000013038516040000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -25.0000013038516040000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -19.0000003203749660000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -19.0000003203749660000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -24.0000011399388360000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -24.0000011399388360000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -20.0000004842877460000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -20.0000004842877460000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -25.0000013038516040000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -25.0000013038516040000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -25.9999986737966540000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -25.9999986737966540000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -20.0000004842877440000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -20.0000004842877440000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -15.9999998286366460000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -15.9999998286366460000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -22.9999995790421960000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+average episode rewards is -22.9999995790421960000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+전체 걸린 시간: 0시간 1분 20.97초 is -22.9999995790421960000000000003 | eval_goal_diff -1.4 | eval_WDL -0.75 | 000.0
+Env Football Algo rmappo Exp base_jrpo updates 200/33333 episodes total num timesteps 6030000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.22초o Exp base_jrpo updates 200/33333 episodes total num timesteps 6030000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 201/33333 episodes total num timesteps 6060000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.97초o Exp base_jrpo updates 201/33333 episodes total num timesteps 6060000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 202/33333 episodes total num timesteps 6090000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.84초o Exp base_jrpo updates 202/33333 episodes total num timesteps 6090000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 203/33333 episodes total num timesteps 6120000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.74초o Exp base_jrpo updates 203/33333 episodes total num timesteps 6120000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 204/33333 episodes total num timesteps 6150000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.15초o Exp base_jrpo updates 204/33333 episodes total num timesteps 6150000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 205/33333 episodes total num timesteps 6180000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.36초o Exp base_jrpo updates 205/33333 episodes total num timesteps 6180000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 206/33333 episodes total num timesteps 6210000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.11초o Exp base_jrpo updates 206/33333 episodes total num timesteps 6210000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 207/33333 episodes total num timesteps 6240000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.16초o Exp base_jrpo updates 207/33333 episodes total num timesteps 6240000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 208/33333 episodes total num timesteps 6270000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.51초o Exp base_jrpo updates 208/33333 episodes total num timesteps 6270000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 209/33333 episodes total num timesteps 6300000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.43226666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+| eval_goal 0.0 | eval_possession_rate 0.43226666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -29.999999329447746666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -29.999999329447746666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -19.000000320374966666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -19.000000320374966666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -21.000000648200512666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -21.000000648200512666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -24.000001139938832666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -24.000001139938832666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -28.999999165534973666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -28.999999165534973666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -28.999999165534973666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -28.999999165534973666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -30.999999493360523666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -30.999999493360523666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -18.000000156462193666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -18.000000156462193666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -28.999999165534973666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -28.999999165534973666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -22.999999579042196666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+average episode rewards is -22.999999579042196666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+전체 걸린 시간: 0시간 1분 21.34초 is -22.999999579042196666666666663 | eval_goal_diff -1.75 | eval_WDL -0.75 | 000.0
+Env Football Algo rmappo Exp base_jrpo updates 220/33333 episodes total num timesteps 6630000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.22초o Exp base_jrpo updates 220/33333 episodes total num timesteps 6630000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 221/33333 episodes total num timesteps 6660000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.35초o Exp base_jrpo updates 221/33333 episodes total num timesteps 6660000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 222/33333 episodes total num timesteps 6690000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.61초o Exp base_jrpo updates 222/33333 episodes total num timesteps 6690000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 223/33333 episodes total num timesteps 6720000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.99초o Exp base_jrpo updates 223/33333 episodes total num timesteps 6720000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 224/33333 episodes total num timesteps 6750000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.44초o Exp base_jrpo updates 224/33333 episodes total num timesteps 6750000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 225/33333 episodes total num timesteps 6780000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.81초o Exp base_jrpo updates 225/33333 episodes total num timesteps 6780000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 226/33333 episodes total num timesteps 6810000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.70초o Exp base_jrpo updates 226/33333 episodes total num timesteps 6810000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 227/33333 episodes total num timesteps 6840000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.24초o Exp base_jrpo updates 227/33333 episodes total num timesteps 6840000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 228/33333 episodes total num timesteps 6870000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.23초o Exp base_jrpo updates 228/33333 episodes total num timesteps 6870000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 229/33333 episodes total num timesteps 6900000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 229/33333 episodes total num timesteps 6900000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.38283333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+| eval_goal 0.0 | eval_possession_rate 0.38283333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -29.999999329447746333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -29.999999329447746333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -33.999999985098846333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -33.999999985098846333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -16.999999992549426333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -16.999999992549426333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -20.000000484287746333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -20.000000484287746333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -20.000000484287746333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -20.000000484287746333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -21.999999415129423333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -21.999999415129423333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -19.000000320374966333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -19.000000320374966333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -25.000001303851604333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -25.000001303851604333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -25.999998673796654333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -25.999998673796654333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -19.000000320374966333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+average episode rewards is -19.000000320374966333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+전체 걸린 시간: 0시간 1분 21.39초 is -19.000000320374966333333333336 | eval_goal_diff -2.2 | eval_WDL -0.85 | 0000.0
+Env Football Algo rmappo Exp base_jrpo updates 240/33333 episodes total num timesteps 7230000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.83초o Exp base_jrpo updates 240/33333 episodes total num timesteps 7230000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 241/33333 episodes total num timesteps 7260000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.08초o Exp base_jrpo updates 241/33333 episodes total num timesteps 7260000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 242/33333 episodes total num timesteps 7290000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.32초o Exp base_jrpo updates 242/33333 episodes total num timesteps 7290000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 243/33333 episodes total num timesteps 7320000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.53초o Exp base_jrpo updates 243/33333 episodes total num timesteps 7320000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 244/33333 episodes total num timesteps 7350000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.53초o Exp base_jrpo updates 244/33333 episodes total num timesteps 7350000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 245/33333 episodes total num timesteps 7380000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.71초o Exp base_jrpo updates 245/33333 episodes total num timesteps 7380000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 246/33333 episodes total num timesteps 7410000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.50초o Exp base_jrpo updates 246/33333 episodes total num timesteps 7410000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 247/33333 episodes total num timesteps 7440000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.91초o Exp base_jrpo updates 247/33333 episodes total num timesteps 7440000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 248/33333 episodes total num timesteps 7470000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.58초o Exp base_jrpo updates 248/33333 episodes total num timesteps 7470000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 249/33333 episodes total num timesteps 7500000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.37836666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+| eval_goal 0.0 | eval_possession_rate 0.37836666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -25.000001303851604666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -25.000001303851604666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.000000648200512666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.000000648200512666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -33.999999985098842666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -33.999999985098842666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.999999415129423666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.999999415129423666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -29.999999329447746666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -29.999999329447746666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -20.000000484287746666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -20.000000484287746666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -22.999999579042196666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -22.999999579042196666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -20.000000484287746666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -20.000000484287746666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -15.999999828636646666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -15.999999828636646666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -15.999999828636646666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -22.999999579042196666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+average episode rewards is -22.999999579042196666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+전체 걸린 시간: 0시간 1분 21.37초 is -22.999999579042196666666666663 | eval_goal_diff -1.9 | eval_WDL -0.9 | 00000.0
+Env Football Algo rmappo Exp base_jrpo updates 260/33333 episodes total num timesteps 7830000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.05초o Exp base_jrpo updates 260/33333 episodes total num timesteps 7830000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 261/33333 episodes total num timesteps 7860000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.09초o Exp base_jrpo updates 261/33333 episodes total num timesteps 7860000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 262/33333 episodes total num timesteps 7890000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.87초o Exp base_jrpo updates 262/33333 episodes total num timesteps 7890000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 263/33333 episodes total num timesteps 7920000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.38초o Exp base_jrpo updates 263/33333 episodes total num timesteps 7920000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 264/33333 episodes total num timesteps 7950000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.05초o Exp base_jrpo updates 264/33333 episodes total num timesteps 7950000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 265/33333 episodes total num timesteps 7980000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.17초o Exp base_jrpo updates 265/33333 episodes total num timesteps 7980000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 266/33333 episodes total num timesteps 8010000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.74초o Exp base_jrpo updates 266/33333 episodes total num timesteps 8010000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 267/33333 episodes total num timesteps 8040000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.89초o Exp base_jrpo updates 267/33333 episodes total num timesteps 8040000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 268/33333 episodes total num timesteps 8070000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.77초o Exp base_jrpo updates 268/33333 episodes total num timesteps 8070000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 269/33333 episodes total num timesteps 8100000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.3540333333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+| eval_goal 0.0 | eval_possession_rate 0.3540333333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -24.00000113993883333333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -24.00000113993883333333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -18.00000015646219333333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -18.00000015646219333333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -27.99999900162229333333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -27.99999900162229333333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -20.00000048428774333333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -20.00000048428774333333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -14.99999966472387333333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -14.99999966472387333333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -22.99999957904219633333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -22.99999957904219633333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -21.99999941512942333333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -21.99999941512942333333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -26.99999883770942733333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -26.99999883770942733333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -21.99999941512942333333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -21.99999941512942333333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -21.99999941512942333333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+average episode rewards is -21.99999941512942333333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+전체 걸린 시간: 0시간 1분 21.68초 is -21.99999941512942333333333333 | eval_goal_diff -1.7 | eval_WDL -0.85 | 00000.0
+Env Football Algo rmappo Exp base_jrpo updates 280/33333 episodes total num timesteps 8430000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.82초o Exp base_jrpo updates 280/33333 episodes total num timesteps 8430000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 281/33333 episodes total num timesteps 8460000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.29초o Exp base_jrpo updates 281/33333 episodes total num timesteps 8460000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 282/33333 episodes total num timesteps 8490000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.55초o Exp base_jrpo updates 282/33333 episodes total num timesteps 8490000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 283/33333 episodes total num timesteps 8520000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.79초o Exp base_jrpo updates 283/33333 episodes total num timesteps 8520000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 284/33333 episodes total num timesteps 8550000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.45초o Exp base_jrpo updates 284/33333 episodes total num timesteps 8550000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.45초o Exp base_jrpo updates 284/33333 episodes total num timesteps 8550000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 285/33333 episodes total num timesteps 8580000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.45초o Exp base_jrpo updates 285/33333 episodes total num timesteps 8580000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 286/33333 episodes total num timesteps 8610000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.85초o Exp base_jrpo updates 286/33333 episodes total num timesteps 8610000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 287/33333 episodes total num timesteps 8640000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.48초o Exp base_jrpo updates 287/33333 episodes total num timesteps 8640000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 288/33333 episodes total num timesteps 8670000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.45초o Exp base_jrpo updates 288/33333 episodes total num timesteps 8670000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 289/33333 episodes total num timesteps 8700000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.40236666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+| eval_goal 0.0 | eval_possession_rate 0.40236666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -28.999999165534973666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -28.999999165534973666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -18.000000156462193666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -18.000000156462193666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -19.000000320374966666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -19.000000320374966666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.999999415129423666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.999999415129423666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -20.000000484287743666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -20.000000484287743666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.999999415129423666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.999999415129423666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -27.999999001622223666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -27.999999001622223666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -24.000001139938833666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -24.000001139938833666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -25.999998673796654666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -25.999998673796654666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -25.999998673796654666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -27.999999001622254666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+average episode rewards is -27.999999001622254666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+전체 걸린 시간: 0시간 1분 21.91초 is -27.999999001622254666666666665 | eval_goal_diff -2.7 | eval_WDL -0.9 | 00000.0
+Env Football Algo rmappo Exp base_jrpo updates 300/33333 episodes total num timesteps 9030000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.18초o Exp base_jrpo updates 300/33333 episodes total num timesteps 9030000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 301/33333 episodes total num timesteps 9060000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.00초o Exp base_jrpo updates 301/33333 episodes total num timesteps 9060000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 302/33333 episodes total num timesteps 9090000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.28초o Exp base_jrpo updates 302/33333 episodes total num timesteps 9090000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 303/33333 episodes total num timesteps 9120000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.43초o Exp base_jrpo updates 303/33333 episodes total num timesteps 9120000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 304/33333 episodes total num timesteps 9150000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.20초o Exp base_jrpo updates 304/33333 episodes total num timesteps 9150000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 305/33333 episodes total num timesteps 9180000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.69초o Exp base_jrpo updates 305/33333 episodes total num timesteps 9180000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 306/33333 episodes total num timesteps 9210000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.59초o Exp base_jrpo updates 306/33333 episodes total num timesteps 9210000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 307/33333 episodes total num timesteps 9240000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.16초o Exp base_jrpo updates 307/33333 episodes total num timesteps 9240000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 308/33333 episodes total num timesteps 9270000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.51초o Exp base_jrpo updates 308/33333 episodes total num timesteps 9270000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 309/33333 episodes total num timesteps 9300000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.4170333333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+| eval_goal 0.0 | eval_possession_rate 0.4170333333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -14.99999966472387333333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -14.99999966472387333333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -20.00000048428774333333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -20.00000048428774333333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.00000064820051233333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.00000064820051233333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -28.99999916553497333333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -28.99999916553497333333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -15.99999982863664633333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -15.99999982863664633333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -13.99999950081114633333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -13.99999950081114633333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -24.00000113993883633333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -24.00000113993883633333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -20.00000048428774633333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -20.00000048428774633333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -25.00000130385160433333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -25.00000130385160433333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.00000064820051233333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.00000064820051233333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+전체 걸린 시간: 0시간 1분 21.52초 is -21.00000064820051233333333333 | eval_goal_diff -2.15 | eval_WDL -0.9 | 00000.0
+Env Football Algo rmappo Exp base_jrpo updates 320/33333 episodes total num timesteps 9630000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.65초o Exp base_jrpo updates 320/33333 episodes total num timesteps 9630000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 321/33333 episodes total num timesteps 9660000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.76초o Exp base_jrpo updates 321/33333 episodes total num timesteps 9660000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 322/33333 episodes total num timesteps 9690000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.10초o Exp base_jrpo updates 322/33333 episodes total num timesteps 9690000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 323/33333 episodes total num timesteps 9720000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.51초o Exp base_jrpo updates 323/33333 episodes total num timesteps 9720000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 324/33333 episodes total num timesteps 9750000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.92초o Exp base_jrpo updates 324/33333 episodes total num timesteps 9750000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 325/33333 episodes total num timesteps 9780000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.38초o Exp base_jrpo updates 325/33333 episodes total num timesteps 9780000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 326/33333 episodes total num timesteps 9810000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.35초o Exp base_jrpo updates 326/33333 episodes total num timesteps 9810000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 327/33333 episodes total num timesteps 9840000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.12초o Exp base_jrpo updates 327/33333 episodes total num timesteps 9840000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 328/33333 episodes total num timesteps 9870000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.67초o Exp base_jrpo updates 328/33333 episodes total num timesteps 9870000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 329/33333 episodes total num timesteps 9900000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.42969999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+| eval_goal 0.0 | eval_possession_rate 0.42969999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -26.999998837709427999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -26.999998837709427999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -16.999999992549427999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -16.999999992549427999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -26.999998837709427999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -26.999998837709427999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -22.999999579042196999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -22.999999579042196999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -25.000001303851604999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -25.000001303851604999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -21.000000648200512999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -21.000000648200512999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -12.999999336898327999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -12.999999336898327999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -21.000000648200512999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -21.000000648200512999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -15.999999828636646999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -15.999999828636646999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -24.000001139938836999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+average episode rewards is -24.000001139938836999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+전체 걸린 시간: 0시간 1분 21.63초 is -24.000001139938836999999999997 | eval_goal_diff -1.9 | eval_WDL -0.85 | 0000.0
+Env Football Algo rmappo Exp base_jrpo updates 340/33333 episodes total num timesteps 10230000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.81초o Exp base_jrpo updates 340/33333 episodes total num timesteps 10230000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 341/33333 episodes total num timesteps 10260000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.43초o Exp base_jrpo updates 341/33333 episodes total num timesteps 10260000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 342/33333 episodes total num timesteps 10290000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.59초o Exp base_jrpo updates 342/33333 episodes total num timesteps 10290000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 343/33333 episodes total num timesteps 10320000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.14초o Exp base_jrpo updates 343/33333 episodes total num timesteps 10320000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 344/33333 episodes total num timesteps 10350000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.33초o Exp base_jrpo updates 344/33333 episodes total num timesteps 10350000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 345/33333 episodes total num timesteps 10380000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.35초o Exp base_jrpo updates 345/33333 episodes total num timesteps 10380000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 346/33333 episodes total num timesteps 10410000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.13초o Exp base_jrpo updates 346/33333 episodes total num timesteps 10410000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 347/33333 episodes total num timesteps 10440000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.34초o Exp base_jrpo updates 347/33333 episodes total num timesteps 10440000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 348/33333 episodes total num timesteps 10470000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.02초o Exp base_jrpo updates 348/33333 episodes total num timesteps 10470000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 349/33333 episodes total num timesteps 10500000/1000000000.0
+| eval_goal 0.2 | eval_possession_rate 0.4486 | eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+| eval_goal 0.2 | eval_possession_rate 0.4486 | eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -22.999999579042196| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -22.999999579042196| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -25.000001303851604| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -25.000001303851604| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -16.999999992549424| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -16.999999992549424| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -28.999999165534973| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -28.999999165534973| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -33.999999985098843| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -33.999999985098843| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -21.000000648200512| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -21.000000648200512| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -16.999999992549422| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -16.999999992549422| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -27.999999001622222| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -27.999999001622222| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -16.999999992549422| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -16.999999992549422| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -25.000001303851604| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+average episode rewards is -25.000001303851604| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.84초 is -25.000001303851604| eval_goal_diff -1.8 | eval_WDL -0.8 | 10500000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 360/33333 episodes total num timesteps 10830000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.53초o Exp base_jrpo updates 360/33333 episodes total num timesteps 10830000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 361/33333 episodes total num timesteps 10860000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.32초o Exp base_jrpo updates 361/33333 episodes total num timesteps 10860000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 362/33333 episodes total num timesteps 10890000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.27초o Exp base_jrpo updates 362/33333 episodes total num timesteps 10890000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 363/33333 episodes total num timesteps 10920000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.55초o Exp base_jrpo updates 363/33333 episodes total num timesteps 10920000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 364/33333 episodes total num timesteps 10950000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.08초o Exp base_jrpo updates 364/33333 episodes total num timesteps 10950000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 365/33333 episodes total num timesteps 10980000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.51초o Exp base_jrpo updates 365/33333 episodes total num timesteps 10980000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 366/33333 episodes total num timesteps 11010000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.71초o Exp base_jrpo updates 366/33333 episodes total num timesteps 11010000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 367/33333 episodes total num timesteps 11040000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.30초o Exp base_jrpo updates 367/33333 episodes total num timesteps 11040000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 368/33333 episodes total num timesteps 11070000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.45초o Exp base_jrpo updates 368/33333 episodes total num timesteps 11070000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 369/33333 episodes total num timesteps 11100000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.4898 | eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.4898 | eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -18.000000156462193| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -18.000000156462193| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -21.999999415129423| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -21.999999415129423| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -21.999999415129423| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -21.999999415129423| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -28.999999165534973| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -28.999999165534973| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -19.000000320374966| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -19.000000320374966| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -24.000001139938836| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -24.000001139938836| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -21.999999415129423| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -21.999999415129423| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -21.999999415129423| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -21.999999415129423| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -21.000000648200512| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -21.000000648200512| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -14.999999664723873| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+average episode rewards is -14.999999664723873| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.84초 is -14.999999664723873| eval_goal_diff -2.0 | eval_WDL -0.95 | 1100000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 380/33333 episodes total num timesteps 11430000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.89초o Exp base_jrpo updates 380/33333 episodes total num timesteps 11430000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 381/33333 episodes total num timesteps 11460000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.17초o Exp base_jrpo updates 381/33333 episodes total num timesteps 11460000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 382/33333 episodes total num timesteps 11490000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.92초o Exp base_jrpo updates 382/33333 episodes total num timesteps 11490000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 383/33333 episodes total num timesteps 11520000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.62초o Exp base_jrpo updates 383/33333 episodes total num timesteps 11520000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 384/33333 episodes total num timesteps 11550000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.98초o Exp base_jrpo updates 384/33333 episodes total num timesteps 11550000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 385/33333 episodes total num timesteps 11580000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.97초o Exp base_jrpo updates 385/33333 episodes total num timesteps 11580000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 386/33333 episodes total num timesteps 11610000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.07초o Exp base_jrpo updates 386/33333 episodes total num timesteps 11610000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 387/33333 episodes total num timesteps 11640000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.59초o Exp base_jrpo updates 387/33333 episodes total num timesteps 11640000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 388/33333 episodes total num timesteps 11670000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.51초o Exp base_jrpo updates 388/33333 episodes total num timesteps 11670000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 389/33333 episodes total num timesteps 11700000/1000000000.0
+| eval_goal 0.2 | eval_possession_rate 0.41773333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+| eval_goal 0.2 | eval_possession_rate 0.41773333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -21.000000648200512333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -21.000000648200512333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -24.000001139938832333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -24.000001139938832333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -21.000000648200512333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -21.000000648200512333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -20.000000484287742333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -20.000000484287742333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -24.000001139938832333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -24.000001139938832333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -24.000001139938832333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -24.000001139938832333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -14.999999664723873333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -14.999999664723873333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -22.999999579042196333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -22.999999579042196333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -13.999999500811196333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -13.999999500811196333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -13.999999500811196333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -16.999999992549426333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+average episode rewards is -16.999999992549426333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+전체 걸린 시간: 0시간 1분 21.07초 is -16.999999992549426333333333335 | eval_goal_diff -1.5 | eval_WDL -0.8 | 000000.0
+Env Football Algo rmappo Exp base_jrpo updates 400/33333 episodes total num timesteps 12030000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.46초o Exp base_jrpo updates 400/33333 episodes total num timesteps 12030000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 401/33333 episodes total num timesteps 12060000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.92초o Exp base_jrpo updates 401/33333 episodes total num timesteps 12060000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 402/33333 episodes total num timesteps 12090000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.44초o Exp base_jrpo updates 402/33333 episodes total num timesteps 12090000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 403/33333 episodes total num timesteps 12120000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.53초o Exp base_jrpo updates 403/33333 episodes total num timesteps 12120000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 404/33333 episodes total num timesteps 12150000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.38초o Exp base_jrpo updates 404/33333 episodes total num timesteps 12150000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 405/33333 episodes total num timesteps 12180000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.04초o Exp base_jrpo updates 405/33333 episodes total num timesteps 12180000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 406/33333 episodes total num timesteps 12210000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.22초o Exp base_jrpo updates 406/33333 episodes total num timesteps 12210000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 407/33333 episodes total num timesteps 12240000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.85초o Exp base_jrpo updates 407/33333 episodes total num timesteps 12240000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 408/33333 episodes total num timesteps 12270000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.31초o Exp base_jrpo updates 408/33333 episodes total num timesteps 12270000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 409/33333 episodes total num timesteps 12300000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.5471333333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+| eval_goal 0.0 | eval_possession_rate 0.5471333333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -18.00000015646219333333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -18.00000015646219333333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -25.99999867379665433333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -25.99999867379665433333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -25.00000130385160433333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -25.00000130385160433333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -25.99999867379665433333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -25.99999867379665433333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -29.99999932944774633333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -29.99999932944774633333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -19.00000032037496633333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -19.00000032037496633333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -18.00000015646219333333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -18.00000015646219333333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -24.00000113993883333333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -24.00000113993883333333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -18.00000015646219333333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -18.00000015646219333333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -21.99999941512942333333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+average episode rewards is -21.99999941512942333333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+전체 걸린 시간: 0시간 1분 21.64초 is -21.99999941512942333333333334 | eval_goal_diff -2.2 | eval_WDL -0.85 | 000000.0
+Env Football Algo rmappo Exp base_jrpo updates 420/33333 episodes total num timesteps 12630000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.24초o Exp base_jrpo updates 420/33333 episodes total num timesteps 12630000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 421/33333 episodes total num timesteps 12660000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.23초o Exp base_jrpo updates 421/33333 episodes total num timesteps 12660000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 422/33333 episodes total num timesteps 12690000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.85초o Exp base_jrpo updates 422/33333 episodes total num timesteps 12690000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 423/33333 episodes total num timesteps 12720000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.25초o Exp base_jrpo updates 423/33333 episodes total num timesteps 12720000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 424/33333 episodes total num timesteps 12750000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.52초o Exp base_jrpo updates 424/33333 episodes total num timesteps 12750000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 425/33333 episodes total num timesteps 12780000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.08초o Exp base_jrpo updates 425/33333 episodes total num timesteps 12780000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 426/33333 episodes total num timesteps 12810000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.36초o Exp base_jrpo updates 426/33333 episodes total num timesteps 12810000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 427/33333 episodes total num timesteps 12840000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.23초o Exp base_jrpo updates 427/33333 episodes total num timesteps 12840000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 428/33333 episodes total num timesteps 12870000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.94초o Exp base_jrpo updates 428/33333 episodes total num timesteps 12870000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 429/33333 episodes total num timesteps 12900000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.49483333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+| eval_goal 0.0 | eval_possession_rate 0.49483333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -19.000000320374966333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -19.000000320374966333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -28.999999165534973333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -28.999999165534973333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -25.000001303851604333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -25.000001303851604333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -26.999998837709427333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -26.999998837709427333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -25.999998673796654333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -25.999998673796654333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -14.999999664723873333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -14.999999664723873333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -22.999999579042196333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -22.999999579042196333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -13.999999500811196333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -13.999999500811196333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -14.999999664723873333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -14.999999664723873333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -24.000001139938833333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+average episode rewards is -24.000001139938833333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+전체 걸린 시간: 0시간 1분 21.53초 is -24.000001139938833333333333335 | eval_goal_diff -2.25 | eval_WDL -0.95 | 0000.0
+Env Football Algo rmappo Exp base_jrpo updates 440/33333 episodes total num timesteps 13230000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.42초o Exp base_jrpo updates 440/33333 episodes total num timesteps 13230000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 441/33333 episodes total num timesteps 13260000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.33초o Exp base_jrpo updates 441/33333 episodes total num timesteps 13260000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 442/33333 episodes total num timesteps 13290000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.99초o Exp base_jrpo updates 442/33333 episodes total num timesteps 13290000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 443/33333 episodes total num timesteps 13320000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.82초o Exp base_jrpo updates 443/33333 episodes total num timesteps 13320000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 444/33333 episodes total num timesteps 13350000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.66초o Exp base_jrpo updates 444/33333 episodes total num timesteps 13350000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 445/33333 episodes total num timesteps 13380000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.17초o Exp base_jrpo updates 445/33333 episodes total num timesteps 13380000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 446/33333 episodes total num timesteps 13410000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.70초o Exp base_jrpo updates 446/33333 episodes total num timesteps 13410000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 447/33333 episodes total num timesteps 13440000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.07초o Exp base_jrpo updates 447/33333 episodes total num timesteps 13440000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 448/33333 episodes total num timesteps 13470000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.97초o Exp base_jrpo updates 448/33333 episodes total num timesteps 13470000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 449/33333 episodes total num timesteps 13500000/1000000000.0
+| eval_goal 0.2 | eval_possession_rate 0.4362 | eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+| eval_goal 0.2 | eval_possession_rate 0.4362 | eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -19.000000320374966| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -19.000000320374966| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -19.000000320374966| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -19.000000320374966| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -21.999999415129423| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -21.999999415129423| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -22.999999579042196| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -22.999999579042196| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -28.999999165534973| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -28.999999165534973| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -19.000000320374966| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -19.000000320374966| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -19.000000320374966| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -19.000000320374966| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -25.999998673796654| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -25.999998673796654| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -20.000000484287744| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -20.000000484287744| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -19.000000320374966| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+average episode rewards is -19.000000320374966| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.67초 is -19.000000320374966| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.67초 is -19.000000320374966| eval_goal_diff -2.35 | eval_WDL -0.9 | 3500000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 460/33333 episodes total num timesteps 13830000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.24초o Exp base_jrpo updates 460/33333 episodes total num timesteps 13830000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 461/33333 episodes total num timesteps 13860000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.48초o Exp base_jrpo updates 461/33333 episodes total num timesteps 13860000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 462/33333 episodes total num timesteps 13890000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.85초o Exp base_jrpo updates 462/33333 episodes total num timesteps 13890000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 463/33333 episodes total num timesteps 13920000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.32초o Exp base_jrpo updates 463/33333 episodes total num timesteps 13920000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 464/33333 episodes total num timesteps 13950000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.37초o Exp base_jrpo updates 464/33333 episodes total num timesteps 13950000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 465/33333 episodes total num timesteps 13980000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.39초o Exp base_jrpo updates 465/33333 episodes total num timesteps 13980000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 466/33333 episodes total num timesteps 14010000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.94초o Exp base_jrpo updates 466/33333 episodes total num timesteps 14010000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 467/33333 episodes total num timesteps 14040000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.75초o Exp base_jrpo updates 467/33333 episodes total num timesteps 14040000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 468/33333 episodes total num timesteps 14070000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.49초o Exp base_jrpo updates 468/33333 episodes total num timesteps 14070000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 469/33333 episodes total num timesteps 14100000/1000000000.0
+| eval_goal 0.15 | eval_possession_rate 0.4795666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+| eval_goal 0.15 | eval_possession_rate 0.4795666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -20.000000484287745666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -20.000000484287745666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -18.000000156462193666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -18.000000156462193666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -26.999998837709427666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -26.999998837709427666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -25.000001303851604666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -25.000001303851604666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -22.999999579042196666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -22.999999579042196666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.000000648200512666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.000000648200512666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -18.000000156462193666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -18.000000156462193666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -12.999999336898327666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -12.999999336898327666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -31.999999657273293666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -31.999999657273293666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -20.000000484287743666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+average episode rewards is -20.000000484287743666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+전체 걸린 시간: 0시간 1분 21.51초 is -20.000000484287743666666666667 | eval_goal_diff -2.05 | eval_WDL -0.9 | 00000.0
+Env Football Algo rmappo Exp base_jrpo updates 480/33333 episodes total num timesteps 14430000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.21초o Exp base_jrpo updates 480/33333 episodes total num timesteps 14430000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 481/33333 episodes total num timesteps 14460000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.61초o Exp base_jrpo updates 481/33333 episodes total num timesteps 14460000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 482/33333 episodes total num timesteps 14490000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.04초o Exp base_jrpo updates 482/33333 episodes total num timesteps 14490000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 483/33333 episodes total num timesteps 14520000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.69초o Exp base_jrpo updates 483/33333 episodes total num timesteps 14520000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 484/33333 episodes total num timesteps 14550000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.35초o Exp base_jrpo updates 484/33333 episodes total num timesteps 14550000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 485/33333 episodes total num timesteps 14580000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.63초o Exp base_jrpo updates 485/33333 episodes total num timesteps 14580000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 486/33333 episodes total num timesteps 14610000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.87초o Exp base_jrpo updates 486/33333 episodes total num timesteps 14610000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 487/33333 episodes total num timesteps 14640000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.48초o Exp base_jrpo updates 487/33333 episodes total num timesteps 14640000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 488/33333 episodes total num timesteps 14670000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.48초o Exp base_jrpo updates 488/33333 episodes total num timesteps 14670000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 489/33333 episodes total num timesteps 14700000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.48893333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+| eval_goal 0.0 | eval_possession_rate 0.48893333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -29.999999329447746333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -29.999999329447746333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -27.999999001622246333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -27.999999001622246333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -15.999999828636646333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -15.999999828636646333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -22.999999579042196333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -22.999999579042196333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -18.000000156462193333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -18.000000156462193333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -24.000001139938833333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -24.000001139938833333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -27.999999001622233333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -27.999999001622233333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -18.000000156462193333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -18.000000156462193333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -19.000000320374966333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -19.000000320374966333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -25.999998673796654333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+average episode rewards is -25.999998673796654333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+전체 걸린 시간: 0시간 1분 22.38초 is -25.999998673796654333333333333 | eval_goal_diff -1.95 | eval_WDL -0.85 | 0000.0
+Env Football Algo rmappo Exp base_jrpo updates 500/33333 episodes total num timesteps 15030000/1000000000.0
+전체 걸린 시간: 0시간 1분 24.04초o Exp base_jrpo updates 500/33333 episodes total num timesteps 15030000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 501/33333 episodes total num timesteps 15060000/1000000000.0
+전체 걸린 시간: 0시간 1분 24.41초o Exp base_jrpo updates 501/33333 episodes total num timesteps 15060000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 502/33333 episodes total num timesteps 15090000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.46초o Exp base_jrpo updates 502/33333 episodes total num timesteps 15090000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 503/33333 episodes total num timesteps 15120000/1000000000.0
+전체 걸린 시간: 0시간 1분 28.38초o Exp base_jrpo updates 503/33333 episodes total num timesteps 15120000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 504/33333 episodes total num timesteps 15150000/1000000000.0
+전체 걸린 시간: 0시간 1분 23.79초o Exp base_jrpo updates 504/33333 episodes total num timesteps 15150000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 505/33333 episodes total num timesteps 15180000/1000000000.0
+전체 걸린 시간: 0시간 1분 23.14초o Exp base_jrpo updates 505/33333 episodes total num timesteps 15180000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 506/33333 episodes total num timesteps 15210000/1000000000.0
+전체 걸린 시간: 0시간 1분 27.01초o Exp base_jrpo updates 506/33333 episodes total num timesteps 15210000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 507/33333 episodes total num timesteps 15240000/1000000000.0
+전체 걸린 시간: 0시간 1분 24.30초o Exp base_jrpo updates 507/33333 episodes total num timesteps 15240000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 508/33333 episodes total num timesteps 15270000/1000000000.0
+전체 걸린 시간: 0시간 1분 24.32초o Exp base_jrpo updates 508/33333 episodes total num timesteps 15270000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 509/33333 episodes total num timesteps 15300000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.4237666666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+| eval_goal 0.0 | eval_possession_rate 0.4237666666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -24.00000113993883666666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -24.00000113993883666666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -13.99999950081113666666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -13.99999950081113666666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -28.99999916553497366666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -28.99999916553497366666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -28.99999916553497366666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -20.00000048428774366666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -20.00000048428774366666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -21.00000064820051266666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -21.00000064820051266666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -25.00000130385160466666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -25.00000130385160466666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -24.00000113993883466666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -24.00000113993883466666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -24.00000113993883466666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -24.00000113993883466666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -22.99999957904219666666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -22.99999957904219666666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -25.00000130385160466666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+average episode rewards is -25.00000130385160466666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+전체 걸린 시간: 0시간 1분 23.11초 is -25.00000130385160466666666666 | eval_goal_diff -2.1 | eval_WDL -0.95 | 000000.0
+Env Football Algo rmappo Exp base_jrpo updates 520/33333 episodes total num timesteps 15630000/1000000000.0
+전체 걸린 시간: 0시간 1분 23.62초o Exp base_jrpo updates 520/33333 episodes total num timesteps 15630000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 521/33333 episodes total num timesteps 15660000/1000000000.0
+전체 걸린 시간: 0시간 1분 23.48초o Exp base_jrpo updates 521/33333 episodes total num timesteps 15660000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 522/33333 episodes total num timesteps 15690000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.42초o Exp base_jrpo updates 522/33333 episodes total num timesteps 15690000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 523/33333 episodes total num timesteps 15720000/1000000000.0
+전체 걸린 시간: 0시간 1분 24.04초o Exp base_jrpo updates 523/33333 episodes total num timesteps 15720000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 524/33333 episodes total num timesteps 15750000/1000000000.0
+전체 걸린 시간: 0시간 1분 24.70초o Exp base_jrpo updates 524/33333 episodes total num timesteps 15750000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 525/33333 episodes total num timesteps 15780000/1000000000.0
+전체 걸린 시간: 0시간 1분 23.10초o Exp base_jrpo updates 525/33333 episodes total num timesteps 15780000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 526/33333 episodes total num timesteps 15810000/1000000000.0
+전체 걸린 시간: 0시간 1분 24.07초o Exp base_jrpo updates 526/33333 episodes total num timesteps 15810000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 527/33333 episodes total num timesteps 15840000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.72초o Exp base_jrpo updates 527/33333 episodes total num timesteps 15840000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 528/33333 episodes total num timesteps 15870000/1000000000.0
+전체 걸린 시간: 0시간 1분 27.89초o Exp base_jrpo updates 528/33333 episodes total num timesteps 15870000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 529/33333 episodes total num timesteps 15900000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.41383333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+| eval_goal 0.0 | eval_possession_rate 0.41383333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -25.999998673796654333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -25.999998673796654333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -24.000001139938834333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -24.000001139938834333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -19.000000320374966333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -19.000000320374966333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -22.999999579042196333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -22.999999579042196333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -13.999999500811196333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -13.999999500811196333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -19.000000320374966333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -19.000000320374966333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -24.000001139938836333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -24.000001139938836333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -21.000000648200512333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -21.000000648200512333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -21.999999415129423333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -21.999999415129423333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -19.000000320374966333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+average episode rewards is -19.000000320374966333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+전체 걸린 시간: 0시간 1분 25.34초 is -19.000000320374966333333333333 | eval_goal_diff -2.25 | eval_WDL -1.0 | 00000.0
+Env Football Algo rmappo Exp base_jrpo updates 540/33333 episodes total num timesteps 16230000/1000000000.0
+전체 걸린 시간: 0시간 1분 27.54초o Exp base_jrpo updates 540/33333 episodes total num timesteps 16230000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 541/33333 episodes total num timesteps 16260000/1000000000.0
+전체 걸린 시간: 0시간 1분 24.38초o Exp base_jrpo updates 541/33333 episodes total num timesteps 16260000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 542/33333 episodes total num timesteps 16290000/1000000000.0
+전체 걸린 시간: 0시간 1분 23.79초o Exp base_jrpo updates 542/33333 episodes total num timesteps 16290000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 543/33333 episodes total num timesteps 16320000/1000000000.0
+전체 걸린 시간: 0시간 1분 24.93초o Exp base_jrpo updates 543/33333 episodes total num timesteps 16320000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 544/33333 episodes total num timesteps 16350000/1000000000.0
+전체 걸린 시간: 0시간 1분 26.48초o Exp base_jrpo updates 544/33333 episodes total num timesteps 16350000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 545/33333 episodes total num timesteps 16380000/1000000000.0
+전체 걸린 시간: 0시간 1분 27.08초o Exp base_jrpo updates 545/33333 episodes total num timesteps 16380000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 546/33333 episodes total num timesteps 16410000/1000000000.0
+전체 걸린 시간: 0시간 1분 24.49초o Exp base_jrpo updates 546/33333 episodes total num timesteps 16410000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 547/33333 episodes total num timesteps 16440000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.59초o Exp base_jrpo updates 547/33333 episodes total num timesteps 16440000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 548/33333 episodes total num timesteps 16470000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.25초o Exp base_jrpo updates 548/33333 episodes total num timesteps 16470000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 549/33333 episodes total num timesteps 16500000/1000000000.0
+| eval_goal 0.15 | eval_possession_rate 0.4424 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+| eval_goal 0.15 | eval_possession_rate 0.4424 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -21.999999415129423 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -21.999999415129423 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -21.000000648200512 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -21.000000648200512 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -19.000000320374966 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -19.000000320374966 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -32.999999821186066 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -32.999999821186066 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -22.999999579042196 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -22.999999579042196 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -13.999999500811196 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -13.999999500811196 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -15.999999828636646 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -15.999999828636646 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -15.999999828636646 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -15.999999828636646 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -22.999999579042196 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -22.999999579042196 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -25.999998673796654 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+average episode rewards is -25.999998673796654 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+전체 걸린 시간: 0시간 1분 24.53초 is -25.999998673796654 | eval_goal_diff -2.1 | eval_WDL -0.95 | 500000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 560/33333 episodes total num timesteps 16830000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.19초o Exp base_jrpo updates 560/33333 episodes total num timesteps 16830000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 561/33333 episodes total num timesteps 16860000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.58초o Exp base_jrpo updates 561/33333 episodes total num timesteps 16860000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 562/33333 episodes total num timesteps 16890000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.96초o Exp base_jrpo updates 562/33333 episodes total num timesteps 16890000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 563/33333 episodes total num timesteps 16920000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.32초o Exp base_jrpo updates 563/33333 episodes total num timesteps 16920000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 564/33333 episodes total num timesteps 16950000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.91초o Exp base_jrpo updates 564/33333 episodes total num timesteps 16950000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 565/33333 episodes total num timesteps 16980000/1000000000.0
+전체 걸린 시간: 0시간 1분 26.39초o Exp base_jrpo updates 565/33333 episodes total num timesteps 16980000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 566/33333 episodes total num timesteps 17010000/1000000000.0
+전체 걸린 시간: 0시간 1분 23.98초o Exp base_jrpo updates 566/33333 episodes total num timesteps 17010000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 567/33333 episodes total num timesteps 17040000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.33초o Exp base_jrpo updates 567/33333 episodes total num timesteps 17040000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 568/33333 episodes total num timesteps 17070000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.61초o Exp base_jrpo updates 568/33333 episodes total num timesteps 17070000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 569/33333 episodes total num timesteps 17100000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.4447 | eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.4447 | eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -25.000001303851604| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -25.000001303851604| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -16.999999992549424| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -16.999999992549424| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -25.000001303851604| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -25.000001303851604| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -24.000001139938834| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -24.000001139938834| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -21.000000648200512| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -21.000000648200512| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -12.999999336898327| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -12.999999336898327| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -24.000001139938837| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -24.000001139938837| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -18.000000156462193| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -18.000000156462193| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -30.999999493360523| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -30.999999493360523| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -13.999999500811123| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+average episode rewards is -13.999999500811123| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+전체 걸린 시간: 0시간 1분 23.81초 is -13.999999500811123| eval_goal_diff -2.05 | eval_WDL -0.95 | 100000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 580/33333 episodes total num timesteps 17430000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.28초o Exp base_jrpo updates 580/33333 episodes total num timesteps 17430000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 581/33333 episodes total num timesteps 17460000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.67초o Exp base_jrpo updates 581/33333 episodes total num timesteps 17460000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 582/33333 episodes total num timesteps 17490000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.63초o Exp base_jrpo updates 582/33333 episodes total num timesteps 17490000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 583/33333 episodes total num timesteps 17520000/1000000000.0
+전체 걸린 시간: 0시간 1분 23.36초o Exp base_jrpo updates 583/33333 episodes total num timesteps 17520000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 584/33333 episodes total num timesteps 17550000/1000000000.0
+전체 걸린 시간: 0시간 1분 28.92초o Exp base_jrpo updates 584/33333 episodes total num timesteps 17550000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 585/33333 episodes total num timesteps 17580000/1000000000.0
+전체 걸린 시간: 0시간 1분 24.34초o Exp base_jrpo updates 585/33333 episodes total num timesteps 17580000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 586/33333 episodes total num timesteps 17610000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.20초o Exp base_jrpo updates 586/33333 episodes total num timesteps 17610000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 587/33333 episodes total num timesteps 17640000/1000000000.0
+전체 걸린 시간: 0시간 1분 26.74초o Exp base_jrpo updates 587/33333 episodes total num timesteps 17640000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 588/33333 episodes total num timesteps 17670000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.80초o Exp base_jrpo updates 588/33333 episodes total num timesteps 17670000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 589/33333 episodes total num timesteps 17700000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.43016666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+| eval_goal 0.0 | eval_possession_rate 0.43016666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -21.000000648200512666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -21.000000648200512666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -25.000001303851604666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -25.000001303851604666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -20.000000484287744666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -20.000000484287744666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -16.999999992549424666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -16.999999992549424666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -21.000000648200512666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -21.000000648200512666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -21.000000648200512666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -21.000000648200512666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -16.999999992549422666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -16.999999992549422666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -16.999999992549422666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -18.000000156462193666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -18.000000156462193666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -19.000000320374966666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -19.000000320374966666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -27.999999001622266666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+average episode rewards is -27.999999001622266666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+전체 걸린 시간: 0시간 1분 30.00초 is -27.999999001622266666666666664 | eval_goal_diff -1.6 | eval_WDL -0.8 | 000000.0
+Env Football Algo rmappo Exp base_jrpo updates 600/33333 episodes total num timesteps 18030000/1000000000.0
+전체 걸린 시간: 0시간 1분 29.88초o Exp base_jrpo updates 600/33333 episodes total num timesteps 18030000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 601/33333 episodes total num timesteps 18060000/1000000000.0
+전체 걸린 시간: 0시간 1분 24.37초o Exp base_jrpo updates 601/33333 episodes total num timesteps 18060000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 602/33333 episodes total num timesteps 18090000/1000000000.0
+전체 걸린 시간: 0시간 1분 28.41초o Exp base_jrpo updates 602/33333 episodes total num timesteps 18090000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 603/33333 episodes total num timesteps 18120000/1000000000.0
+전체 걸린 시간: 0시간 1분 27.36초o Exp base_jrpo updates 603/33333 episodes total num timesteps 18120000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 604/33333 episodes total num timesteps 18150000/1000000000.0
+전체 걸린 시간: 0시간 1분 27.92초o Exp base_jrpo updates 604/33333 episodes total num timesteps 18150000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 605/33333 episodes total num timesteps 18180000/1000000000.0
+전체 걸린 시간: 0시간 1분 30.44초o Exp base_jrpo updates 605/33333 episodes total num timesteps 18180000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 606/33333 episodes total num timesteps 18210000/1000000000.0
+전체 걸린 시간: 0시간 1분 26.97초o Exp base_jrpo updates 606/33333 episodes total num timesteps 18210000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 607/33333 episodes total num timesteps 18240000/1000000000.0
+전체 걸린 시간: 0시간 1분 29.86초o Exp base_jrpo updates 607/33333 episodes total num timesteps 18240000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 608/33333 episodes total num timesteps 18270000/1000000000.0
+전체 걸린 시간: 0시간 1분 29.54초o Exp base_jrpo updates 608/33333 episodes total num timesteps 18270000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 609/33333 episodes total num timesteps 18300000/1000000000.0
+| eval_goal 0.1 | eval_possession_rate 0.4674333333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+| eval_goal 0.1 | eval_possession_rate 0.4674333333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -21.99999941512942333333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -21.99999941512942333333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -25.00000130385160433333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -25.00000130385160433333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -18.00000015646219333333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -18.00000015646219333333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -21.99999941512942333333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -21.99999941512942333333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -22.99999957904219633333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -22.99999957904219633333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -21.00000064820051233333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -21.00000064820051233333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -22.99999957904219633333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -22.99999957904219633333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -22.99999957904219633333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -22.99999957904219633333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -14.99999966472387333333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -14.99999966472387333333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -21.00000064820051233333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+average episode rewards is -21.00000064820051233333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+전체 걸린 시간: 0시간 1분 23.87초 is -21.00000064820051233333333333 | eval_goal_diff -1.6 | eval_WDL -0.85 | 000000.0
+Env Football Algo rmappo Exp base_jrpo updates 620/33333 episodes total num timesteps 18630000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.65초o Exp base_jrpo updates 620/33333 episodes total num timesteps 18630000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 621/33333 episodes total num timesteps 18660000/1000000000.0
+전체 걸린 시간: 0시간 1분 28.71초o Exp base_jrpo updates 621/33333 episodes total num timesteps 18660000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 622/33333 episodes total num timesteps 18690000/1000000000.0
+전체 걸린 시간: 0시간 1분 29.24초o Exp base_jrpo updates 622/33333 episodes total num timesteps 18690000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 623/33333 episodes total num timesteps 18720000/1000000000.0
+전체 걸린 시간: 0시간 1분 38.48초o Exp base_jrpo updates 623/33333 episodes total num timesteps 18720000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 624/33333 episodes total num timesteps 18750000/1000000000.0
+전체 걸린 시간: 0시간 1분 29.41초o Exp base_jrpo updates 624/33333 episodes total num timesteps 18750000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 625/33333 episodes total num timesteps 18780000/1000000000.0
+전체 걸린 시간: 0시간 1분 23.02초o Exp base_jrpo updates 625/33333 episodes total num timesteps 18780000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 626/33333 episodes total num timesteps 18810000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.87초o Exp base_jrpo updates 626/33333 episodes total num timesteps 18810000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 627/33333 episodes total num timesteps 18840000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.26초o Exp base_jrpo updates 627/33333 episodes total num timesteps 18840000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 628/33333 episodes total num timesteps 18870000/1000000000.0
+전체 걸린 시간: 0시간 1분 26.35초o Exp base_jrpo updates 628/33333 episodes total num timesteps 18870000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 629/33333 episodes total num timesteps 18900000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.46313333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+| eval_goal 0.0 | eval_possession_rate 0.46313333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -15.999999828636646333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -15.999999828636646333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -25.000001303851604333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -25.000001303851604333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -14.999999664723873333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -14.999999664723873333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -25.000001303851604333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -25.000001303851604333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -21.000000648200512333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -21.000000648200512333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -14.999999664723873333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -14.999999664723873333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -21.999999415129423333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -21.999999415129423333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -21.000000648200512333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -21.000000648200512333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -19.000000320374966333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -19.000000320374966333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -21.000000648200512333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+average episode rewards is -21.000000648200512333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+전체 걸린 시간: 0시간 1분 23.09초 is -21.000000648200512333333333334 | eval_goal_diff -1.45 | eval_WDL -0.8 | 00000.0
+Env Football Algo rmappo Exp base_jrpo updates 640/33333 episodes total num timesteps 19230000/1000000000.0
+전체 걸린 시간: 0시간 1분 27.27초o Exp base_jrpo updates 640/33333 episodes total num timesteps 19230000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 641/33333 episodes total num timesteps 19260000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.61초o Exp base_jrpo updates 641/33333 episodes total num timesteps 19260000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 642/33333 episodes total num timesteps 19290000/1000000000.0
+전체 걸린 시간: 0시간 1분 20.62초o Exp base_jrpo updates 642/33333 episodes total num timesteps 19290000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 643/33333 episodes total num timesteps 19320000/1000000000.0
+전체 걸린 시간: 0시간 1분 24.04초o Exp base_jrpo updates 643/33333 episodes total num timesteps 19320000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 644/33333 episodes total num timesteps 19350000/1000000000.0
+전체 걸린 시간: 0시간 1분 27.31초o Exp base_jrpo updates 644/33333 episodes total num timesteps 19350000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 645/33333 episodes total num timesteps 19380000/1000000000.0
+전체 걸린 시간: 0시간 1분 27.80초o Exp base_jrpo updates 645/33333 episodes total num timesteps 19380000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 646/33333 episodes total num timesteps 19410000/1000000000.0
+전체 걸린 시간: 0시간 1분 27.31초o Exp base_jrpo updates 646/33333 episodes total num timesteps 19410000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 647/33333 episodes total num timesteps 19440000/1000000000.0
+전체 걸린 시간: 0시간 1분 27.73초o Exp base_jrpo updates 647/33333 episodes total num timesteps 19440000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 648/33333 episodes total num timesteps 19470000/1000000000.0
+전체 걸린 시간: 0시간 1분 29.71초o Exp base_jrpo updates 648/33333 episodes total num timesteps 19470000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 649/33333 episodes total num timesteps 19500000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.5189333333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+| eval_goal 0.0 | eval_possession_rate 0.5189333333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -31.99999965727329333333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -31.99999965727329333333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -20.00000048428774333333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -20.00000048428774333333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -18.00000015646219333333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -18.00000015646219333333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -26.99999883770942733333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -26.99999883770942733333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -16.99999999254942733333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -16.99999999254942733333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -24.00000113993883733333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -24.00000113993883733333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -21.99999941512942333333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -21.99999941512942333333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -21.00000064820051233333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -21.00000064820051233333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -19.00000032037496633333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -19.00000032037496633333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -19.00000032037496633333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+average episode rewards is -19.00000032037496633333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+전체 걸린 시간: 0시간 1분 27.18초 is -19.00000032037496633333333334 | eval_goal_diff -1.45 | eval_WDL -0.9 | 000000.0
+Env Football Algo rmappo Exp base_jrpo updates 660/33333 episodes total num timesteps 19830000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.00초o Exp base_jrpo updates 660/33333 episodes total num timesteps 19830000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 661/33333 episodes total num timesteps 19860000/1000000000.0
+전체 걸린 시간: 0시간 1분 26.02초o Exp base_jrpo updates 661/33333 episodes total num timesteps 19860000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 662/33333 episodes total num timesteps 19890000/1000000000.0
+전체 걸린 시간: 0시간 1분 27.40초o Exp base_jrpo updates 662/33333 episodes total num timesteps 19890000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 663/33333 episodes total num timesteps 19920000/1000000000.0
+전체 걸린 시간: 0시간 1분 27.07초o Exp base_jrpo updates 663/33333 episodes total num timesteps 19920000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 664/33333 episodes total num timesteps 19950000/1000000000.0
+전체 걸린 시간: 0시간 1분 27.09초o Exp base_jrpo updates 664/33333 episodes total num timesteps 19950000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 665/33333 episodes total num timesteps 19980000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.59초o Exp base_jrpo updates 665/33333 episodes total num timesteps 19980000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 666/33333 episodes total num timesteps 20010000/1000000000.0
+전체 걸린 시간: 0시간 1분 24.30초o Exp base_jrpo updates 666/33333 episodes total num timesteps 20010000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 667/33333 episodes total num timesteps 20040000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.45초o Exp base_jrpo updates 667/33333 episodes total num timesteps 20040000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 668/33333 episodes total num timesteps 20070000/1000000000.0
+전체 걸린 시간: 0시간 1분 24.80초o Exp base_jrpo updates 668/33333 episodes total num timesteps 20070000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 669/33333 episodes total num timesteps 20100000/1000000000.0
+| eval_goal 0.05 | eval_possession_rate 0.44906666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+| eval_goal 0.05 | eval_possession_rate 0.44906666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -15.9999998286366466666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -15.9999998286366466666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -22.9999995790421966666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -22.9999995790421966666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -18.0000001564621936666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -18.0000001564621936666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -24.0000011399388336666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -24.0000011399388336666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.0000006482005126666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.0000006482005126666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -25.9999986737966546666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -25.9999986737966546666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.0000006482005126666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.0000006482005126666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.0000006482005126666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -20.0000004842877426666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -20.0000004842877426666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -24.0000011399388326666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -24.0000011399388326666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.0000006482005126666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+average episode rewards is -21.0000006482005126666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+전체 걸린 시간: 0시간 1분 24.78초 is -21.0000006482005126666666666667 | eval_goal_diff -1.8 | eval_WDL -0.9 | 00000.0
+Env Football Algo rmappo Exp base_jrpo updates 680/33333 episodes total num timesteps 20430000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.85초o Exp base_jrpo updates 680/33333 episodes total num timesteps 20430000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 681/33333 episodes total num timesteps 20460000/1000000000.0
+전체 걸린 시간: 0시간 1분 24.91초o Exp base_jrpo updates 681/33333 episodes total num timesteps 20460000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 682/33333 episodes total num timesteps 20490000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.65초o Exp base_jrpo updates 682/33333 episodes total num timesteps 20490000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 683/33333 episodes total num timesteps 20520000/1000000000.0
+전체 걸린 시간: 0시간 1분 26.64초o Exp base_jrpo updates 683/33333 episodes total num timesteps 20520000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 684/33333 episodes total num timesteps 20550000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.15초o Exp base_jrpo updates 684/33333 episodes total num timesteps 20550000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 685/33333 episodes total num timesteps 20580000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.29초o Exp base_jrpo updates 685/33333 episodes total num timesteps 20580000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 686/33333 episodes total num timesteps 20610000/1000000000.0
+전체 걸린 시간: 0시간 1분 24.43초o Exp base_jrpo updates 686/33333 episodes total num timesteps 20610000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 687/33333 episodes total num timesteps 20640000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.83초o Exp base_jrpo updates 687/33333 episodes total num timesteps 20640000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 688/33333 episodes total num timesteps 20670000/1000000000.0
+전체 걸린 시간: 0시간 1분 27.10초o Exp base_jrpo updates 688/33333 episodes total num timesteps 20670000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 689/33333 episodes total num timesteps 20700000/1000000000.0
+| eval_goal 0.1 | eval_possession_rate 0.4547333333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+| eval_goal 0.1 | eval_possession_rate 0.4547333333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -16.99999999254942333333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -16.99999999254942333333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -25.99999867379665433333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -25.99999867379665433333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -25.99999867379665433333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -25.99999867379665433333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -25.99999867379665433333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -25.99999867379665433333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -21.99999941512942333333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -21.99999941512942333333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -21.99999941512942333333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -21.99999941512942333333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -21.00000064820051233333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -21.00000064820051233333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -19.00000032037496633333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -19.00000032037496633333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -19.00000032037496633333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -27.99999900162226633333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -27.99999900162226633333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -18.00000015646219333333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+average episode rewards is -18.00000015646219333333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+전체 걸린 시간: 0시간 1분 23.12초 is -18.00000015646219333333333333 | eval_goal_diff -1.25 | eval_WDL -0.95 | 00000.0
+Env Football Algo rmappo Exp base_jrpo updates 700/33333 episodes total num timesteps 21030000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.96초o Exp base_jrpo updates 700/33333 episodes total num timesteps 21030000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 701/33333 episodes total num timesteps 21060000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.97초o Exp base_jrpo updates 701/33333 episodes total num timesteps 21060000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 702/33333 episodes total num timesteps 21090000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.23초o Exp base_jrpo updates 702/33333 episodes total num timesteps 21090000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 703/33333 episodes total num timesteps 21120000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.64초o Exp base_jrpo updates 703/33333 episodes total num timesteps 21120000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 704/33333 episodes total num timesteps 21150000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.91초o Exp base_jrpo updates 704/33333 episodes total num timesteps 21150000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 705/33333 episodes total num timesteps 21180000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.50초o Exp base_jrpo updates 705/33333 episodes total num timesteps 21180000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 706/33333 episodes total num timesteps 21210000/1000000000.0
+전체 걸린 시간: 0시간 1분 21.68초o Exp base_jrpo updates 706/33333 episodes total num timesteps 21210000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 707/33333 episodes total num timesteps 21240000/1000000000.0
+전체 걸린 시간: 0시간 1분 22.10초o Exp base_jrpo updates 707/33333 episodes total num timesteps 21240000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 708/33333 episodes total num timesteps 21270000/1000000000.0
+전체 걸린 시간: 0시간 1분 23.54초o Exp base_jrpo updates 708/33333 episodes total num timesteps 21270000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 709/33333 episodes total num timesteps 21300000/1000000000.0
+| eval_goal 0.0 | eval_possession_rate 0.4983666666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+| eval_goal 0.0 | eval_possession_rate 0.4983666666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -28.99999916553497366666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -28.99999916553497366666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -26.99999883770942766666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -26.99999883770942766666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -21.99999941512942366666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -21.99999941512942366666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -14.99999966472387366666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -14.99999966472387366666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -20.00000048428774366666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -20.00000048428774366666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -21.00000064820051266666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -21.00000064820051266666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -13.99999950081111266666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -13.99999950081111266666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -21.99999941512942366666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -21.99999941512942366666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -25.99999867379665466666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -25.99999867379665466666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -22.99999957904219666666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+average episode rewards is -22.99999957904219666666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+전체 걸린 시간: 0시간 1분 26.55초 is -22.99999957904219666666666666 | eval_goal_diff -1.55 | eval_WDL -0.7 | 000000.0
+Env Football Algo rmappo Exp base_jrpo updates 720/33333 episodes total num timesteps 21630000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.62초o Exp base_jrpo updates 720/33333 episodes total num timesteps 21630000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 721/33333 episodes total num timesteps 21660000/1000000000.0
+전체 걸린 시간: 0시간 1분 28.64초o Exp base_jrpo updates 721/33333 episodes total num timesteps 21660000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 722/33333 episodes total num timesteps 21690000/1000000000.0
+전체 걸린 시간: 0시간 1분 31.36초o Exp base_jrpo updates 722/33333 episodes total num timesteps 21690000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 723/33333 episodes total num timesteps 21720000/1000000000.0
+전체 걸린 시간: 0시간 1분 31.45초o Exp base_jrpo updates 723/33333 episodes total num timesteps 21720000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 724/33333 episodes total num timesteps 21750000/1000000000.0
+전체 걸린 시간: 0시간 1분 30.51초o Exp base_jrpo updates 724/33333 episodes total num timesteps 21750000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 725/33333 episodes total num timesteps 21780000/1000000000.0
+전체 걸린 시간: 0시간 1분 23.53초o Exp base_jrpo updates 725/33333 episodes total num timesteps 21780000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 726/33333 episodes total num timesteps 21810000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.51초o Exp base_jrpo updates 726/33333 episodes total num timesteps 21810000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 727/33333 episodes total num timesteps 21840000/1000000000.0
+전체 걸린 시간: 0시간 1분 25.95초o Exp base_jrpo updates 727/33333 episodes total num timesteps 21840000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 728/33333 episodes total num timesteps 21870000/1000000000.0
+전체 걸린 시간: 0시간 1분 28.37초o Exp base_jrpo updates 728/33333 episodes total num timesteps 21870000/1000000000.0
+Env Football Algo rmappo Exp base_jrpo updates 729/33333 episodes total num timesteps 21900000/1000000000.0
+| eval_goal 0.35 | eval_possession_rate 0.5067666666666667 | eval_goal_diff -1.5 | eval_WDL -0.6 | 000000.0
+| eval_goal 0.35 | eval_possession_rate 0.5067666666666667 | eval_goal_diff -1.5 | eval_WDL -0.6 | 000000.0
+average episode rewards is -24.000001139938837666666666667 | eval_goal_diff -1.5 | eval_WDL -0.6 | 000000.0
+average episode rewards is -24.000001139938837666666666667 | eval_goal_diff -1.5 | eval_WDL -0.6 | 000000.0
+average episode rewards is -28.999999165534973666666666667 | eval_goal_diff -1.5 | eval_WDL -0.6 | 000000.0
+average episode rewards is -28.999999165534973666666666667 | eval_goal_diff -1.5 | eval_WDL -0.6 | 000000.0
+average episode rewards is -25.000001303851604666666666667 | eval_goal_diff -1.5 | eval_WDL -0.6 | 000000.0
+average episode rewards is -25.000001303851604666666666667 | eval_goal_diff -1.5 | eval_WDL -0.6 | 000000.0
+average episode rewards is -16.999999992549424666666666667 | eval_goal_diff -1.5 | eval_WDL -0.6 | 000000.0
+average episode rewards is -16.999999992549424666666666667 | eval_goal_diff -1.5 | eval_WDL -0.6 | 000000.0

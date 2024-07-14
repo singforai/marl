@@ -12,7 +12,7 @@ from utils.util import update_linear_schedule
 from runner.shared.base_runner import Runner
 
 from runner.shared.xT.cal_xT import xT
-
+from algorithms.utils.obs_preprocessing import preproc_obs
 
 def _t2n(x):
     return x.detach().cpu().numpy()
@@ -41,6 +41,7 @@ class FootballRunner(Runner):
                 # Obser reward and next obs
                 obs, rewards, dones, infos = self.envs.step(actions_env)
                 scores = self.infos_processing(infos = infos)
+            
                 if self.use_xt:
                     rewards = self.cal_xt.controller(
                         step = step,
@@ -48,8 +49,6 @@ class FootballRunner(Runner):
                         obs = obs,
                         score = scores,
                     )
-                if rewards[0][0][0] != 0.0:
-                    print(rewards)
                 data = obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic 
                 
                 # insert data into buffer
@@ -91,38 +90,17 @@ class FootballRunner(Runner):
             # eval
             if total_num_steps % self.eval_interval == 0 and self.use_eval:
                 self.eval(total_num_steps)
-
-    def infos_processing(self, infos):
-        """
-        infos: 
-        score_reward
-        ball_direction O 3
-        left_team_yellow_card 
-        left_team 위치
-        ball_rotation O 3
-        score
-        left_team_active
-        ball_owned_team O -> one hot
-        right_team_tired_factor
-        right_team_yellow_card 
-        ball
-        right_team_direction O
-        right_team_active 
-        left_team_tired_factor O
-        right_team_roles
-        ball_owned_player
-        right_team
-        left_team_direction o
-        sticky_actions O 
-        """
-        
-        possessions = [info['ball_owned_team'] for info in infos]
-        for idx, possession in enumerate(possessions):
-            if possession == 1:
-                self.buffer.possession_state[idx] += 1
-
         scores = [info["score"] for info in infos]
         return scores
+    
+    def infos_processing(self, infos):
+        possessions = [info['ball_owned_team'] for info in infos]
+        for idx, possession in enumerate(possessions):
+            if possession == -1:
+                self.buffer.possession_state[idx] += 1
+
+        if self.algorithm_name == "rmappo":
+            observations, share_obs = preproc_obs(infos = infos)
 
     def warmup(self):
         # reset env
