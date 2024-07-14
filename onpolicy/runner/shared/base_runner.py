@@ -1,5 +1,6 @@
 import wandb
 import os
+from gym import spaces
 import numpy as np
 import torch
 from tensorboardX import SummaryWriter
@@ -52,6 +53,7 @@ class Runner(object):
         # 나의 오리지널
         self.use_xt = self.all_args.use_xt
         self.eval_episode = self.all_args.eval_episodes
+        self.use_additional_obs = self.all_args.use_additional_obs
 
         if self.use_wandb:
             self.save_dir = str(wandb.run.dir)
@@ -79,7 +81,7 @@ class Runner(object):
         else:
             from algorithms.r_mappo.r_mappo import R_MAPPO as TrainAlgo
             from algorithms.r_mappo.algorithm.rMAPPOPolicy import R_MAPPOPolicy as Policy
-            
+
         # policy network
         if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
             self.policy = Policy(
@@ -91,6 +93,14 @@ class Runner(object):
                 device = self.device
             )
         elif self.algorithm_name == "tizero":
+            low = np.full((330,), -np.inf)
+            high = np.full((330,), np.inf)
+            self.envs.observation_space[0] = spaces.Box(low=low, high=high, dtype=np.float32)
+
+            low = np.full((220,), -np.inf)
+            high = np.full((220,), np.inf)
+            share_observation_space = spaces.Box(low=low, high=high, dtype=np.float32)
+
             self.policy = Policy(
                 self.all_args, 
                 self.envs.observation_space[0], 

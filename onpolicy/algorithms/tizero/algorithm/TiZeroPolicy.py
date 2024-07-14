@@ -13,7 +13,7 @@ class TiZeroPolicy:
     :param action_space: (gym.Space) action space.
     :param device: (torch.device) specifies the device to run on (cpu/gpu).
     """
-    
+
     def __init__(self, args, obs_space, cent_obs_space, act_space, device=torch.device("cpu")):
         self.device = device
         self.lr = args.lr
@@ -25,7 +25,7 @@ class TiZeroPolicy:
         self.share_obs_space = cent_obs_space
         self.act_space = act_space
 
-        self.actor = R_Actor(args, self.obs_space, self.act_space, self.device)
+        self.actor = R_Actor(args, self.obs_space, self.act_space, device = self.device)
         self.critic = R_Critic(args, self.share_obs_space, self.device)
 
         self.actor_optimizer = torch.optim.Adam(self.actor.parameters(),
@@ -106,7 +106,7 @@ class TiZeroPolicy:
         if critic_masks_batch is None:
             critic_masks_batch = masks
 
-        action_log_probs, dist_entropy = self.actor.evaluate_actions(obs,
+        action_log_probs, dist_entropy, id_prediction, id_groundtruth  = self.actor.evaluate_actions(obs,
                                                                      rnn_states_actor,
                                                                      action,
                                                                      masks,

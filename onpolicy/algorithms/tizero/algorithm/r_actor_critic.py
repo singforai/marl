@@ -27,6 +27,8 @@ class R_Actor(nn.Module):
     """
     def __init__(self, args, obs_space, action_space, device=torch.device("cpu")):
         super(R_Actor, self).__init__()
+
+        self.device = device
         self.hidden_size = args.hidden_size
 
         self._gain = args.gain
@@ -39,7 +41,12 @@ class R_Actor(nn.Module):
 
         obs_shape = get_shape_from_obs_space(obs_space)
 
-        self.obs_encoder = ObsEncoder(args)
+        input_embedding_size = 64 * 4 + 9
+        recurrent_N = 1
+        use_orthogonal = True
+        rnn_type = 'lstm'
+
+        self.obs_encoder = ObsEncoder(input_embedding_size, self.hidden_size, recurrent_N, use_orthogonal, rnn_type)
         self.action_dim = 19
         self.active_id_size = 1
         self.id_max = 11
@@ -50,7 +57,7 @@ class R_Actor(nn.Module):
         self.before_act_wrapper = FcEncoder(2, self.hidden_size + self.id_max, self.hidden_size)
         
         self.act = ACTLayer(action_space, self.hidden_size, self._use_orthogonal, self._gain)
-        self.to(device)
+        self.to(self.device)
 
     def forward(self, obs, rnn_states, masks, available_actions=None, deterministic=False):
         """
@@ -66,6 +73,7 @@ class R_Actor(nn.Module):
         :return action_log_probs: (torch.Tensor) log probabilities of taken actions.
         :return rnn_states: (torch.Tensor) updated RNN hidden states.
         """
+        
         obs = check(obs).to(**self.tpdv)
         rnn_states = check(rnn_states).to(**self.tpdv)
         masks = check(masks).to(**self.tpdv)
@@ -73,14 +81,18 @@ class R_Actor(nn.Module):
         if available_actions is not None:
             available_actions = check(available_actions).to(**self.tpdv)
 
-        obs_output, rnn_states = self.obs_encoder(obs, rnn_states, masks)
+        active_id = obs[:, :self.active_id_size].squeeze(1).long().to(self.device)
+        id_onehot = torch.eye(self.id_max).to(self.device)[active_id]
         id_output = self.id_embedding(id_onehot)
+
+        obs = obs[:,self.active_id_size:]
+        obs_output, rnn_states = self.obs_encoder(obs, rnn_states, masks)
+
         output = torch.cat([id_output, obs_output], 1)
 
-        if self._use_naive_recurrent_policy or self._use_recurrent_policy:
-            actor_features, rnn_states = self.rnn(actor_features, rnn_states, masks)
+        output = self.before_act_wrapper(output)
 
-        actions, action_log_probs = self.act(actor_features, available_actions, deterministic)
+        actions, action_log_probs = self.act(output, available_actions, deterministic)
 
         return actions, action_log_probs, rnn_states
 
@@ -108,18 +120,28 @@ class R_Actor(nn.Module):
         if active_masks is not None:
             active_masks = check(active_masks).to(**self.tpdv)
 
-        actor_features = self.base(obs)
 
-        if self._use_naive_recurrent_policy or self._use_recurrent_policy:
-            actor_features, rnn_states = self.rnn(actor_features, rnn_states, masks)
+        id_groundtruth = obs[:, :self.active_id_size].squeeze(1).long()
+        id_onehot = torch.eye(self.id_max).to(self.device)[id_groundtruth]
+        obs = obs[:,self.active_id_size:]
 
-        action_log_probs, dist_entropy = self.act.evaluate_actions(actor_features,
+        obs_output, rnn_states = self.obs_encoder(obs, rnn_states, masks)
+        id_output = self.id_embedding(id_onehot)
+
+        action_onehot = torch.eye(self.action_dim).to(self.device)[action.squeeze(1).long()]
+        id_prediction = self.predict_id(torch.cat([obs_output, action_onehot], 1))
+        output = torch.cat([id_output, obs_output], 1)
+
+        output = self.before_act_wrapper(output)
+
+
+        action_log_probs, dist_entropy = self.act.evaluate_actions(output,
                                                                 action, available_actions,
                                                                 active_masks=
                                                                 active_masks if self._use_policy_active_masks
                                                                 else None)
 
-        return action_log_probs, dist_entropy
+        return action_log_probs, dist_entropy, id_prediction, id_groundtruth
 
 
 class R_Critic(nn.Module):

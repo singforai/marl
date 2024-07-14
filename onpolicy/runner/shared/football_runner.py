@@ -40,8 +40,9 @@ class FootballRunner(Runner):
                     
                 # Obser reward and next obs
                 obs, rewards, dones, infos = self.envs.step(actions_env)
+                
                 scores = self.infos_processing(infos = infos)
-            
+
                 if self.use_xt:
                     rewards = self.cal_xt.controller(
                         step = step,
@@ -49,7 +50,19 @@ class FootballRunner(Runner):
                         obs = obs,
                         score = scores,
                     )
-                data = obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic 
+
+                share_obs = obs
+                if self.use_additional_obs:
+                    """
+                    TiZero 구현을 위한 관측 정보 변경
+                    actor(obs): 330
+                    critic(share_obs): 220
+                    """
+                    observations, share_obs = preproc_obs(infos = infos)
+                    obs = observations
+                    share_obs = share_obs
+
+                data = obs, share_obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic 
                 
                 # insert data into buffer
                 self.insert(data)
@@ -90,25 +103,21 @@ class FootballRunner(Runner):
             # eval
             if total_num_steps % self.eval_interval == 0 and self.use_eval:
                 self.eval(total_num_steps)
-        scores = [info["score"] for info in infos]
-        return scores
+
     
     def infos_processing(self, infos):
         possessions = [info['ball_owned_team'] for info in infos]
         for idx, possession in enumerate(possessions):
             if possession == -1:
                 self.buffer.possession_state[idx] += 1
-
-        if self.algorithm_name == "rmappo":
-            observations, share_obs = preproc_obs(infos = infos)
+        scores = [info["score"] for info in infos]
+        return scores
 
     def warmup(self):
         # reset env
         obs = self.envs.reset()
-
-        # insert obs to buffer
-        self.buffer.share_obs[0] = obs.copy()
-        self.buffer.obs[0] = obs.copy()
+        # self.buffer.share_obs[0] = obs.copy()
+        # self.buffer.obs[0] = obs.copy()
 
         if self.use_xt:
             self.cal_xt = xT(args = self.all_args)
@@ -138,7 +147,7 @@ class FootballRunner(Runner):
         return values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env
 
     def insert(self, data):
-        obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic = data
+        obs, share_obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic = data
         
         # update env_infos if done
         dones_env = np.all(dones, axis=-1)
@@ -164,7 +173,7 @@ class FootballRunner(Runner):
         masks[dones_env == True] = np.zeros(((dones_env == True).sum(), self.num_agents, 1), dtype=np.float32)
 
         self.buffer.insert(
-            share_obs=obs,
+            share_obs=share_obs,
             obs=obs,
             rnn_states_actor=rnn_states,
             rnn_states_critic=rnn_states_critic,
@@ -187,6 +196,8 @@ class FootballRunner(Runner):
     def eval(self, total_num_steps):
         # reset envs and init rnn and mask
         eval_obs = self.eval_envs.reset()
+        eval_obs = np.random.rand(self.n_eval_rollout_threads, self.num_agents, 330)
+
         eval_rnn_states = np.zeros((self.n_eval_rollout_threads, self.num_agents, self.recurrent_N, self.hidden_size), dtype=np.float32)
         eval_masks = np.ones((self.n_eval_rollout_threads, self.num_agents, 1), dtype=np.float32)
 
@@ -226,7 +237,11 @@ class FootballRunner(Runner):
             # step
             eval_obs, eval_rewards, eval_dones, eval_infos = self.eval_envs.step(eval_actions_env)
 
-            scores = self.infos_processing(infos = eval_infos)
+            scores = [info["score"] for info in eval_infos]
+            
+            if self.use_additional_obs:
+                observations, _ = self.obs_processing(infos = eval_infos)
+                eval_obs = observations
 
             # update goals if done
             eval_dones_env = np.all(eval_dones, axis=-1)
@@ -257,24 +272,20 @@ class FootballRunner(Runner):
         eval_goal = np.mean(eval_goals)
         eval_WDL = np.mean(eval_WDL)
         eval_goal_diff = np.mean(eval_goal_diff)
-        eval_possession_rate = np.mean(self.buffer.possession_state)/self.game_length
 
 
         # log and print
-        print(f"| eval_goal {eval_goal} | eval_possession_rate {eval_possession_rate} | eval_goal_diff {eval_goal_diff} | eval_WDL {eval_WDL} | ")
+        print(f"| eval_goal {eval_goal} | eval_goal_diff {eval_goal_diff} | eval_WDL {eval_WDL} | ")
         if self.use_wandb:
             wandb.log({"eval_goal": eval_goal}, step=total_num_steps)
             wandb.log({"eval_WDL": eval_WDL}, step=total_num_steps)
             wandb.log({"eval_goal_diff": eval_goal_diff}, step=total_num_steps)
-            wandb.log({"eval_possession_rate": eval_possession_rate}, step=total_num_steps)
         else:
             self.writter.add_scalars("eval_goal", {"expected_goal": eval_goal}, total_num_steps)
             self.writter.add_scalars("eval_WDL", {"eval_WDL": eval_WDL}, total_num_steps)
             self.writter.add_scalars("eval_goal_diff", {"eval_goal_diff": eval_goal_diff}, total_num_steps)
-            self.writter.add_scalars("eval_possession_rate", {"eval_possession_rate": eval_possession_rate}, total_num_steps)
+ 
 
-        self.buffer.possession_state = [ 0 for _ in range(self.n_rollout_threads)]
-        
 
 
     @torch.no_grad()

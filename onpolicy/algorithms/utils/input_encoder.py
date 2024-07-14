@@ -1,6 +1,8 @@
 import torch
 import torch.nn as nn
 
+from algorithms.utils.rnn import RNNLayer
+
 class InputRNNLayer(nn.Module):
     def __init__(self, inputs_dim, outputs_dim, recurrent_N, use_orthogonal,rnn_type='gru'):
         super(InputRNNLayer, self).__init__()
@@ -327,19 +329,14 @@ def get_fc(input_size, output_size):
 
 
 class ObsEncoder(nn.Module):
-    def __init__(self, args):
+    def __init__(self, input_embedding_size, hidden_size, _recurrent_N, _use_orthogonal, rnn_type):
         super(ObsEncoder, self).__init__()
 
-        self.input_embedding_size = 64 * 4 + 9
-        self.hidden_size = 256
-        _recurrent_N = 1
-        _use_orthogonal = True
-        rnn_type = 'lstm'
 
         self.input_encoder = InputEncoder()     
-        self.input_embedding = get_fc(self.input_embedding_size, self.hidden_size) 
-        self.rnn = InputRNNLayer(self.hidden_size, self.hidden_size, _recurrent_N, _use_orthogonal, rnn_type=rnn_type) 
-        self.after_rnn_mlp = get_fc(self.hidden_size, self.hidden_size)   
+        self.input_embedding = get_fc(input_embedding_size, hidden_size) 
+        self.rnn = RNNLayer(hidden_size, hidden_size, _recurrent_N, _use_orthogonal) 
+        self.after_rnn_mlp = get_fc(hidden_size, hidden_size)   
 
     def forward(self, obs, rnn_states, masks):
         actor_features = self.input_encoder(obs)

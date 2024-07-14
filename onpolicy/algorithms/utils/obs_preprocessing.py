@@ -393,7 +393,6 @@ def preproc_obs(infos):
             ])
             observation.append(agent_obs)
         observations.append(observation)
-
         share_obs = np.concatenate([
             ball_info, # 12
             ball_owned_player,   # 23
