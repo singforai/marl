@@ -240,7 +240,7 @@ class FootballRunner(Runner):
             scores = [info["score"] for info in eval_infos]
             
             if self.use_additional_obs:
-                observations, _ = self.obs_processing(infos = eval_infos)
+                observations, _ = preproc_obs(infos = eval_infos)
                 eval_obs = observations
 
             # update goals if done
