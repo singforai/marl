@@ -11,7 +11,6 @@ def get_config():
     
     # Tizero
     parser.add_argument("--use_additional_obs", action='store_true', default=False, help="whether to use addtional obs for replicating the TiZero")
-    parser.add_argument("--use_obs_encoder", action='store_true', default=False, help="whether to use obs encoder for replicating the TiZero")
     
     # Wandb
     parser.add_argument("--use_wandb", action='store_true', default=False, help="[for wandb usage], by default True, will log date to wandb server. or else will use tensorboard to log data.")
@@ -27,8 +26,8 @@ def get_config():
     parser.add_argument("--cuda_deterministic",
                         action='store_false', default=True, help="by default, make sure random seed effective. if set, bypass such function.")
     parser.add_argument("--n_torch_threads", type=int,
-                        default=24, help="Number of torch threads for training")
-    parser.add_argument("--n_rollout_threads", type=int, default=10,
+                        default=48, help="Number of torch threads for training")
+    parser.add_argument("--n_rollout_threads", type=int, default=1,
                         help="Number of parallel envs for training rollouts")
     parser.add_argument("--n_eval_rollout_threads", type=int, default=10,
                         help="Number of parallel envs for evaluating rollouts")
@@ -55,7 +54,7 @@ def get_config():
                         help="Dimension of hidden layers for actor/critic networks")
     parser.add_argument("--use_stacked_frames", action='store_true',
                         default=False, help="Whether to use stacked_frames")
-    parser.add_argument("--hidden_size", type=int, default=256,
+    parser.add_argument("--hidden_size", type=int, default=512,
                         help="Dimension of hidden layers for actor/critic networks") 
     parser.add_argument("--layer_N", type=int, default=1,
                         help="Number of layers for actor/critic networks")
@@ -140,7 +139,7 @@ def get_config():
     # eval parameters
     parser.add_argument("--use_eval", action='store_true', default=True, help="by default, do not start evaluation. If set`, start evaluation alongside with training.")
     parser.add_argument("--eval_interval", type=int, default=300000, help="time duration between contiunous twice evaluation progress.")
-    parser.add_argument("--eval_episodes", type=int, default=20, help="number of episodes of a single evaluation.")
+    parser.add_argument("--eval_episodes", type=int, default=10, help="number of episodes of a single evaluation.")
 
     # render parameters
     parser.add_argument("--save_gifs", action='store_true', default=False, help="by default, do not save render video. If set, save video.")

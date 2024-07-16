@@ -33,13 +33,15 @@ class FootballRunner(Runner):
                 self.trainer.policy.lr_decay(episode, episodes)
             
             start_time = time.time()
-
             for step in range(self.episode_length):
+                
                 # Sample actions
                 values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env = self.collect(step)
                     
                 # Obser reward and next obs
                 obs, rewards, dones, infos = self.envs.step(actions_env)
+
+                print(step)
                 
                 scores = self.infos_processing(infos = infos)
 
@@ -58,7 +60,7 @@ class FootballRunner(Runner):
                     actor(obs): 330
                     critic(share_obs): 220
                     """
-                    observations, share_obs = preproc_obs(infos = infos)
+                    observations, share_obs = self.dict2array(infos = infos)
                     obs = observations
                     share_obs = share_obs
 
@@ -67,15 +69,10 @@ class FootballRunner(Runner):
                 # insert data into buffer
                 self.insert(data)
 
-            # compute return and update network
-
 
             end_time = time.time()
-            hours, rem = divmod(end_time - start_time, 3600)
-            minutes, seconds = divmod(rem, 60)
 
-            # 결과 출력
-            print(f"전체 걸린 시간: {int(hours)}시간 {int(minutes)}분 {seconds:.2f}초")
+            # compute return and update network
 
             self.compute()
             train_infos = self.train()
@@ -91,6 +88,7 @@ class FootballRunner(Runner):
             # if total_num_steps % self.log_interval == 0:
             print(f"\nEnv {self.env_name} Algo {self.algorithm_name} Exp {self.experiment_name} updates {episode}/{episodes} episodes total num timesteps {total_num_steps}/{self.num_env_steps}")     
             train_infos["average_episode_rewards"] = np.mean(self.buffer.rewards) * self.episode_length
+            train_infos["Episode_Time"] = end_time - start_time
             print("average episode rewards is {}".format(train_infos["average_episode_rewards"]))
 
             self.log_train(train_infos, total_num_steps)
@@ -112,6 +110,34 @@ class FootballRunner(Runner):
                 self.buffer.possession_state[idx] += 1
         scores = [info["score"] for info in infos]
         return scores
+    
+    def dict2array(self, infos):
+        infos_list = []
+        for info in infos:
+            info_array = np.concatenate((
+                info["active"],
+                info["left_team"].reshape(-1),
+                info["left_team_direction"].reshape(-1), 
+                info["left_team_tired_factor"],
+                info["left_team_yellow_card"],
+                info["left_team_active"],
+                info["right_team"].reshape(-1),
+                info["right_team_direction"].reshape(-1), 
+                info["right_team_tired_factor"],
+                info["right_team_yellow_card"],
+                info["right_team_active"],
+                info["sticky_actions"].reshape(-1),
+                info["score"],
+                info["ball"],
+                info['ball_direction'],
+                info['ball_rotation'],
+                [info["ball_owned_team"], info["game_mode"], info["steps_left"], info["ball_owned_player"]]
+            ))
+            infos_list.append(info_array)
+        infos_array = np.ascontiguousarray(infos_list, dtype=np.float32)
+
+        obs , share_obs = preproc_obs(infos_array)
+        return obs , share_obs
 
     def warmup(self):
         # reset env
@@ -151,6 +177,7 @@ class FootballRunner(Runner):
         
         # update env_infos if done
         dones_env = np.all(dones, axis=-1)
+        print(dones_env)
         
         if np.any(dones_env):
             for done, info in zip(dones_env, infos):
@@ -240,7 +267,7 @@ class FootballRunner(Runner):
             scores = [info["score"] for info in eval_infos]
             
             if self.use_additional_obs:
-                observations, _ = preproc_obs(infos = eval_infos)
+                observations, _ = self.dict2array(infos = eval_infos)
                 eval_obs = observations
 
             # update goals if done

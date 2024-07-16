@@ -7,7 +7,7 @@ import setproctitle
 
 import numpy as np
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '/home/uosai/Desktop/marl/onpolicy/envs/package/')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), './envs/package/')))
 
 from config import get_config
 

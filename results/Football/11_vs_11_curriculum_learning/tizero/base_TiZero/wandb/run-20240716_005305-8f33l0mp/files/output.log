@@ -1,0 +1,435 @@
+
+사용 가능한 CPU Thread: 128
+Env Football Algo tizero Exp base_TiZero updates 0/6666 episodes total num timesteps 150000/1000000000.0
+average episode rewards is -27.600000612437725
+Env Football Algo tizero Exp base_TiZero updates 1/6666 episodes total num timesteps 300000/1000000000.0
+average episode rewards is -29.400000348687172
+| eval_goal 0.2 | eval_goal_diff -1.6 | eval_WDL -0.8 |
+Env Football Algo tizero Exp base_TiZero updates 2/6666 episodes total num timesteps 450000/1000000000.0
+average episode rewards is -22.999999579042196
+Env Football Algo tizero Exp base_TiZero updates 3/6666 episodes total num timesteps 600000/1000000000.0
+average episode rewards is -26.999998837709427
+| eval_goal 0.0 | eval_goal_diff -2.0 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 4/6666 episodes total num timesteps 750000/1000000000.0
+average episode rewards is -25.60000028461218
+Env Football Algo tizero Exp base_TiZero updates 5/6666 episodes total num timesteps 900000/1000000000.0
+average episode rewards is -27.600000612437725
+| eval_goal 0.0 | eval_goal_diff -2.5 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 6/6666 episodes total num timesteps 1050000/1000000000.0
+average episode rewards is -23.800000548362732
+Env Football Algo tizero Exp base_TiZero updates 7/6666 episodes total num timesteps 1200000/1000000000.0
+average episode rewards is -24.399999529123306
+| eval_goal 0.0 | eval_goal_diff -2.7 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 8/6666 episodes total num timesteps 1350000/1000000000.0
+average episode rewards is -25.000001303851604
+Env Football Algo tizero Exp base_TiZero updates 9/6666 episodes total num timesteps 1500000/1000000000.0
+average episode rewards is -28.600000776350498
+| eval_goal 0.0 | eval_goal_diff -1.9 | eval_WDL -0.7 |
+Env Football Algo tizero Exp base_TiZero updates 10/6666 episodes total num timesteps 1650000/1000000000.0
+average episode rewards is -25.800000876188278
+Env Football Algo tizero Exp base_TiZero updates 11/6666 episodes total num timesteps 1800000/1000000000.0
+average episode rewards is -25.39999969303608
+| eval_goal 0.0 | eval_goal_diff -2.5 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 12/6666 episodes total num timesteps 1950000/1000000000.0
+average episode rewards is -26.80000104010105
+Env Football Algo tizero Exp base_TiZero updates 13/6666 episodes total num timesteps 2100000/1000000000.0
+average episode rewards is -24.00000113993883
+| eval_goal 0.0 | eval_goal_diff -3.1 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 14/6666 episodes total num timesteps 2250000/1000000000.0
+average episode rewards is -22.400000598281622
+Env Football Algo tizero Exp base_TiZero updates 15/6666 episodes total num timesteps 2400000/1000000000.0
+average episode rewards is -24.199998937547207
+| eval_goal 0.0 | eval_goal_diff -2.9 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 16/6666 episodes total num timesteps 2550000/1000000000.0
+average episode rewards is -24.399999529123306
+Env Football Algo tizero Exp base_TiZero updates 17/6666 episodes total num timesteps 2700000/1000000000.0
+average episode rewards is -27.600000612437725
+| eval_goal 0.0 | eval_goal_diff -2.5 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 18/6666 episodes total num timesteps 2850000/1000000000.0
+average episode rewards is -28.4000001847744
+Env Football Algo tizero Exp base_TiZero updates 19/6666 episodes total num timesteps 3000000/1000000000.0
+average episode rewards is -25.800000876188278
+| eval_goal 0.0 | eval_goal_diff -2.4 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 20/6666 episodes total num timesteps 3150000/1000000000.0
+average episode rewards is -20.400000270456076
+Env Football Algo tizero Exp base_TiZero updates 21/6666 episodes total num timesteps 3300000/1000000000.0
+average episode rewards is -24.00000113993883
+| eval_goal 0.0 | eval_goal_diff -2.0 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 22/6666 episodes total num timesteps 3450000/1000000000.0
+average episode rewards is -21.999999415129423
+Env Football Algo tizero Exp base_TiZero updates 23/6666 episodes total num timesteps 3600000/1000000000.0
+average episode rewards is -22.59999979287386
+| eval_goal 0.1 | eval_goal_diff -2.6 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 24/6666 episodes total num timesteps 3750000/1000000000.0
+average episode rewards is -25.60000028461218
+Env Football Algo tizero Exp base_TiZero updates 25/6666 episodes total num timesteps 3900000/1000000000.0
+average episode rewards is -25.39999969303608
+| eval_goal 0.0 | eval_goal_diff -2.4 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 26/6666 episodes total num timesteps 4050000/1000000000.0
+average episode rewards is -24.800000712275505
+Env Football Algo tizero Exp base_TiZero updates 27/6666 episodes total num timesteps 4200000/1000000000.0
+average episode rewards is -25.800000876188278
+| eval_goal 0.0 | eval_goal_diff -2.3 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 28/6666 episodes total num timesteps 4350000/1000000000.0
+average episode rewards is -24.800000712275505
+Env Football Algo tizero Exp base_TiZero updates 29/6666 episodes total num timesteps 4500000/1000000000.0
+average episode rewards is -26.999998837709427
+| eval_goal 0.0 | eval_goal_diff -2.3 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 30/6666 episodes total num timesteps 4650000/1000000000.0
+average episode rewards is -22.80000038444996
+Env Football Algo tizero Exp base_TiZero updates 31/6666 episodes total num timesteps 4800000/1000000000.0
+average episode rewards is -25.19999910145998
+| eval_goal 0.1 | eval_goal_diff -2.2 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 32/6666 episodes total num timesteps 4950000/1000000000.0
+average episode rewards is -29.199999757111073
+Env Football Algo tizero Exp base_TiZero updates 33/6666 episodes total num timesteps 5100000/1000000000.0
+average episode rewards is -22.59999979287386
+| eval_goal 0.0 | eval_goal_diff -2.0 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 34/6666 episodes total num timesteps 5250000/1000000000.0
+average episode rewards is -24.399999529123306
+Env Football Algo tizero Exp base_TiZero updates 35/6666 episodes total num timesteps 5400000/1000000000.0
+average episode rewards is -24.399999529123306
+| eval_goal 0.3 | eval_goal_diff -2.0 | eval_WDL -0.8 |
+Env Football Algo tizero Exp base_TiZero updates 36/6666 episodes total num timesteps 5550000/1000000000.0
+average episode rewards is -24.00000113993883
+Env Football Algo tizero Exp base_TiZero updates 37/6666 episodes total num timesteps 5700000/1000000000.0
+average episode rewards is -22.400000598281622
+| eval_goal 0.0 | eval_goal_diff -2.5 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 38/6666 episodes total num timesteps 5850000/1000000000.0
+average episode rewards is -24.600000120699406
+Env Football Algo tizero Exp base_TiZero updates 39/6666 episodes total num timesteps 6000000/1000000000.0
+average episode rewards is -22.200000006705523
+| eval_goal 0.0 | eval_goal_diff -3.1 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 40/6666 episodes total num timesteps 6150000/1000000000.0
+average episode rewards is -22.80000038444996
+Env Football Algo tizero Exp base_TiZero updates 41/6666 episodes total num timesteps 6300000/1000000000.0
+average episode rewards is -25.000001303851604
+| eval_goal 0.0 | eval_goal_diff -2.1 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 42/6666 episodes total num timesteps 6450000/1000000000.0
+average episode rewards is -27.600000612437725
+Env Football Algo tizero Exp base_TiZero updates 43/6666 episodes total num timesteps 6600000/1000000000.0
+average episode rewards is -23.800000548362732
+| eval_goal 0.2 | eval_goal_diff -3.1 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 44/6666 episodes total num timesteps 6750000/1000000000.0
+average episode rewards is -24.399999529123306
+Env Football Algo tizero Exp base_TiZero updates 45/6666 episodes total num timesteps 6900000/1000000000.0
+average episode rewards is -21.40000043436885
+| eval_goal 0.0 | eval_goal_diff -2.5 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 46/6666 episodes total num timesteps 7050000/1000000000.0
+average episode rewards is -23.800000548362732
+Env Football Algo tizero Exp base_TiZero updates 47/6666 episodes total num timesteps 7200000/1000000000.0
+average episode rewards is -22.200000006705523
+| eval_goal 0.1 | eval_goal_diff -2.6 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 48/6666 episodes total num timesteps 7350000/1000000000.0
+average episode rewards is -24.199998937547207
+Env Football Algo tizero Exp base_TiZero updates 49/6666 episodes total num timesteps 7500000/1000000000.0
+average episode rewards is -21.000000648200512
+| eval_goal 0.0 | eval_goal_diff -1.7 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 50/6666 episodes total num timesteps 7650000/1000000000.0
+average episode rewards is -24.00000113993883
+Env Football Algo tizero Exp base_TiZero updates 51/6666 episodes total num timesteps 7800000/1000000000.0
+average episode rewards is -23.200000170618296
+| eval_goal 0.2 | eval_goal_diff -2.4 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 52/6666 episodes total num timesteps 7950000/1000000000.0
+average episode rewards is -21.599999628961086
+Env Football Algo tizero Exp base_TiZero updates 53/6666 episodes total num timesteps 8100000/1000000000.0
+average episode rewards is -24.00000113993883
+| eval_goal 0.0 | eval_goal_diff -2.1 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 54/6666 episodes total num timesteps 8250000/1000000000.0
+average episode rewards is -23.399999365210533
+Env Football Algo tizero Exp base_TiZero updates 55/6666 episodes total num timesteps 8400000/1000000000.0
+average episode rewards is -21.40000043436885
+| eval_goal 0.1 | eval_goal_diff -2.1 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 56/6666 episodes total num timesteps 8550000/1000000000.0
+average episode rewards is -25.800000876188278
+Env Football Algo tizero Exp base_TiZero updates 57/6666 episodes total num timesteps 8700000/1000000000.0
+average episode rewards is -19.79999989271164
+| eval_goal 0.0 | eval_goal_diff -2.1 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 58/6666 episodes total num timesteps 8850000/1000000000.0
+average episode rewards is -22.59999979287386
+Env Football Algo tizero Exp base_TiZero updates 59/6666 episodes total num timesteps 9000000/1000000000.0
+average episode rewards is -20.199999678879976
+| eval_goal 0.0 | eval_goal_diff -2.2 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 60/6666 episodes total num timesteps 9150000/1000000000.0
+average episode rewards is -25.800000876188278
+Env Football Algo tizero Exp base_TiZero updates 61/6666 episodes total num timesteps 9300000/1000000000.0
+average episode rewards is -24.199998937547207
+| eval_goal 0.0 | eval_goal_diff -2.1 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 62/6666 episodes total num timesteps 9450000/1000000000.0
+average episode rewards is -20.400000270456076
+Env Football Algo tizero Exp base_TiZero updates 63/6666 episodes total num timesteps 9600000/1000000000.0
+average episode rewards is -21.800000220537186
+| eval_goal 0.1 | eval_goal_diff -1.7 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 64/6666 episodes total num timesteps 9750000/1000000000.0
+average episode rewards is -24.399999529123306
+Env Football Algo tizero Exp base_TiZero updates 65/6666 episodes total num timesteps 9900000/1000000000.0
+average episode rewards is -20.199999678879976
+| eval_goal 0.0 | eval_goal_diff -1.9 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 66/6666 episodes total num timesteps 10050000/1000000000.0
+average episode rewards is -23.800000548362732
+Env Football Algo tizero Exp base_TiZero updates 67/6666 episodes total num timesteps 10200000/1000000000.0
+average episode rewards is -21.599999628961086
+| eval_goal 0.5 | eval_goal_diff -1.3 | eval_WDL -0.7 |
+Env Football Algo tizero Exp base_TiZero updates 68/6666 episodes total num timesteps 10350000/1000000000.0
+average episode rewards is -22.400000598281622
+Env Football Algo tizero Exp base_TiZero updates 69/6666 episodes total num timesteps 10500000/1000000000.0
+average episode rewards is -21.19999984279275
+| eval_goal 0.0 | eval_goal_diff -2.1 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 70/6666 episodes total num timesteps 10650000/1000000000.0
+average episode rewards is -24.199998937547207
+Env Football Algo tizero Exp base_TiZero updates 71/6666 episodes total num timesteps 10800000/1000000000.0
+average episode rewards is -21.999999415129423
+| eval_goal 0.0 | eval_goal_diff -2.1 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 72/6666 episodes total num timesteps 10950000/1000000000.0
+average episode rewards is -23.200000170618296
+Env Football Algo tizero Exp base_TiZero updates 73/6666 episodes total num timesteps 11100000/1000000000.0
+average episode rewards is -22.80000038444996
+| eval_goal 0.4 | eval_goal_diff -1.1 | eval_WDL -0.6 |
+Env Football Algo tizero Exp base_TiZero updates 74/6666 episodes total num timesteps 11250000/1000000000.0
+average episode rewards is -24.600000120699406
+Env Football Algo tizero Exp base_TiZero updates 75/6666 episodes total num timesteps 11400000/1000000000.0
+average episode rewards is -25.60000028461218
+| eval_goal 0.0 | eval_goal_diff -2.7 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 76/6666 episodes total num timesteps 11550000/1000000000.0
+average episode rewards is -30.79999890178442
+Env Football Algo tizero Exp base_TiZero updates 77/6666 episodes total num timesteps 11700000/1000000000.0
+average episode rewards is -25.19999910145998
+| eval_goal 0.1 | eval_goal_diff -1.7 | eval_WDL -0.7 |
+Env Football Algo tizero Exp base_TiZero updates 78/6666 episodes total num timesteps 11850000/1000000000.0
+average episode rewards is -22.999999579042196
+Env Football Algo tizero Exp base_TiZero updates 79/6666 episodes total num timesteps 12000000/1000000000.0
+average episode rewards is -21.19999984279275
+| eval_goal 0.0 | eval_goal_diff -2.1 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 80/6666 episodes total num timesteps 12150000/1000000000.0
+average episode rewards is -23.800000548362732
+Env Football Algo tizero Exp base_TiZero updates 81/6666 episodes total num timesteps 12300000/1000000000.0
+average episode rewards is -25.000001303851604
+| eval_goal 0.1 | eval_goal_diff -2.6 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 82/6666 episodes total num timesteps 12450000/1000000000.0
+average episode rewards is -23.200000170618296
+Env Football Algo tizero Exp base_TiZero updates 83/6666 episodes total num timesteps 12600000/1000000000.0
+average episode rewards is -22.80000038444996
+| eval_goal 0.0 | eval_goal_diff -2.5 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 84/6666 episodes total num timesteps 12750000/1000000000.0
+average episode rewards is -25.19999910145998
+Env Football Algo tizero Exp base_TiZero updates 85/6666 episodes total num timesteps 12900000/1000000000.0
+average episode rewards is -24.399999529123306
+| eval_goal 0.1 | eval_goal_diff -2.5 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 86/6666 episodes total num timesteps 13050000/1000000000.0
+average episode rewards is -21.000000648200512
+Env Football Algo tizero Exp base_TiZero updates 87/6666 episodes total num timesteps 13200000/1000000000.0
+average episode rewards is -23.599999956786633
+| eval_goal 0.0 | eval_goal_diff -1.4 | eval_WDL -0.8 |
+Env Football Algo tizero Exp base_TiZero updates 88/6666 episodes total num timesteps 13350000/1000000000.0
+average episode rewards is -26.999998837709427
+Env Football Algo tizero Exp base_TiZero updates 89/6666 episodes total num timesteps 13500000/1000000000.0
+average episode rewards is -20.199999678879976
+| eval_goal 0.0 | eval_goal_diff -1.5 | eval_WDL -0.7 |
+Env Football Algo tizero Exp base_TiZero updates 90/6666 episodes total num timesteps 13650000/1000000000.0
+average episode rewards is -24.600000120699406
+Env Football Algo tizero Exp base_TiZero updates 91/6666 episodes total num timesteps 13800000/1000000000.0
+average episode rewards is -22.999999579042196
+| eval_goal 0.2 | eval_goal_diff -2.0 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 92/6666 episodes total num timesteps 13950000/1000000000.0
+average episode rewards is -25.19999910145998
+Env Football Algo tizero Exp base_TiZero updates 93/6666 episodes total num timesteps 14100000/1000000000.0
+average episode rewards is -29.400000348687172
+| eval_goal 0.0 | eval_goal_diff -1.9 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 94/6666 episodes total num timesteps 14250000/1000000000.0
+average episode rewards is -23.399999365210533
+Env Football Algo tizero Exp base_TiZero updates 95/6666 episodes total num timesteps 14400000/1000000000.0
+average episode rewards is -18.799999728798866
+| eval_goal 0.2 | eval_goal_diff -1.8 | eval_WDL -0.7 |
+Env Football Algo tizero Exp base_TiZero updates 96/6666 episodes total num timesteps 14550000/1000000000.0
+average episode rewards is -23.599999956786633
+Env Football Algo tizero Exp base_TiZero updates 97/6666 episodes total num timesteps 14700000/1000000000.0
+average episode rewards is -22.59999979287386
+| eval_goal 0.0 | eval_goal_diff -1.8 | eval_WDL -0.7 |
+Env Football Algo tizero Exp base_TiZero updates 98/6666 episodes total num timesteps 14850000/1000000000.0
+average episode rewards is -23.800000548362732
+Env Football Algo tizero Exp base_TiZero updates 99/6666 episodes total num timesteps 15000000/1000000000.0
+average episode rewards is -21.19999984279275
+| eval_goal 0.2 | eval_goal_diff -1.4 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 100/6666 episodes total num timesteps 15150000/1000000000.0
+average episode rewards is -22.80000038444996
+Env Football Algo tizero Exp base_TiZero updates 101/6666 episodes total num timesteps 15300000/1000000000.0
+average episode rewards is -21.599999628961086
+| eval_goal 0.0 | eval_goal_diff -1.3 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 102/6666 episodes total num timesteps 15450000/1000000000.0
+average episode rewards is -20.199999678879976
+Env Football Algo tizero Exp base_TiZero updates 103/6666 episodes total num timesteps 15600000/1000000000.0
+average episode rewards is -25.60000028461218
+| eval_goal 0.1 | eval_goal_diff -2.0 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 104/6666 episodes total num timesteps 15750000/1000000000.0
+average episode rewards is -23.599999956786633
+Env Football Algo tizero Exp base_TiZero updates 105/6666 episodes total num timesteps 15900000/1000000000.0
+average episode rewards is -24.399999529123306
+| eval_goal 0.0 | eval_goal_diff -2.2 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 106/6666 episodes total num timesteps 16050000/1000000000.0
+average episode rewards is -25.800000876188278
+Env Football Algo tizero Exp base_TiZero updates 107/6666 episodes total num timesteps 16200000/1000000000.0
+average episode rewards is -21.599999628961086
+| eval_goal 0.0 | eval_goal_diff -2.0 | eval_WDL -0.8 |
+Env Football Algo tizero Exp base_TiZero updates 108/6666 episodes total num timesteps 16350000/1000000000.0
+average episode rewards is -22.999999579042196
+Env Football Algo tizero Exp base_TiZero updates 109/6666 episodes total num timesteps 16500000/1000000000.0
+average episode rewards is -22.200000006705523
+| eval_goal 0.0 | eval_goal_diff -1.7 | eval_WDL -0.8 |
+Env Football Algo tizero Exp base_TiZero updates 110/6666 episodes total num timesteps 16650000/1000000000.0
+average episode rewards is -22.200000006705523
+Env Football Algo tizero Exp base_TiZero updates 111/6666 episodes total num timesteps 16800000/1000000000.0
+average episode rewards is -22.400000598281622
+| eval_goal 0.3 | eval_goal_diff -1.2 | eval_WDL -0.4 |
+Env Football Algo tizero Exp base_TiZero updates 112/6666 episodes total num timesteps 16950000/1000000000.0
+average episode rewards is -22.400000598281622
+Env Football Algo tizero Exp base_TiZero updates 113/6666 episodes total num timesteps 17100000/1000000000.0
+average episode rewards is -22.80000038444996
+| eval_goal 0.0 | eval_goal_diff -1.5 | eval_WDL -0.8 |
+Env Football Algo tizero Exp base_TiZero updates 114/6666 episodes total num timesteps 17250000/1000000000.0
+average episode rewards is -20.400000270456076
+Env Football Algo tizero Exp base_TiZero updates 115/6666 episodes total num timesteps 17400000/1000000000.0
+average episode rewards is -22.80000038444996
+| eval_goal 0.0 | eval_goal_diff -2.3 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 116/6666 episodes total num timesteps 17550000/1000000000.0
+average episode rewards is -21.800000220537186
+Env Football Algo tizero Exp base_TiZero updates 117/6666 episodes total num timesteps 17700000/1000000000.0
+average episode rewards is -24.399999529123306
+| eval_goal 0.0 | eval_goal_diff -1.7 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 118/6666 episodes total num timesteps 17850000/1000000000.0
+average episode rewards is -22.400000598281622
+Env Football Algo tizero Exp base_TiZero updates 119/6666 episodes total num timesteps 18000000/1000000000.0
+average episode rewards is -21.599999628961086
+| eval_goal 0.2 | eval_goal_diff -1.6 | eval_WDL -0.8 |
+Env Football Algo tizero Exp base_TiZero updates 120/6666 episodes total num timesteps 18150000/1000000000.0
+average episode rewards is -21.599999628961086
+Env Football Algo tizero Exp base_TiZero updates 121/6666 episodes total num timesteps 18300000/1000000000.0
+average episode rewards is -22.400000598281622
+| eval_goal 0.0 | eval_goal_diff -2.0 | eval_WDL -0.7 |
+Env Football Algo tizero Exp base_TiZero updates 122/6666 episodes total num timesteps 18450000/1000000000.0
+average episode rewards is -20.599999465048313
+Env Football Algo tizero Exp base_TiZero updates 123/6666 episodes total num timesteps 18600000/1000000000.0
+average episode rewards is -19.79999989271164
+| eval_goal 0.0 | eval_goal_diff -1.6 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 124/6666 episodes total num timesteps 18750000/1000000000.0
+average episode rewards is -26.199999265372753
+Env Football Algo tizero Exp base_TiZero updates 125/6666 episodes total num timesteps 18900000/1000000000.0
+average episode rewards is -22.200000006705523
+| eval_goal 0.1 | eval_goal_diff -1.9 | eval_WDL -0.7 |
+Env Football Algo tizero Exp base_TiZero updates 126/6666 episodes total num timesteps 19050000/1000000000.0
+average episode rewards is -23.399999365210533
+Env Football Algo tizero Exp base_TiZero updates 127/6666 episodes total num timesteps 19200000/1000000000.0
+average episode rewards is -25.000001303851604
+| eval_goal 0.2 | eval_goal_diff -2.0 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 128/6666 episodes total num timesteps 19350000/1000000000.0
+average episode rewards is -21.19999984279275
+Env Football Algo tizero Exp base_TiZero updates 129/6666 episodes total num timesteps 19500000/1000000000.0
+average episode rewards is -21.999999415129423
+| eval_goal 0.0 | eval_goal_diff -1.9 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 130/6666 episodes total num timesteps 19650000/1000000000.0
+average episode rewards is -22.999999579042196
+Env Football Algo tizero Exp base_TiZero updates 131/6666 episodes total num timesteps 19800000/1000000000.0
+average episode rewards is -21.19999984279275
+| eval_goal 0.0 | eval_goal_diff -2.5 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 132/6666 episodes total num timesteps 19950000/1000000000.0
+average episode rewards is -18.799999728798866
+Env Football Algo tizero Exp base_TiZero updates 133/6666 episodes total num timesteps 20100000/1000000000.0
+average episode rewards is -22.999999579042196
+| eval_goal 0.0 | eval_goal_diff -1.4 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 134/6666 episodes total num timesteps 20250000/1000000000.0
+average episode rewards is -21.19999984279275
+Env Football Algo tizero Exp base_TiZero updates 135/6666 episodes total num timesteps 20400000/1000000000.0
+average episode rewards is -20.400000270456076
+| eval_goal 0.1 | eval_goal_diff -1.4 | eval_WDL -0.8 |
+Env Football Algo tizero Exp base_TiZero updates 136/6666 episodes total num timesteps 20550000/1000000000.0
+average episode rewards is -23.800000548362732
+Env Football Algo tizero Exp base_TiZero updates 137/6666 episodes total num timesteps 20700000/1000000000.0
+average episode rewards is -21.000000648200512
+| eval_goal 0.1 | eval_goal_diff -2.0 | eval_WDL -0.8 |
+Env Football Algo tizero Exp base_TiZero updates 138/6666 episodes total num timesteps 20850000/1000000000.0
+average episode rewards is -22.59999979287386
+Env Football Algo tizero Exp base_TiZero updates 139/6666 episodes total num timesteps 21000000/1000000000.0
+average episode rewards is -18.39999994263053
+| eval_goal 0.1 | eval_goal_diff -1.8 | eval_WDL -0.8 |
+Env Football Algo tizero Exp base_TiZero updates 140/6666 episodes total num timesteps 21150000/1000000000.0
+average episode rewards is -18.000000156462193
+Env Football Algo tizero Exp base_TiZero updates 141/6666 episodes total num timesteps 21300000/1000000000.0
+average episode rewards is -21.599999628961086
+| eval_goal 0.2 | eval_goal_diff -2.0 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 142/6666 episodes total num timesteps 21450000/1000000000.0
+average episode rewards is -22.400000598281622
+Env Football Algo tizero Exp base_TiZero updates 143/6666 episodes total num timesteps 21600000/1000000000.0
+average episode rewards is -23.399999365210533
+| eval_goal 0.0 | eval_goal_diff -2.4 | eval_WDL -0.8 |
+Env Football Algo tizero Exp base_TiZero updates 144/6666 episodes total num timesteps 21750000/1000000000.0
+average episode rewards is -21.999999415129423
+Env Football Algo tizero Exp base_TiZero updates 145/6666 episodes total num timesteps 21900000/1000000000.0
+average episode rewards is -23.200000170618296
+| eval_goal 0.2 | eval_goal_diff -2.2 | eval_WDL -0.8 |
+Env Football Algo tizero Exp base_TiZero updates 146/6666 episodes total num timesteps 22050000/1000000000.0
+average episode rewards is -17.799999564886093
+Env Football Algo tizero Exp base_TiZero updates 147/6666 episodes total num timesteps 22200000/1000000000.0
+average episode rewards is -19.400000106543303
+| eval_goal 0.1 | eval_goal_diff -1.6 | eval_WDL -0.8 |
+Env Football Algo tizero Exp base_TiZero updates 148/6666 episodes total num timesteps 22350000/1000000000.0
+average episode rewards is -21.800000220537186
+Env Football Algo tizero Exp base_TiZero updates 149/6666 episodes total num timesteps 22500000/1000000000.0
+average episode rewards is -22.80000038444996
+| eval_goal 0.0 | eval_goal_diff -1.6 | eval_WDL -0.8 |
+Env Football Algo tizero Exp base_TiZero updates 150/6666 episodes total num timesteps 22650000/1000000000.0
+average episode rewards is -19.400000106543303
+Env Football Algo tizero Exp base_TiZero updates 151/6666 episodes total num timesteps 22800000/1000000000.0
+average episode rewards is -21.000000648200512
+| eval_goal 0.1 | eval_goal_diff -2.7 | eval_WDL -1.0 |
+Env Football Algo tizero Exp base_TiZero updates 152/6666 episodes total num timesteps 22950000/1000000000.0
+average episode rewards is -19.199999514967203
+Env Football Algo tizero Exp base_TiZero updates 153/6666 episodes total num timesteps 23100000/1000000000.0
+average episode rewards is -22.200000006705523
+| eval_goal 0.0 | eval_goal_diff -1.9 | eval_WDL -0.9 |
+Env Football Algo tizero Exp base_TiZero updates 154/6666 episodes total num timesteps 23250000/1000000000.0
+average episode rewards is -20.199999678879976
+Env Football Algo tizero Exp base_TiZero updates 155/6666 episodes total num timesteps 23400000/1000000000.0
+average episode rewards is -24.00000113993883
+| eval_goal 0.0 | eval_goal_diff -1.2 | eval_WDL -0.8 |
+Env Football Algo tizero Exp base_TiZero updates 156/6666 episodes total num timesteps 23550000/1000000000.0
+average episode rewards is -22.59999979287386
+Env Football Algo tizero Exp base_TiZero updates 157/6666 episodes total num timesteps 23700000/1000000000.0
+average episode rewards is -23.800000548362732
+| eval_goal 0.0 | eval_goal_diff -1.6 | eval_WDL -0.7 |
+Env Football Algo tizero Exp base_TiZero updates 158/6666 episodes total num timesteps 23850000/1000000000.0
+average episode rewards is -21.599999628961086
+Env Football Algo tizero Exp base_TiZero updates 159/6666 episodes total num timesteps 24000000/1000000000.0
+average episode rewards is -19.400000106543303
+| eval_goal 0.1 | eval_goal_diff -1.3 | eval_WDL -0.7 |
+Env Football Algo tizero Exp base_TiZero updates 160/6666 episodes total num timesteps 24150000/1000000000.0
+average episode rewards is -22.59999979287386
+Env Football Algo tizero Exp base_TiZero updates 161/6666 episodes total num timesteps 24300000/1000000000.0
+average episode rewards is -20.400000270456076
+| eval_goal 0.4 | eval_goal_diff -0.9 | eval_WDL -0.5 |
+Env Football Algo tizero Exp base_TiZero updates 162/6666 episodes total num timesteps 24450000/1000000000.0
+average episode rewards is -21.800000220537186
+Env Football Algo tizero Exp base_TiZero updates 163/6666 episodes total num timesteps 24600000/1000000000.0
+average episode rewards is -21.800000220537186
+| eval_goal 0.1 | eval_goal_diff -2.1 | eval_WDL -0.7 |
+Env Football Algo tizero Exp base_TiZero updates 164/6666 episodes total num timesteps 24750000/1000000000.0
+average episode rewards is -21.40000043436885
+Env Football Algo tizero Exp base_TiZero updates 165/6666 episodes total num timesteps 24900000/1000000000.0
+average episode rewards is -21.800000220537186
+| eval_goal 0.0 | eval_goal_diff -2.3 | eval_WDL -0.9 |
+Traceback (most recent call last):
+  File "/root/marl/onpolicy/train_grf.py", line 215, in <module>
+    main(args = sys.argv[1:])
+  File "/root/marl/onpolicy/train_grf.py", line 206, in main
+    runner.run()
+  File "/root/marl/onpolicy/runner/shared/football_runner.py", line 76, in run
+    train_infos = self.train()
+  File "/root/marl/onpolicy/runner/shared/base_runner.py", line 178, in train
+    train_infos = self.trainer.train(self.buffer)
+  File "/root/marl/onpolicy/algorithms/tizero/tizero.py", line 248, in train
+    = self.ppo_update(sample, update_actor)
+  File "/root/marl/onpolicy/algorithms/tizero/tizero.py", line 135, in ppo_update
+    values, action_log_probs, dist_entropy = self.policy.evaluate_actions(
+  File "/root/marl/onpolicy/algorithms/tizero/algorithm/TiZeroPolicy.py", line 109, in evaluate_actions
+    action_log_probs, dist_entropy, id_prediction, id_groundtruth  = self.actor.evaluate_actions(obs,
+  File "/root/marl/onpolicy/algorithms/tizero/algorithm/r_actor_critic.py", line 112, in evaluate_actions
+    obs = check(obs).to(**self.tpdv)
+KeyboardInterrupt

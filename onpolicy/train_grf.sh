@@ -2,8 +2,8 @@
 #! /bin/bash
 
 
-#=============================== base jrpo ==========================
-command="python train_grf.py --seed {0} --experiment_name base_jrpo --group_name base_jrpo --use_wandb --use_joint_action_loss --num_mini_batch 10"
+#=============================== base TiZero ==========================
+command="python train_grf.py --seed {0} --experiment_name base_TiZero --group_name base_TiZero --algorithm_name tizero --use_wandb --use_joint_action_loss --num_mini_batch 2 --n_rollout_threads 32 --hidden_size 512 --use_additional_obs"
 
 args_gpu0="--num_gpu 0"
 args_gpu1="--num_gpu 1"

@@ -21,6 +21,10 @@ import numpy as np
 
 from . import *
 
+class Director():
+    def __init__(self):
+        self.win_rate  = 0.0
+
 
 def build_real_scenario(builder):
     builder.config().game_duration = 3000
@@ -29,12 +33,16 @@ def build_real_scenario(builder):
     builder.config().right_team_difficulty = 1.0
 
     builder.config().deterministic = False
-    if builder.EpisodeNumber() % 2 == 0:
-        first_team = Team.e_Left
-        second_team = Team.e_Right
-    else:
-        first_team = Team.e_Right
-        second_team = Team.e_Left
+    # if builder.EpisodeNumber() % 2 == 0:
+    #     first_team = Team.e_Left
+    #     second_team = Team.e_Right
+    # else:
+    #     first_team = Team.e_Right
+    #     second_team = Team.e_Left
+
+    first_team = Team.e_Left
+    second_team = Team.e_Right
+
     builder.SetTeam(first_team)
     builder.AddPlayer(-1.000000, 0.000000, e_PlayerRole_GK, controllable=False)
     builder.AddPlayer(0.000000, 0.020000, e_PlayerRole_RM)
@@ -73,13 +81,12 @@ def build_scenario(builder):
 
     difficulty_level = math.ceil(builder.EpisodeNumber() / level_up_interval)
     difficulty_level = min(difficulty_level , 10)
-    # print(f"difficulty_level: {difficulty_level}")
     
     if difficulty_level == 10:
         build_real_scenario(builder)
         return
 
-    # builder.config().end_episode_on_score = True
+    builder.config().end_episode_on_score = True
     builder.config().game_duration = 3000
     builder.config().left_team_difficulty = 1.0
     builder.config().right_team_difficulty = difficulty_level * 0.1
@@ -91,6 +98,7 @@ def build_scenario(builder):
     # else:
     #   first_team = Team.e_Right
     #   second_team = Team.e_Left
+
     first_team = Team.e_Left
     second_team = Team.e_Right
 

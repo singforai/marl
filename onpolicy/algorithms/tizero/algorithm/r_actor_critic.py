@@ -12,7 +12,6 @@ from utils.util import get_shape_from_obs_space
 from algorithms.utils.input_encoder import get_fc
 from algorithms.utils.input_encoder import InputRNNLayer
 from algorithms.utils.input_encoder import FcEncoder
-from algorithms.utils.input_encoder import InputEncoder
 from algorithms.utils.input_encoder import ACTLayer
 from algorithms.utils.input_encoder import ObsEncoder
 
