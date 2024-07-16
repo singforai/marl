@@ -1,0 +1,157 @@
+2024-07-16 16:30:37,729 INFO    StreamThr :254463 [internal.py:wandb_internal():85] W&B internal server running at pid: 254463, started at: 2024-07-16 16:30:37.728403
+2024-07-16 16:30:37,731 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: status
+2024-07-16 16:30:37,737 INFO    WriterThread:254463 [datastore.py:open_for_write():87] open: /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/run-1x4em7pw.wandb
+2024-07-16 16:30:37,737 DEBUG   SenderThread:254463 [sender.py:send():379] send: header
+2024-07-16 16:30:37,776 DEBUG   SenderThread:254463 [sender.py:send():379] send: run
+2024-07-16 16:30:38,330 INFO    SenderThread:254463 [dir_watcher.py:__init__():211] watching files in: /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/files
+2024-07-16 16:30:38,330 INFO    SenderThread:254463 [sender.py:_start_run_threads():1188] run started: 1x4em7pw with start time 1721115037.72858
+2024-07-16 16:30:38,343 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: check_version
+2024-07-16 16:30:38,343 DEBUG   SenderThread:254463 [sender.py:send_request():406] send_request: check_version
+2024-07-16 16:30:38,386 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: run_start
+2024-07-16 16:30:38,396 DEBUG   HandlerThread:254463 [system_info.py:__init__():26] System info init
+2024-07-16 16:30:38,396 DEBUG   HandlerThread:254463 [system_info.py:__init__():41] System info init done
+2024-07-16 16:30:38,396 INFO    HandlerThread:254463 [system_monitor.py:start():194] Starting system monitor
+2024-07-16 16:30:38,396 INFO    SystemMonitor:254463 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-07-16 16:30:38,396 INFO    HandlerThread:254463 [system_monitor.py:probe():214] Collecting system info
+2024-07-16 16:30:38,397 INFO    SystemMonitor:254463 [interfaces.py:start():188] Started cpu monitoring
+2024-07-16 16:30:38,398 INFO    SystemMonitor:254463 [interfaces.py:start():188] Started disk monitoring
+2024-07-16 16:30:38,399 INFO    SystemMonitor:254463 [interfaces.py:start():188] Started gpu monitoring
+2024-07-16 16:30:38,400 INFO    SystemMonitor:254463 [interfaces.py:start():188] Started memory monitoring
+2024-07-16 16:30:38,404 INFO    SystemMonitor:254463 [interfaces.py:start():188] Started network monitoring
+2024-07-16 16:30:38,438 DEBUG   HandlerThread:254463 [system_info.py:probe():152] Probing system
+2024-07-16 16:30:38,447 DEBUG   HandlerThread:254463 [system_info.py:_probe_git():137] Probing git
+2024-07-16 16:30:38,462 DEBUG   HandlerThread:254463 [system_info.py:_probe_git():145] Probing git done
+2024-07-16 16:30:38,462 DEBUG   HandlerThread:254463 [system_info.py:probe():200] Probing system done
+2024-07-16 16:30:38,462 DEBUG   HandlerThread:254463 [system_monitor.py:probe():223] {'os': 'Linux-5.4.0-125-generic-x86_64-with-glibc2.31', 'python': '3.9.19', 'heartbeatAt': '2024-07-16T07:30:38.438994', 'startedAt': '2024-07-16T07:30:37.720663', 'docker': None, 'cuda': None, 'args': ('--seed', '0', '--experiment_name', 'base_TiZero', '--group_name', 'base_TiZero', '--algorithm_name', 'tizero', '--use_wandb', '--n_rollout_threads', '20', '--num_gpu', '0'), 'state': 'running', 'program': '/root/marl/onpolicy/train_grf.py', 'codePathLocal': 'train_grf.py', 'codePath': 'onpolicy/train_grf.py', 'git': {'remote': 'https://github.com/singforai/marl.git', 'commit': 'e3e73c0f9f57a7e997a8b884537e0b6de507f9da'}, 'email': 'singfor7012@gmail.com', 'root': '/root/marl', 'host': 'cc6d4f284c5a', 'username': 'root', 'executable': '/root/miniconda3/envs/marl/bin/python', 'cpu_count': 128, 'cpu_count_logical': 128, 'cpu_freq': {'current': 2731.171046875, 'min': 1500.0, 'max': 2450.0}, 'cpu_freq_per_core': [{'current': 3249.847, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.628, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.941, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.645, 'min': 1500.0, 'max': 2450.0}, {'current': 2594.393, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.539, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.425, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.362, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.752, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.958, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.759, 'min': 1500.0, 'max': 2450.0}, {'current': 2593.824, 'min': 1500.0, 'max': 2450.0}, {'current': 2593.737, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.611, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.358, 'min': 1500.0, 'max': 2450.0}, {'current': 2593.922, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.346, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.459, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.241, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.204, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.056, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.673, 'min': 1500.0, 'max': 2450.0}, {'current': 2593.98, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.467, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.661, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.541, 'min': 1500.0, 'max': 2450.0}, {'current': 2588.839, 'min': 1500.0, 'max': 2450.0}, {'current': 2600.669, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.985, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.891, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.878, 'min': 1500.0, 'max': 2450.0}, {'current': 2593.066, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.691, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.988, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.563, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.758, 'min': 1500.0, 'max': 2450.0}, {'current': 2586.299, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.787, 'min': 1500.0, 'max': 2450.0}, {'current': 2594.277, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.122, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.546, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.737, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.921, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.729, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.07, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.726, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.493, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.901, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.919, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.006, 'min': 1500.0, 'max': 2450.0}, {'current': 3248.512, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.603, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.835, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.108, 'min': 1500.0, 'max': 2450.0}, {'current': 3250.047, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.359, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.75, 'min': 1500.0, 'max': 2450.0}, {'current': 2594.641, 'min': 1500.0, 'max': 2450.0}, {'current': 2592.922, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.129, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.99, 'min': 1500.0, 'max': 2450.0}, {'current': 2594.452, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.616, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.446, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.823, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.594, 'min': 1500.0, 'max': 2450.0}, {'current': 2621.944, 'min': 1500.0, 'max': 2450.0}, {'current': 2570.0, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.415, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.458, 'min': 1500.0, 'max': 2450.0}, {'current': 2790.014, 'min': 1500.0, 'max': 2450.0}, {'current': 3250.046, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.38, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.015, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.308, 'min': 1500.0, 'max': 2450.0}, {'current': 2594.951, 'min': 1500.0, 'max': 2450.0}, {'current': 3250.071, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.183, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.972, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.642, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.182, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.629, 'min': 1500.0, 'max': 2450.0}, {'current': 2593.063, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.475, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.939, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.171, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.032, 'min': 1500.0, 'max': 2450.0}, {'current': 2594.439, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.513, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.028, 'min': 1500.0, 'max': 2450.0}, {'current': 3248.85, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.067, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.686, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.028, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.219, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.439, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.778, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.674, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.053, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.345, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.535, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.156, 'min': 1500.0, 'max': 2450.0}, {'current': 2601.683, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.873, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.473, 'min': 1500.0, 'max': 2450.0}, {'current': 2594.729, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.211, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.471, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.211, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.874, 'min': 1500.0, 'max': 2450.0}, {'current': 2590.946, 'min': 1500.0, 'max': 2450.0}, {'current': 2600.026, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.143, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.724, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.559, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.032, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.968, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.734, 'min': 1500.0, 'max': 2450.0}, {'current': 3069.835, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.593, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.556, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.681, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.103, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.808, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.726, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.662, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.306, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.144, 'min': 1500.0, 'max': 2450.0}], 'disk': {'/': {'total': 3665.955093383789, 'used': 2668.9302520751953}}, 'gpu': 'NVIDIA RTX A6000', 'gpu_count': 4, 'gpu_devices': [{'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}], 'memory': {'total': 1007.7300682067871}}
+2024-07-16 16:30:38,463 INFO    HandlerThread:254463 [system_monitor.py:probe():224] Finished collecting system info
+2024-07-16 16:30:38,463 INFO    HandlerThread:254463 [system_monitor.py:probe():227] Publishing system info
+2024-07-16 16:30:38,463 DEBUG   HandlerThread:254463 [system_info.py:_save_conda():209] Saving list of conda packages installed into the current environment
+2024-07-16 16:30:39,333 INFO    Thread-12 :254463 [dir_watcher.py:_on_file_created():271] file/dir created: /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/files/conda-environment.yaml
+2024-07-16 16:30:40,331 INFO    Thread-12 :254463 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/files/conda-environment.yaml
+2024-07-16 16:30:40,436 DEBUG   HandlerThread:254463 [system_info.py:_save_conda():224] Saving conda packages done
+2024-07-16 16:30:40,437 INFO    HandlerThread:254463 [system_monitor.py:probe():229] Finished publishing system info
+2024-07-16 16:30:40,443 DEBUG   SenderThread:254463 [sender.py:send():379] send: files
+2024-07-16 16:30:40,443 INFO    SenderThread:254463 [sender.py:_save_file():1454] saving file wandb-metadata.json with policy now
+2024-07-16 16:30:40,518 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: python_packages
+2024-07-16 16:30:40,518 DEBUG   SenderThread:254463 [sender.py:send_request():406] send_request: python_packages
+2024-07-16 16:30:40,519 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-16 16:30:40,520 DEBUG   SenderThread:254463 [sender.py:send_request():406] send_request: stop_status
+2024-07-16 16:30:40,522 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:40,764 DEBUG   SenderThread:254463 [sender.py:send():379] send: telemetry
+2024-07-16 16:30:41,331 INFO    Thread-12 :254463 [dir_watcher.py:_on_file_created():271] file/dir created: /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/files/wandb-metadata.json
+2024-07-16 16:30:41,333 INFO    wandb-upload_0:254463 [upload_job.py:push():130] Uploaded file /tmp/tmp3qpbq6q9wandb/3sdlp4fv-wandb-metadata.json
+2024-07-16 16:30:41,333 INFO    Thread-12 :254463 [dir_watcher.py:_on_file_created():271] file/dir created: /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/files/requirements.txt
+2024-07-16 16:30:41,519 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:42,519 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:42,765 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: status_report
+2024-07-16 16:30:43,519 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:44,333 INFO    Thread-12 :254463 [dir_watcher.py:_on_file_created():271] file/dir created: /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/files/output.log
+2024-07-16 16:30:44,519 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:45,519 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:46,333 INFO    Thread-12 :254463 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/files/output.log
+2024-07-16 16:30:46,519 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:47,520 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:48,520 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: status_report
+2024-07-16 16:30:48,520 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:49,520 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:50,520 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:51,520 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:52,521 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:53,521 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:54,520 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: status_report
+2024-07-16 16:30:54,521 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:55,519 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-16 16:30:55,519 DEBUG   SenderThread:254463 [sender.py:send_request():406] send_request: stop_status
+2024-07-16 16:30:55,562 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:56,521 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:57,521 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:58,522 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:59,521 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:30:59,726 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: status_report
+2024-07-16 16:31:00,521 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:01,522 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:02,522 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:03,522 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:04,523 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:05,520 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: status_report
+2024-07-16 16:31:05,522 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:06,523 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:07,523 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:08,523 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:09,523 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:10,519 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-16 16:31:10,520 DEBUG   SenderThread:254463 [sender.py:send_request():406] send_request: stop_status
+2024-07-16 16:31:10,563 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:10,812 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: status_report
+2024-07-16 16:31:11,342 INFO    Thread-12 :254463 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/files/config.yaml
+2024-07-16 16:31:11,524 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:12,524 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:13,524 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:14,524 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:15,524 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:16,521 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: status_report
+2024-07-16 16:31:16,524 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:17,525 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:18,525 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:19,525 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:20,527 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:21,521 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: status_report
+2024-07-16 16:31:21,527 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:22,527 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:23,527 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:24,527 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:25,519 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-16 16:31:25,519 DEBUG   SenderThread:254463 [sender.py:send_request():406] send_request: stop_status
+2024-07-16 16:31:25,563 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:26,528 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:26,773 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: status_report
+2024-07-16 16:31:27,528 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:28,528 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:29,528 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:30,528 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:31,529 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:32,521 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: status_report
+2024-07-16 16:31:32,528 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:33,528 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:34,529 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:35,528 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:36,529 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:37,531 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:38,404 DEBUG   SystemMonitor:254463 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-07-16 16:31:38,407 DEBUG   SenderThread:254463 [sender.py:send():379] send: stats
+2024-07-16 16:31:38,409 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: status_report
+2024-07-16 16:31:38,531 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:39,531 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:40,519 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: stop_status
+2024-07-16 16:31:40,520 DEBUG   SenderThread:254463 [sender.py:send_request():406] send_request: stop_status
+2024-07-16 16:31:40,563 DEBUG   HandlerThread:254463 [handler.py:handle_request():158] handle_request: internal_messages
+2024-07-16 16:31:42,438 INFO    memory    :254463 [interfaces.py:monitor():138] Process proc.memory.rssMB has exited.
+2024-07-16 16:31:42,439 DEBUG   SystemMonitor:254463 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-07-16 16:31:42,439 DEBUG   SystemMonitor:254463 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-07-16 16:31:42,447 DEBUG   SenderThread:254463 [sender.py:send():379] send: stats
+2024-07-16 16:31:42,796 WARNING StreamThr :254463 [internal.py:is_dead():413] Internal process exiting, parent pid 253629 disappeared
+2024-07-16 16:31:42,796 ERROR   StreamThr :254463 [internal.py:wandb_internal():151] Internal process shutdown.
+2024-07-16 16:31:43,442 INFO    HandlerThread:254463 [handler.py:finish():882] shutting down handler
+2024-07-16 16:31:43,442 INFO    HandlerThread:254463 [system_monitor.py:finish():203] Stopping system monitor
+2024-07-16 16:31:43,442 INFO    HandlerThread:254463 [interfaces.py:finish():200] Joined cpu monitor
+2024-07-16 16:31:43,443 INFO    HandlerThread:254463 [interfaces.py:finish():200] Joined disk monitor
+2024-07-16 16:31:43,443 INFO    HandlerThread:254463 [interfaces.py:finish():200] Joined gpu monitor
+2024-07-16 16:31:43,443 INFO    HandlerThread:254463 [interfaces.py:finish():200] Joined memory monitor
+2024-07-16 16:31:43,443 INFO    HandlerThread:254463 [interfaces.py:finish():200] Joined network monitor
+2024-07-16 16:31:43,447 INFO    WriterThread:254463 [datastore.py:close():296] close: /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/run-1x4em7pw.wandb
+2024-07-16 16:31:43,448 INFO    SenderThread:254463 [sender.py:finish():1608] shutting down sender
+2024-07-16 16:31:43,625 INFO    SenderThread:254463 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-07-16 16:31:44,348 INFO    SenderThread:254463 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/files/output.log
+2024-07-16 16:31:44,348 INFO    SenderThread:254463 [dir_watcher.py:finish():388] scan: /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/files
+2024-07-16 16:31:44,348 INFO    SenderThread:254463 [dir_watcher.py:finish():402] scan save: /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/files/conda-environment.yaml conda-environment.yaml
+2024-07-16 16:31:44,349 INFO    SenderThread:254463 [dir_watcher.py:finish():402] scan save: /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/files/wandb-metadata.json wandb-metadata.json
+2024-07-16 16:31:44,349 INFO    SenderThread:254463 [dir_watcher.py:finish():402] scan save: /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/files/requirements.txt requirements.txt
+2024-07-16 16:31:44,349 INFO    SenderThread:254463 [dir_watcher.py:finish():402] scan save: /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/files/config.yaml config.yaml
+2024-07-16 16:31:44,350 INFO    SenderThread:254463 [dir_watcher.py:finish():402] scan save: /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/files/output.log output.log
+2024-07-16 16:31:44,350 INFO    SenderThread:254463 [file_pusher.py:finish():169] shutting down file pusher
+2024-07-16 16:31:44,350 INFO    SenderThread:254463 [file_pusher.py:join():175] waiting for file pusher
+2024-07-16 16:31:44,859 INFO    wandb-upload_0:254463 [upload_job.py:push():130] Uploaded file /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/files/conda-environment.yaml
+2024-07-16 16:31:45,093 INFO    wandb-upload_2:254463 [upload_job.py:push():130] Uploaded file /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/files/config.yaml
+2024-07-16 16:31:45,107 INFO    wandb-upload_1:254463 [upload_job.py:push():130] Uploaded file /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/files/requirements.txt
+2024-07-16 16:31:45,162 INFO    wandb-upload_3:254463 [upload_job.py:push():130] Uploaded file /root/marl/results/Football/curriculum_learning_11vs11/tizero/base_TiZero/wandb/run-20240716_163037-1x4em7pw/files/output.log
+2024-07-16 16:31:45,163 INFO    MainThread:254463 [internal.py:handle_exit():75] Internal process exited

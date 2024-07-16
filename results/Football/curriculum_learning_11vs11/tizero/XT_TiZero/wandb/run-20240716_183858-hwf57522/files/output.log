@@ -1,0 +1,30 @@
+
+사용 가능한 CPU Thread: 128
+Env Football Algo tizero Exp XT_TiZero updates 0/3333333 episodes total num timesteps 30000/100000000000.0
+average episode rewards is -22.987673990428448
+Env Football Algo tizero Exp XT_TiZero updates 1/3333333 episodes total num timesteps 60000/100000000000.0
+average episode rewards is -20.99006110802293
+Env Football Algo tizero Exp XT_TiZero updates 2/3333333 episodes total num timesteps 90000/100000000000.0
+average episode rewards is -23.98902364075184
+Env Football Algo tizero Exp XT_TiZero updates 3/3333333 episodes total num timesteps 120000/100000000000.0
+average episode rewards is -24.983729235827923
+Env Football Algo tizero Exp XT_TiZero updates 4/3333333 episodes total num timesteps 150000/100000000000.0
+average episode rewards is -15.988775063306093
+Env Football Algo tizero Exp XT_TiZero updates 5/3333333 episodes total num timesteps 180000/100000000000.0
+average episode rewards is -28.980852104723454
+Env Football Algo tizero Exp XT_TiZero updates 6/3333333 episodes total num timesteps 210000/100000000000.0
+average episode rewards is -20.98357630893588
+Env Football Algo tizero Exp XT_TiZero updates 7/3333333 episodes total num timesteps 240000/100000000000.0
+average episode rewards is -22.980902809649706
+Env Football Algo tizero Exp XT_TiZero updates 8/3333333 episodes total num timesteps 270000/100000000000.0
+average episode rewards is -25.984162464737892
+Env Football Algo tizero Exp XT_TiZero updates 9/3333333 episodes total num timesteps 300000/100000000000.0
+average episode rewards is -25.98526608198881
+| eval_goal 0.0 | eval_goal_diff -2.6 | eval_WDL -1.0 |
+Env Football Algo tizero Exp XT_TiZero updates 10/3333333 episodes total num timesteps 330000/100000000000.0
+average episode rewards is -21.983815357089043
+Env Football Algo tizero Exp XT_TiZero updates 11/3333333 episodes total num timesteps 360000/100000000000.0
+average episode rewards is -27.985126711428165
+Env Football Algo tizero Exp XT_TiZero updates 12/3333333 episodes total num timesteps 390000/100000000000.0
+average episode rewards is -18.98493943735957
+Env Football Algo tizero Exp XT_TiZero updates 13/3333333 episodes total num timesteps 420000/100000000000.0

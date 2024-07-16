@@ -1,0 +1,28 @@
+
+사용 가능한 CPU Thread: 128
+Env Football Algo tizero Exp XT_TiZero updates 0/3333333 episodes total num timesteps 30000/100000000000.0
+average episode rewards is -12.990136630833149
+Env Football Algo tizero Exp XT_TiZero updates 1/3333333 episodes total num timesteps 60000/100000000000.0
+average episode rewards is -27.986529283225536
+Env Football Algo tizero Exp XT_TiZero updates 2/3333333 episodes total num timesteps 90000/100000000000.0
+average episode rewards is -25.982312858104706
+Env Football Algo tizero Exp XT_TiZero updates 3/3333333 episodes total num timesteps 120000/100000000000.0
+average episode rewards is -33.980028703808784
+Env Football Algo tizero Exp XT_TiZero updates 4/3333333 episodes total num timesteps 150000/100000000000.0
+average episode rewards is -34.978900104761124
+Env Football Algo tizero Exp XT_TiZero updates 5/3333333 episodes total num timesteps 180000/100000000000.0
+average episode rewards is -15.985358040779829
+Env Football Algo tizero Exp XT_TiZero updates 6/3333333 episodes total num timesteps 210000/100000000000.0
+average episode rewards is -28.985023498535156
+Env Football Algo tizero Exp XT_TiZero updates 7/3333333 episodes total num timesteps 240000/100000000000.0
+average episode rewards is -21.9853394664824
+Env Football Algo tizero Exp XT_TiZero updates 8/3333333 episodes total num timesteps 270000/100000000000.0
+average episode rewards is -27.982329949736595
+Env Football Algo tizero Exp XT_TiZero updates 9/3333333 episodes total num timesteps 300000/100000000000.0
+average episode rewards is -18.984224181622267
+| eval_goal 0.0 | eval_goal_diff -2.4 | eval_WDL -0.8 |
+Env Football Algo tizero Exp XT_TiZero updates 10/3333333 episodes total num timesteps 330000/100000000000.0
+average episode rewards is -26.982899755239487
+Env Football Algo tizero Exp XT_TiZero updates 11/3333333 episodes total num timesteps 360000/100000000000.0
+average episode rewards is -27.979047037661076
+Env Football Algo tizero Exp XT_TiZero updates 12/3333333 episodes total num timesteps 390000/100000000000.0

@@ -23,8 +23,22 @@ from . import *
 
 class Director():
     def __init__(self):
-        self.win_rate  = 0.0
+        self.win_stack  = 0
+        self.level = 1
 
+
+    def assessing_game(self, goal_diffs):
+        if all(goal_diff > 0 for goal_diff in goal_diffs):
+            self.win_stack += 1
+        
+        if self.win_stack >= 100:
+            self.win_stack = 0
+            if self.level < 10:
+                self.level += 1
+                
+
+
+director = Director()
 
 def build_real_scenario(builder):
     builder.config().game_duration = 3000
@@ -71,22 +85,17 @@ def build_real_scenario(builder):
 
 def build_scenario(builder):
 
-    
     if builder.EpisodeNumber() == 1:
         build_real_scenario(builder)
         return
-    
-    curr_learning_end = 10000000000
-    level_up_interval = curr_learning_end / 10
 
-    difficulty_level = math.ceil(builder.EpisodeNumber() / level_up_interval)
-    difficulty_level = min(difficulty_level , 10)
+    difficulty_level = director.level 
     
     if difficulty_level == 10:
         build_real_scenario(builder)
         return
 
-    builder.config().end_episode_on_score = True
+    # builder.config().end_episode_on_score = True
     builder.config().game_duration = 3000
     builder.config().left_team_difficulty = 1.0
     builder.config().right_team_difficulty = difficulty_level * 0.1

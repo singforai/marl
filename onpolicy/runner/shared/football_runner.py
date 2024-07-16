@@ -7,12 +7,18 @@ import imageio
 import numpy as np
 import torch
 import wandb
+import importlib
+
+# import cProfile, io, pstats
+# from pstats import SortKey
 
 from utils.util import update_linear_schedule
 from runner.shared.base_runner import Runner
 
 from runner.shared.xT.cal_xT import xT
 from algorithms.utils.obs_preprocessing import preproc_obs
+
+from envs.package.gfootball.scenarios.curriculum_learning_11vs11 import Director
 
 def _t2n(x):
     return x.detach().cpu().numpy()
@@ -29,6 +35,8 @@ class FootballRunner(Runner):
         episodes = int(self.num_env_steps) // self.episode_length // self.n_rollout_threads
         
         for episode in range(episodes):
+            # pr = cProfile.Profile()
+            # pr.enable()
             if self.use_linear_lr_decay:
                 self.trainer.policy.lr_decay(episode, episodes)
             
@@ -40,8 +48,6 @@ class FootballRunner(Runner):
                     
                 # Obser reward and next obs
                 obs, rewards, dones, infos = self.envs.step(actions_env)
-
-                print(step)
                 
                 scores = self.infos_processing(infos = infos)
 
@@ -70,9 +76,17 @@ class FootballRunner(Runner):
                 self.insert(data)
 
 
-            end_time = time.time()
+            
+            # pr.disable()
+            # s = io.StringIO()
+            # sortby = SortKey.CUMULATIVE
+            # ps = pstats.Stats(pr, stream=s).sort_stats(sortby)
+            # ps.print_stats()
+            # print(s.getvalue())
 
             # compute return and update network
+
+            end_time = time.time()
 
             self.compute()
             train_infos = self.train()
@@ -89,9 +103,12 @@ class FootballRunner(Runner):
             print(f"\nEnv {self.env_name} Algo {self.algorithm_name} Exp {self.experiment_name} updates {episode}/{episodes} episodes total num timesteps {total_num_steps}/{self.num_env_steps}")     
             train_infos["average_episode_rewards"] = np.mean(self.buffer.rewards) * self.episode_length
             train_infos["Episode_Time"] = end_time - start_time
+            train_infos["Difficulty_level"] =  self.director.level
+            
             print("average episode rewards is {}".format(train_infos["average_episode_rewards"]))
 
             self.log_train(train_infos, total_num_steps)
+            self.director.assessing_game(goal_diffs = self.buffer.env_infos["train_goal_diff"])
 
             self.buffer.env_infos["train_possession_rate"] = np.array(self.buffer.possession_state) / self.game_length
             self.log_env(self.buffer.env_infos, total_num_steps)
@@ -144,7 +161,7 @@ class FootballRunner(Runner):
         obs = self.envs.reset()
         # self.buffer.share_obs[0] = obs.copy()
         # self.buffer.obs[0] = obs.copy()
-
+        self.director = Director()
         if self.use_xt:
             self.cal_xt = xT(args = self.all_args)
 
@@ -177,12 +194,12 @@ class FootballRunner(Runner):
         
         # update env_infos if done
         dones_env = np.all(dones, axis=-1)
-        print(dones_env)
         
         if np.any(dones_env):
             for done, info in zip(dones_env, infos):
                 if done:
                     goal_diff = info["score"][0] - info["score"][1]
+
                     self.buffer.env_infos["train_goal_diff"].append(goal_diff)
                     
                     self.buffer.env_infos["train_goal"].append(info["score"][0])

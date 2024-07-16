@@ -7,10 +7,10 @@ def get_config():
         description='onpolicy', formatter_class=argparse.RawDescriptionHelpFormatter)
     
     #JRPO
-    parser.add_argument("--use_joint_action_loss", action='store_true', default=False, help="whether to use joint action loss for JRPO or TiZero")
+    parser.add_argument("--use_joint_action_loss", action='store_false', default=True, help="whether to use joint action loss for JRPO or TiZero")
     
     # Tizero
-    parser.add_argument("--use_additional_obs", action='store_true', default=False, help="whether to use addtional obs for replicating the TiZero")
+    parser.add_argument("--use_additional_obs", action='store_false', default=True, help="whether to use addtional obs for replicating the TiZero")
     
     # Wandb
     parser.add_argument("--use_wandb", action='store_true', default=False, help="[for wandb usage], by default True, will log date to wandb server. or else will use tensorboard to log data.")
@@ -27,13 +27,13 @@ def get_config():
                         action='store_false', default=True, help="by default, make sure random seed effective. if set, bypass such function.")
     parser.add_argument("--n_torch_threads", type=int,
                         default=48, help="Number of torch threads for training")
-    parser.add_argument("--n_rollout_threads", type=int, default=1,
+    parser.add_argument("--n_rollout_threads", type=int, default=30,
                         help="Number of parallel envs for training rollouts")
     parser.add_argument("--n_eval_rollout_threads", type=int, default=10,
                         help="Number of parallel envs for evaluating rollouts")
     parser.add_argument("--n_render_rollout_threads", type=int, default=1,
                         help="Number of parallel envs for rendering rollouts")
-    parser.add_argument("--num_env_steps", type=int, default=10e8,
+    parser.add_argument("--num_env_steps", type=int, default=10e10,
                         help='Number of environment steps to train (default: 10e6)')
     parser.add_argument("--num_gpu", type = int, default = 0, help = "사용할 gpu number")
     parser.add_argument("--episode_length", type=int,
@@ -41,7 +41,7 @@ def get_config():
 
     #학습을 위한 알고리즘 전처리
     parser.add_argument("--algorithm_name", type=str,
-                        default='rmappo', choices=["rmappo", "mappo", "ippo", "tizero", "jrpo"])
+                        default='tizero', choices=["rmappo", "mappo", "ippo", "tizero", "jrpo"])
     parser.add_argument("--use_xt", action='store_true', default=False, help="xT score를 사용해 reward shaping을 수행할 것인가?")
     parser.add_argument("--xt_type", type=str, default='compound_xt', choices=["base_xt", "compound_xt"])
     parser.add_argument("--use_obs_instead_of_state", action='store_true',
@@ -102,7 +102,7 @@ def get_config():
                         action='store_false', default=True, help="by default, clip loss value. If set, do not clip loss value.")
     parser.add_argument("--clip_param", type=float, default=0.2,
                         help='ppo clip parameter (default: 0.2)')
-    parser.add_argument("--num_mini_batch", type=int, default=1,
+    parser.add_argument("--num_mini_batch", type=int, default=10,
                         help='number of batches for ppo (default: 1)')
     parser.add_argument("--entropy_coef", type=float, default=0.01,
                         help='entropy term coefficient (default: 0.01)')

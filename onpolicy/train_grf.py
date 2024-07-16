@@ -13,6 +13,7 @@ from config import get_config
 
 from pathlib import Path
 
+
 from envs.football.Football_Environment import FootballEnv
 from envs.env_wrappers import SubprocVecEnv, DummyVecEnv
 from runner.shared.football_runner import FootballRunner as Runner
@@ -57,7 +58,7 @@ def make_eval_env(all_args):
 
 def parse_args(args, parser):
     parser.add_argument("--scenario_name", type=str,
-                        default="11_vs_11_curriculum_learning",
+                        default="curriculum_learning_11vs11",
                         choices = [
                             "11_vs_11_easy_stochastic", 
                             "11_vs_11_stochastic",
@@ -107,6 +108,7 @@ def main(args):
         print("u are choosing to use rmappo, we set use_recurrent_policy to be True")
         all_args.use_recurrent_policy = True
         all_args.use_naive_recurrent_policy = False
+        all_args.use_joint_action_loss = False
 
     elif all_args.algorithm_name == "mappo":
         print("u are choosing to use mappo, we set use_recurrent_policy & use_naive_recurrent_policy to be False")
