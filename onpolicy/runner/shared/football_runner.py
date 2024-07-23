@@ -33,13 +33,13 @@ class FootballRunner(Runner):
         self.game_length = 3000
 
         episodes = int(self.num_env_steps) // self.episode_length // self.n_rollout_threads
-        
+
         for episode in range(episodes):
             # pr = cProfile.Profile()
             # pr.enable()
             if self.use_linear_lr_decay:
                 self.trainer.policy.lr_decay(episode, episodes)
-            
+                
             start_time = time.time()
             for step in range(self.episode_length):
                 

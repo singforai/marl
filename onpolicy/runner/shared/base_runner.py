@@ -93,14 +93,14 @@ class Runner(object):
                 device = self.device
             )
         elif self.algorithm_name == "tizero":
-            low = np.full((330,), -np.inf)
-            high = np.full((330,), np.inf)
-            self.envs.observation_space[0] = spaces.Box(low=low, high=high, dtype=np.float32)
+            if self.use_additional_obs:
+                low = np.full((330,), -np.inf)
+                high = np.full((330,), np.inf)
+                self.envs.observation_space[0] = spaces.Box(low=low, high=high, dtype=np.float32)
 
-            low = np.full((220,), -np.inf)
-            high = np.full((220,), np.inf)
-            share_observation_space = spaces.Box(low=low, high=high, dtype=np.float32)
-
+                low = np.full((220,), -np.inf)
+                high = np.full((220,), np.inf)
+                share_observation_space = spaces.Box(low=low, high=high, dtype=np.float32)
             self.policy = Policy(
                 self.all_args, 
                 self.envs.observation_space[0], 

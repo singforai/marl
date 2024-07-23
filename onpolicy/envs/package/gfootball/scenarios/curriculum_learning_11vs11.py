@@ -95,7 +95,7 @@ def build_scenario(builder):
         build_real_scenario(builder)
         return
 
-    # builder.config().end_episode_on_score = True
+    builder.config().end_episode_on_score = True
     builder.config().game_duration = 3000
     builder.config().left_team_difficulty = 1.0
     builder.config().right_team_difficulty = difficulty_level * 0.1
@@ -143,14 +143,12 @@ def build_scenario(builder):
     builder.SetTeam(second_team)
     builder.AddPlayer(-1.000000, 0.000000, e_PlayerRole_GK, controllable=False)
 
-    # builder.AddPlayer(-1.000000, 0.000000, e_PlayerRole_RM)
-    # if difficulty_level > 3:
-    #     builder.AddPlayer(-1.000000, 0.000000, e_PlayerRole_CF)
-    # else:
-        # builder.AddPlayer(x_pos[1], y_pos[1], e_PlayerRole_CF)
+    builder.AddPlayer(-1.000000, 0.000000, e_PlayerRole_RM)
+    if difficulty_level > 3:
+        builder.AddPlayer(-1.000000, 0.000000, e_PlayerRole_CF)
+    else:
+        builder.AddPlayer(x_pos[1], y_pos[1], e_PlayerRole_CF)
 
-    builder.AddPlayer(x_pos[0], y_pos[0], e_PlayerRole_LB)
-    builder.AddPlayer(x_pos[1], y_pos[1], e_PlayerRole_CB)
     builder.AddPlayer(x_pos[2], y_pos[2], e_PlayerRole_LB)
     builder.AddPlayer(x_pos[3], y_pos[3], e_PlayerRole_CB)
     builder.AddPlayer(x_pos[4], y_pos[4], e_PlayerRole_CB)
