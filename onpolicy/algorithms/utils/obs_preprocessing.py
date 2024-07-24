@@ -2,7 +2,7 @@ import numpy as np
 import time
 import numba
 
-from numba.types import bool_, float32, Tuple
+from numba.types import float32, Tuple, bool_
 
 THIRD_X = 0.3
 BOX_X = 0.7
@@ -277,8 +277,6 @@ def thread_processing(info): # 279
         ball_own_active_info[0:7] = game_mode
         ball_own_active_info[7] =goal_diff_ratio
         ball_own_active_info[8] = steps_left_ratio
-        
-
 
         agent_obs = np.zeros((1 ,330), dtype = float32)
         agent_obs[:, 0] = active_id
@@ -299,6 +297,7 @@ def thread_processing(info): # 279
 
         share_observation[idx, :] = share_obs
 
+
     return (observation, share_observation)
 
 
@@ -313,3 +312,41 @@ def preproc_obs(infos_array):
 
 
     return (observations, share_observations) # (Rollout, num_agents, 330) / (Rollout, num_agents, 220)
+
+
+def dict2array(infos):
+    infos_list = []
+    for info in infos:
+        info_array = np.zeros(279)
+        info_array[0  : 10] = info["active"]
+
+        info_array[10 : 32] = info["left_team"].reshape(-1)
+        info_array[32 : 54] = info["left_team_direction"].reshape(-1)
+        info_array[54 : 65] = info["left_team_tired_factor"]
+        info_array[65 : 76] = info["left_team_yellow_card"]
+        info_array[76 : 87] = info["left_team_active"]
+
+
+        info_array[87  : 109] = info["right_team"].reshape(-1)
+        info_array[109 : 131] = info["right_team_direction"].reshape(-1)
+        info_array[131 : 142] = info["right_team_tired_factor"]
+        info_array[142 : 153] = info["right_team_yellow_card"]
+        info_array[153 : 164] = info["right_team_active"]
+
+        info_array[164 : 264] = info["sticky_actions"].reshape(-1)
+        info_array[264 : 266] = info["score"]
+
+        info_array[266 : 269] = info["ball"]
+        info_array[269 : 272] = info['ball_direction']
+        info_array[272 : 275] = info['ball_rotation']
+
+        info_array[275] = info["ball_owned_team"]
+        info_array[276] = info["game_mode"]
+        info_array[277] = info["steps_left"]
+        info_array[278] = info["ball_owned_player"]
+
+        infos_list.append(info_array)
+    infos_array = np.array(infos_list, dtype=np.float32)
+
+    obs , share_obs = preproc_obs(infos_array)
+    return obs , share_obs

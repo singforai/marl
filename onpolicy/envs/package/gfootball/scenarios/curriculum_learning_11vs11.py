@@ -95,7 +95,7 @@ def build_scenario(builder):
         build_real_scenario(builder)
         return
 
-    builder.config().end_episode_on_score = True
+    # builder.config().end_episode_on_score = True
     builder.config().game_duration = 3000
     builder.config().left_team_difficulty = 1.0
     builder.config().right_team_difficulty = difficulty_level * 0.1

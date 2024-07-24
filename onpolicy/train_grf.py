@@ -109,6 +109,7 @@ def main(args):
         all_args.use_recurrent_policy = True
         all_args.use_naive_recurrent_policy = False
         all_args.use_joint_action_loss = False
+        all_args.use_additional_obs = False
 
     elif all_args.algorithm_name == "mappo":
         print("u are choosing to use mappo, we set use_recurrent_policy & use_naive_recurrent_policy to be False")
@@ -118,7 +119,11 @@ def main(args):
         print("u are choosing to use ippo, we set use_centralized_V to be False. Note that GRF is a fully observed game, so ippo is rmappo.")
         all_args.use_centralized_V = False
     elif all_args.algorithm_name == "jrpo":
+        all_args.use_recurrent_policy = True
+        all_args.use_naive_recurrent_policy = False
         all_args.use_joint_action_loss = True
+        all_args.use_additional_obs = False
+        
     elif all_args.algorithm_name == "tizero":
         if "11_vs_11" not in all_args.scenario_name and all_args.representation != "simple115v2" :
             raise ValueError("Tizero는 11 vs 11 simple115v2 관찰 환경에서만 실행가능합니다.")

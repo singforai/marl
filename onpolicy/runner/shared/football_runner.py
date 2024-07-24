@@ -16,7 +16,7 @@ from utils.util import update_linear_schedule
 from runner.shared.base_runner import Runner
 
 from runner.shared.xT.cal_xT import xT
-from algorithms.utils.obs_preprocessing import preproc_obs
+from algorithms.utils.obs_preprocessing import dict2array
 
 from envs.package.gfootball.scenarios.curriculum_learning_11vs11 import Director
 
@@ -39,7 +39,7 @@ class FootballRunner(Runner):
             # pr.enable()
             if self.use_linear_lr_decay:
                 self.trainer.policy.lr_decay(episode, episodes)
-                
+
             start_time = time.time()
             for step in range(self.episode_length):
                 
@@ -66,7 +66,7 @@ class FootballRunner(Runner):
                     actor(obs): 330
                     critic(share_obs): 220
                     """
-                    observations, share_obs = self.dict2array(infos = infos)
+                    observations, share_obs = dict2array(infos = infos)
                     obs = observations
                     share_obs = share_obs
 
@@ -127,34 +127,6 @@ class FootballRunner(Runner):
                 self.buffer.possession_state[idx] += 1
         scores = [info["score"] for info in infos]
         return scores
-    
-    def dict2array(self, infos):
-        infos_list = []
-        for info in infos:
-            info_array = np.concatenate((
-                info["active"],
-                info["left_team"].reshape(-1),
-                info["left_team_direction"].reshape(-1), 
-                info["left_team_tired_factor"],
-                info["left_team_yellow_card"],
-                info["left_team_active"],
-                info["right_team"].reshape(-1),
-                info["right_team_direction"].reshape(-1), 
-                info["right_team_tired_factor"],
-                info["right_team_yellow_card"],
-                info["right_team_active"],
-                info["sticky_actions"].reshape(-1),
-                info["score"],
-                info["ball"],
-                info['ball_direction'],
-                info['ball_rotation'],
-                [info["ball_owned_team"], info["game_mode"], info["steps_left"], info["ball_owned_player"]]
-            ))
-            infos_list.append(info_array)
-        infos_array = np.ascontiguousarray(infos_list, dtype=np.float32)
-
-        obs , share_obs = preproc_obs(infos_array)
-        return obs , share_obs
 
     def warmup(self):
         # reset env
@@ -240,7 +212,8 @@ class FootballRunner(Runner):
     def eval(self, total_num_steps):
         # reset envs and init rnn and mask
         eval_obs = self.eval_envs.reset()
-        eval_obs = np.random.rand(self.n_eval_rollout_threads, self.num_agents, 330)
+        if self.use_additional_obs:
+            eval_obs = np.random.rand(self.n_eval_rollout_threads, self.num_agents, 330)
 
         eval_rnn_states = np.zeros((self.n_eval_rollout_threads, self.num_agents, self.recurrent_N, self.hidden_size), dtype=np.float32)
         eval_masks = np.ones((self.n_eval_rollout_threads, self.num_agents, 1), dtype=np.float32)
@@ -284,7 +257,7 @@ class FootballRunner(Runner):
             scores = [info["score"] for info in eval_infos]
             
             if self.use_additional_obs:
-                observations, _ = self.dict2array(infos = eval_infos)
+                observations, _ = dict2array(infos = eval_infos)
                 eval_obs = observations
 
             # update goals if done
@@ -387,3 +360,6 @@ class FootballRunner(Runner):
                 )
         
         print("expected goal: {}".format(np.mean(render_goals)))
+
+
+    
