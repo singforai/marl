@@ -16,7 +16,6 @@ class ACTLayer(nn.Module):
         self.multi_discrete = False
         self.mujoco_box = False
         self.action_type = action_space.__class__.__name__
-
         if action_space.__class__.__name__ == "Discrete":
             action_dim = action_space.n
             self.action_out = Categorical(inputs_dim, action_dim, use_orthogonal, gain)

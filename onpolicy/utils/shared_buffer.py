@@ -98,7 +98,6 @@ class SharedReplayBuffer(object):
         self.step = 0
 
         # 박현우's 오리지널
-        self.possession_state = [ 0 for i in range(self.n_rollout_threads)]
         self.env_infos = defaultdict(list)
 
     def insert(self, share_obs, obs, rnn_states_actor, rnn_states_critic, actions, action_log_probs,
@@ -127,11 +126,11 @@ class SharedReplayBuffer(object):
         self.value_preds[self.step] = value_preds.copy()
         self.rewards[self.step] = rewards.copy()
         self.masks[self.step + 1] = masks.copy()
-        if bad_masks is not None:
+        if bad_masks is not None: # None
             self.bad_masks[self.step + 1] = bad_masks.copy()
-        if active_masks is not None:
+        if active_masks is not None:# None
             self.active_masks[self.step + 1] = active_masks.copy()
-        if available_actions is not None:
+        if available_actions is not None:# None
             self.available_actions[self.step + 1] = available_actions.copy()
 
         self.step = (self.step + 1) % self.episode_length
@@ -171,17 +170,17 @@ class SharedReplayBuffer(object):
 
         self.step = (self.step + 1) % self.episode_length
 
-    def after_update(self):
+    def after_update(self, done_step):
         """Copy last timestep data to first index. Called after update to model."""
-        self.share_obs[0] = self.share_obs[-1].copy()
-        self.obs[0] = self.obs[-1].copy()
-        self.rnn_states[0] = self.rnn_states[-1].copy()
-        self.rnn_states_critic[0] = self.rnn_states_critic[-1].copy()
-        self.masks[0] = self.masks[-1].copy()
-        self.bad_masks[0] = self.bad_masks[-1].copy()
-        self.active_masks[0] = self.active_masks[-1].copy()
+        self.share_obs[0] = self.share_obs[done_step + 1].copy()
+        self.obs[0] = self.obs[done_step + 1].copy()
+        self.rnn_states[0] = self.rnn_states[done_step + 1].copy()
+        self.rnn_states_critic[0] = self.rnn_states_critic[done_step + 1].copy()
+        self.masks[0] = self.masks[done_step + 1].copy()
+        self.bad_masks[0] = self.bad_masks[done_step + 1].copy()
+        self.active_masks[0] = self.active_masks[done_step + 1].copy()
         if self.available_actions is not None:
-            self.available_actions[0] = self.available_actions[-1].copy()
+            self.available_actions[0] = self.available_actions[done_step + 1].copy()
 
     def chooseafter_update(self):
         """Copy last timestep data to first index. This method is used for Hanabi."""

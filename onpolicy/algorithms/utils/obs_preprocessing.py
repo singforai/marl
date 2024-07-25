@@ -178,12 +178,12 @@ def thread_processing(info): # 279
 
         # relative 69
         relative_info = np.zeros(69)
-        right_team[0 : 2] = relative_ball_position
-        right_team[2] = distance2ball
-        right_team[3: 25] = relative_left_position
-        right_team[25: 36] = distance2left
-        right_team[36: 58] = relative_right_position
-        right_team[58: 69] = distance2right
+        relative_info[0 : 2] = relative_ball_position
+        relative_info[2] = distance2ball
+        relative_info[3: 25] = relative_left_position
+        relative_info[25: 36] = distance2left
+        relative_info[36: 58] = relative_right_position
+        relative_info[58: 69] = distance2right
 
         active_info = np.zeros(87)
         active_info[0:18] = active_player
@@ -204,7 +204,7 @@ def thread_processing(info): # 279
             if counting % 3 == 2:
                 new_ball_direction[counting] /= ball_direction_z_bound
                 new_ball_rotation[counting] /= ball_rotation_z_bound
-        
+                
         ball_info = np.zeros(12)
         ball_info[0:3] = info_ball
         ball_info[3:6] = new_ball_direction
@@ -274,9 +274,9 @@ def thread_processing(info): # 279
         steps_left_ratio = info_steps_left / 3001
 
         match_state = np.zeros(9, dtype = float32)
-        ball_own_active_info[0:7] = game_mode
-        ball_own_active_info[7] =goal_diff_ratio
-        ball_own_active_info[8] = steps_left_ratio
+        match_state[0:7] = game_mode
+        match_state[7] =goal_diff_ratio
+        match_state[8] = steps_left_ratio
 
         agent_obs = np.zeros((1 ,330), dtype = float32)
         agent_obs[:, 0] = active_id
@@ -350,3 +350,155 @@ def dict2array(infos):
 
     obs , share_obs = preproc_obs(infos_array)
     return obs , share_obs
+
+def dict2array(infos):
+
+    infos_list = []
+    for info in infos:
+        info_array = np.zeros(279)
+        info_array[0  : 10] = info["active"]
+
+        info_array[10 : 32] = info["left_team"].reshape(-1)
+        info_array[32 : 54] = info["left_team_direction"].reshape(-1)
+        info_array[54 : 65] = info["left_team_tired_factor"]
+        info_array[65 : 76] = info["left_team_yellow_card"]
+        info_array[76 : 87] = info["left_team_active"]
+
+
+        info_array[87  : 109] = info["right_team"].reshape(-1)
+        info_array[109 : 131] = info["right_team_direction"].reshape(-1)
+        info_array[131 : 142] = info["right_team_tired_factor"]
+        info_array[142 : 153] = info["right_team_yellow_card"]
+        info_array[153 : 164] = info["right_team_active"]
+
+        info_array[164 : 264] = info["sticky_actions"].reshape(-1)
+        info_array[264 : 266] = info["score"]
+
+        info_array[266 : 269] = info["ball"]
+        info_array[269 : 272] = info['ball_direction']
+        info_array[272 : 275] = info['ball_rotation']
+
+        info_array[275] = info["ball_owned_team"]
+        info_array[276] = info["game_mode"]
+        info_array[277] = info["steps_left"]
+        info_array[278] = info["ball_owned_player"]
+
+        infos_list.append(info_array)
+    infos_array = np.array(infos_list, dtype=np.float32)
+
+    obs , share_obs = preproc_obs(infos_array)
+    return obs , share_obs
+
+@numba.njit(Tuple((float32[:,:,:], float32[:,:,:]))(float32[:, :, :]))
+def init_obs(obs):
+    rollout = np.ascontiguousarray(obs).shape[0]
+    agents = np.ascontiguousarray(obs).shape[1]
+    tuned_obs = np.zeros((rollout, agents, 330), dtype=float32)
+    tuned_share_obs = np.zeros((rollout, agents, 220), dtype=float32)
+    
+    left_position = obs[:, : , 0 : 22]
+    left_direction = obs[:, :, 22 : 44]
+    
+    right_position = obs[:, : , 44 : 66]
+    right_direction = obs[:, : , 66 : 88]
+    
+    ball_position = obs[0, 0 , 88 : 91]
+    ball_direction = obs[0, 0 , 91 : 94]
+    ball_ownership = obs[0, 0 , 94 : 97]
+    
+    active = obs[:, : , 97 : 108]
+    game_mode = obs[:, : , 108 : 115]
+
+    # left team
+    left_team = np.zeros(88)
+    left_team[0 : 22] = left_position[0][0]
+    left_team[22 : 44] = left_direction[0][0]
+    left_team[44 : 88] = 0
+    
+    tuned_obs[:,:,145:233] = left_team
+    
+    # right team
+    right_team = np.zeros(88)
+    right_team[0 : 22] = right_position[0][0]
+    right_team[22 : 44] = right_direction[0][0]
+    right_team[44 : 88] = 0
+    
+    tuned_obs[:,:,233:321] = right_team
+    
+    # match state
+    tuned_obs[:,:,321:328] = game_mode
+    tuned_obs[:,:,328] = 0
+    tuned_obs[:,:,329] = 1
+    
+    tuned_share_obs[:,:,0 : 3] = ball_position
+    tuned_share_obs[:,:,3 : 6] = 0
+    tuned_share_obs[:,:,6 : 9] = np.array([1, 0, 0])
+    tuned_share_obs[:,:,9 : 12] = 0
+    
+    tuned_share_obs[:,:,34] = -1
+    tuned_share_obs[:,:,35: 123] = left_team
+    tuned_share_obs[:,:,123: 211] = right_team     
+    tuned_share_obs[:,:,211: 218] = game_mode  
+    tuned_share_obs[:,:,218] = 0  
+    tuned_share_obs[:,:,219] = 1  
+    
+    # active id 
+    for idxes in range(rollout):
+        for idx in range(1, agents+ 1):
+            tuned_obs[idxes, idx - 1, 0] = idx
+            active_position = np.ascontiguousarray(left_position[idxes, idx-1, 2*idx: 2*idx + 2])
+            active_direction = left_direction[idxes, idx - 1, 2*idx: 2*idx + 2]
+            
+            active_info = np.zeros(87)
+            active_info[0: 10] = 0 # sticky actions
+            active_info[10: 12] = active_position # active position
+            active_info[12: 14] = active_direction # active_direction
+            active_info[14] = 0
+            active_info[15] = 0
+            active_info[16] = 0
+            active_info[17] = 0
+            
+            contig_left_position = np.ascontiguousarray(left_position[idxes, idx - 1, :])
+            contig_right_position = np.ascontiguousarray(right_position[idxes, idx - 1, :])
+            
+            relative_ball_position = ball_position[:2] - active_position
+            relative_left_position = np.ascontiguousarray(contig_left_position.reshape(2, 11) - active_position.reshape(2, 1))
+            distance2ball = np.linalg.norm(relative_ball_position)
+            distance2left = np.linalg.norm(relative_left_position, 1)
+            relative_left_position = relative_left_position.reshape(-1)
+            relative_right_position = np.ascontiguousarray(contig_right_position.reshape(2, 11) - active_position.reshape(2, 1))
+            distance2right = np.linalg.norm(relative_right_position, 1)
+            relative_right_position = relative_right_position.reshape(-1)
+            
+            active_info[18 : 20] = relative_ball_position 
+            active_info[20] = distance2ball 
+            active_info[21 : 43] = relative_left_position
+            active_info[43: 54] = distance2left
+            active_info[54: 76] = relative_right_position
+            active_info[76: 87] = distance2right
+            
+            tuned_obs[idxes, idx - 1, 1 : 88] = active_info 
+            
+            ball_own_active_info = np.zeros(57)
+            ball_own_active_info[0:3] = ball_position
+            ball_own_active_info[3:6] = 0 # new_ball_direction
+            ball_own_active_info[6:9] =np.array([1, 0, 0]) # ball_owned_team
+            ball_own_active_info[9:12] = 0 # new_ball_rotation
+            ball_own_active_info[34] = 1  # ball_owned_player
+            ball_own_active_info[35:37] = active_position
+            ball_own_active_info[37:39] = active_direction
+            ball_own_active_info[39] = 0   # active_tired_factor
+            ball_own_active_info[40] = 0   # active_yellow_card
+            ball_own_active_info[41] = 0   # active_red_card
+            ball_own_active_info[42] = 0   # active_offside
+            ball_own_active_info[43: 45] = relative_ball_position
+            ball_own_active_info[45] = distance2ball
+            ball_own_active_info[46: 48] = 0 # ball_owned_player_pos
+            ball_own_active_info[48: 50] = 0 #new_ball_owned_player_direction
+            ball_own_active_info[50: 52] = -active_position  # relative_ball_owner_position
+            ball_own_active_info[52] = np.linalg.norm(-active_position)
+            ball_own_active_info[53: 57] = 0
+            
+            tuned_obs[idxes, idx - 1, 88 : 145] = ball_own_active_info 
+
+    return (tuned_obs , tuned_share_obs)

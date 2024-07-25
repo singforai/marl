@@ -6,6 +6,9 @@ import torch
 from tensorboardX import SummaryWriter
 from utils.shared_buffer import SharedReplayBuffer
 
+from runner.shared.xT.cal_xT import xT
+from envs.package.gfootball.scenarios.curriculum_learning_11vs11 import Director
+
 def _t2n(x):
     """Convert torch tensor to a numpy array."""
     return x.detach().cpu().numpy()
@@ -136,6 +139,10 @@ class Runner(object):
             self.envs.action_space[0]
         )
         
+        self.director = Director()
+        if self.use_xt:
+            self.cal_xt = xT(args = self.all_args)
+        
 
     def run(self):
         """Collect training data, perform training updates, and evaluate policy."""
@@ -172,11 +179,11 @@ class Runner(object):
         next_values = np.array(np.split(_t2n(next_values), self.n_rollout_threads))
         self.buffer.compute_returns(next_values, self.trainer.value_normalizer)
     
-    def train(self):
+    def train(self, done_step):
         """Train policies with data in buffer. """
         self.trainer.prep_training()
         train_infos = self.trainer.train(self.buffer)      
-        self.buffer.after_update()
+        self.buffer.after_update(done_step)
         return train_infos
 
     def save(self, episode=0):
