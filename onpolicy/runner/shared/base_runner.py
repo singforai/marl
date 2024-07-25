@@ -24,7 +24,7 @@ class Runner(object):
         self.eval_envs = config['eval_envs']
         self.device = config['device']        
         if config.__contains__("render_envs"):
-            self.render_envs = config['render_envs']       
+            self.render_envs = config['render_envs'] 
 
         # parameters
         self.env_name = self.all_args.env_name
@@ -54,6 +54,7 @@ class Runner(object):
         self.model_dir = self.all_args.model_dir
 
         # 나의 오리지널
+        self.game_length = 3000
         self.use_xt = self.all_args.use_xt
         self.eval_episode = self.all_args.eval_episodes
         self.use_additional_obs = self.all_args.use_additional_obs
@@ -99,14 +100,14 @@ class Runner(object):
             if self.use_additional_obs:
                 low = np.full((330,), -np.inf)
                 high = np.full((330,), np.inf)
-                self.envs.observation_space[0] = spaces.Box(low=low, high=high, dtype=np.float32)
+                observation_space = spaces.Box(low=low, high=high, dtype=np.float32)
 
                 low = np.full((220,), -np.inf)
                 high = np.full((220,), np.inf)
                 share_observation_space = spaces.Box(low=low, high=high, dtype=np.float32)
             self.policy = Policy(
                 self.all_args, 
-                self.envs.observation_space[0], 
+                observation_space, 
                 share_observation_space, 
                 self.envs.action_space[0], 
                 device = self.device
@@ -134,7 +135,7 @@ class Runner(object):
         self.buffer = SharedReplayBuffer(
             self.all_args,
             self.num_agents,
-            self.envs.observation_space[0],
+            observation_space,
             share_observation_space,
             self.envs.action_space[0]
         )
@@ -179,11 +180,11 @@ class Runner(object):
         next_values = np.array(np.split(_t2n(next_values), self.n_rollout_threads))
         self.buffer.compute_returns(next_values, self.trainer.value_normalizer)
     
-    def train(self, done_step):
+    def train(self):
         """Train policies with data in buffer. """
         self.trainer.prep_training()
         train_infos = self.trainer.train(self.buffer)      
-        self.buffer.after_update(done_step)
+        self.buffer.after_update()
         return train_infos
 
     def save(self, episode=0):

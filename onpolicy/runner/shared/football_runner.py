@@ -16,7 +16,7 @@ from utils.util import update_linear_schedule
 from runner.shared.base_runner import Runner
 
 
-from algorithms.utils.obs_preprocessing import dict2array, init_obs
+from algorithms.utils.obs_preprocessing import additional_obs, init_obs
 
 
 
@@ -28,88 +28,83 @@ class FootballRunner(Runner):
         super(FootballRunner, self).__init__(config)
 
     def run(self):
+
+        # episodes = int(self.num_env_steps) // self.episode_length // self.n_rollout_threads
+        total_num_steps = 0
         
-
-        self.game_length = 3000
-
-        episodes = int(self.num_env_steps) // self.episode_length // self.n_rollout_threads
-
-        for episode in range(episodes):
-            if self.use_linear_lr_decay:
-                self.trainer.policy.lr_decay(episode, episodes)
-
+        while self.num_env_steps >= total_num_steps:
             start_time = time.time()
+            
+            self.warmup()  
+
+            if self.use_linear_lr_decay:
+                self.trainer.policy.lr_decay(total_num_steps, self.num_env_steps)    
+                
             done_rollouts = [[] for _ in range(self.n_rollout_threads)]
             infos_rollouts = [[] for _ in range(self.n_rollout_threads)]
-            self.warmup()   
 
-                
-            for step in range(self.episode_length):
-                
+            step = 0
+            while (step < 3000) and any(len(rollout) == 0 for rollout in done_rollouts):
                 # Sample actions
                 values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env = self.collect(step)
-                    
+                
+                
                 # Obser reward and next obs
                 obs, rewards, dones, infos = self.envs.step(actions_env)
+                share_obs = obs
                 
                 if self.use_xt:
                     rewards = self.cal_xt.controller(
                         step = step,
                         rewards = rewards,
                         obs = obs,
-                        score = [info["score"] for info in infos],
+                        score = np.array([info["score"] for info in infos]),
                     )
-                share_obs = obs
+                    
+                if np.any(rewards != 0):
+                    print(rewards)
+                
                 if self.use_additional_obs:
-                    """
-                    TiZero 구현을 위한 관측 정보 변경
-                    actor(obs): 330
-                    critic(share_obs): 220
-                    """
-                    observations, share_obs = dict2array(infos = infos)
-                    obs = observations
-                    share_obs = share_obs
-                for idx, done_rollout in enumerate(dones):
-                    if True in done_rollout:
+                    obs, share_obs = additional_obs(infos = infos)
+                    
+                    
+                for idx, done in enumerate(dones):
+                    if True in done:
                         done_rollouts[idx].append(step)
-                        infos_rollouts[idx].append(infos)
+                        infos_rollouts[idx].append(infos[idx])
                     if len(done_rollouts[idx]) > 0:
                         dones[idx] = [True for _ in range(self.num_agents)]
                         infos = list(infos)
-                        infos[idx] = infos_rollouts[idx][0][0]
+                        infos[idx] = infos_rollouts[idx][0]
                         infos = tuple(infos)
-                        print(infos)
 
                 data = obs, share_obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic 
                 # insert data into buffer
                 self.insert(data)
+                
+                step += 1
 
-                if all(len(rollout) > 0 for rollout in done_rollouts) or step == 2999:
-                    done_step = step
-                    break
+            done_steps = [3000 if len(done_rollout) == 0 else done_rollout[0] for done_rollout in done_rollouts]
+            total_num_steps = np.sum(done_steps)
+            for done_step in done_steps:
+                self.buffer.masks[:, done_step: ] = 0
 
-            end_time = time.time()
-            
-            self.buffer.masks[done_step:] = 0
-            masks = self.buffer.masks
+            masks = self.buffer.masks[:-1]
 
             self.compute()
-            train_infos = self.train(done_step)
-
-            # post process
-            total_num_steps = (episode + 1) * self.episode_length * self.n_rollout_threads
+            train_infos = self.train()
             
             # save model
-            if (total_num_steps % self.save_interval == 0 or episode == episodes - 1):
+            if total_num_steps % self.save_interval == 0:
                 self.save()
+                
+            train_infos["total_episode_rewards"] = np.sum(self.buffer.rewards * masks / self.num_agents)
 
-            # log information
-            # if total_num_steps % self.log_interval == 0:
-            print(f"\nEnv {self.env_name} Algo {self.algorithm_name} Exp {self.experiment_name} updates {episode}/{episodes} episodes total num timesteps {total_num_steps}/{self.num_env_steps}")     
-            train_infos["total_episode_rewards"] = np.sum(self.buffer.rewards * masks[1:,])
-            train_infos["Episode_Time"] = end_time - start_time
             train_infos["Difficulty_level"] =  self.director.level
+            end_time = time.time()
+            train_infos["Episode_Time"] = end_time - start_time
             
+            print(f"\nEnv {self.env_name} Algo {self.algorithm_name} Exp {self.experiment_name} updates {total_num_steps}/{self.num_env_steps} steps in {(end_time - start_time):.2f}")  
             print("total episode rewards is {}".format(train_infos["total_episode_rewards"]))
 
             self.log_train(train_infos, total_num_steps)
@@ -125,18 +120,23 @@ class FootballRunner(Runner):
     def warmup(self):
         # reset env
         default_obs = self.envs.reset()
-        if not self.use_additional_obs:
-            self.buffer.share_obs[0] = obs.copy()
-            self.buffer.obs[0] = obs.copy()
-        else:
-            obs, share_obs = init_obs(np.ascontiguousarray(default_obs))
+        if self.use_additional_obs:
+            obs, share_obs = init_obs(obs = default_obs)
             self.buffer.share_obs[0] = share_obs
             self.buffer.obs[0] = obs
+            self.buffer.rnn_states[0] = 0
+            self.buffer.rnn_states_critic[0] = 0
+            self.buffer.masks[0] = 1
+        else:
+            self.buffer.share_obs[0] = default_obs.copy()
+            self.buffer.obs[0] = default_obs.copy()
+            self.buffer.rnn_states[0] = 0
+            self.buffer.rnn_states_critic[0] = 0
+            self.buffer.masks[0] = 1
 
     @torch.no_grad()
     def collect(self, step):
         self.trainer.prep_rollout()
-
         # [n_envs, n_agents, ...] -> [n_envs*n_agents, ...]
         values, actions, action_log_probs, rnn_states, rnn_states_critic = self.trainer.policy.get_actions(
             np.concatenate(self.buffer.share_obs[step]),
@@ -253,7 +253,7 @@ class FootballRunner(Runner):
             scores = [info["score"] for info in eval_infos]
             
             if self.use_additional_obs:
-                observations, _ = dict2array(infos = eval_infos)
+                observations, _ = additional_obs(infos = eval_infos)
                 eval_obs = observations
 
             # update goals if done

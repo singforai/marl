@@ -21,9 +21,9 @@ class xT():
     
 
     
-    def initialize_xt(self, idx):
-        self.xT_deque[idx] = deque(maxlen=2)
-        self.xT_deque[idx].append(self.start_xt)
+    def initialize_xt(self, roll_idx):
+        self.xT_deque[roll_idx] = deque(maxlen=2)
+        self.xT_deque[roll_idx].append(self.start_xt)
 
     
     def cal_xthreat(self, obs):
@@ -48,17 +48,17 @@ class xT():
                 dq.append(self.start_xt)
             self.score = self.score = [[0, 0] for _ in range(self.n_rollout_threads)]
 
-        for idx, past_score in enumerate(self.score):
-            if all(x == y for x, y in zip(past_score, score[idx])):
-                threat_value = self.cal_xthreat(obs = obs[idx])
+        for roll_idx, past_score in enumerate(self.score):
+            if all(x == y for x, y in zip(past_score, score[roll_idx])):
+                threat_value = self.cal_xthreat(obs = obs[roll_idx])
                 if threat_value == "out_of_range":
                     pass
                 else:
-                    self.xT_deque[idx].append(threat_value)
-                    xT_score = self.xT_deque[idx][1] - self.xT_deque[idx][0]
-                    rewards[idx] += xT_score
+                    self.xT_deque[roll_idx].append(threat_value)
+                    xT_score = self.xT_deque[roll_idx][1] - self.xT_deque[roll_idx][0]
+                    rewards[roll_idx] += xT_score
             else:
-                self.initialize_xt(idx = idx)
+                self.initialize_xt(roll_idx = roll_idx)
         self.score = score
         return rewards
     

@@ -49,6 +49,7 @@ class SharedReplayBuffer(object):
         self._use_proper_time_limits = args.use_proper_time_limits
         self.algo = args.algorithm_name
         self.num_agents = num_agents
+        self.act_space_n = act_space.n
 
         self.use_additional_obs = args.use_additional_obs
         
@@ -60,24 +61,27 @@ class SharedReplayBuffer(object):
 
         if type(share_obs_shape[-1]) == list:
             share_obs_shape = share_obs_shape[:1]
+        
+        self.obs_shape = (*obs_shape,)[0]
+        self.share_obs_shape = (*share_obs_shape,)[0]
 
-        self.share_obs = np.zeros((self.episode_length + 1, self.n_rollout_threads, num_agents, *share_obs_shape),
+        self.share_obs = np.zeros((self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.share_obs_shape),
                                   dtype=np.float32)
-        self.obs = np.zeros((self.episode_length + 1, self.n_rollout_threads, num_agents, *obs_shape), dtype=np.float32)
+        self.obs = np.zeros((self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.obs_shape), dtype=np.float32)
 
         self.rnn_states = np.zeros(
-            (self.episode_length + 1, self.n_rollout_threads, num_agents, self.recurrent_N, self.hidden_size),
+            (self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.recurrent_N, self.hidden_size),
             dtype=np.float32)
         self.rnn_states_critic = np.zeros_like(self.rnn_states)
 
         self.value_preds = np.zeros(
-            (self.episode_length + 1, self.n_rollout_threads, num_agents, 1), dtype=np.float32)
+            (self.episode_length + 1, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
         self.returns = np.zeros_like(self.value_preds)
         self.advantages = np.zeros(
-            (self.episode_length, self.n_rollout_threads, num_agents, 1), dtype=np.float32)
-
+            (self.episode_length, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
+        
         if act_space.__class__.__name__ == 'Discrete':
-            self.available_actions = np.ones((self.episode_length + 1, self.n_rollout_threads, num_agents, act_space.n),
+            self.available_actions = np.ones((self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.act_space_n),
                                              dtype=np.float32)
         else:
             self.available_actions = None
@@ -85,13 +89,13 @@ class SharedReplayBuffer(object):
         act_shape = get_shape_from_act_space(act_space)
 
         self.actions = np.zeros(
-            (self.episode_length, self.n_rollout_threads, num_agents, act_shape), dtype=np.float32)
+            (self.episode_length, self.n_rollout_threads, self.num_agents, act_shape), dtype=np.float32)
         self.action_log_probs = np.zeros(
-            (self.episode_length, self.n_rollout_threads, num_agents, act_shape), dtype=np.float32)
+            (self.episode_length, self.n_rollout_threads, self.num_agents, act_shape), dtype=np.float32)
         self.rewards = np.zeros(
-            (self.episode_length, self.n_rollout_threads, num_agents, 1), dtype=np.float32)
+            (self.episode_length, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
 
-        self.masks = np.ones((self.episode_length + 1, self.n_rollout_threads, num_agents, 1), dtype=np.float32)
+        self.masks = np.ones((self.episode_length + 1, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
         self.bad_masks = np.ones_like(self.masks)
         self.active_masks = np.ones_like(self.masks)
 
@@ -170,17 +174,19 @@ class SharedReplayBuffer(object):
 
         self.step = (self.step + 1) % self.episode_length
 
-    def after_update(self, done_step):
+    def after_update(self):
         """Copy last timestep data to first index. Called after update to model."""
-        self.share_obs[0] = self.share_obs[done_step + 1].copy()
-        self.obs[0] = self.obs[done_step + 1].copy()
-        self.rnn_states[0] = self.rnn_states[done_step + 1].copy()
-        self.rnn_states_critic[0] = self.rnn_states_critic[done_step + 1].copy()
-        self.masks[0] = self.masks[done_step + 1].copy()
-        self.bad_masks[0] = self.bad_masks[done_step + 1].copy()
-        self.active_masks[0] = self.active_masks[done_step + 1].copy()
+        self.share_obs = np.zeros((self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.share_obs_shape),
+                                  dtype=np.float32)
+        self.obs = np.zeros((self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.obs_shape), dtype=np.float32)
+        self.rnn_states = np.zeros((self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.recurrent_N, self.hidden_size),dtype=np.float32)
+        self.rnn_states_critic = np.zeros_like(self.rnn_states)
+        self.masks = np.ones((self.episode_length + 1, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
+        self.bad_masks = np.ones_like(self.masks)
+        self.active_masks = np.ones_like(self.masks)
         if self.available_actions is not None:
-            self.available_actions[0] = self.available_actions[done_step + 1].copy()
+            self.available_actions = np.ones((self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.act_space_n),
+                                             dtype=np.float32)
 
     def chooseafter_update(self):
         """Copy last timestep data to first index. This method is used for Hanabi."""
@@ -281,7 +287,7 @@ class SharedReplayBuffer(object):
         :param num_mini_batch: (int) number of minibatches to split the batch into.
         :param mini_batch_size: (int) number of samples in each minibatch.
         """
-        episode_length, n_rollout_threads, num_agents = self.rewards.shape[0:3]
+        episode_length, n_rollout_threads, self.num_agents = self.rewards.shape[0:3]
         batch_size = n_rollout_threads * episode_length
 
         if mini_batch_size is None:
@@ -296,7 +302,7 @@ class SharedReplayBuffer(object):
 
         rand = torch.randperm(batch_size).numpy()
         sampler = [rand[i * mini_batch_size:(i + 1) * mini_batch_size] for i in range(num_mini_batch)]
-        rows, cols = _shuffle_agent_grid(batch_size, num_agents)
+        rows, cols = _shuffle_agent_grid(batch_size, self.num_agents)
 
         # keep (num_agent, dim)
         share_obs = self.share_obs[:-1].reshape(-1, *self.share_obs.shape[2:])
@@ -357,16 +363,16 @@ class SharedReplayBuffer(object):
         :param num_mini_batch: (int) number of minibatches to split the batch into.
         :param mini_batch_size: (int) number of samples in each minibatch.
         """
-        episode_length, n_rollout_threads, num_agents = self.rewards.shape[0:3]
-        batch_size = n_rollout_threads * episode_length * num_agents
+        episode_length, n_rollout_threads, self.num_agents = self.rewards.shape[0:3]
+        batch_size = n_rollout_threads * episode_length * self.num_agents
 
         if mini_batch_size is None:
             assert batch_size >= num_mini_batch, (
                 "PPO requires the number of processes ({}) "
                 "* number of steps ({}) * number of agents ({}) = {} "
                 "to be greater than or equal to the number of PPO mini batches ({})."
-                "".format(n_rollout_threads, episode_length, num_agents,
-                          n_rollout_threads * episode_length * num_agents,
+                "".format(n_rollout_threads, episode_length, self.num_agents,
+                          n_rollout_threads * episode_length * self.num_agents,
                           num_mini_batch))
             mini_batch_size = batch_size // num_mini_batch
 
@@ -418,12 +424,12 @@ class SharedReplayBuffer(object):
         :param advantages: (np.ndarray) advantage estimates.
         :param num_mini_batch: (int) number of minibatches to split the batch into.
         """
-        episode_length, n_rollout_threads, num_agents = self.rewards.shape[0:3]
-        batch_size = n_rollout_threads * num_agents
-        assert n_rollout_threads * num_agents >= num_mini_batch, (
+        episode_length, n_rollout_threads, self.num_agents = self.rewards.shape[0:3]
+        batch_size = n_rollout_threads * self.num_agents
+        assert n_rollout_threads * self.num_agents >= num_mini_batch, (
             "PPO requires the number of processes ({})* number of agents ({}) "
             "to be greater than or equal to the number of "
-            "PPO mini batches ({}).".format(n_rollout_threads, num_agents, num_mini_batch))
+            "PPO mini batches ({}).".format(n_rollout_threads, self.num_agents, num_mini_batch))
         num_envs_per_batch = batch_size // num_mini_batch
         perm = torch.randperm(batch_size).numpy()
 
@@ -516,8 +522,8 @@ class SharedReplayBuffer(object):
         :param num_mini_batch: (int) number of minibatches to split the batch into.
         :param data_chunk_length: (int) length of sequence chunks with which to train RNN.
         """
-        episode_length, n_rollout_threads, num_agents = self.rewards.shape[0:3]
-        batch_size = n_rollout_threads * episode_length * num_agents 
+        episode_length, n_rollout_threads, self.num_agents = self.rewards.shape[0:3]
+        batch_size = n_rollout_threads * episode_length * self.num_agents 
 
         data_chunks = batch_size // data_chunk_length  # [C=r*T*M/L]
         mini_batch_size = data_chunks // num_mini_batch
@@ -625,7 +631,7 @@ class SharedReplayBuffer(object):
 
 
     def jrpo_recurrent_generator(self, advantages, num_mini_batch, data_chunk_length):
-        episode_length, n_rollout_threads, num_agents = self.rewards.shape[0:3]
+        episode_length, n_rollout_threads, self.num_agents = self.rewards.shape[0:3]
         batch_size = n_rollout_threads * episode_length
         data_chunks = batch_size // data_chunk_length  # [C=r*T*M/L]
         mini_batch_size = data_chunks // num_mini_batch
@@ -728,26 +734,26 @@ class SharedReplayBuffer(object):
 
             # States is just a (N, agent_num, -1) from_numpy
             rnn_states_batch = np.stack(rnn_states_batch).reshape(
-                N * num_agents, *self.rnn_states.shape[3:]
+                N * self.num_agents, *self.rnn_states.shape[3:]
             )
             rnn_states_critic_batch = np.stack(rnn_states_critic_batch).reshape(
-                N * num_agents, *self.rnn_states_critic.shape[3:]
+                N * self.num_agents, *self.rnn_states_critic.shape[3:]
             )
             # Flatten the (L, N, ...) from_numpys to (L * N, ...)
 
-            share_obs_batch = _flatten_v3(L, N, num_agents, share_obs_batch)
-            obs_batch = _flatten_v3(L, N, num_agents, obs_batch)
-            actions_batch = _flatten_v3(L, N, num_agents, actions_batch)
+            share_obs_batch = _flatten_v3(L, N, self.num_agents, share_obs_batch)
+            obs_batch = _flatten_v3(L, N, self.num_agents, obs_batch)
+            actions_batch = _flatten_v3(L, N, self.num_agents, actions_batch)
             if self.available_actions is not None:
-                available_actions_batch = _flatten_v3(L, N, num_agents, available_actions_batch)
+                available_actions_batch = _flatten_v3(L, N, self.num_agents, available_actions_batch)
             else:
                 available_actions_batch = None
-            value_preds_batch = _flatten_v3(L, N, num_agents, value_preds_batch)
-            return_batch = _flatten_v3(L, N, num_agents, return_batch)
-            masks_batch = _flatten_v3(L, N, num_agents, masks_batch)
-            active_masks_batch = _flatten_v3(L, N, num_agents, active_masks_batch)
+            value_preds_batch = _flatten_v3(L, N, self.num_agents, value_preds_batch)
+            return_batch = _flatten_v3(L, N, self.num_agents, return_batch)
+            masks_batch = _flatten_v3(L, N, self.num_agents, masks_batch)
+            active_masks_batch = _flatten_v3(L, N, self.num_agents, active_masks_batch)
             old_action_log_probs_batch = _flatten_v3(
-                L, N, num_agents, old_action_log_probs_batch
+                L, N, self.num_agents, old_action_log_probs_batch
             )
-            adv_targ = _flatten_v3(L, N, num_agents, adv_targ)
+            adv_targ = _flatten_v3(L, N, self.num_agents, adv_targ)
             yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, adv_targ, available_actions_batch
