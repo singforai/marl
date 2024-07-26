@@ -29,12 +29,12 @@ class FootballRunner(Runner):
 
     def run(self):
 
-        # episodes = int(self.num_env_steps) // self.episode_length // self.n_rollout_threads
         total_num_steps = 0
         
         while self.num_env_steps >= total_num_steps:
             start_time = time.time()
-            
+            # pr = cProfile.Profile()
+            # pr.enable()
             self.warmup()  
 
             if self.use_linear_lr_decay:
@@ -44,7 +44,9 @@ class FootballRunner(Runner):
             infos_rollouts = [[] for _ in range(self.n_rollout_threads)]
 
             step = 0
+            
             while (step < 3000) and any(len(rollout) == 0 for rollout in done_rollouts):
+                
                 # Sample actions
                 values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env = self.collect(step)
                 
@@ -61,8 +63,6 @@ class FootballRunner(Runner):
                         score = np.array([info["score"] for info in infos]),
                     )
                     
-                if np.any(rewards != 0):
-                    print(rewards)
                 
                 if self.use_additional_obs:
                     obs, share_obs = additional_obs(infos = infos)
@@ -85,7 +85,7 @@ class FootballRunner(Runner):
                 step += 1
 
             done_steps = [3000 if len(done_rollout) == 0 else done_rollout[0] for done_rollout in done_rollouts]
-            total_num_steps = np.sum(done_steps)
+            total_num_steps += int(np.average(done_steps))
             for done_step in done_steps:
                 self.buffer.masks[:, done_step: ] = 0
 
@@ -113,9 +113,16 @@ class FootballRunner(Runner):
             self.log_env(self.buffer.env_infos, total_num_steps)
             self.buffer.env_infos = defaultdict(list)
 
+            # pr.disable()
+            # s = io.StringIO()
+            # sortby = SortKey.CUMULATIVE
+            # ps = pstats.Stats(pr, stream=s).sort_stats(sortby)
+            # ps.print_stats()
+            # print(s.getvalue())
+
             # eval
-            if total_num_steps % self.eval_interval == 0 and self.use_eval:
-                self.eval(total_num_steps)
+            # if total_num_steps % self.eval_interval == 0 and self.use_eval:
+            #     self.eval(total_num_steps)
 
     def warmup(self):
         # reset env

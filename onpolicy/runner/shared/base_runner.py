@@ -72,7 +72,8 @@ class Runner(object):
             if not os.path.exists(self.save_dir):
                 os.makedirs(self.save_dir)
 
-        share_observation_space = self.envs.share_observation_space[0] if self.use_centralized_V else self.envs.observation_space[0]
+        observation_space = self.envs.observation_space[0]
+        share_observation_space = self.envs.share_observation_space[0] if self.use_centralized_V else observation_space
 
         if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
             from algorithms.mat.mat_trainer import MATTrainer as TrainAlgo
@@ -90,7 +91,7 @@ class Runner(object):
         if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
             self.policy = Policy(
                 self.all_args, 
-                self.envs.observation_space[0],
+                observation_space,
                 share_observation_space, 
                 self.envs.action_space[0], 
                 self.num_agents, 
@@ -116,7 +117,7 @@ class Runner(object):
         else:
             self.policy = Policy(
                 self.all_args, 
-                self.envs.observation_space[0], 
+                observation_space, 
                 share_observation_space, 
                 self.envs.action_space[0], 
                 device = self.device
