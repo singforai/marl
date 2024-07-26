@@ -1,9 +1,0 @@
-
-사용 가능한 CPU Thread: 128
-Env Football Algo tizero Exp base_TiZero updates 0/3333333 episodes total num timesteps 30000/100000000000.0
-average episode rewards is -27.9999990016222
-Env Football Algo tizero Exp base_TiZero updates 1/3333333 episodes total num timesteps 60000/100000000000.0
-average episode rewards is -26.999998837709427
-Env Football Algo tizero Exp base_TiZero updates 2/3333333 episodes total num timesteps 90000/100000000000.0
-average episode rewards is -30.99999949336052
-Env Football Algo tizero Exp base_TiZero updates 3/3333333 episodes total num timesteps 120000/100000000000.0

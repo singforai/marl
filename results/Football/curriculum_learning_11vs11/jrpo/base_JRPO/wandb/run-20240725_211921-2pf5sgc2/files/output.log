@@ -1,0 +1,12 @@
+
+사용 가능한 CPU Thread: 128
+Traceback (most recent call last):
+  File "/root/marl/onpolicy/train_grf.py", line 221, in <module>
+    main(args = sys.argv[1:])
+  File "/root/marl/onpolicy/train_grf.py", line 211, in main
+    runner = Runner(config)
+  File "/root/marl/onpolicy/runner/shared/football_runner.py", line 28, in __init__
+    super(FootballRunner, self).__init__(config)
+  File "/root/marl/onpolicy/runner/shared/base_runner.py", line 138, in __init__
+    observation_space,
+UnboundLocalError: local variable 'observation_space' referenced before assignment

@@ -1,0 +1,25 @@
+
+사용 가능한 CPU Thread: 128
+(3000, 3, 10, 1)
+Env Football Algo tizero Exp base_TiZero updates 1130/100000000000.0 steps in 64.66
+total episode rewards is -30.0
+(3000, 3, 10, 1)
+Env Football Algo tizero Exp base_TiZero updates 1862/100000000000.0 steps in 30.16
+total episode rewards is -80.0
+(3000, 3, 10, 1)
+Env Football Algo tizero Exp base_TiZero updates 2107/100000000000.0 steps in 25.67
+total episode rewards is -80.0
+Traceback (most recent call last):
+  File "/root/marl/onpolicy/train_grf.py", line 221, in <module>
+    main(args = sys.argv[1:])
+  File "/root/marl/onpolicy/train_grf.py", line 212, in main
+    runner.run()
+  File "/root/marl/onpolicy/runner/shared/football_runner.py", line 95, in run
+    train_infos = self.train()
+  File "/root/marl/onpolicy/runner/shared/base_runner.py", line 187, in train
+    train_infos = self.trainer.train(self.buffer)
+  File "/root/marl/onpolicy/algorithms/tizero/tizero.py", line 246, in train
+    for sample in data_generator:
+  File "/root/marl/onpolicy/utils/shared_buffer.py", line 702, in jrpo_recurrent_generator
+    available_actions_batch.append(
+KeyboardInterrupt
