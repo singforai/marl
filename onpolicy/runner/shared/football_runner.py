@@ -62,11 +62,9 @@ class FootballRunner(Runner):
                         obs = obs,
                         score = np.array([info["score"] for info in infos]),
                     )
-                    
                 
                 if self.use_additional_obs:
                     obs, share_obs = additional_obs(infos = infos)
-                    
                     
                 for idx, done in enumerate(dones):
                     if True in done:
@@ -86,8 +84,8 @@ class FootballRunner(Runner):
 
             done_steps = [3000 if len(done_rollout) == 0 else done_rollout[0] for done_rollout in done_rollouts]
             total_num_steps += int(np.average(done_steps))
-            for done_step in done_steps:
-                self.buffer.masks[:, done_step: ] = 0
+            for roll_idx, done_step in enumerate(done_steps):
+                self.buffer.masks[done_step + 1: , roll_idx] = 0
 
             masks = self.buffer.masks[:-1]
 
