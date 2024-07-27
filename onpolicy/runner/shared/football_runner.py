@@ -94,6 +94,12 @@ class FootballRunner(Runner):
                     self.buffer.action_log_probs[done_step: , roll_idx, :] = 0
                     self.buffer.masks[done_step+1: , roll_idx, :] = 0
                     
+            # for idxes, step in enumerate(self.buffer.rewards):
+            #     for idx, rew in enumerate(step):
+            #         if np.any(rew != 0.0):
+            #             print(f"step: {idxes} rollout: {idx} {rew[0]}")
+            
+                    
             rewards_record = self.buffer.rewards # 리셋 대비용 백업
             
             self.compute()
@@ -102,7 +108,9 @@ class FootballRunner(Runner):
             # save model
             if total_num_steps % self.save_interval == 0:
                 self.save()
-                
+            
+            
+            train_infos["episode_length"] = np.average(done_steps)
             train_infos["total_episode_rewards"] = np.sum(rewards_record) / self.num_agents
 
             train_infos["Difficulty_level"] =  self.director.level
@@ -175,23 +183,19 @@ class FootballRunner(Runner):
         # update env_infos if done
         dones_env = np.all(dones, axis=-1)
         
-        print(np.all(dones_env), dones_env)
-        
         if np.all(dones_env) or step == 2999:
-            for done, info in zip(dones_env, infos):
-                print(info)
-                if done:
-                    goal_diff = info["score"][0] - info["score"][1]
-
-                    self.buffer.env_infos["train_goal_diff"].append(goal_diff)
-                    
-                    self.buffer.env_infos["train_goal"].append(info["score"][0])
-                    if goal_diff > 0:
-                        self.buffer.env_infos["train_WDL"].append(1)
-                    elif goal_diff == 0:
-                        self.buffer.env_infos["train_WDL"].append(0)
-                    else:
-                        self.buffer.env_infos["train_WDL"].append(-1)
+            for _, info in zip(dones_env, infos):
+                goal_diff = info["score"][0] - info["score"][1]
+                
+                self.buffer.env_infos["train_goal_diff"].append(goal_diff)
+                
+                self.buffer.env_infos["train_goal"].append(info["score"][0])
+                if goal_diff > 0:
+                    self.buffer.env_infos["train_WDL"].append(1)
+                elif goal_diff == 0:
+                    self.buffer.env_infos["train_WDL"].append(0)
+                else:
+                    self.buffer.env_infos["train_WDL"].append(-1)
                     
         # reset rnn and mask args for done envs
         
