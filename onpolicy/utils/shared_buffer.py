@@ -86,12 +86,12 @@ class SharedReplayBuffer(object):
         else:
             self.available_actions = None
 
-        act_shape = get_shape_from_act_space(act_space)
+        self.act_shape = get_shape_from_act_space(act_space)
 
         self.actions = np.zeros(
-            (self.episode_length, self.n_rollout_threads, self.num_agents, act_shape), dtype=np.float32)
+            (self.episode_length, self.n_rollout_threads, self.num_agents, self.act_shape), dtype=np.float32)
         self.action_log_probs = np.zeros(
-            (self.episode_length, self.n_rollout_threads, self.num_agents, act_shape), dtype=np.float32)
+            (self.episode_length, self.n_rollout_threads, self.num_agents, self.act_shape), dtype=np.float32)
         self.rewards = np.zeros(
             (self.episode_length, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
 
@@ -137,7 +137,7 @@ class SharedReplayBuffer(object):
         if available_actions is not None:# None
             self.available_actions[self.step + 1] = available_actions.copy()
 
-        self.step = (self.step + 1) % self.episode_length
+        self.step = self.step + 1
 
     def chooseinsert(self, share_obs, obs, rnn_states, rnn_states_critic, actions, action_log_probs,
                      value_preds, rewards, masks, bad_masks=None, active_masks=None, available_actions=None):
@@ -181,6 +181,21 @@ class SharedReplayBuffer(object):
         self.obs = np.zeros((self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.obs_shape), dtype=np.float32)
         self.rnn_states = np.zeros((self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.recurrent_N, self.hidden_size),dtype=np.float32)
         self.rnn_states_critic = np.zeros_like(self.rnn_states)
+
+        self.value_preds = np.zeros(
+            (self.episode_length + 1, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
+        self.returns = np.zeros_like(self.value_preds)
+        self.advantages = np.zeros(
+            (self.episode_length, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
+
+        self.actions = np.zeros(
+            (self.episode_length, self.n_rollout_threads, self.num_agents, self.act_shape), dtype=np.float32)
+        self.action_log_probs = np.zeros(
+            (self.episode_length, self.n_rollout_threads, self.num_agents, self.act_shape), dtype=np.float32)
+        self.rewards = np.zeros(
+            (self.episode_length, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
+
+
         self.masks = np.ones((self.episode_length + 1, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
         self.bad_masks = np.ones_like(self.masks)
         self.active_masks = np.ones_like(self.masks)

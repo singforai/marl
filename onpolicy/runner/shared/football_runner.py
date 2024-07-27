@@ -68,7 +68,7 @@ class FootballRunner(Runner):
                     
                 for idx, done in enumerate(dones):
                     if True in done:
-                        done_rollouts[idx].append(step)
+                        done_rollouts[idx].append(step + 1)
                         infos_rollouts[idx].append(infos[idx])
                     if len(done_rollouts[idx]) > 0:
                         dones[idx] = [True for _ in range(self.num_agents)]
@@ -76,19 +76,26 @@ class FootballRunner(Runner):
                         infos[idx] = infos_rollouts[idx][0]
                         infos = tuple(infos)
 
-                data = obs, share_obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic 
+                data = step, obs, share_obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic 
                 # insert data into buffer
                 self.insert(data)
                 
                 step += 1
 
             done_steps = [3000 if len(done_rollout) == 0 else done_rollout[0] for done_rollout in done_rollouts]
+            self.buffer.step = 0
             total_num_steps += int(np.average(done_steps))
             for roll_idx, done_step in enumerate(done_steps):
-                self.buffer.masks[done_step + 1: , roll_idx] = 0
-
-            masks = self.buffer.masks[:-1]
-
+                if done_step < 3000:
+                    self.buffer.share_obs[done_step+1: , roll_idx, :] = 0
+                    self.buffer.obs[done_step+1: , roll_idx, :] = 0
+                    self.buffer.rewards[done_step: , roll_idx, :] = 0
+                    self.buffer.actions[done_step: , roll_idx, :] = 0
+                    self.buffer.action_log_probs[done_step: , roll_idx, :] = 0
+                    self.buffer.masks[done_step+1: , roll_idx, :] = 0
+                    
+            rewards_record = self.buffer.rewards # 리셋 대비용 백업
+            
             self.compute()
             train_infos = self.train()
             
@@ -96,7 +103,7 @@ class FootballRunner(Runner):
             if total_num_steps % self.save_interval == 0:
                 self.save()
                 
-            train_infos["total_episode_rewards"] = np.sum(self.buffer.rewards * masks / self.num_agents)
+            train_infos["total_episode_rewards"] = np.sum(rewards_record) / self.num_agents
 
             train_infos["Difficulty_level"] =  self.director.level
             end_time = time.time()
@@ -163,13 +170,16 @@ class FootballRunner(Runner):
         return values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env
 
     def insert(self, data):
-        obs, share_obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic = data
+        step, obs, share_obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic = data
         
         # update env_infos if done
         dones_env = np.all(dones, axis=-1)
         
-        if np.any(dones_env):
+        print(np.all(dones_env), dones_env)
+        
+        if np.all(dones_env) or step == 2999:
             for done, info in zip(dones_env, infos):
+                print(info)
                 if done:
                     goal_diff = info["score"][0] - info["score"][1]
 
@@ -184,6 +194,9 @@ class FootballRunner(Runner):
                         self.buffer.env_infos["train_WDL"].append(-1)
                     
         # reset rnn and mask args for done envs
+        
+        
+        
         rnn_states[dones_env == True] = np.zeros(((dones_env == True).sum(), self.num_agents, self.recurrent_N, self.hidden_size), dtype=np.float32)
         rnn_states_critic[dones_env == True] = np.zeros(((dones_env == True).sum(), self.num_agents, self.recurrent_N, self.hidden_size), dtype=np.float32)
         masks = np.ones((self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
