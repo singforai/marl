@@ -11,7 +11,14 @@
 
 # parallel -j 5 $command $args_gpu0 ::: 0  
 
-command="python train_grf.py --seed {0} --experiment_name base_JRPO --group_name base_JRPO --algorithm_name jrpo --use_wandb --n_rollout_threads 10"
+# command="python train_grf.py --seed {0} --experiment_name base_JRPO --group_name base_JRPO --algorithm_name jrpo --use_wandb --n_rollout_threads 10"
+
+# args_gpu0="--num_gpu 0"
+# args_gpu1="--num_gpu 1"
+
+# parallel -j 5 $command $args_gpu0 ::: 0  
+
+command="python train_grf.py --seed {0} --experiment_name base_MAPPO --group_name base_MAPPO --algorithm_name mappo --use_wandb --n_rollout_threads 10 --use_joint_action_loss"
 
 args_gpu0="--num_gpu 0"
 args_gpu1="--num_gpu 1"
