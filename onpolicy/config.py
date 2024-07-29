@@ -26,8 +26,8 @@ def get_config():
     parser.add_argument("--cuda_deterministic",
                         action='store_false', default=True, help="by default, make sure random seed effective. if set, bypass such function.")
     parser.add_argument("--n_torch_threads", type=int,
-                        default=48, help="Number of torch threads for training")
-    parser.add_argument("--n_rollout_threads", type=int, default=1,
+                        default=128, help="Number of torch threads for training")
+    parser.add_argument("--n_rollout_threads", type=int, default=10,
                         help="Number of parallel envs for training rollouts")
     parser.add_argument("--n_eval_rollout_threads", type=int, default=10,
                         help="Number of parallel envs for evaluating rollouts")
@@ -79,9 +79,9 @@ def get_config():
                         help="Time length of chunks used to train a recurrent_policy")
 
     # optimizer parameters
-    parser.add_argument("--lr", type=float, default=5e-4,
+    parser.add_argument("--lr", type=float, default=2e-4,
                         help='learning rate (default: 5e-4)')
-    parser.add_argument("--critic_lr", type=float, default=5e-4,
+    parser.add_argument("--critic_lr", type=float, default=2e-4,
                         help='critic learning rate (default: 5e-4)')
     parser.add_argument("--opti_eps", type=float, default=1e-5,
                         help='RMSprop optimizer epsilon (default: 1e-5)')
@@ -128,8 +128,8 @@ def get_config():
     parser.add_argument("--huber_delta", type=float, default=10.0, help=" coefficience of huber loss.")
 
     # run parameters
-    parser.add_argument("--use_linear_lr_decay", action='store_false',
-                        default=True, help='use a linear schedule on the learning rate')
+    parser.add_argument("--use_linear_lr_decay", action='store_true',
+                        default=False, help='use a linear schedule on the learning rate')
     # save parameters
     parser.add_argument("--save_interval", type=int, default=5000000, help="time duration between contiunous twice models saving.")
 
@@ -138,7 +138,7 @@ def get_config():
 
     # eval parameters
     parser.add_argument("--use_eval", action='store_false', default=True, help="by default, do not start evaluation. If set`, start evaluation alongside with training.")
-    parser.add_argument("--eval_interval", type=int, default=300000, help="time duration between contiunous twice evaluation progress.")
+    parser.add_argument("--eval_interval", type=int, default=100000, help="time duration between contiunous twice evaluation progress.")
     parser.add_argument("--eval_episodes", type=int, default=10, help="number of episodes of a single evaluation.")
 
     # render parameters

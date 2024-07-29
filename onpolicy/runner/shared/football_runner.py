@@ -9,8 +9,8 @@ import torch
 import wandb
 import importlib
 
-# import cProfile, io, pstats
-# from pstats import SortKey
+import cProfile, io, pstats
+from pstats import SortKey
 
 from utils.util import update_linear_schedule
 from runner.shared.base_runner import Runner
@@ -30,22 +30,23 @@ class FootballRunner(Runner):
     def run(self):
 
         total_num_steps = 0
+        interval_stack = 0
         
         while self.num_env_steps >= total_num_steps:
             start_time = time.time()
             # pr = cProfile.Profile()
             # pr.enable()
             self.warmup()  
-
+            
             if self.use_linear_lr_decay:
                 self.trainer.policy.lr_decay(total_num_steps, self.num_env_steps)    
                 
-            done_rollouts = [[] for _ in range(self.n_rollout_threads)]
-            infos_rollouts = [[] for _ in range(self.n_rollout_threads)]
+            done_rollouts = [None for _ in range(self.n_rollout_threads)]
+            infos_rollouts = [None for _ in range(self.n_rollout_threads)]
 
             step = 0
             
-            while (step < 3000) and any(len(rollout) == 0 for rollout in done_rollouts):
+            while (step < 3000) and (None in done_rollouts):
                 
                 # Sample actions
                 values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env = self.collect(step)
@@ -67,13 +68,13 @@ class FootballRunner(Runner):
                     obs, share_obs = additional_obs(infos = infos)
                     
                 for idx, done in enumerate(dones):
-                    if True in done:
-                        done_rollouts[idx].append(step + 1)
-                        infos_rollouts[idx].append(infos[idx])
-                    if len(done_rollouts[idx]) > 0:
+                    if (True in done) and (done_rollouts[idx] == None):
+                        done_rollouts[idx] = step + 1
+                        infos_rollouts[idx] = infos[idx]
+                    if done_rollouts[idx] != None:
                         dones[idx] = [True for _ in range(self.num_agents)]
                         infos = list(infos)
-                        infos[idx] = infos_rollouts[idx][0]
+                        infos[idx] = infos_rollouts[idx]
                         infos = tuple(infos)
 
                 data = step, obs, share_obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic 
@@ -82,9 +83,12 @@ class FootballRunner(Runner):
                 
                 step += 1
 
-            done_steps = [3000 if len(done_rollout) == 0 else done_rollout[0] for done_rollout in done_rollouts]
+            done_steps = [3000 if done_rollout == None else done_rollout for done_rollout in done_rollouts]
+            
             self.buffer.step = 0
             total_num_steps += int(np.average(done_steps))
+            interval_stack += int(np.average(done_steps))
+            
             for roll_idx, done_step in enumerate(done_steps):
                 if done_step < 3000:
                     self.buffer.share_obs[done_step+1: , roll_idx, :] = 0
@@ -106,8 +110,9 @@ class FootballRunner(Runner):
             train_infos = self.train()
             
             # save model
-            if total_num_steps % self.save_interval == 0:
-                self.save()
+            # if interval_stack >= self.save_interval:
+            #     self.save()
+            #     interval_stack = 0
             
             
             train_infos["episode_length"] = np.average(done_steps)
@@ -133,9 +138,9 @@ class FootballRunner(Runner):
             # ps.print_stats()
             # print(s.getvalue())
 
-            # eval
-            # if total_num_steps % self.eval_interval == 0 and self.use_eval:
-            #     self.eval(total_num_steps)
+            if interval_stack >= self.eval_interval:
+                self.eval(total_num_steps)
+                interval_stack = 0
 
     def warmup(self):
         # reset env
@@ -232,7 +237,7 @@ class FootballRunner(Runner):
         eval_obs = self.eval_envs.reset()
         if self.use_additional_obs:
             eval_obs, _ = init_obs(np.ascontiguousarray(eval_obs))
-
+        
         eval_rnn_states = np.zeros((self.n_eval_rollout_threads, self.num_agents, self.recurrent_N, self.hidden_size), dtype=np.float32)
         eval_masks = np.ones((self.n_eval_rollout_threads, self.num_agents, 1), dtype=np.float32)
 
@@ -301,7 +306,6 @@ class FootballRunner(Runner):
             eval_masks = np.ones((self.all_args.n_eval_rollout_threads, self.num_agents, 1), dtype=np.float32)
             eval_masks[eval_dones_env == True] = np.zeros(((eval_dones_env == True).sum(), self.num_agents, 1), dtype=np.float32)
             step += 1
-
 
         # get expected goal
         eval_goal = np.mean(eval_goals)
