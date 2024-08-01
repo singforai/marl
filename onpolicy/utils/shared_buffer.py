@@ -171,9 +171,6 @@ class SharedReplayBuffer(object):
             self.active_masks[self.step] = active_masks.copy()
         if available_actions is not None:
             self.available_actions[self.step] = available_actions.copy()
-        
-
-
         self.step = (self.step + 1) % self.episode_length
 
     def after_update(self):

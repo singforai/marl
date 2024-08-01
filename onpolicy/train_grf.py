@@ -58,15 +58,16 @@ def make_eval_env(all_args):
 
 def parse_args(args, parser):
     parser.add_argument("--scenario_name", type=str,
-                        default="curriculum_learning_11vs11",
+                        default="curriculum_learning",
                         choices = [
+                            "curriculum_learning_11vs11",
+                            "curriculum_learning",
                             "11_vs_11_easy_stochastic", 
                             "11_vs_11_stochastic",
                             "11_vs_11_hard_stochastic",
-                            "11_vs_11_curriculum_learning"
                         ], 
                         help="which scenario to run on.")
-    parser.add_argument("--num_agents", type=int, default=10,
+    parser.add_argument("--num_agents", type=int, default=3,
                         help="number of controlled players.")
     parser.add_argument("--representation", type=str, default="simple115v2", 
                         choices=["simple115v2", "extracted", "pixels_gray", 

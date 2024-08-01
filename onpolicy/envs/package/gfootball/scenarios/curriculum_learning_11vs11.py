@@ -100,13 +100,6 @@ def build_scenario(builder):
     builder.config().left_team_difficulty = 1.0
     builder.config().right_team_difficulty = difficulty_level * 0.1
     builder.config().deterministic = False
-    # print(dir(builder.config()))
-    # if builder.EpisodeNumber() % 2 == 0:
-    #   first_team = Team.e_Left
-    #   second_team = Team.e_Right
-    # else:
-    #   first_team = Team.e_Right
-    #   second_team = Team.e_Left
 
     first_team = Team.e_Left
     second_team = Team.e_Right
@@ -129,31 +122,28 @@ def build_scenario(builder):
     player_has_ball = np.random.randint(10)
     builder.SetBallPosition(x_pos[player_has_ball], y_pos[player_has_ball])
 
+
     builder.AddPlayer(x_pos[0], y_pos[0], e_PlayerRole_RM)
     builder.AddPlayer(x_pos[1], y_pos[1], e_PlayerRole_CF)
     builder.AddPlayer(x_pos[2], y_pos[2], e_PlayerRole_LB)
-    builder.AddPlayer(x_pos[3], y_pos[3], e_PlayerRole_CB)
-    builder.AddPlayer(x_pos[4], y_pos[4], e_PlayerRole_CB)
-    builder.AddPlayer(x_pos[5], y_pos[5], e_PlayerRole_RB)
-    builder.AddPlayer(x_pos[6], y_pos[6], e_PlayerRole_CM)
-    builder.AddPlayer(x_pos[7], y_pos[7], e_PlayerRole_CM)
-    builder.AddPlayer(x_pos[8], y_pos[8], e_PlayerRole_CM)
-    builder.AddPlayer(x_pos[9], y_pos[9], e_PlayerRole_LM)
+    # builder.AddPlayer(x_pos[3], y_pos[3], e_PlayerRole_CB)
+    # builder.AddPlayer(x_pos[4], y_pos[4], e_PlayerRole_CB)
+    # builder.AddPlayer(x_pos[5], y_pos[5], e_PlayerRole_RB)
+    # builder.AddPlayer(x_pos[6], y_pos[6], e_PlayerRole_CM)
+    # builder.AddPlayer(x_pos[7], y_pos[7], e_PlayerRole_CM)
+    # builder.AddPlayer(x_pos[8], y_pos[8], e_PlayerRole_CM)
+    # builder.AddPlayer(x_pos[9], y_pos[9], e_PlayerRole_LM)
 
     builder.SetTeam(second_team)
     builder.AddPlayer(-1.000000, 0.000000, e_PlayerRole_GK, controllable=False)
-
-    builder.AddPlayer(-1.000000, 0.000000, e_PlayerRole_RM)
-    if difficulty_level > 3:
-        builder.AddPlayer(-1.000000, 0.000000, e_PlayerRole_CF)
-    else:
-        builder.AddPlayer(x_pos[1], y_pos[1], e_PlayerRole_CF)
-
+    
+    builder.AddPlayer(x_pos[0], y_pos[0], e_PlayerRole_RM)
+    builder.AddPlayer(x_pos[1], y_pos[1], e_PlayerRole_CF)
     builder.AddPlayer(x_pos[2], y_pos[2], e_PlayerRole_LB)
-    builder.AddPlayer(x_pos[3], y_pos[3], e_PlayerRole_CB)
-    builder.AddPlayer(x_pos[4], y_pos[4], e_PlayerRole_CB)
-    builder.AddPlayer(x_pos[5], y_pos[5], e_PlayerRole_RB)
-    builder.AddPlayer(x_pos[6], y_pos[6], e_PlayerRole_CM)
-    builder.AddPlayer(x_pos[7], y_pos[7], e_PlayerRole_CM)
-    builder.AddPlayer(x_pos[8], y_pos[8], e_PlayerRole_CM)
-    builder.AddPlayer(x_pos[9], y_pos[9], e_PlayerRole_LM)
+    # builder.AddPlayer(x_pos[3], y_pos[3], e_PlayerRole_LB)
+    # builder.AddPlayer(x_pos[4], y_pos[4], e_PlayerRole_CB)
+    # builder.AddPlayer(x_pos[5], y_pos[5], e_PlayerRole_RB)
+    # builder.AddPlayer(x_pos[6], y_pos[6], e_PlayerRole_CM)
+    # builder.AddPlayer(x_pos[7], y_pos[7], e_PlayerRole_CM)
+    # builder.AddPlayer(x_pos[8], y_pos[8], e_PlayerRole_CM)
+    # builder.AddPlayer(x_pos[9], y_pos[9], e_PlayerRole_LM)

@@ -7,7 +7,7 @@ from tensorboardX import SummaryWriter
 from utils.shared_buffer import SharedReplayBuffer
 
 from runner.shared.xT.cal_xT import xT
-from envs.package.gfootball.scenarios.curriculum_learning_11vs11 import Director
+from envs.package.gfootball.scenarios.curriculum_learning import Director
 
 def _t2n(x):
     """Convert torch tensor to a numpy array."""

@@ -16,7 +16,7 @@ from utils.util import update_linear_schedule
 from runner.shared.base_runner import Runner
 
 
-from algorithms.utils.obs_preprocessing import additional_obs, init_obs
+from algorithms.utils.obs_preprocessing_final import additional_obs, init_obs
 
 
 
@@ -56,6 +56,12 @@ class FootballRunner(Runner):
                 obs, rewards, dones, infos = self.envs.step(actions_env)
                 share_obs = obs
                 
+                rewards / self.num_agents * 10
+                
+                if self.algorithm_name == "tizero":
+                    if infos[0]["ball_owned_team"] == 0:
+                        rewards += 0.0001
+                
                 if self.use_xt:
                     rewards = self.cal_xt.controller(
                         step = step,
@@ -65,17 +71,20 @@ class FootballRunner(Runner):
                     )
                 
                 if self.use_additional_obs:
-                    obs, share_obs = additional_obs(infos = infos)
-                    
+                    obs, share_obs = additional_obs(infos = infos, num_agents = self.num_agents)
+                
+                
+                infos = list(infos)
+                
                 for idx, done in enumerate(dones):
                     if (True in done) and (done_rollouts[idx] == None):
                         done_rollouts[idx] = step + 1
                         infos_rollouts[idx] = infos[idx]
                     if done_rollouts[idx] != None:
-                        dones[idx] = [True for _ in range(self.num_agents)]
-                        infos = list(infos)
+                        dones[idx] = [True for _ in range(self.num_agents)]        
                         infos[idx] = infos_rollouts[idx]
-                        infos = tuple(infos)
+                
+                infos = tuple(infos)
 
                 data = step, obs, share_obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic 
                 # insert data into buffer
@@ -145,6 +154,7 @@ class FootballRunner(Runner):
     def warmup(self):
         # reset env
         default_obs = self.envs.reset()
+        np.set_printoptions(threshold=np.inf)
         if self.use_additional_obs:
             obs, share_obs = init_obs(obs = default_obs)
             self.buffer.share_obs[0] = share_obs
@@ -236,8 +246,8 @@ class FootballRunner(Runner):
         # reset envs and init rnn and mask
         eval_obs = self.eval_envs.reset()
         if self.use_additional_obs:
-            eval_obs, _ = init_obs(np.ascontiguousarray(eval_obs))
-        
+            eval_obs, _ = init_obs(obs = np.ascontiguousarray(eval_obs))
+            
         eval_rnn_states = np.zeros((self.n_eval_rollout_threads, self.num_agents, self.recurrent_N, self.hidden_size), dtype=np.float32)
         eval_masks = np.ones((self.n_eval_rollout_threads, self.num_agents, 1), dtype=np.float32)
 
@@ -280,7 +290,7 @@ class FootballRunner(Runner):
             scores = [info["score"] for info in eval_infos]
             
             if self.use_additional_obs:
-                observations, _ = additional_obs(infos = eval_infos)
+                observations, _ = additional_obs(infos = eval_infos, num_agents = self.num_agents)
                 eval_obs = observations
 
             # update goals if done
@@ -307,10 +317,15 @@ class FootballRunner(Runner):
             eval_masks[eval_dones_env == True] = np.zeros(((eval_dones_env == True).sum(), self.num_agents, 1), dtype=np.float32)
             step += 1
 
+        print(eval_goal)
+        print(eval_WDL)
+        print(eval_goal_diff)
+
         # get expected goal
         eval_goal = np.mean(eval_goals)
         eval_WDL = np.mean(eval_WDL)
         eval_goal_diff = np.mean(eval_goal_diff)
+
 
 
         # log and print

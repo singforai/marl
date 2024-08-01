@@ -56,7 +56,7 @@ class xT():
                 else:
                     self.xT_deque[roll_idx].append(threat_value)
                     xT_score = self.xT_deque[roll_idx][1] - self.xT_deque[roll_idx][0]
-                    rewards[roll_idx] += xT_score
+                    rewards[roll_idx] += xT_score * 5
             else:
                 self.initialize_xt(roll_idx = roll_idx)
         self.score = score
