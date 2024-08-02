@@ -54,10 +54,9 @@ class FootballRunner(Runner):
                 
                 # Obser reward and next obs
                 obs, rewards, dones, infos = self.envs.step(actions_env)
-                share_obs = obs
-                
-                rewards / self.num_agents * 10
-                
+
+                rewards = rewards / self.num_agents * 10
+          
                 if self.algorithm_name == "tizero":
                     if infos[0]["ball_owned_team"] == 0:
                         rewards += 0.0001
@@ -147,9 +146,9 @@ class FootballRunner(Runner):
             # ps.print_stats()
             # print(s.getvalue())
 
-            if interval_stack >= self.eval_interval:
-                self.eval(total_num_steps)
-                interval_stack = 0
+#            if interval_stack >= self.eval_interval:
+#                self.eval(total_num_steps)
+#                interval_stack = 0
 
     def warmup(self):
         # reset env

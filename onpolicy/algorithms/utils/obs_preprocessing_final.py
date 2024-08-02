@@ -88,10 +88,9 @@ def thread_processing(info, num_agents): # 279
     info_steps_left = int(info[277])
     info_ball_owned_player = int(info[278])
 
-    for idx, agent_id in enumerate(info_active):
-        if agent_id == -1:
-            break
-        agent_id = int(agent_id)
+    for idx in range(num_agents):
+
+        agent_id = int(idx+ 1)
         # left team 88
         left_position = np.ascontiguousarray(info_left_team).reshape(-1)
         left_direction = np.ascontiguousarray(info_left_direct).reshape(-1)
@@ -320,7 +319,7 @@ def preproc_obs(infos_array, num_agents):
 def additional_obs(infos, num_agents):
     infos_list = []
     for info in infos:
-        info_array = np.zeros(279)
+        info_array = np.zeros(279, dtype=np.float32)
         
         info_array[0  : num_agents] = info["active"]
 
@@ -332,7 +331,6 @@ def additional_obs(infos, num_agents):
         info_array[54 : 54 + num_teammate] = info["left_team_tired_factor"]
         info_array[65 : 65 + num_teammate] = info["left_team_yellow_card"]
         info_array[76 : 76 + num_teammate] = info["left_team_active"]
-
         info_array[87  : 87 + num_player] = info["right_team"].reshape(-1)
         info_array[109 : 109 + num_player] = info["right_team_direction"].reshape(-1)
         info_array[131 : 131 + num_teammate] = info["right_team_tired_factor"]
@@ -350,22 +348,27 @@ def additional_obs(infos, num_agents):
         info_array[277] = info["steps_left"]
         info_array[278] = info["ball_owned_player"]
         
-        if num_agents < 10:
-            info_array[num_agents : 10] = -1
-            info_array[10 + num_player : 32] = -1
-            info_array[32 + num_player : 54] = -1
-            info_array[54 + num_teammate : 65] = -1
-            info_array[65 + num_teammate : 76] = -1
-            info_array[76 + num_teammate : 87] = -1
-            info_array[87 + num_player : 109] = -1
-            info_array[109 + num_player : 131] = -1
-            info_array[131 + num_teammate : 142] = -1
-            info_array[142 + num_teammate : 153] = -1
-            info_array[153 + num_teammate : 164] = -1
-            info_array[164 + 10*num_agents: 264] = -1
-            
-            
         infos_list.append(info_array)
+        
+        """
+        agent가 줄어들면 -1로 마스킹하는 기본 설정을 0으로 변경
+        """
+        # if num_agents < 10:
+        #     info_array[num_agents : 10] = -1.0
+        #     info_array[10 + num_player : 32] = -1.0
+        #     info_array[32 + num_player : 54] = -1.0
+        #     info_array[54 + num_teammate : 65] = -1.0
+        #     info_array[65 + num_teammate : 76] = -1.0
+        #     info_array[76 + num_teammate : 87] = -1.0
+        #     info_array[87 + num_player : 109] = -1.0
+        #     info_array[109 + num_player : 131] = -1.0
+        #     info_array[131 + num_teammate : 142] = -1.0
+        #     info_array[142 + num_teammate : 153] = -1.0
+        #     info_array[153 + num_teammate : 164] = -1.0
+        #     info_array[164 + 10*num_agents: 264] = -1.0
+            
+            
+    
     infos_array = np.array(infos_list, dtype=np.float32)
     obs , share_obs = preproc_obs(infos_array, num_agents)
     return obs , share_obs
@@ -374,7 +377,6 @@ def additional_obs(infos, num_agents):
 def init_obs(obs):
     rollout = obs.shape[0]
     agents = obs.shape[1]
-    
     init_obs = np.zeros((rollout, agents, 330), dtype=float32)
     init_share_obs = np.zeros((rollout, agents, 220), dtype=float32)
     
@@ -386,6 +388,11 @@ def init_obs(obs):
     ball_direction = obs[ : , : , 91 : 94]
     ball_ownership = obs[ : , : , 94 : 97]
     game_mode = obs[:, : , 108 : 115]
+
+    left_position[:, :, (agents+1)*2: 22] = 0
+    left_direction[:, :, 22 + (agents+1)*2: 44]= 0
+    right_position[:, :, 44 + (agents+1)*2: 66]= 0
+    right_direction[:, :, 66 + (agents+1)*2: 88]= 0
 
     for roll_id in range(rollout):
         for agent_id in range(agents):

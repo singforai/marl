@@ -127,3 +127,48 @@ total episode rewards is -26.994099934895832
 Env Football Algo tizero Exp base_TiZero updates 77561/100000000000.0 steps in 64.67
 total episode rewards is -20.95250066121419
 Env Football Algo tizero Exp base_TiZero updates 78796/100000000000.0 steps in 64.62
+total episode rewards is -26.96070098876953
+Env Football Algo tizero Exp base_TiZero updates 80244/100000000000.0 steps in 69.64
+total episode rewards is -26.953999837239582
+Env Football Algo tizero Exp base_TiZero updates 81717/100000000000.0 steps in 70.48
+total episode rewards is -23.95409901936849
+Env Football Algo tizero Exp base_TiZero updates 83280/100000000000.0 steps in 68.75
+total episode rewards is -20.977898915608723
+Env Football Algo tizero Exp base_TiZero updates 85056/100000000000.0 steps in 67.08
+total episode rewards is -21.0
+Env Football Algo tizero Exp base_TiZero updates 86406/100000000000.0 steps in 69.35
+total episode rewards is -23.95440165201823
+Env Football Algo tizero Exp base_TiZero updates 87792/100000000000.0 steps in 68.68
+total episode rewards is -26.986597696940105
+Env Football Algo tizero Exp base_TiZero updates 89296/100000000000.0 steps in 73.22
+total episode rewards is -20.94979985555013
+Env Football Algo tizero Exp base_TiZero updates 90997/100000000000.0 steps in 70.20
+total episode rewards is -23.947799682617188
+Env Football Algo tizero Exp base_TiZero updates 92661/100000000000.0 steps in 68.83
+total episode rewards is -23.975499471028645
+Env Football Algo tizero Exp base_TiZero updates 94002/100000000000.0 steps in 73.71
+total episode rewards is -23.990000406901043
+Env Football Algo tizero Exp base_TiZero updates 95533/100000000000.0 steps in 69.63
+total episode rewards is -26.98040008544922
+Env Football Algo tizero Exp base_TiZero updates 96628/100000000000.0 steps in 71.36
+total episode rewards is -20.987101236979168
+Env Football Algo tizero Exp base_TiZero updates 97707/100000000000.0 steps in 72.75
+total episode rewards is -26.966102600097656
+Env Football Algo tizero Exp base_TiZero updates 98669/100000000000.0 steps in 70.97
+total episode rewards is -20.988201141357422
+Env Football Algo tizero Exp base_TiZero updates 99851/100000000000.0 steps in 72.13
+total episode rewards is -17.987599690755207
+Env Football Algo tizero Exp base_TiZero updates 101487/100000000000.0 steps in 69.30
+total episode rewards is -23.98509979248047
+Traceback (most recent call last):
+  File "/root/marl/onpolicy/train_grf.py", line 222, in <module>
+    main(args = sys.argv[1:])
+  File "/root/marl/onpolicy/train_grf.py", line 213, in main
+    runner.run()
+  File "/root/marl/onpolicy/runner/shared/football_runner.py", line 151, in run
+    self.eval(total_num_steps)
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/root/marl/onpolicy/runner/shared/football_runner.py", line 320, in eval
+    print(eval_goal)
+UnboundLocalError: local variable 'eval_goal' referenced before assignment

@@ -28,9 +28,9 @@ class Director():
 
 
     def assessing_game(self, goal_diffs):
-        if all(goal_diff > 0 for goal_diff in goal_diffs):
+        if np.mean(goal_diffs) > 0.5:
             self.win_stack += 1
-        
+            
         if self.win_stack >= 100:
             self.win_stack = 0
             if self.level < 10:
@@ -68,17 +68,11 @@ def build_real_scenario(builder):
 
 def build_scenario(builder):
     
-    num_agents = 3
+    num_agents = 2
 
-    if builder.EpisodeNumber() == 1:
-        build_real_scenario(builder)
-        return
 
     difficulty_level = director.level 
     
-    if difficulty_level == 10:
-        build_real_scenario(builder)
-        return
 
     builder.config().end_episode_on_score = True
     builder.config().game_duration = 3000
@@ -87,12 +81,6 @@ def build_scenario(builder):
     builder.config().deterministic = False
     
     # print(dir(builder.config()))
-    # if builder.EpisodeNumber() % 2 == 0:
-    #   first_team = Team.e_Left
-    #   second_team = Team.e_Right
-    # else:
-    #   first_team = Team.e_Right
-    #   second_team = Team.e_Left
 
     first_team = Team.e_Left
     second_team = Team.e_Right
@@ -110,7 +98,8 @@ def build_scenario(builder):
     left_margin = right_margin - 0.5
     x_pos = list(np.random.random(10) * 0.5 + left_margin)
     y_pos = np.random.normal(loc=0.0, scale=0.1, size=10)
-    y_pos = list(np.clip(y_pos, -0.3, 0.3))
+    y_cut = 0.1 + difficulty_level * 0.02
+    y_pos = list(np.clip(y_pos, -y_cut, y_cut))
      
     player_has_ball = np.random.randint(10)
     builder.SetBallPosition(x_pos[player_has_ball], y_pos[player_has_ball])

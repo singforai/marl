@@ -67,7 +67,7 @@ def parse_args(args, parser):
                             "11_vs_11_hard_stochastic",
                         ], 
                         help="which scenario to run on.")
-    parser.add_argument("--num_agents", type=int, default=3,
+    parser.add_argument("--num_agents", type=int, default=2,
                         help="number of controlled players.")
     parser.add_argument("--representation", type=str, default="simple115v2", 
                         choices=["simple115v2", "extracted", "pixels_gray", 

@@ -26,3 +26,4 @@ config: {'use_joint_action_loss': True, 'use_additional_obs': True, 'use_wandb':
 2024-08-01 21:35:23,245 INFO    MainThread:1032129 [wandb_run.py:_redirect():2300] Wrapping output streams.
 2024-08-01 21:35:23,245 INFO    MainThread:1032129 [wandb_run.py:_redirect():2325] Redirects installed.
 2024-08-01 21:35:23,247 INFO    MainThread:1032129 [wandb_init.py:init():847] run started, returning control to user process
+2024-08-01 23:11:50,701 WARNING MsgRouterThr:1032129 [router.py:message_loop():77] message_loop has been closed

@@ -1,0 +1,395 @@
+2024-08-02 14:42:36,654 INFO    StreamThr :1185787 [internal.py:wandb_internal():85] W&B internal server running at pid: 1185787, started at: 2024-08-02 14:42:36.653249
+2024-08-02 14:42:36,657 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: status
+2024-08-02 14:42:36,664 INFO    WriterThread:1185787 [datastore.py:open_for_write():87] open: /root/marl/results/Football/curriculum_learning/tizero/Xt_TiZero_1/wandb/run-20240802_144236-fd5b1y50/run-fd5b1y50.wandb
+2024-08-02 14:42:36,665 DEBUG   SenderThread:1185787 [sender.py:send():379] send: header
+2024-08-02 14:42:36,714 DEBUG   SenderThread:1185787 [sender.py:send():379] send: run
+2024-08-02 14:42:37,254 INFO    SenderThread:1185787 [dir_watcher.py:__init__():211] watching files in: /root/marl/results/Football/curriculum_learning/tizero/Xt_TiZero_1/wandb/run-20240802_144236-fd5b1y50/files
+2024-08-02 14:42:37,254 INFO    SenderThread:1185787 [sender.py:_start_run_threads():1188] run started: fd5b1y50 with start time 1722577356.653419
+2024-08-02 14:42:37,265 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: check_version
+2024-08-02 14:42:37,266 DEBUG   SenderThread:1185787 [sender.py:send_request():406] send_request: check_version
+2024-08-02 14:42:37,353 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: run_start
+2024-08-02 14:42:37,540 DEBUG   HandlerThread:1185787 [system_info.py:__init__():26] System info init
+2024-08-02 14:42:37,540 DEBUG   HandlerThread:1185787 [system_info.py:__init__():41] System info init done
+2024-08-02 14:42:37,540 INFO    HandlerThread:1185787 [system_monitor.py:start():194] Starting system monitor
+2024-08-02 14:42:37,540 INFO    SystemMonitor:1185787 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-08-02 14:42:37,540 INFO    HandlerThread:1185787 [system_monitor.py:probe():214] Collecting system info
+2024-08-02 14:42:37,541 INFO    SystemMonitor:1185787 [interfaces.py:start():188] Started cpu monitoring
+2024-08-02 14:42:37,542 INFO    SystemMonitor:1185787 [interfaces.py:start():188] Started disk monitoring
+2024-08-02 14:42:37,544 INFO    SystemMonitor:1185787 [interfaces.py:start():188] Started gpu monitoring
+2024-08-02 14:42:37,544 INFO    SystemMonitor:1185787 [interfaces.py:start():188] Started memory monitoring
+2024-08-02 14:42:37,546 INFO    SystemMonitor:1185787 [interfaces.py:start():188] Started network monitoring
+2024-08-02 14:42:37,584 DEBUG   HandlerThread:1185787 [system_info.py:probe():152] Probing system
+2024-08-02 14:42:37,595 DEBUG   HandlerThread:1185787 [system_info.py:_probe_git():137] Probing git
+2024-08-02 14:42:37,613 DEBUG   HandlerThread:1185787 [system_info.py:_probe_git():145] Probing git done
+2024-08-02 14:42:37,613 DEBUG   HandlerThread:1185787 [system_info.py:probe():200] Probing system done
+2024-08-02 14:42:37,613 DEBUG   HandlerThread:1185787 [system_monitor.py:probe():223] {'os': 'Linux-5.4.0-125-generic-x86_64-with-glibc2.31', 'python': '3.9.19', 'heartbeatAt': '2024-08-02T05:42:37.584467', 'startedAt': '2024-08-02T05:42:36.644733', 'docker': None, 'cuda': None, 'args': ('--seed', '0', '--experiment_name', 'Xt_TiZero_1', '--group_name', 'Xt_TiZero_1', '--algorithm_name', 'tizero', '--use_wandb', '--use_xt', '--use_linear_lr_decay', '--n_rollout_threads', '10', '--num_gpu', '0'), 'state': 'running', 'program': '/root/marl/onpolicy/train_grf.py', 'codePathLocal': 'train_grf.py', 'codePath': 'onpolicy/train_grf.py', 'git': {'remote': 'https://github.com/singforai/marl.git', 'commit': 'ae21f96e8b3ee3fa7f70d76ec2b3f8a5d2d3cf5d'}, 'email': 'singfor7012@gmail.com', 'root': '/root/marl', 'host': 'cc6d4f284c5a', 'username': 'root', 'executable': '/root/miniconda3/envs/marl/bin/python', 'cpu_count': 128, 'cpu_count_logical': 128, 'cpu_freq': {'current': 2813.5501874999995, 'min': 1500.0, 'max': 2450.0}, 'cpu_freq_per_core': [{'current': 2592.781, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.88, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.499, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.916, 'min': 1500.0, 'max': 2450.0}, {'current': 2594.026, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.113, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.499, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.711, 'min': 1500.0, 'max': 2450.0}, {'current': 2593.309, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.495, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.362, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.379, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.887, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.367, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.489, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.501, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.325, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.044, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.842, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.787, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.49, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.871, 'min': 1500.0, 'max': 2450.0}, {'current': 2618.876, 'min': 1500.0, 'max': 2450.0}, {'current': 2600.38, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.118, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.162, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.727, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.955, 'min': 1500.0, 'max': 2450.0}, {'current': 2594.759, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.542, 'min': 1500.0, 'max': 2450.0}, {'current': 2594.336, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.82, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.972, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.003, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.225, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.704, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.465, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.321, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.826, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.035, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.6, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.836, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.056, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.755, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.682, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.132, 'min': 1500.0, 'max': 2450.0}, {'current': 3248.932, 'min': 1500.0, 'max': 2450.0}, {'current': 3036.261, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.863, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.113, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.287, 'min': 1500.0, 'max': 2450.0}, {'current': 3248.822, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.614, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.208, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.279, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.811, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.471, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.818, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.336, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.467, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.693, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.125, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.348, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.642, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.249, 'min': 1500.0, 'max': 2450.0}, {'current': 2600.046, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.675, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.735, 'min': 1500.0, 'max': 2450.0}, {'current': 2548.127, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.509, 'min': 1500.0, 'max': 2450.0}, {'current': 2627.401, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.673, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.132, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.499, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.799, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.409, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.089, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.578, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.31, 'min': 1500.0, 'max': 2450.0}, {'current': 2592.56, 'min': 1500.0, 'max': 2450.0}, {'current': 3248.928, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.839, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.741, 'min': 1500.0, 'max': 2450.0}, {'current': 2594.825, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.498, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.371, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.805, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.564, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.958, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.801, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.966, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.502, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.723, 'min': 1500.0, 'max': 2450.0}, {'current': 2597.159, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.902, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.85, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.302, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.306, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.759, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.034, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.606, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.088, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.875, 'min': 1500.0, 'max': 2450.0}, {'current': 3248.731, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.657, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.693, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.558, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.117, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.065, 'min': 1500.0, 'max': 2450.0}, {'current': 2592.995, 'min': 1500.0, 'max': 2450.0}, {'current': 2596.291, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.237, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.284, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.628, 'min': 1500.0, 'max': 2450.0}, {'current': 2598.777, 'min': 1500.0, 'max': 2450.0}, {'current': 2605.71, 'min': 1500.0, 'max': 2450.0}, {'current': 2595.439, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.385, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.865, 'min': 1500.0, 'max': 2450.0}, {'current': 2593.647, 'min': 1500.0, 'max': 2450.0}, {'current': 2768.766, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.912, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.501, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.114, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.005, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.477, 'min': 1500.0, 'max': 2450.0}, {'current': 2599.869, 'min': 1500.0, 'max': 2450.0}, {'current': 3249.329, 'min': 1500.0, 'max': 2450.0}], 'disk': {'/': {'total': 3665.955093383789, 'used': 2774.600498199463}}, 'gpu': 'NVIDIA RTX A6000', 'gpu_count': 4, 'gpu_devices': [{'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}, {'name': 'NVIDIA RTX A6000', 'memory_total': 51527024640}], 'memory': {'total': 1007.7300605773926}}
+2024-08-02 14:42:37,614 INFO    HandlerThread:1185787 [system_monitor.py:probe():224] Finished collecting system info
+2024-08-02 14:42:37,614 INFO    HandlerThread:1185787 [system_monitor.py:probe():227] Publishing system info
+2024-08-02 14:42:37,614 DEBUG   HandlerThread:1185787 [system_info.py:_save_conda():209] Saving list of conda packages installed into the current environment
+2024-08-02 14:42:38,257 INFO    Thread-12 :1185787 [dir_watcher.py:_on_file_created():271] file/dir created: /root/marl/results/Football/curriculum_learning/tizero/Xt_TiZero_1/wandb/run-20240802_144236-fd5b1y50/files/conda-environment.yaml
+2024-08-02 14:42:39,490 DEBUG   HandlerThread:1185787 [system_info.py:_save_conda():224] Saving conda packages done
+2024-08-02 14:42:39,492 INFO    HandlerThread:1185787 [system_monitor.py:probe():229] Finished publishing system info
+2024-08-02 14:42:39,498 DEBUG   SenderThread:1185787 [sender.py:send():379] send: files
+2024-08-02 14:42:39,498 INFO    SenderThread:1185787 [sender.py:_save_file():1454] saving file wandb-metadata.json with policy now
+2024-08-02 14:42:39,574 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: python_packages
+2024-08-02 14:42:39,575 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: stop_status
+2024-08-02 14:42:39,575 DEBUG   SenderThread:1185787 [sender.py:send_request():406] send_request: python_packages
+2024-08-02 14:42:39,576 DEBUG   SenderThread:1185787 [sender.py:send_request():406] send_request: stop_status
+2024-08-02 14:42:39,579 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:39,857 ERROR   wandb-upload_0:1185787 [internal_api.py:execute():349] 404 response executing GraphQL.
+2024-08-02 14:42:39,857 ERROR   wandb-upload_0:1185787 [internal_api.py:execute():350] {"errors":[{"message":"run Football/fd5b1y50 not found during createRunFiles","path":["createRunFiles"]}],"data":{"createRunFiles":null}}
+2024-08-02 14:42:39,858 ERROR   Thread-11 :1185787 [step_upload.py:_handle_event():144] Failed to upload file: /tmp/tmpgmjw5oj5wandb/bs002wzq-wandb-metadata.json
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 345, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/marl/lib/python3.9/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/filesync/step_upload.py", line 223, in run_and_notify
+    self._do_upload(event)
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/filesync/step_upload.py", line 243, in _do_upload
+    job.run()
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/filesync/upload_job.py", line 56, in run
+    self.push()
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/filesync/upload_job.py", line 105, in push
+    _, upload_headers, result = self._api.upload_urls(project, [self.save_name])
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/apis/normalize.py", line 73, in wrapper
+    raise err
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 2500, in upload_urls
+    query_result = self.gql(
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 317, in gql
+    ret = self._retry_gql(
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/lib/retry.py", line 147, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/util.py", line 910, in no_retry_auth
+    raise CommError(
+wandb.errors.CommError: It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 404: Not Found)
+2024-08-02 14:42:39,860 DEBUG   SenderThread:1185787 [sender.py:send():379] send: telemetry
+2024-08-02 14:42:40,256 INFO    Thread-12 :1185787 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/marl/results/Football/curriculum_learning/tizero/Xt_TiZero_1/wandb/run-20240802_144236-fd5b1y50/files/conda-environment.yaml
+2024-08-02 14:42:40,256 INFO    Thread-12 :1185787 [dir_watcher.py:_on_file_created():271] file/dir created: /root/marl/results/Football/curriculum_learning/tizero/Xt_TiZero_1/wandb/run-20240802_144236-fd5b1y50/files/requirements.txt
+2024-08-02 14:42:40,257 INFO    Thread-12 :1185787 [dir_watcher.py:_on_file_created():271] file/dir created: /root/marl/results/Football/curriculum_learning/tizero/Xt_TiZero_1/wandb/run-20240802_144236-fd5b1y50/files/wandb-metadata.json
+2024-08-02 14:42:40,596 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:41,597 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:42,257 INFO    Thread-12 :1185787 [dir_watcher.py:_on_file_created():271] file/dir created: /root/marl/results/Football/curriculum_learning/tizero/Xt_TiZero_1/wandb/run-20240802_144236-fd5b1y50/files/output.log
+2024-08-02 14:42:42,360 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: status_report
+2024-08-02 14:42:42,596 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:43,599 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:43,609 ERROR   FileStreamThread:1185787 [file_stream.py:_handle_response():510] dropped chunk 404 Client Error: Not Found for url: https://api.wandb.ai/files/singfor7012/Football/fd5b1y50/file_stream
+NoneType: None
+2024-08-02 14:42:44,258 INFO    Thread-12 :1185787 [dir_watcher.py:_on_file_modified():288] file/dir modified: /root/marl/results/Football/curriculum_learning/tizero/Xt_TiZero_1/wandb/run-20240802_144236-fd5b1y50/files/output.log
+2024-08-02 14:42:44,599 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:45,599 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:46,600 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:47,577 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: status_report
+2024-08-02 14:42:47,600 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:48,600 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:49,600 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:50,600 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:51,601 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:52,601 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:53,577 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: status_report
+2024-08-02 14:42:53,601 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:54,575 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: stop_status
+2024-08-02 14:42:54,576 DEBUG   SenderThread:1185787 [sender.py:send_request():406] send_request: stop_status
+2024-08-02 14:42:54,616 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:55,601 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:56,601 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:57,602 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:58,602 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:42:58,802 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: status_report
+2024-08-02 14:42:59,602 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:00,602 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:01,605 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:02,605 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:03,605 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:04,577 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: status_report
+2024-08-02 14:43:04,605 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:05,606 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:06,606 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:07,606 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:08,606 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:09,575 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: stop_status
+2024-08-02 14:43:09,576 DEBUG   SenderThread:1185787 [sender.py:send_request():406] send_request: stop_status
+2024-08-02 14:43:09,616 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:09,861 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: status_report
+2024-08-02 14:43:10,040 ERROR   SenderThread:1185787 [internal_api.py:execute():349] 409 response executing GraphQL.
+2024-08-02 14:43:10,040 ERROR   SenderThread:1185787 [internal_api.py:execute():350] {"errors":[{"message":"run fd5b1y50 was previously created and deleted; try a new run name","path":["upsertBucket"]}],"data":{"upsertBucket":null}}
+2024-08-02 14:43:10,606 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:11,288 ERROR   SenderThread:1185787 [internal_api.py:execute():349] 409 response executing GraphQL.
+2024-08-02 14:43:11,288 ERROR   SenderThread:1185787 [internal_api.py:execute():350] {"errors":[{"message":"run fd5b1y50 was previously created and deleted; try a new run name","path":["upsertBucket"]}],"data":{"upsertBucket":null}}
+2024-08-02 14:43:11,606 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:12,607 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:13,607 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:13,919 ERROR   SenderThread:1185787 [internal_api.py:execute():349] 409 response executing GraphQL.
+2024-08-02 14:43:13,919 ERROR   SenderThread:1185787 [internal_api.py:execute():350] {"errors":[{"message":"run fd5b1y50 was previously created and deleted; try a new run name","path":["upsertBucket"]}],"data":{"upsertBucket":null}}
+2024-08-02 14:43:13,919 INFO    SenderThread:1185787 [retry.py:__call__():172] Retry attempt failed:
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 345, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: https://api.wandb.ai/graphql
+2024-08-02 14:43:14,607 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:15,607 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:16,608 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:17,607 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:18,608 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:18,981 ERROR   SenderThread:1185787 [internal_api.py:execute():349] 409 response executing GraphQL.
+2024-08-02 14:43:18,981 ERROR   SenderThread:1185787 [internal_api.py:execute():350] {"errors":[{"message":"run fd5b1y50 was previously created and deleted; try a new run name","path":["upsertBucket"]}],"data":{"upsertBucket":null}}
+2024-08-02 14:43:19,608 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:20,608 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:21,608 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:22,608 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:23,608 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:24,576 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: stop_status
+2024-08-02 14:43:24,616 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:25,609 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:26,609 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:27,609 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:27,831 ERROR   SenderThread:1185787 [internal_api.py:execute():349] 409 response executing GraphQL.
+2024-08-02 14:43:27,831 ERROR   SenderThread:1185787 [internal_api.py:execute():350] {"errors":[{"message":"run fd5b1y50 was previously created and deleted; try a new run name","path":["upsertBucket"]}],"data":{"upsertBucket":null}}
+2024-08-02 14:43:28,609 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:29,609 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:30,609 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:31,609 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:32,610 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:33,610 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:34,552 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:43:34,553 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:43:34,553 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:43:34,553 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:43:34,553 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:43:34,554 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:43:34,554 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:43:34,554 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:43:34,554 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:43:34,554 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:43:34,554 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:43:34,554 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:43:34,554 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:43:34,610 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:35,610 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:36,610 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:37,546 DEBUG   SystemMonitor:1185787 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-08-02 14:43:37,611 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:38,611 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:39,611 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:40,612 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:41,611 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:42,611 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:43,611 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:44,611 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:45,612 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:46,612 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:47,612 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:47,811 ERROR   SenderThread:1185787 [internal_api.py:execute():349] 409 response executing GraphQL.
+2024-08-02 14:43:47,811 ERROR   SenderThread:1185787 [internal_api.py:execute():350] {"errors":[{"message":"run fd5b1y50 was previously created and deleted; try a new run name","path":["upsertBucket"]}],"data":{"upsertBucket":null}}
+2024-08-02 14:43:48,612 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:49,613 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:50,612 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:51,612 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:52,613 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:53,613 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:54,613 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:55,613 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:56,613 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:57,614 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:58,614 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:43:59,614 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:00,614 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:01,614 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:02,614 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:03,615 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:04,615 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:05,615 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:06,615 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:07,616 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:08,616 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:09,616 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:10,617 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:11,617 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:12,617 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:13,618 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:14,617 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:15,617 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:16,618 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:17,618 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:18,618 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:19,618 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:20,618 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:21,619 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:22,619 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:23,560 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:44:23,563 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:44:23,563 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:44:23,563 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:44:23,564 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:44:23,564 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:44:23,564 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:44:23,564 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:44:23,564 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:44:23,564 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:44:23,564 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:44:23,564 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:44:23,564 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:44:23,619 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:24,448 ERROR   SenderThread:1185787 [internal_api.py:execute():349] 409 response executing GraphQL.
+2024-08-02 14:44:24,448 ERROR   SenderThread:1185787 [internal_api.py:execute():350] {"errors":[{"message":"run fd5b1y50 was previously created and deleted; try a new run name","path":["upsertBucket"]}],"data":{"upsertBucket":null}}
+2024-08-02 14:44:24,619 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:25,620 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:26,620 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:27,620 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:28,620 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:29,620 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:30,621 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:31,620 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:32,621 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:33,621 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:34,622 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:35,622 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:36,623 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:37,623 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:38,623 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:39,623 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:40,623 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:41,624 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:42,623 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:43,624 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:44,624 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:45,624 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:46,625 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:47,625 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:48,625 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:49,625 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:50,625 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:51,625 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:52,626 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:53,626 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:54,626 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:55,626 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:56,627 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:57,626 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:58,627 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:44:59,627 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:00,627 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:01,627 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:02,628 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:03,628 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:04,628 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:05,628 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:06,628 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:07,628 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:08,629 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:09,629 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:10,629 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:11,629 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:12,629 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:13,664 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:45:13,666 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:45:13,666 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:45:13,666 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:45:13,666 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:45:13,666 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:45:13,666 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:45:13,666 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:45:13,666 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:45:13,667 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:45:13,667 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:45:13,667 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:45:13,667 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: partial_history
+2024-08-02 14:45:13,667 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:14,629 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:15,629 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:16,630 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:17,630 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:18,630 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:19,630 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:20,630 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:21,630 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:22,631 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:23,631 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:24,631 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:25,631 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:26,631 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:27,631 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:28,631 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:29,631 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:30,632 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:31,632 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:32,504 ERROR   SenderThread:1185787 [internal_api.py:execute():349] 409 response executing GraphQL.
+2024-08-02 14:45:32,505 ERROR   SenderThread:1185787 [internal_api.py:execute():350] {"errors":[{"message":"run fd5b1y50 was previously created and deleted; try a new run name","path":["upsertBucket"]}],"data":{"upsertBucket":null}}
+2024-08-02 14:45:32,632 DEBUG   HandlerThread:1185787 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-02 14:45:32,632 INFO    HandlerThread:1185787 [handler.py:finish():882] shutting down handler
+2024-08-02 14:45:32,633 INFO    HandlerThread:1185787 [system_monitor.py:finish():203] Stopping system monitor
+2024-08-02 14:45:32,634 INFO    HandlerThread:1185787 [interfaces.py:finish():200] Joined cpu monitor
+2024-08-02 14:45:32,634 INFO    HandlerThread:1185787 [interfaces.py:finish():200] Joined disk monitor
+2024-08-02 14:45:32,634 DEBUG   SystemMonitor:1185787 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-08-02 14:45:32,635 DEBUG   SystemMonitor:1185787 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-08-02 14:45:32,670 INFO    WriterThread:1185787 [datastore.py:close():296] close: /root/marl/results/Football/curriculum_learning/tizero/Xt_TiZero_1/wandb/run-20240802_144236-fd5b1y50/run-fd5b1y50.wandb
+2024-08-02 14:45:34,064 INFO    HandlerThread:1185787 [interfaces.py:finish():200] Joined gpu monitor
+2024-08-02 14:45:34,065 INFO    HandlerThread:1185787 [interfaces.py:finish():200] Joined memory monitor
+2024-08-02 14:45:34,065 INFO    HandlerThread:1185787 [interfaces.py:finish():200] Joined network monitor
+2024-08-02 14:45:34,065 ERROR   StreamThr :1185787 [internal.py:wandb_internal():173] Thread SenderThread:
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/apis/normalize.py", line 41, in wrapper
+    return func(*args, **kwargs)
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 2224, in upsert_run
+    response = self.gql(
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 317, in gql
+    ret = self._retry_gql(
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/lib/retry.py", line 131, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/internal/internal_api.py", line 345, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/lib/gql_request.py", line 59, in execute
+    request.raise_for_status()
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 409 Client Error: Conflict for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/internal/internal_util.py", line 48, in run
+    self._run()
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/internal/internal_util.py", line 92, in _run
+    self._debounce()
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/internal/internal.py", line 333, in _debounce
+    self._sm.debounce()
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/internal/sender.py", line 537, in debounce
+    self._maybe_update_config(always=final)
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/internal/sender.py", line 514, in _maybe_update_config
+    self._debounce_config()
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/sdk/internal/sender.py", line 543, in _debounce_config
+    self._api.upsert_run(
+  File "/root/miniconda3/envs/marl/lib/python3.9/site-packages/wandb/apis/normalize.py", line 51, in wrapper
+    raise CommError(message, error)
+wandb.errors.CommError: run fd5b1y50 was previously created and deleted; try a new run name (Error 409: Conflict)
