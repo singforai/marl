@@ -84,7 +84,6 @@ class TiZero():
             value_loss = torch.max(value_loss_original, value_loss_clipped)
         else:
             value_loss = value_loss_original
-
         if self._use_value_active_masks:
             value_loss = (value_loss * active_masks_batch).sum() / active_masks_batch.sum()
         else:

@@ -9,7 +9,7 @@ class xT():
         self.xt_type = self.args.xt_type
         self.n_rollout_threads = self.args.n_rollout_threads
 
-        xT_csv = f'/root/marl/onpolicy/runner/shared/xT/csv/{self.xt_type}.csv'
+        xT_csv = f'/home/uosai/Desktop/marl/onpolicy/runner/shared/xT/csv/{self.xt_type}.csv'
         self.df = pd.read_csv(xT_csv, header=None, skiprows=1).values
         self.df_shape = np.array([72, 96])
 

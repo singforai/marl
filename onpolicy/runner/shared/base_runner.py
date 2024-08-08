@@ -7,7 +7,6 @@ from tensorboardX import SummaryWriter
 from utils.shared_buffer import SharedReplayBuffer
 
 from runner.shared.xT.cal_xT import xT
-from envs.package.gfootball.scenarios.curriculum_learning import Director
 
 def _t2n(x):
     """Convert torch tensor to a numpy array."""
@@ -54,7 +53,7 @@ class Runner(object):
         self.model_dir = self.all_args.model_dir
 
         # 나의 오리지널
-        self.game_length = 3000
+        self.render_mode = self.all_args.render_mode
         self.use_xt = self.all_args.use_xt
         self.eval_episode = self.all_args.eval_episodes
         self.use_additional_obs = self.all_args.use_additional_obs
@@ -134,7 +133,6 @@ class Runner(object):
             self.envs.action_space[0]
         )
         
-        self.director = Director()
         if self.use_xt:
             self.cal_xt = xT(args = self.all_args)
         

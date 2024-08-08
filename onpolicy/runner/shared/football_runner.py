@@ -1,6 +1,7 @@
 from collections import defaultdict
 from itertools import chain
 import os
+import json
 import time
 from itertools import starmap
 import imageio
@@ -9,7 +10,6 @@ import torch
 import wandb
 import importlib
 
-import cProfile, io, pstats
 from pstats import SortKey
 
 from utils.util import update_linear_schedule
@@ -26,16 +26,27 @@ def _t2n(x):
 class FootballRunner(Runner):
     def __init__(self, config):
         super(FootballRunner, self).__init__(config)
-
+        self.difficulty_level = 1
+        self.level_up_stack = 0
+        """
+        scenario 파일에는 init_level 파일 경로를 넣어야 한다. 
+        """
+        self.level_file_path = "/home/uosai/Desktop/marl/onpolicy/level/level.json"
+        # if os.path.exists(self.level_file_path):
+        #     os.remove(self.level_file_path)
+        
     def run(self):
 
         total_num_steps = 0
-        interval_stack = 0
+        render_stack = 0
+        
+        if self.render_mode == True:
+            self.render()
+            return
         
         while self.num_env_steps >= total_num_steps:
             start_time = time.time()
-            # pr = cProfile.Profile()
-            # pr.enable()
+
             self.warmup()  
             
             if self.use_linear_lr_decay:
@@ -46,21 +57,20 @@ class FootballRunner(Runner):
 
             step = 0
             
-            while (step < 3000) and (None in done_rollouts):
+            while (step < self.episode_length) and (None in done_rollouts):
                 
                 # Sample actions
                 values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env = self.collect(step)
-                
-                
+
                 # Obser reward and next obs
                 obs, rewards, dones, infos = self.envs.step(actions_env)
 
                 rewards = rewards / self.num_agents * 10
           
-                if self.algorithm_name == "tizero":
-                    if infos[0]["ball_owned_team"] == 0:
-                        rewards += 0.0001
-                
+                # reward
+                for idx, info in enumerate(infos):
+                    if info["ball_owned_team"] == 1:  # 상대 
+                        rewards[idx] -= 0.001
                 if self.use_xt:
                     rewards = self.cal_xt.controller(
                         step = step,
@@ -72,12 +82,11 @@ class FootballRunner(Runner):
                 if self.use_additional_obs:
                     obs, share_obs = additional_obs(infos = infos, num_agents = self.num_agents)
                 
-                
                 infos = list(infos)
                 
                 for idx, done in enumerate(dones):
                     if (True in done) and (done_rollouts[idx] == None):
-                        done_rollouts[idx] = step + 1
+                        done_rollouts[idx] = step+1
                         infos_rollouts[idx] = infos[idx]
                     if done_rollouts[idx] != None:
                         dones[idx] = [True for _ in range(self.num_agents)]        
@@ -91,60 +100,57 @@ class FootballRunner(Runner):
                 
                 step += 1
 
-            done_steps = [3000 if done_rollout == None else done_rollout for done_rollout in done_rollouts]
-            
-            self.buffer.step = 0
+            done_steps = [self.episode_length if done_rollout == None else done_rollout for done_rollout in done_rollouts]
             total_num_steps += int(np.average(done_steps))
-            interval_stack += int(np.average(done_steps))
+            render_stack += int(np.average(done_steps))
             
+            # print(done_steps)
+            # for step_idx, roll_idx in enumerate(self.buffer.rewards):
+            #     print(step_idx, roll_idx[0][0], roll_idx[1][0])
+                
             for roll_idx, done_step in enumerate(done_steps):
-                if done_step < 3000:
+                if done_step < (self.episode_length - 1):
                     self.buffer.share_obs[done_step+1: , roll_idx, :] = 0
                     self.buffer.obs[done_step+1: , roll_idx, :] = 0
                     self.buffer.rewards[done_step: , roll_idx, :] = 0
                     self.buffer.actions[done_step: , roll_idx, :] = 0
                     self.buffer.action_log_probs[done_step: , roll_idx, :] = 0
                     self.buffer.masks[done_step+1: , roll_idx, :] = 0
-                    
-            # for idxes, step in enumerate(self.buffer.rewards):
-            #     for idx, rew in enumerate(step):
-            #         if np.any(rew != 0.0):
-            #             print(f"step: {idxes} rollout: {idx} {rew[0]}")
             
-                    
-            rewards_record = self.buffer.rewards # 리셋 대비용 백업
+            rewards_record = self.buffer.rewards 
+            
+            # for step_idx, roll_idx in enumerate(self.buffer.rewards):
+            #     print(step_idx, roll_idx[0][0], roll_idx[1][0])
             
             self.compute()
             train_infos = self.train()
             
             # save model
-            # if interval_stack >= self.save_interval:
-            #     self.save()
-            #     interval_stack = 0
+            if render_stack >= self.save_interval:
+                self.save()
+                render_stack = 0
             
             
             train_infos["episode_length"] = np.average(done_steps)
             train_infos["total_episode_rewards"] = np.sum(rewards_record) / self.num_agents
 
-            train_infos["Difficulty_level"] =  self.director.level
             end_time = time.time()
             train_infos["Episode_Time"] = end_time - start_time
             
             print(f"\nEnv {self.env_name} Algo {self.algorithm_name} Exp {self.experiment_name} updates {total_num_steps}/{self.num_env_steps} steps in {(end_time - start_time):.2f}")  
             print("total episode rewards is {}".format(train_infos["total_episode_rewards"]))
 
+            difficulty_level, level_stack = self.supervisor(
+                wdl = self.buffer.env_infos["train_WDL"],
+                num_agents = self.num_agents,
+            )
+            train_infos["difficulty_level"] = difficulty_level
+            train_infos["level_stack"] = level_stack
+
             self.log_train(train_infos, total_num_steps)
-            self.director.assessing_game(goal_diffs = self.buffer.env_infos["train_goal_diff"])
-            
             self.log_env(self.buffer.env_infos, total_num_steps)
             self.buffer.env_infos = defaultdict(list)
 
-            # pr.disable()
-            # s = io.StringIO()
-            # sortby = SortKey.CUMULATIVE
-            # ps = pstats.Stats(pr, stream=s).sort_stats(sortby)
-            # ps.print_stats()
-            # print(s.getvalue())
 
 #            if interval_stack >= self.eval_interval:
 #                self.eval(total_num_steps)
@@ -152,6 +158,7 @@ class FootballRunner(Runner):
 
     def warmup(self):
         # reset env
+        self.buffer.step = 0
         default_obs = self.envs.reset()
         np.set_printoptions(threshold=np.inf)
         if self.use_additional_obs:
@@ -167,6 +174,21 @@ class FootballRunner(Runner):
             self.buffer.rnn_states[0] = 0
             self.buffer.rnn_states_critic[0] = 0
             self.buffer.masks[0] = 1
+
+    def supervisor(self, wdl, num_agents):
+        if np.mean(wdl) >= 0.4:
+            self.level_up_stack += 1
+            if self.level_up_stack >= 100:
+                self.difficulty_level += 1
+                self.level_up_stack = 0
+        result = {
+            "difficulty_level": self.difficulty_level,
+            "num_agents": num_agents,
+        }
+        with open(self.level_file_path, 'w') as json_file:
+            json.dump(result, json_file, indent=4)
+            
+        return self.difficulty_level, self.level_up_stack
 
     @torch.no_grad()
     def collect(self, step):
@@ -197,7 +219,8 @@ class FootballRunner(Runner):
         # update env_infos if done
         dones_env = np.all(dones, axis=-1)
         
-        if np.all(dones_env) or step == 2999:
+        if np.all(dones_env) or step == (self.episode_length - 1):
+            # print(dones, step)
             for _, info in zip(dones_env, infos):
                 goal_diff = info["score"][0] - info["score"][1]
                 
@@ -230,15 +253,7 @@ class FootballRunner(Runner):
             value_preds=values,
             rewards=rewards,
             masks=masks
-        )
-
-    def log_env(self, env_infos, total_num_steps):
-        for k, v in env_infos.items():
-            if len(v) > 0:
-                if self.use_wandb:
-                    wandb.log({k: np.mean(v)}, step=total_num_steps)
-                else:
-                    self.writter.add_scalars(k, {k: np.mean(v)}, total_num_steps)    
+        ) 
 
     @torch.no_grad()
     def eval(self, total_num_steps):
@@ -337,26 +352,30 @@ class FootballRunner(Runner):
             self.writter.add_scalars("eval_goal", {"expected_goal": eval_goal}, total_num_steps)
             self.writter.add_scalars("eval_WDL", {"eval_WDL": eval_WDL}, total_num_steps)
             self.writter.add_scalars("eval_goal_diff", {"eval_goal_diff": eval_goal_diff}, total_num_steps)
- 
-
-
 
     @torch.no_grad()
     def render(self):        
         # reset envs and init rnn and mask
         render_env = self.envs
+        
+        self.policy.actor.load_state_dict(torch.load('/home/uosai/Desktop/marl/onpolicy/render/actor.pt'))
+        
+        # self.policy
 
         # init goal
         render_goals = np.zeros(self.all_args.render_episodes)
         for i_episode in range(self.all_args.render_episodes):
             render_obs = render_env.reset()
-            render_rnn_states = np.zeros((self.n_rollout_threads, self.num_agents, self.recurrent_N, self.hidden_size), dtype=np.float32)
-            render_masks = np.ones((self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
-
-            if self.all_args.save_gifs:        
-                frames = []
-                image = self.envs.envs[0].env.unwrapped.observation()[0]["frame"]
-                frames.append(image)
+            
+            if self.use_additional_obs:
+                render_obs, _ = init_obs(obs = render_obs)
+            
+            render_rnn_states = np.zeros((self.n_render_rollout_threads, self.num_agents, self.recurrent_N, self.hidden_size), dtype=np.float32)
+            render_masks = np.ones((self.n_render_rollout_threads, self.num_agents, 1), dtype=np.float32)
+            # if self.all_args.save_gifs:        
+            #     frames = []
+            #     image = self.envs.envs[0].env.unwrapped.observation()[0]["frame"]
+            #     frames.append(image)
 
             render_dones = False
             while not np.any(render_dones):
@@ -369,31 +388,35 @@ class FootballRunner(Runner):
                 )
 
                 # [n_envs*n_agents, ...] -> [n_envs, n_agents, ...]
-                render_actions = np.array(np.split(_t2n(render_actions), self.n_rollout_threads))
-                render_rnn_states = np.array(np.split(_t2n(render_rnn_states), self.n_rollout_threads))
+                render_actions = np.array(np.split(_t2n(render_actions), self.n_render_rollout_threads))
+                render_rnn_states = np.array(np.split(_t2n(render_rnn_states), self.n_render_rollout_threads))
 
-                render_actions_env = [render_actions[idx, :, 0] for idx in range(self.n_rollout_threads)]
+                render_actions_env = [render_actions[idx, :, 0] for idx in range(self.n_render_rollout_threads)]
 
                 # step
+                
                 render_obs, render_rewards, render_dones, render_infos = render_env.step(render_actions_env)
-
+                
+                if self.use_additional_obs:
+                    render_obs, _ = init_obs(obs = render_obs)
+                    
                 # append frame
-                if self.all_args.save_gifs:        
-                    image = render_infos[0]["frame"]
-                    frames.append(image)
+                # if self.all_args.save_gifs:        
+                #     image = render_infos[0]["frame"]
+                #     frames.append(image)
             
             # print goal
             render_goals[i_episode] = render_rewards[0, 0]
             print("goal in episode {}: {}".format(i_episode, render_rewards[0, 0]))
 
             # save gif
-            if self.all_args.save_gifs:
-                imageio.mimsave(
-                    uri="{}/episode{}.gif".format(str(self.gif_dir), i_episode),
-                    ims=frames,
-                    format="GIF",
-                    duration=self.all_args.ifi,
-                )
+            # if self.all_args.save_gifs:
+            #     imageio.mimsave(
+            #         uri="{}/episode{}.gif".format(str(self.gif_dir), i_episode),
+            #         ims=frames,
+            #         format="GIF",
+            #         duration=self.all_args.ifi,
+            #     )
         
         print("expected goal: {}".format(np.mean(render_goals)))
 

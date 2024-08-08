@@ -322,6 +322,45 @@ class InputEncoder(nn.Module):
             right_output,
             match_state_output
         ], 1)
+        
+        
+class InputEncoder_critic(nn.Module):
+    def __init__(self):
+        super(InputEncoder_critic, self).__init__()
+        fc_layer_num = 2
+        self.ball_info_num = 12
+        self.ball_owner_num = 23
+        self.left_input_num = 88
+        self.right_input_num = 88
+        self.match_state_input_num = 9
+
+        self.ball_info_encoder = FcEncoder(fc_layer_num, self.ball_info_num, 10)
+        self.ball_owner_encoder = FcEncoder(fc_layer_num, self.ball_owner_num, 20)
+        self.left_encoder = FcEncoder(fc_layer_num, self.left_input_num, 45)
+        self.right_encoder = FcEncoder(fc_layer_num, self.right_input_num, 45)
+        self.match_state_encoder = FcEncoder(fc_layer_num, self.match_state_input_num, 8)
+
+    def forward(self, x):
+        active_vec = x[:, :self.ball_info_num] # 87
+        ball_owner_vec = x[:, self.ball_info_num : self.ball_info_num + self.ball_owner_num] 
+        left_vec = x[:, self.ball_info_num + self.ball_owner_num : self.ball_info_num + self.ball_owner_num + self.left_input_num] 
+        right_vec = x[:, self.ball_info_num + self.ball_owner_num + self.left_input_num : \
+            self.ball_info_num + self.ball_owner_num + self.left_input_num + self.right_input_num] 
+        match_state_vec = x[:, self.ball_info_num + self.ball_owner_num + self.left_input_num + self.right_input_num:]
+
+        active_output = self.ball_info_encoder(active_vec)
+        ball_owner_output = self.ball_owner_encoder(ball_owner_vec)
+        left_output = self.left_encoder(left_vec)
+        right_output = self.right_encoder(right_vec)
+        match_state_output = self.match_state_encoder(match_state_vec)
+
+        return torch.cat([
+            active_output,
+            ball_owner_output,
+            left_output,
+            right_output,
+            match_state_output
+        ], 1)
 
 def get_fc(input_size, output_size):
     return nn.Sequential(nn.Linear(input_size, output_size), nn.ReLU(), nn.LayerNorm(output_size))
@@ -329,14 +368,31 @@ def get_fc(input_size, output_size):
 
 
 class ObsEncoder(nn.Module):
-    def __init__(self, input_embedding_size, hidden_size, _recurrent_N, _use_orthogonal, rnn_type):
+    def __init__(self, input_embedding_size, hidden_size, _recurrent_N, _use_orthogonal, device=torch.device("cpu")):
         super(ObsEncoder, self).__init__()
-
-
         self.input_encoder = InputEncoder()     
         self.input_embedding = get_fc(input_embedding_size, hidden_size) 
         self.rnn = RNNLayer(hidden_size, hidden_size, _recurrent_N, _use_orthogonal) 
         self.after_rnn_mlp = get_fc(hidden_size, hidden_size)   
+        
+        self.to(device)
+
+    def forward(self, obs, rnn_states, masks):
+        actor_features = self.input_encoder(obs)
+        actor_features = self.input_embedding(actor_features)
+        output, rnn_states = self.rnn(actor_features, rnn_states, masks)
+        return self.after_rnn_mlp(output), rnn_states
+
+
+class ObsEncoder_critic(nn.Module):
+    def __init__(self, input_embedding_size, hidden_size, _recurrent_N, _use_orthogonal, device=torch.device("cpu")):
+        super(ObsEncoder_critic, self).__init__()
+        self.input_encoder = InputEncoder_critic()     
+        self.input_embedding = get_fc(input_embedding_size, hidden_size) 
+        self.rnn = RNNLayer(hidden_size, hidden_size, _recurrent_N, _use_orthogonal) 
+        self.after_rnn_mlp = get_fc(hidden_size, hidden_size)   
+        
+        self.to(device)
 
     def forward(self, obs, rnn_states, masks):
         actor_features = self.input_encoder(obs)

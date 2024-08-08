@@ -6,9 +6,10 @@ def get_config():
     parser = argparse.ArgumentParser(
         description='onpolicy', formatter_class=argparse.RawDescriptionHelpFormatter)
     
+    
+    parser.add_argument("--render_mode", action='store_true', default=False, help="whether to use render mode using saved model")
     #JRPO
     parser.add_argument("--use_joint_action_loss", action='store_false', default=True, help="whether to use joint action loss for JRPO or TiZero")
-    
     # Tizero
     parser.add_argument("--use_additional_obs", action='store_false', default=True, help="whether to use addtional obs for replicating the TiZero")
     
@@ -26,18 +27,18 @@ def get_config():
     parser.add_argument("--cuda_deterministic",
                         action='store_false', default=True, help="by default, make sure random seed effective. if set, bypass such function.")
     parser.add_argument("--n_torch_threads", type=int,
-                        default=128, help="Number of torch threads for training")
-    parser.add_argument("--n_rollout_threads", type=int, default=5,
+                        default = 64, help="Number of torch threads for training")
+    parser.add_argument("--n_rollout_threads", type=int, default=10,
                         help="Number of parallel envs for training rollouts")
     parser.add_argument("--n_eval_rollout_threads", type=int, default=10,
                         help="Number of parallel envs for evaluating rollouts")
-    parser.add_argument("--n_render_rollout_threads", type=int, default=1,
+    parser.add_argument("--n_render_rollout_threads", type=int, default=10,
                         help="Number of parallel envs for rendering rollouts")
     parser.add_argument("--num_env_steps", type=int, default=1e11,
                         help='Number of environment steps to train (default: 10e6)')
     parser.add_argument("--num_gpu", type = int, default = 0, help = "사용할 gpu number")
     parser.add_argument("--episode_length", type=int,
-                        default=3000, help="Max length for any episode, 전체 경기 지표를 확인하기 위해 이걸 3000으로 고정한다.")
+                        default=1500, help="Max length for any episode, 전체 경기 지표를 확인하기 위해 이걸 3000으로 고정한다.")
 
     #학습을 위한 알고리즘 전처리
     parser.add_argument("--algorithm_name", type=str,
@@ -54,7 +55,7 @@ def get_config():
                         help="Dimension of hidden layers for actor/critic networks")
     parser.add_argument("--use_stacked_frames", action='store_true',
                         default=False, help="Whether to use stacked_frames")
-    parser.add_argument("--hidden_size", type=int, default=512,
+    parser.add_argument("--hidden_size", type=int, default = 32,
                         help="Dimension of hidden layers for actor/critic networks") 
     parser.add_argument("--layer_N", type=int, default=1,
                         help="Number of layers for actor/critic networks")
@@ -62,8 +63,8 @@ def get_config():
                         default=True, help="Whether to use ReLU")
     parser.add_argument("--use_popart", action='store_true', default=False, help="by default False, use PopArt to normalize rewards.")
     parser.add_argument("--use_valuenorm", action='store_false', default=True, help="by default True, use running mean and std to normalize rewards.")
-    parser.add_argument("--use_feature_normalization", action='store_false',
-                        default=True, help="Whether to apply layernorm to the inputs")
+    parser.add_argument("--use_feature_normalization", action='store_true',
+                        default = False, help="Whether to apply layernorm to the inputs")
     parser.add_argument("--use_orthogonal", action='store_false', default=True,
                         help="Whether to use Orthogonal initialization for weights and 0 initialization for biases")
     parser.add_argument("--gain", type=float, default=0.01,
@@ -96,8 +97,8 @@ def get_config():
                         default=0.5, help='accept ratio of loss improve (default: 0.5)')
 
     # ppo parameters
-    parser.add_argument("--ppo_epoch", type=int, default=15,
-                        help='number of ppo epochs (default: 15)')
+    parser.add_argument("--ppo_epoch", type=int, default=5,
+                        help='number of ppo epochs (default: 10)')
     parser.add_argument("--use_clipped_value_loss",
                         action='store_false', default=True, help="by default, clip loss value. If set, do not clip loss value.")
     parser.add_argument("--clip_param", type=float, default=0.2,
@@ -131,7 +132,7 @@ def get_config():
     parser.add_argument("--use_linear_lr_decay", action='store_true',
                         default=False, help='use a linear schedule on the learning rate')
     # save parameters
-    parser.add_argument("--save_interval", type=int, default=5000000, help="time duration between contiunous twice models saving.")
+    parser.add_argument("--save_interval", type=int, default=100000, help="time duration between contiunous twice models saving.")
 
     # log parameters
     parser.add_argument("--log_interval", type=int, default=5, help="time duration between contiunous twice log printing.")
@@ -144,7 +145,7 @@ def get_config():
     # render parameters
     parser.add_argument("--save_gifs", action='store_true', default=False, help="by default, do not save render video. If set, save video.")
     parser.add_argument("--use_render", action='store_true', default=False, help="by default, do not render the env during training. If set, start render. Note: something, the environment has internal render process which is not controlled by this hyperparam.")
-    parser.add_argument("--render_episodes", type=int, default=5, help="the number of episodes to render a given env")
+    parser.add_argument("--render_episodes", type=int, default=1, help="the number of episodes to render a given env")
     parser.add_argument("--ifi", type=float, default=0.1, help="the play interval of each rendered image in saved video.")
 
     # pretrained parameters

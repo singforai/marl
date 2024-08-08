@@ -7,7 +7,7 @@ import setproctitle
 
 import numpy as np
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), './envs/package/')))
+# sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), './envs/package/')))
 
 from config import get_config
 
@@ -23,6 +23,7 @@ def make_train_env(all_args):
         def init_env():
             if all_args.env_name == "Football":
                 env = FootballEnv(all_args)
+ 
             else:
                 print("Can not support the " +
                       all_args.env_name + " environment.")
@@ -60,6 +61,7 @@ def parse_args(args, parser):
     parser.add_argument("--scenario_name", type=str,
                         default="curriculum_learning",
                         choices = [
+                            "1_vs_1_easy",
                             "curriculum_learning_11vs11",
                             "curriculum_learning",
                             "11_vs_11_easy_stochastic", 
@@ -67,8 +69,8 @@ def parse_args(args, parser):
                             "11_vs_11_hard_stochastic",
                         ], 
                         help="which scenario to run on.")
-    parser.add_argument("--num_agents", type=int, default=2,
-                        help="number of controlled players.")
+    parser.add_argument("--num_agents", type=int, default=3,
+                        help="number of controlled players. (must >= 3)")
     parser.add_argument("--representation", type=str, default="simple115v2", 
                         choices=["simple115v2", "extracted", "pixels_gray", 
                                  "pixels"],
@@ -91,9 +93,9 @@ def parse_args(args, parser):
     parser.add_argument("--share_reward", action='store_false', 
                         default=True, 
                         help="by default true. If false, use different reward for each agent.")
-    parser.add_argument("--save_videos", action="store_true", default=False, 
+    parser.add_argument("--save_videos", action="store_true", default  = False, 
                         help="by default, do not save render video. If set, save video.")
-    parser.add_argument("--video_dir", type=str, default="", 
+    parser.add_argument("--video_dir", type=str, default="./render", 
                         help="directory to save videos.")
                         
     all_args = parser.parse_known_args(args)[0]
@@ -102,6 +104,11 @@ def parse_args(args, parser):
 
 
 def main(args):
+    
+    level_file_path = "/home/uosai/Desktop/marl/onpolicy/level/level.json"
+    if os.path.exists(level_file_path):
+        os.remove(level_file_path)
+        
     parser = get_config()
     all_args = parse_args(args, parser)
 
@@ -110,12 +117,14 @@ def main(args):
         all_args.use_recurrent_policy = True
         all_args.use_naive_recurrent_policy = False
         all_args.use_joint_action_loss = False
-        all_args.use_additional_obs = False
+
 
     elif all_args.algorithm_name == "mappo":
         print("u are choosing to use mappo, we set use_recurrent_policy & use_naive_recurrent_policy to be False")
         all_args.use_recurrent_policy = False 
         all_args.use_naive_recurrent_policy = False
+        all_args.use_joint_action_loss = False
+
     elif all_args.algorithm_name == "ippo":
         print("u are choosing to use ippo, we set use_centralized_V to be False. Note that GRF is a fully observed game, so ippo is rmappo.")
         all_args.use_centralized_V = False
@@ -123,7 +132,6 @@ def main(args):
         all_args.use_recurrent_policy = True
         all_args.use_naive_recurrent_policy = False
         all_args.use_joint_action_loss = True
-        all_args.use_additional_obs = False
         
     elif all_args.algorithm_name == "tizero":
         if "11_vs_11" not in all_args.scenario_name and all_args.representation != "simple115v2" :

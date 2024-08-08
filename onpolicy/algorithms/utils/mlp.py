@@ -29,7 +29,6 @@ class MLPLayer(nn.Module):
             x = self.fc2[i](x)
         return x
 
-
 class MLPBase(nn.Module):
     def __init__(self, args, obs_shape, cat_self=True, attn_internal=False):
         super(MLPBase, self).__init__()

@@ -12,7 +12,7 @@ from utils.util import get_shape_from_obs_space
 from algorithms.utils.input_encoder import get_fc
 from algorithms.utils.input_encoder import FcEncoder
 from algorithms.utils.input_encoder import ACTLayer
-from algorithms.utils.input_encoder import ObsEncoder
+from algorithms.utils.input_encoder import ObsEncoder, ObsEncoder_critic
 
 
 class R_Actor(nn.Module):
@@ -39,12 +39,7 @@ class R_Actor(nn.Module):
 
         obs_shape = get_shape_from_obs_space(obs_space)
 
-        input_embedding_size = 64 * 4 + 9
-        recurrent_N = 1
-        use_orthogonal = True
-        rnn_type = 'lstm'
-
-        self.obs_encoder = ObsEncoder(input_embedding_size, self.hidden_size, recurrent_N, use_orthogonal, rnn_type)
+        self.obs_encoder = ObsEncoder(input_embedding_size = 265, hidden_size=self.hidden_size, _recurrent_N = 1, _use_orthogonal = True, device = self.device)
         self.action_dim = 19
         self.active_id_size = 1
         self.id_max = 11
@@ -152,6 +147,7 @@ class R_Critic(nn.Module):
     """
     def __init__(self, args, cent_obs_space, device=torch.device("cpu")):
         super(R_Critic, self).__init__()
+    
         self.hidden_size = args.hidden_size
         self._use_orthogonal = args.use_orthogonal
         self._use_naive_recurrent_policy = args.use_naive_recurrent_policy
@@ -160,13 +156,14 @@ class R_Critic(nn.Module):
         self._use_popart = args.use_popart
         self.tpdv = dict(dtype=torch.float32, device=device)
         init_method = [nn.init.xavier_uniform_, nn.init.orthogonal_][self._use_orthogonal]
-
-        cent_obs_shape = get_shape_from_obs_space(cent_obs_space)
-        base = CNNBase if len(cent_obs_shape) == 3 else MLPBase
-        self.base = base(args, cent_obs_shape)
-
-        if self._use_naive_recurrent_policy or self._use_recurrent_policy:
-            self.rnn = RNNLayer(self.hidden_size, self.hidden_size, self._recurrent_N, self._use_orthogonal)
+        
+        self.obs_encoder = ObsEncoder_critic(
+            input_embedding_size = 128, 
+            hidden_size=self.hidden_size, 
+            _recurrent_N = 1, 
+            _use_orthogonal = True, 
+            device = device
+        )
 
         def init_(m):
             return init(m, init_method, lambda x: nn.init.constant_(x, 0))
@@ -191,10 +188,9 @@ class R_Critic(nn.Module):
         cent_obs = check(cent_obs).to(**self.tpdv)
         rnn_states = check(rnn_states).to(**self.tpdv)
         masks = check(masks).to(**self.tpdv)
-
-        critic_features = self.base(cent_obs)
-        if self._use_naive_recurrent_policy or self._use_recurrent_policy:
-            critic_features, rnn_states = self.rnn(critic_features, rnn_states, masks)
-        values = self.v_out(critic_features)
+        
+        x, rnn_states = self.obs_encoder(cent_obs, rnn_states, masks)
+        
+        values = self.v_out(x)
 
         return values, rnn_states

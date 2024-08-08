@@ -100,12 +100,9 @@ def thread_processing(info, num_agents): # 279
         left_offside = np.zeros(11, dtype = float32)
         if info_ball_owned_team == 0:
             left_offside_line = max(0, info_ball[0], np.sort(info_right_team[:, 0])[-2])
-            left_offside = (info_left_team[:, 0] > left_offside_line).astype(float32) 
-            """
-            아래의 코드를 변경함. 
-            left_offside[info_ball_owned_player] = False => left_offside[info_ball_owned_player] = 1
-            """
+            left_offside = (info_left_team[:, 0] > left_offside_line).astype(float32)          
             left_offside[info_ball_owned_player] = 1
+
 
         new_left_direction = left_direction.copy()
         for counting in range(len(new_left_direction)):
@@ -213,7 +210,7 @@ def thread_processing(info, num_agents): # 279
 
         # ball owned player 23
         ball_owned_player = np.zeros(23)
-        if info_ball_owned_team == 1:     # 对手
+        if info_ball_owned_team == 1:
             ball_owned_player[11 + info_ball_owned_player] = 1.0
             ball_owned_player_pos = (info_left_team[info_ball_owned_player]).astype(float32)
             ball_owned_player_direction = (info_right_direct[info_ball_owned_player]).astype(float32)
@@ -313,7 +310,7 @@ def preproc_obs(infos_array, num_agents):
         share_observations[idx, : , :] = share_obs
 
 
-    return (observations, share_observations) # (Rollout, num_agents, 330) / (Rollout, num_agents, 220)
+    return (observations, share_observations) # (num_Rollout, num_agents, 330) / (num_Rollout, num_agents, 220)
 
 
 def additional_obs(infos, num_agents):
@@ -342,44 +339,25 @@ def additional_obs(infos, num_agents):
         info_array[266 : 269] = info["ball"]
         info_array[269 : 272] = info['ball_direction']
         info_array[272 : 275] = info['ball_rotation']
-
         info_array[275] = info["ball_owned_team"]
         info_array[276] = info["game_mode"]
         info_array[277] = info["steps_left"]
         info_array[278] = info["ball_owned_player"]
         
         infos_list.append(info_array)
-        
-        """
-        agent가 줄어들면 -1로 마스킹하는 기본 설정을 0으로 변경
-        """
-        # if num_agents < 10:
-        #     info_array[num_agents : 10] = -1.0
-        #     info_array[10 + num_player : 32] = -1.0
-        #     info_array[32 + num_player : 54] = -1.0
-        #     info_array[54 + num_teammate : 65] = -1.0
-        #     info_array[65 + num_teammate : 76] = -1.0
-        #     info_array[76 + num_teammate : 87] = -1.0
-        #     info_array[87 + num_player : 109] = -1.0
-        #     info_array[109 + num_player : 131] = -1.0
-        #     info_array[131 + num_teammate : 142] = -1.0
-        #     info_array[142 + num_teammate : 153] = -1.0
-        #     info_array[153 + num_teammate : 164] = -1.0
-        #     info_array[164 + 10*num_agents: 264] = -1.0
-            
-            
-    
+
     infos_array = np.array(infos_list, dtype=np.float32)
     obs , share_obs = preproc_obs(infos_array, num_agents)
     return obs , share_obs
 
 @numba.njit(Tuple((float32[:,:,:], float32[:,:,:]))(float32[:, :, :]))
 def init_obs(obs):
-    rollout = obs.shape[0]
-    agents = obs.shape[1]
-    init_obs = np.zeros((rollout, agents, 330), dtype=float32)
-    init_share_obs = np.zeros((rollout, agents, 220), dtype=float32)
+    num_rollout = obs.shape[0]
+    num__agents = obs.shape[1]
     
+    init_obs = np.zeros((num_rollout, num__agents, 330), dtype=float32)
+    init_share_obs = np.zeros((num_rollout, num__agents, 220), dtype=float32)
+
     left_position = obs[:, : , 0 : 22]
     left_direction = obs[:, :, 22 : 44]
     right_position = obs[:, : , 44 : 66]
@@ -388,14 +366,14 @@ def init_obs(obs):
     ball_direction = obs[ : , : , 91 : 94]
     ball_ownership = obs[ : , : , 94 : 97]
     game_mode = obs[:, : , 108 : 115]
-
-    left_position[:, :, (agents+1)*2: 22] = 0
-    left_direction[:, :, 22 + (agents+1)*2: 44]= 0
-    right_position[:, :, 44 + (agents+1)*2: 66]= 0
-    right_direction[:, :, 66 + (agents+1)*2: 88]= 0
-
-    for roll_id in range(rollout):
-        for agent_id in range(agents):
+    
+    left_position[:, :, (num__agents+1)*2: 22] = 0
+    left_direction[:, :, (num__agents+1)*2: 22]= 0
+    right_position[:, :, (num__agents+1)*2: 22]= 0
+    right_direction[:, :, (num__agents+1)*2: 22]= 0
+    
+    for roll_id in range(num_rollout):
+        for agent_id in range(num__agents):
             
             active_position = np.ascontiguousarray(left_position[roll_id, agent_id, 2*(agent_id + 1): 2*(agent_id + 1) + 2])
             active_direction = np.ascontiguousarray(left_direction[roll_id, agent_id, 2*(agent_id + 1): 2*(agent_id + 1) + 2])
@@ -410,7 +388,7 @@ def init_obs(obs):
             relative_right_position = np.ascontiguousarray(contigous_right_position.reshape(2, 11) - active_position.reshape(2, 1))
             distance2right = np.linalg.norm(relative_right_position, 1)
             relative_right_position = relative_right_position.reshape(-1)
-            
+
             active_info = np.zeros(87)
             active_info[0: 10] = 0 # sticky actions
             active_info[10: 12] = active_position # active position
@@ -447,13 +425,13 @@ def init_obs(obs):
             ball_own_active_info[53: 57] = 0 # ball_owner_info
             
             left_team = np.zeros(88)
-            left_team[0 : 22] = left_position[roll_id, agent_id]
-            left_team[22 : 44] = left_direction[roll_id, agent_id]
-            left_team[44 : 88] = 0      
+            left_team[0 : 22] = left_position[roll_id, agent_id, :]
+            left_team[22 : 44] = left_direction[roll_id, agent_id, :]
+            left_team[44 : 88] = 0    
             
             right_team = np.zeros(88)
-            right_team[0 : 22] = right_position[roll_id, agent_id]
-            right_team[22 : 44] = right_direction[roll_id, agent_id]
+            right_team[0 : 22] = right_position[roll_id, agent_id, :]
+            right_team[22 : 44] = right_direction[roll_id, agent_id, :]
             right_team[44 : 88] = 0     
             
             match_state = np.zeros(9)
