@@ -10,7 +10,7 @@
 
 # parallel -j 5 $command $args_gpu0 ::: 0    
 
-command="python train_grf.py --seed {0} --experiment_name tizero --group_name tizero --algorithm_name tizero --use_wandb --use_linear_lr_decay --n_rollout_threads 10 --layer_N 1"
+command="python train_grf.py --seed {0} --experiment_name tizero --group_name tizero_mse --algorithm_name tizero --use_wandb --use_linear_lr_decay --n_rollout_threads 10 --layer_N 1"
 
 args_gpu0="--num_gpu 1"
 args_gpu1="--num_gpu 1"

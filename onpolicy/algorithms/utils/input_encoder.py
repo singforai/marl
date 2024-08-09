@@ -327,7 +327,7 @@ class InputEncoder(nn.Module):
 class InputEncoder_critic(nn.Module):
     def __init__(self):
         super(InputEncoder_critic, self).__init__()
-        fc_layer_num = 2
+        fc_layer_num = 1
         self.ball_info_num = 12
         self.ball_owner_num = 23
         self.left_input_num = 88

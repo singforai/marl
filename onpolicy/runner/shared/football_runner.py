@@ -31,7 +31,7 @@ class FootballRunner(Runner):
         """
         scenario 파일에는 init_level 파일 경로를 넣어야 한다. 
         """
-        self.level_file_path = "/home/uosai/Desktop/marl/onpolicy/level/level.json"
+        self.level_file_path = self.all_args.level_dir
         # if os.path.exists(self.level_file_path):
         #     os.remove(self.level_file_path)
         
@@ -65,7 +65,7 @@ class FootballRunner(Runner):
                 # Obser reward and next obs
                 obs, rewards, dones, infos = self.envs.step(actions_env)
 
-                rewards = rewards / self.num_agents * 10
+                # rewards = rewards / self.num_agents * 10
           
                 # reward
                 for idx, info in enumerate(infos):
@@ -176,7 +176,7 @@ class FootballRunner(Runner):
             self.buffer.masks[0] = 1
 
     def supervisor(self, wdl, num_agents):
-        if np.mean(wdl) >= 0.4:
+        if np.mean(wdl) >= 0.8:
             self.level_up_stack += 1
             if self.level_up_stack >= 100:
                 self.difficulty_level += 1
@@ -229,10 +229,8 @@ class FootballRunner(Runner):
                 self.buffer.env_infos["train_goal"].append(info["score"][0])
                 if goal_diff > 0:
                     self.buffer.env_infos["train_WDL"].append(1)
-                elif goal_diff == 0:
-                    self.buffer.env_infos["train_WDL"].append(0)
                 else:
-                    self.buffer.env_infos["train_WDL"].append(-1)
+                    self.buffer.env_infos["train_WDL"].append(0)
                     
         # reset rnn and mask args for done envs
         
@@ -317,10 +315,9 @@ class FootballRunner(Runner):
                         eval_goals[num_done] = scores[idx_env][0]
                         if eval_goal_diff[num_done] > 0:
                             eval_WDL[num_done] = 1
-                        elif eval_goal_diff[num_done] == 0:
-                            eval_WDL[num_done] = 0
                         else:
-                            eval_WDL[num_done] = -1
+                            eval_WDL[num_done] = 0
+                            
                         num_done += 1
                         done_episodes_per_thread[idx_env] += 1
             unfinished_thread = (done_episodes_per_thread != eval_episodes_per_thread)

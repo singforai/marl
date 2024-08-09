@@ -1,0 +1,50 @@
+
+사용 가능한 CPU Thread: 64
+Env Football Algo tizero Exp check updates 849/100000000000.0 steps in 48.25
+total episode rewards is -53.27100626627604
+Env Football Algo tizero Exp check updates 1846/100000000000.0 steps in 44.95
+total episode rewards is -45.4520009358724
+Env Football Algo tizero Exp check updates 3120/100000000000.0 steps in 44.74
+total episode rewards is -36.356005350748696
+Env Football Algo tizero Exp check updates 4217/100000000000.0 steps in 45.23
+total episode rewards is -36.842002868652344
+Env Football Algo tizero Exp check updates 4981/100000000000.0 steps in 45.82
+total episode rewards is -64.49801127115886
+Env Football Algo tizero Exp check updates 5918/100000000000.0 steps in 44.56
+total episode rewards is -35.59700266520182
+Env Football Algo tizero Exp check updates 6776/100000000000.0 steps in 44.73
+total episode rewards is -35.77801259358724
+Env Football Algo tizero Exp check updates 7752/100000000000.0 steps in 45.57
+total episode rewards is -64.79500325520833
+Env Football Algo tizero Exp check updates 8710/100000000000.0 steps in 45.83
+total episode rewards is -43.996002197265625
+Env Football Algo tizero Exp check updates 9742/100000000000.0 steps in 44.80
+total episode rewards is -5.680002848307292
+Env Football Algo tizero Exp check updates 10744/100000000000.0 steps in 44.63
+total episode rewards is -65.09400431315105
+Env Football Algo tizero Exp check updates 11509/100000000000.0 steps in 45.02
+total episode rewards is -63.29700215657552
+Env Football Algo tizero Exp check updates 12431/100000000000.0 steps in 44.82
+total episode rewards is -45.79300435384115
+Env Football Algo tizero Exp check updates 13645/100000000000.0 steps in 45.04
+total episode rewards is -66.22300211588542
+Traceback (most recent call last):
+  File "/root/marl/onpolicy/train_grf.py", line 231, in <module>
+    main(args = sys.argv[1:])
+  File "/root/marl/onpolicy/train_grf.py", line 222, in main
+    runner.run()
+  File "/root/marl/onpolicy/runner/shared/football_runner.py", line 66, in run
+    obs, rewards, dones, infos = self.envs.step(actions_env)
+  File "/root/marl/onpolicy/envs/env_wrappers.py", line 107, in step
+    return self.step_wait()
+  File "/root/marl/onpolicy/envs/env_wrappers.py", line 263, in step_wait
+    results = [remote.recv() for remote in self.remotes]
+  File "/root/marl/onpolicy/envs/env_wrappers.py", line 263, in <listcomp>
+    results = [remote.recv() for remote in self.remotes]
+  File "/root/miniconda3/envs/football/lib/python3.10/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/root/miniconda3/envs/football/lib/python3.10/multiprocessing/connection.py", line 414, in _recv_bytes
+    buf = self._recv(4)
+  File "/root/miniconda3/envs/football/lib/python3.10/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt
