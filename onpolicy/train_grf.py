@@ -104,10 +104,6 @@ def parse_args(args, parser):
 
 
 def main(args):
-    
-    level_file_path = "/home/uosai/Desktop/marl/onpolicy/level/level.json"
-    if os.path.exists(level_file_path):
-        os.remove(level_file_path)
         
     parser = get_config()
     all_args = parse_args(args, parser)

@@ -79,7 +79,6 @@ class SharedReplayBuffer(object):
         self.returns = np.zeros_like(self.value_preds)
         self.advantages = np.zeros(
             (self.episode_length, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
-        
         if act_space.__class__.__name__ == 'Discrete':
             self.available_actions = np.ones((self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.act_space_n),
                                              dtype=np.float32)
@@ -136,7 +135,6 @@ class SharedReplayBuffer(object):
             self.active_masks[self.step + 1] = active_masks.copy()
         if available_actions is not None:# None
             self.available_actions[self.step + 1] = available_actions.copy()
-
         self.step = self.step + 1
 
     def chooseinsert(self, share_obs, obs, rnn_states, rnn_states_critic, actions, action_log_probs,
@@ -171,6 +169,7 @@ class SharedReplayBuffer(object):
             self.active_masks[self.step] = active_masks.copy()
         if available_actions is not None:
             self.available_actions[self.step] = available_actions.copy()
+        
         self.step = (self.step + 1) % self.episode_length
 
     def after_update(self):

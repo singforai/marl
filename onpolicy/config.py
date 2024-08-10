@@ -6,7 +6,8 @@ def get_config():
     parser = argparse.ArgumentParser(
         description='onpolicy', formatter_class=argparse.RawDescriptionHelpFormatter)
     
-    parser.add_argument("--level_dir", type=str, default='/root/marl/onpolicy/level/level.json', help="directory for level change")
+    
+    parser.add_argument("--level_dir",type=str, default="/home/uosai/Desktop/marl/onpolicy/level/level.json", help="difficulty_storage_directory")
     
     parser.add_argument("--render_mode", action='store_true', default=False, help="whether to use render mode using saved model")
     #JRPO
@@ -39,7 +40,7 @@ def get_config():
                         help='Number of environment steps to train (default: 10e6)')
     parser.add_argument("--num_gpu", type = int, default = 0, help = "사용할 gpu number")
     parser.add_argument("--episode_length", type=int,
-                        default=1500, help="Max length for any episode, 전체 경기 지표를 확인하기 위해 이걸 3000으로 고정한다.")
+                        default = 1000, help="Max length for any episode, 전체 경기 지표를 확인하기 위해 이걸 3000으로 고정한다.")
 
     #학습을 위한 알고리즘 전처리
     parser.add_argument("--algorithm_name", type=str,
@@ -81,9 +82,9 @@ def get_config():
                         help="Time length of chunks used to train a recurrent_policy")
 
     # optimizer parameters
-    parser.add_argument("--lr", type=float, default=4e-5,
+    parser.add_argument("--lr", type=float, default=2e-4,
                         help='learning rate (default: 5e-4)')
-    parser.add_argument("--critic_lr", type=float, default=1e-4,
+    parser.add_argument("--critic_lr", type=float, default=2e-4,
                         help='critic learning rate (default: 5e-4)')
     parser.add_argument("--opti_eps", type=float, default=1e-5,
                         help='RMSprop optimizer epsilon (default: 1e-5)')
@@ -104,7 +105,7 @@ def get_config():
                         action='store_false', default=True, help="by default, clip loss value. If set, do not clip loss value.")
     parser.add_argument("--clip_param", type=float, default=0.2,
                         help='ppo clip parameter (default: 0.2)')
-    parser.add_argument("--num_mini_batch", type=int, default=1,
+    parser.add_argument("--num_mini_batch", type=int, default=10,
                         help='number of batches for ppo (default: 1)')
     parser.add_argument("--entropy_coef", type=float, default=0.01,
                         help='entropy term coefficient (default: 0.01)')
@@ -122,7 +123,7 @@ def get_config():
                         help='gae lambda parameter (default: 0.95)')
     parser.add_argument("--use_proper_time_limits", action='store_true',
                         default=False, help='compute returns taking into account time limits')
-    parser.add_argument("--use_huber_loss", action='store_true', default=False, help="by default, use huber loss. If set, do not use huber loss.")
+    parser.add_argument("--use_huber_loss", action='store_false', default=True, help="by default, use huber loss. If set, do not use huber loss.")
     parser.add_argument("--use_value_active_masks",
                         action='store_false', default=True, help="by default True, whether to mask useless data in value loss.")
     parser.add_argument("--use_policy_active_masks",
