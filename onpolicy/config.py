@@ -6,7 +6,7 @@ def get_config():
     parser = argparse.ArgumentParser(
         description='onpolicy', formatter_class=argparse.RawDescriptionHelpFormatter)
     
-    parser.add_argument("--level_dir", type=str, default='/root/marl/onpolicy/level/level.json', help="directory for level change")
+    parser.add_argument("--level_dir", type=str, default='/home/uosai/Desktop/marl/onpolicy/level/level.json', help="directory for level change")
     parser.add_argument("--use_available_actions", action='store_true', default=False, help="whether to use available action masking for performance")
  
     parser.add_argument("--render_mode", action='store_true', default=False, help="whether to use render mode using saved model")
@@ -24,7 +24,7 @@ def get_config():
     # 학습 환경 전처리
     parser.add_argument("--env_name", type=str, default='Football', help="specify the name of environment")
     parser.add_argument("--experiment_name", type=str, default="check", help="an identifier to distinguish different experiment.")
-    parser.add_argument("--seed", type=int, default=1, help="Random seed for numpy/torch")
+    parser.add_argument("--seed", type=int, default=10, help="Random seed for numpy/torch")
     parser.add_argument("--cuda", action='store_false', default=True, help="by default True, will use GPU to train; or else will use CPU;")
     parser.add_argument("--cuda_deterministic",
                         action='store_false', default=True, help="by default, make sure random seed effective. if set, bypass such function.")
@@ -40,11 +40,11 @@ def get_config():
                         help='Number of environment steps to train (default: 10e6)')
     parser.add_argument("--num_gpu", type = int, default = 0, help = "사용할 gpu number")
     parser.add_argument("--episode_length", type=int,
-                        default = 500, help="Max length for any episode, 전체 경기 지표를 확인하기 위해 이걸 3000으로 고정한다.")
+                        default = 1000, help="Max length for any episode, 전체 경기 지표를 확인하기 위해 이걸 3000으로 고정한다.")
 
     #학습을 위한 알고리즘 전처리
     parser.add_argument("--algorithm_name", type=str,
-                        default='tizero', choices=["rmappo", "mappo", "ippo", "tizero", "jrpo"])
+                        default='tizero', choices=["rmappo", "mappo", "ippo", "tizero", "jrpo", "mat", "mat_dec"])
     parser.add_argument("--use_xt", action='store_true', default=False, help="xT score를 사용해 reward shaping을 수행할 것인가?")
     parser.add_argument("--xt_type", type=str, default='compound_xt', choices=["base_xt", "compound_xt"])
     parser.add_argument("--use_obs_instead_of_state", action='store_true',

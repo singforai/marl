@@ -5,8 +5,10 @@ import numpy as np
 import torch
 from tensorboardX import SummaryWriter
 from utils.shared_buffer import SharedReplayBuffer
-
+import pdb
 from runner.shared.xT.cal_xT import xT
+
+from copy import deepcopy
 
 def _t2n(x):
     """Convert torch tensor to a numpy array."""
@@ -177,8 +179,14 @@ class Runner(object):
         self.trainer.prep_training()
         train_infos = self.trainer.train(self.buffer)      
         self.buffer.after_update()
+        """
+        Segmentation Fault 에러를 막아보고자하는 필사의 노력.
+        """
+        for key, value in train_infos.items():
+            if isinstance(value, torch.Tensor):
+                train_infos[key] = value.detach().cpu()
         print(train_infos)
-        return train_infos
+        return deepcopy(train_infos)
 
     def save(self, episode=0):
         """Save policy's actor and critic networks."""

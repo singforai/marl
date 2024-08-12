@@ -9,7 +9,7 @@ import numpy as np
 import torch
 import wandb
 import importlib
-
+import pdb
 from pstats import SortKey
 
 from utils.util import update_linear_schedule
@@ -66,21 +66,9 @@ class FootballRunner(Runner):
                 obs, rewards, dones, infos = self.envs.step(actions_env)
 
                 rewards = rewards / self.num_agents * 10
-                # reward
-                for idx, info in enumerate(infos):
-                    if info["ball_owned_team"] == 1:  # 상대 
-                        rewards[idx] -= 0.001
-                if self.use_xt:
-                    rewards = self.cal_xt.controller(
-                        step = step,
-                        rewards = rewards,
-                        obs = obs,
-                        score = np.array([info["score"] for info in infos]),
-                    )
                 
-                if self.use_additional_obs:
-                    obs, share_obs, available_actions = additional_obs(infos = infos, num_agents = self.num_agents, episode_length = self.episode_length)
-                    
+                obs, share_obs, available_actions, added_rewards = additional_obs(infos = infos, num_agents = self.num_agents, episode_length = self.episode_length)
+                rewards += added_rewards
                 infos = list(infos)
                 
                 for idx, done in enumerate(dones):
@@ -118,9 +106,7 @@ class FootballRunner(Runner):
             
             rewards_record = self.buffer.rewards 
             
-            # for step_idx, roll_idx in enumerate(self.buffer.rewards):
-            #     print(step_idx, roll_idx[0][0], roll_idx[1][0])
-            
+            # pdb.set_trace()
             self.compute()
             train_infos = self.train()
             print("And I'm OK")

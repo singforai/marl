@@ -455,14 +455,51 @@ def thread_processing(info, num_agents, episode_length): # 279
         available_actions[idx] = available_action
     return (observation, share_observation, available_actions)
 
+@numba.njit(float32[:,:](float32[:], int64))
+def reward_shaping(info, num_agents):
+    added_reward = np.zeros((num_agents, 1), dtype = float32)
+    info_left_team = np.ascontiguousarray(info[10: 32]).reshape(11, 2)
+    info_left_direct = np.ascontiguousarray(info[32: 54]).reshape(11, 2)
+    info_left_team_tired_factor = info[54: 65]
+    info_left_yellow_card = info[65: 76]
+    info_left_team_active = info[76:87]
 
-@numba.njit(Tuple((float32[:,:,:], float32[:,:,:], float32[:,:,:]))(float32[:, :], int64, int64))
+    info_right_team = np.ascontiguousarray(info[87: 109]).reshape(11, 2)
+    info_right_direct = np.ascontiguousarray(info[109: 131]).reshape(11, 2)
+    info_right_tired_factor = info[131: 142]
+    info_right_yellow_card = info[142: 153]
+    info_right_team_active = info[153: 164]
+
+    info_sticky_actions = np.ascontiguousarray(info[164: 264]).reshape(10, 10)
+    info_score = info[264:266]
+
+    info_ball = info[266: 269]
+    info_ball_direction = info[269: 272]
+    info_ball_rotation = info[272: 275]
+
+    info_ball_owned_team = int(info[275])
+    info_game_mode = int(info[276])
+    info_steps_left = int(info[277])
+    info_ball_owned_player = int(info[278])
+    
+    if info_ball_owned_team == 0:
+        added_reward += 0.0001
+        
+    return added_reward
+
+
+@numba.njit(Tuple((float32[:,:,:], float32[:,:,:], float32[:,:,:], float32[:,:,:]))(float32[:, :], int64, int64))
 def preproc_obs(infos_array, num_agents, episode_length):
     observations = np.zeros((infos_array.shape[0], num_agents, 330), dtype = float32)
     share_observations =np.zeros((infos_array.shape[0], num_agents, 220), dtype = float32)
     available_actions = np.zeros((infos_array.shape[0], num_agents, 19), dtype = float32)
+    added_rewards =np.zeros((infos_array.shape[0], num_agents, 1), dtype = float32)
     
     for idx, info_array in enumerate(infos_array):
+        added_reward = reward_shaping(
+            info = np.ascontiguousarray(info_array),
+            num_agents =  num_agents
+        )
         obs, share_obs, available_action = thread_processing(
             info = np.ascontiguousarray(info_array),
             num_agents =  num_agents,
@@ -473,7 +510,7 @@ def preproc_obs(infos_array, num_agents, episode_length):
         available_actions[idx, :, :] = available_action
 
 
-    return (observations, share_observations, available_actions) # (num_Rollout, num_agents, 330) / (num_Rollout, num_agents, 220)
+    return (observations, share_observations, available_actions, added_rewards) # (num_Rollout, num_agents, 330) / (num_Rollout, num_agents, 220)
 
 
 def additional_obs(infos, num_agents, episode_length):
@@ -509,8 +546,8 @@ def additional_obs(infos, num_agents, episode_length):
         infos_list.append(info_array)
 
     infos_array = np.array(infos_list, dtype=np.float32)
-    obs , share_obs, available_actions = preproc_obs(infos_array, num_agents, episode_length)
-    return obs , share_obs, available_actions
+    obs , share_obs, available_actions, added_rewards = preproc_obs(infos_array, num_agents, episode_length)
+    return obs , share_obs, available_actions, added_rewards
 
 @numba.njit(Tuple((float32[:,:,:], float32[:,:,:], float32[:,:,:]))(float32[:, :, :], int64, int64))
 def init_obs(obs, num_agents, episode_length):
@@ -563,6 +600,6 @@ def init_obs(obs, num_agents, episode_length):
         
         obs_array[roll_id] = info_array
     
-    obs , share_obs, available_actions = preproc_obs(obs_array, num_agents, episode_length)
+    obs , share_obs, available_actions, _ = preproc_obs(obs_array, num_agents, episode_length)
     
     return (obs , share_obs, available_actions)
