@@ -62,7 +62,7 @@ num_gpu:
   value: 0
 episode_length:
   desc: null
-  value: 1000
+  value: 500
 algorithm_name:
   desc: null
   value: tizero
@@ -86,7 +86,7 @@ stacked_frames:
   value: 1
 use_stacked_frames:
   desc: null
-  value: false
+  value: true
 hidden_size:
   desc: null
   value: 128
@@ -293,7 +293,7 @@ _wandb:
     framework: torch
     is_jupyter_run: false
     is_kaggle_kernel: false
-    start_time: 1723462577
+    start_time: 1723463446
     t:
       1:
       - 1

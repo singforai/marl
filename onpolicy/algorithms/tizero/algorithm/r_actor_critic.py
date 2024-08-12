@@ -12,7 +12,7 @@ from utils.util import get_shape_from_obs_space
 from algorithms.utils.input_encoder import get_fc
 from algorithms.utils.input_encoder import FcEncoder
 from algorithms.utils.input_encoder import ACTLayer
-from algorithms.utils.input_encoder import ObsEncoder, ObsEncoder_critic
+from algorithms.utils.input_encoder import ObsEncoder
 
 
 class R_Actor(nn.Module):
@@ -23,6 +23,7 @@ class R_Actor(nn.Module):
     :param action_space: (gym.Space) action space.
     :param device: (torch.device) specifies the device to run on (cpu/gpu).
     """
+
     def __init__(self, args, obs_space, action_space, device=torch.device("cpu")):
         super(R_Actor, self).__init__()
 
@@ -39,16 +40,22 @@ class R_Actor(nn.Module):
 
         obs_shape = get_shape_from_obs_space(obs_space)
 
-        self.obs_encoder = ObsEncoder(input_embedding_size = 265, hidden_size=self.hidden_size, _recurrent_N = 1, _use_orthogonal = True, device = self.device)
+        self.obs_encoder = ObsEncoder(
+            input_embedding_size=265,
+            hidden_size=self.hidden_size,
+            _recurrent_N=1,
+            _use_orthogonal=True,
+            device=self.device,
+        )
         self.action_dim = 19
         self.active_id_size = 1
         self.id_max = 11
 
-        self.predict_id = get_fc(self.hidden_size + self.action_dim, self.id_max)   
-        self.id_embedding = get_fc(self.id_max, self.id_max) 
+        self.predict_id = get_fc(self.hidden_size + self.action_dim, self.id_max)
+        self.id_embedding = get_fc(self.id_max, self.id_max)
 
         self.before_act_wrapper = FcEncoder(2, self.hidden_size + self.id_max, self.hidden_size)
-        
+
         self.act = ACTLayer(action_space, self.hidden_size, self._use_orthogonal, self._gain)
         self.to(self.device)
 
@@ -66,7 +73,7 @@ class R_Actor(nn.Module):
         :return action_log_probs: (torch.Tensor) log probabilities of taken actions.
         :return rnn_states: (torch.Tensor) updated RNN hidden states.
         """
-        
+
         obs = check(obs).to(**self.tpdv)
         rnn_states = check(rnn_states).to(**self.tpdv)
         masks = check(masks).to(**self.tpdv)
@@ -74,11 +81,11 @@ class R_Actor(nn.Module):
         if available_actions is not None:
             available_actions = check(available_actions).to(**self.tpdv)
 
-        active_id = obs[:, :self.active_id_size].squeeze(1).long().to(self.device)
+        active_id = obs[:, : self.active_id_size].squeeze(1).long().to(self.device)
         id_onehot = torch.eye(self.id_max).to(self.device)[active_id]
         id_output = self.id_embedding(id_onehot)
 
-        obs = obs[:,self.active_id_size:]
+        obs = obs[:, self.active_id_size :]
         obs_output, rnn_states = self.obs_encoder(obs, rnn_states, masks)
 
         output = torch.cat([id_output, obs_output], 1)
@@ -113,10 +120,9 @@ class R_Actor(nn.Module):
         if active_masks is not None:
             active_masks = check(active_masks).to(**self.tpdv)
 
-
-        id_groundtruth = obs[:, :self.active_id_size].squeeze(1).long()
+        id_groundtruth = obs[:, : self.active_id_size].squeeze(1).long()
         id_onehot = torch.eye(self.id_max).to(self.device)[id_groundtruth]
-        obs = obs[:,self.active_id_size:]
+        obs = obs[:, self.active_id_size :]
 
         obs_output, rnn_states = self.obs_encoder(obs, rnn_states, masks)
         id_output = self.id_embedding(id_onehot)
@@ -127,12 +133,9 @@ class R_Actor(nn.Module):
 
         output = self.before_act_wrapper(output)
 
-
-        action_log_probs, dist_entropy = self.act.evaluate_actions(output,
-                                                                action, available_actions,
-                                                                active_masks=
-                                                                active_masks if self._use_policy_active_masks
-                                                                else None)
+        action_log_probs, dist_entropy = self.act.evaluate_actions(
+            output, action, available_actions, active_masks=active_masks if self._use_policy_active_masks else None
+        )
 
         return action_log_probs, dist_entropy, id_prediction, id_groundtruth
 
@@ -145,9 +148,10 @@ class R_Critic(nn.Module):
     :param cent_obs_space: (gym.Space) (centralized) observation space.
     :param device: (torch.device) specifies the device to run on (cpu/gpu).
     """
+
     def __init__(self, args, cent_obs_space, device=torch.device("cpu")):
         super(R_Critic, self).__init__()
-    
+
         self.hidden_size = args.hidden_size
         self._use_orthogonal = args.use_orthogonal
         self._use_naive_recurrent_policy = args.use_naive_recurrent_policy
@@ -156,13 +160,9 @@ class R_Critic(nn.Module):
         self._use_popart = args.use_popart
         self.tpdv = dict(dtype=torch.float32, device=device)
         init_method = [nn.init.xavier_uniform_, nn.init.orthogonal_][self._use_orthogonal]
-        
-        self.obs_encoder = ObsEncoder_critic(
-            input_embedding_size = 128, 
-            hidden_size=self.hidden_size, 
-            _recurrent_N = 1, 
-            _use_orthogonal = True, 
-            device = device
+
+        self.obs_encoder = ObsEncoder(
+            input_embedding_size=128, hidden_size=self.hidden_size, _recurrent_N=1, _use_orthogonal=True, device=device
         )
 
         def init_(m):
@@ -188,9 +188,9 @@ class R_Critic(nn.Module):
         cent_obs = check(cent_obs).to(**self.tpdv)
         rnn_states = check(rnn_states).to(**self.tpdv)
         masks = check(masks).to(**self.tpdv)
-        
+
         x, rnn_states = self.obs_encoder(cent_obs, rnn_states, masks)
-        
+
         values = self.v_out(x)
 
         return values, rnn_states

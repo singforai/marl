@@ -92,7 +92,7 @@ def get_config():
     parser.add_argument(
         "--episode_length",
         type=int,
-        default=1000,
+        default=500,
         help="Max length for any episode, 전체 경기 지표를 확인하기 위해 이걸 3000으로 고정한다.",
     )
 
@@ -122,13 +122,11 @@ def get_config():
     parser.add_argument(
         "--stacked_frames", type=int, default=1, help="Dimension of hidden layers for actor/critic networks"
     )
-    parser.add_argument(
-        "--use_stacked_frames", action="store_true", default=False, help="Whether to use stacked_frames"
-    )
+    parser.add_argument("--use_stacked_frames", action="store_true", default=True, help="Whether to use stacked_frames")
     parser.add_argument(
         "--hidden_size", type=int, default=128, help="Dimension of hidden layers for actor/critic networks"
     )
-    parser.add_argument("--layer_N", type=int, default=2, help="Number of layers for actor/critic networks")
+    parser.add_argument("--layer_N", type=int, default=1, help="Number of layers for actor/critic networks")
     parser.add_argument("--use_ReLU", action="store_false", default=True, help="Whether to use ReLU")
     parser.add_argument(
         "--use_popart", action="store_true", default=False, help="by default False, use PopArt to normalize rewards."
@@ -167,8 +165,8 @@ def get_config():
     )
 
     # optimizer parameters
-    parser.add_argument("--lr", type=float, default=1e-3, help="learning rate (default: 5e-4)")
-    parser.add_argument("--critic_lr", type=float, default=1e-3, help="critic learning rate (default: 5e-4)")
+    parser.add_argument("--lr", type=float, default=5e-4, help="learning rate (default: 5e-4)")
+    parser.add_argument("--critic_lr", type=float, default=5e-4, help="critic learning rate (default: 5e-4)")
     parser.add_argument("--opti_eps", type=float, default=1e-5, help="RMSprop optimizer epsilon (default: 1e-5)")
     parser.add_argument("--weight_decay", type=float, default=0)
 
@@ -180,7 +178,7 @@ def get_config():
     parser.add_argument("--accept_ratio", type=float, default=0.5, help="accept ratio of loss improve (default: 0.5)")
 
     # ppo parameters
-    parser.add_argument("--ppo_epoch", type=int, default=50, help="number of ppo epochs (default: 10)")
+    parser.add_argument("--ppo_epoch", type=int, default=10, help="number of ppo epochs (default: 10)")
     parser.add_argument(
         "--use_clipped_value_loss",
         action="store_false",
