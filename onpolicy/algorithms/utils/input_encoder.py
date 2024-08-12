@@ -380,17 +380,25 @@ def get_fc(input_size, output_size):
 
 
 class ObsEncoder(nn.Module):
-    def __init__(self, input_embedding_size, hidden_size, _recurrent_N, _use_orthogonal, device=torch.device("cpu")):
+    def __init__(
+        self,
+        input_encoder,
+        input_embedding_size,
+        hidden_size,
+        _recurrent_N,
+        _use_orthogonal,
+        device=torch.device("cpu"),
+    ):
         super(ObsEncoder, self).__init__()
-        self.input_encoder = InputEncoder()
+        self.input_encoder = input_encoder
         self.input_embedding = get_fc(input_embedding_size, hidden_size)
-        self.rnn = RNNLayer(hidden_size, hidden_size, _recurrent_N, _use_orthogonal)
+        self.rnn = RNNLayer(input_embedding_size, hidden_size, _recurrent_N, _use_orthogonal)
         self.after_rnn_mlp = get_fc(hidden_size, hidden_size)
 
         self.to(device)
 
     def forward(self, obs, rnn_states, masks):
         actor_features = self.input_encoder(obs)
-        actor_features = self.input_embedding(actor_features)
+        # actor_features = self.input_embedding(actor_features)
         output, rnn_states = self.rnn(actor_features, rnn_states, masks)
         return output, rnn_states

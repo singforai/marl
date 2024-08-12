@@ -12,7 +12,7 @@ from utils.util import get_shape_from_obs_space
 from algorithms.utils.input_encoder import get_fc
 from algorithms.utils.input_encoder import FcEncoder
 from algorithms.utils.input_encoder import ACTLayer
-from algorithms.utils.input_encoder import ObsEncoder
+from algorithms.utils.input_encoder import ObsEncoder, InputEncoder, InputEncoder_critic
 
 
 class R_Actor(nn.Module):
@@ -41,6 +41,7 @@ class R_Actor(nn.Module):
         obs_shape = get_shape_from_obs_space(obs_space)
 
         self.obs_encoder = ObsEncoder(
+            InputEncoder(),
             input_embedding_size=265,
             hidden_size=self.hidden_size,
             _recurrent_N=1,
@@ -162,7 +163,12 @@ class R_Critic(nn.Module):
         init_method = [nn.init.xavier_uniform_, nn.init.orthogonal_][self._use_orthogonal]
 
         self.obs_encoder = ObsEncoder(
-            input_embedding_size=128, hidden_size=self.hidden_size, _recurrent_N=1, _use_orthogonal=True, device=device
+            InputEncoder_critic(),
+            input_embedding_size=128,
+            hidden_size=self.hidden_size,
+            _recurrent_N=1,
+            _use_orthogonal=True,
+            device=device,
         )
 
         def init_(m):
