@@ -520,7 +520,7 @@ def preproc_obs(infos_array, num_agents, episode_length):
     added_rewards = np.zeros((infos_array.shape[0], num_agents, 1), dtype=float32)
 
     for idx, info_array in enumerate(infos_array):
-        added_reward = reward_shaping(info=np.ascontiguousarray(info_array), num_agents=num_agents)
+        added_rewards[idx] = reward_shaping(info=np.ascontiguousarray(info_array), num_agents=num_agents)
         obs, share_obs, available_action = thread_processing(
             info=np.ascontiguousarray(info_array), num_agents=num_agents, episode_length=episode_length
         )

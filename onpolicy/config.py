@@ -86,7 +86,7 @@ def get_config():
         "--n_render_rollout_threads", type=int, default=10, help="Number of parallel envs for rendering rollouts"
     )
     parser.add_argument(
-        "--num_env_steps", type=int, default=1e11, help="Number of environment steps to train (default: 10e6)"
+        "--num_env_steps", type=int, default=1e7, help="Number of environment steps to train (default: 10e6)"
     )
     parser.add_argument("--num_gpu", type=int, default=0, help="사용할 gpu number")
     parser.add_argument(
@@ -124,9 +124,9 @@ def get_config():
     )
     parser.add_argument("--use_stacked_frames", action="store_true", default=True, help="Whether to use stacked_frames")
     parser.add_argument(
-        "--hidden_size", type=int, default=128, help="Dimension of hidden layers for actor/critic networks"
+        "--hidden_size", type=int, default=64, help="Dimension of hidden layers for actor/critic networks"
     )
-    parser.add_argument("--layer_N", type=int, default=1, help="Number of layers for actor/critic networks")
+    parser.add_argument("--layer_N", type=int, default=2, help="Number of layers for actor/critic networks")
     parser.add_argument("--use_ReLU", action="store_false", default=True, help="Whether to use ReLU")
     parser.add_argument(
         "--use_popart", action="store_true", default=False, help="by default False, use PopArt to normalize rewards."
