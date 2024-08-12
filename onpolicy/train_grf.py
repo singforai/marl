@@ -134,6 +134,15 @@ def main(args):
             raise ValueError("Tizero는 11 vs 11 simple115v2 관찰 환경에서만 실행가능합니다.")
         print("u are choosing to use Tizero, we set use_joint_action_loss to be True")
         all_args.use_joint_action_loss = True
+        all_args.use_recurrent_policy = True
+        all_args.use_additional_obs = True
+    elif all_args.algorithm_name == "mat":
+        all_args.dec_actor = True
+        all_args.share_actor = True
+    elif all_args.algorithm_name == "mat_dec":
+        all_args.dec_actor = True
+        all_args.share_actor = False
+    
     else:
         raise NotImplementedError
 

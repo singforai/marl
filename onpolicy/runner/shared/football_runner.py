@@ -64,21 +64,7 @@ class FootballRunner(Runner):
                 obs, rewards, dones, infos = self.envs.step(actions_env)
 
                 rewards = rewards / self.num_agents * 10
-          
-                # reward
-                for idx, info in enumerate(infos):
-                    if info["ball_owned_team"] == 1:  # 상대 
-                        rewards[idx] -= 0.001
-                if self.use_xt:
-                    rewards = self.cal_xt.controller(
-                        step = step,
-                        rewards = rewards,
-                        obs = obs,
-                        score = np.array([info["score"] for info in infos]),
-                    )
-                
-                if self.use_additional_obs:
-                    obs, share_obs, available_actions = additional_obs(infos = infos, num_agents = self.num_agents)
+                obs, share_obs, available_actions = additional_obs(infos = infos, num_agents = self.num_agents)
                 infos = list(infos)
                 
                 for idx, done in enumerate(dones):
@@ -88,6 +74,8 @@ class FootballRunner(Runner):
                     if done_rollouts[idx] != None:
                         dones[idx] = [True for _ in range(self.num_agents)]        
                         infos[idx] = infos_rollouts[idx]
+                
+                
                 
                 infos = tuple(infos)
                 data = step, obs, share_obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic
