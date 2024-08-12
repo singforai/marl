@@ -1,0 +1,250 @@
+2024-08-13 02:12:33,597 INFO    StreamThr :240628 [internal.py:wandb_internal():86] W&B internal server running at pid: 240628, started at: 2024-08-13 02:12:33.596517
+2024-08-13 02:12:33,598 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: status
+2024-08-13 02:12:33,601 INFO    WriterThread:240628 [datastore.py:open_for_write():87] open: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/run-ab4nnpu6.wandb
+2024-08-13 02:12:33,601 DEBUG   SenderThread:240628 [sender.py:send():382] send: header
+2024-08-13 02:12:33,629 DEBUG   SenderThread:240628 [sender.py:send():382] send: run
+2024-08-13 02:12:34,121 INFO    SenderThread:240628 [dir_watcher.py:__init__():211] watching files in: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files
+2024-08-13 02:12:34,121 INFO    SenderThread:240628 [sender.py:_start_run_threads():1136] run started: ab4nnpu6 with start time 1723482753.596441
+2024-08-13 02:12:34,126 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: check_version
+2024-08-13 02:12:34,126 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: check_version
+2024-08-13 02:12:34,223 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: run_start
+2024-08-13 02:12:34,235 DEBUG   HandlerThread:240628 [system_info.py:__init__():27] System info init
+2024-08-13 02:12:34,235 DEBUG   HandlerThread:240628 [system_info.py:__init__():42] System info init done
+2024-08-13 02:12:34,235 INFO    HandlerThread:240628 [system_monitor.py:start():194] Starting system monitor
+2024-08-13 02:12:34,235 INFO    SystemMonitor:240628 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-08-13 02:12:34,235 INFO    HandlerThread:240628 [system_monitor.py:probe():214] Collecting system info
+2024-08-13 02:12:34,236 INFO    SystemMonitor:240628 [interfaces.py:start():190] Started cpu monitoring
+2024-08-13 02:12:34,236 INFO    SystemMonitor:240628 [interfaces.py:start():190] Started disk monitoring
+2024-08-13 02:12:34,237 INFO    SystemMonitor:240628 [interfaces.py:start():190] Started gpu monitoring
+2024-08-13 02:12:34,238 INFO    SystemMonitor:240628 [interfaces.py:start():190] Started memory monitoring
+2024-08-13 02:12:34,238 INFO    SystemMonitor:240628 [interfaces.py:start():190] Started network monitoring
+2024-08-13 02:12:34,253 DEBUG   HandlerThread:240628 [system_info.py:probe():151] Probing system
+2024-08-13 02:12:34,260 DEBUG   HandlerThread:240628 [system_info.py:_probe_git():136] Probing git
+2024-08-13 02:12:34,271 DEBUG   HandlerThread:240628 [system_info.py:_probe_git():144] Probing git done
+2024-08-13 02:12:34,271 DEBUG   HandlerThread:240628 [system_info.py:probe():199] Probing system done
+2024-08-13 02:12:34,271 DEBUG   HandlerThread:240628 [system_monitor.py:probe():223] {'os': 'Linux-6.5.0-44-generic-x86_64-with-glibc2.35', 'python': '3.9.18', 'heartbeatAt': '2024-08-12T17:12:34.253129', 'startedAt': '2024-08-12T17:12:33.591119', 'docker': None, 'cuda': None, 'args': ('--seed', '0', '--experiment_name', 'MAT', '--group_name', 'MAT', '--algorithm_name', 'mat', '--use_wandb', '--use_linear_lr_decay', '--n_rollout_threads', '10', '--num_gpu', '1'), 'state': 'running', 'program': '/home/uosai/Desktop/marl/onpolicy/train_grf.py', 'codePathLocal': 'train_grf.py', 'codePath': 'onpolicy/train_grf.py', 'git': {'remote': 'https://github.com/singforai/marl.git', 'commit': 'dd7304f3ab59a35f2c3226368feac44811253c8f'}, 'email': 'singfor7012@gmail.com', 'root': '/home/uosai/Desktop/marl', 'host': 'uos-desktop', 'username': 'uosai', 'executable': '/home/uosai/Desktop/miniconda3/envs/marl/bin/python', 'cpu_count': 12, 'cpu_count_logical': 24, 'cpu_freq': {'current': 3339.7632916666676, 'min': 2200.0, 'max': 3700.0}, 'cpu_freq_per_core': [{'current': 2961.987, 'min': 2200.0, 'max': 3700.0}, {'current': 2200.0, 'min': 2200.0, 'max': 3700.0}, {'current': 3669.127, 'min': 2200.0, 'max': 3700.0}, {'current': 3592.509, 'min': 2200.0, 'max': 3700.0}, {'current': 4521.258, 'min': 2200.0, 'max': 3700.0}, {'current': 4639.699, 'min': 2200.0, 'max': 3700.0}, {'current': 4641.095, 'min': 2200.0, 'max': 3700.0}, {'current': 2874.059, 'min': 2200.0, 'max': 3700.0}, {'current': 3634.253, 'min': 2200.0, 'max': 3700.0}, {'current': 2200.0, 'min': 2200.0, 'max': 3700.0}, {'current': 2200.0, 'min': 2200.0, 'max': 3700.0}, {'current': 4466.197, 'min': 2200.0, 'max': 3700.0}, {'current': 4428.772, 'min': 2200.0, 'max': 3700.0}, {'current': 4454.635, 'min': 2200.0, 'max': 3700.0}, {'current': 4630.417, 'min': 2200.0, 'max': 3700.0}, {'current': 2200.0, 'min': 2200.0, 'max': 3700.0}, {'current': 4618.177, 'min': 2200.0, 'max': 3700.0}, {'current': 2200.0, 'min': 2200.0, 'max': 3700.0}, {'current': 4636.755, 'min': 2200.0, 'max': 3700.0}, {'current': 3712.832, 'min': 2200.0, 'max': 3700.0}, {'current': 2200.0, 'min': 2200.0, 'max': 3700.0}, {'current': 3148.579, 'min': 2200.0, 'max': 3700.0}, {'current': 3712.717, 'min': 2200.0, 'max': 3700.0}, {'current': 2871.872, 'min': 2200.0, 'max': 3700.0}], 'disk': {'/': {'total': 233.17998886108398, 'used': 190.44868087768555}}, 'gpu': 'NVIDIA GeForce RTX 3080', 'gpu_count': 2, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3080', 'memory_total': 10737418240}, {'name': 'NVIDIA GeForce RTX 3080', 'memory_total': 10737418240}], 'memory': {'total': 62.709049224853516}}
+2024-08-13 02:12:34,271 INFO    HandlerThread:240628 [system_monitor.py:probe():224] Finished collecting system info
+2024-08-13 02:12:34,271 INFO    HandlerThread:240628 [system_monitor.py:probe():227] Publishing system info
+2024-08-13 02:12:34,271 DEBUG   HandlerThread:240628 [system_info.py:_save_conda():208] Saving list of conda packages installed into the current environment
+2024-08-13 02:12:35,122 INFO    Thread-12 :240628 [dir_watcher.py:_on_file_created():271] file/dir created: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/conda-environment.yaml
+2024-08-13 02:12:36,376 DEBUG   HandlerThread:240628 [system_info.py:_save_conda():220] Saving conda packages done
+2024-08-13 02:12:36,376 INFO    HandlerThread:240628 [system_monitor.py:probe():229] Finished publishing system info
+2024-08-13 02:12:36,378 DEBUG   SenderThread:240628 [sender.py:send():382] send: files
+2024-08-13 02:12:36,378 INFO    SenderThread:240628 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-08-13 02:12:36,386 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: python_packages
+2024-08-13 02:12:36,386 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: python_packages
+2024-08-13 02:12:36,387 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: stop_status
+2024-08-13 02:12:36,387 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: stop_status
+2024-08-13 02:12:36,389 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: internal_messages
+2024-08-13 02:12:36,681 DEBUG   SenderThread:240628 [sender.py:send():382] send: telemetry
+2024-08-13 02:12:37,122 INFO    Thread-12 :240628 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/conda-environment.yaml
+2024-08-13 02:12:37,123 INFO    Thread-12 :240628 [dir_watcher.py:_on_file_created():271] file/dir created: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/wandb-metadata.json
+2024-08-13 02:12:37,123 INFO    Thread-12 :240628 [dir_watcher.py:_on_file_created():271] file/dir created: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/requirements.txt
+2024-08-13 02:12:37,196 INFO    wandb-upload_0:240628 [upload_job.py:push():131] Uploaded file /tmp/tmpndcb00qmwandb/c95m5h3c-wandb-metadata.json
+2024-08-13 02:12:39,012 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: status_report
+2024-08-13 02:12:39,123 INFO    Thread-12 :240628 [dir_watcher.py:_on_file_created():271] file/dir created: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/output.log
+2024-08-13 02:12:41,123 INFO    Thread-12 :240628 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/output.log
+2024-08-13 02:12:44,013 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: status_report
+2024-08-13 02:12:49,014 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: status_report
+2024-08-13 02:12:51,387 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: stop_status
+2024-08-13 02:12:51,387 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: internal_messages
+2024-08-13 02:12:51,387 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: stop_status
+2024-08-13 02:12:54,640 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: status_report
+2024-08-13 02:12:59,640 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: status_report
+2024-08-13 02:13:00,900 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:00,901 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:00,901 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:00,901 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:00,901 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:00,901 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:00,901 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:00,901 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:00,901 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:00,901 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:00,901 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:00,901 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:00,901 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:00,901 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:03,129 INFO    Thread-12 :240628 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/output.log
+2024-08-13 02:13:04,905 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: status_report
+2024-08-13 02:13:05,129 INFO    Thread-12 :240628 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/config.yaml
+2024-08-13 02:13:06,387 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: stop_status
+2024-08-13 02:13:06,387 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: internal_messages
+2024-08-13 02:13:06,387 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: stop_status
+2024-08-13 02:13:10,613 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: status_report
+2024-08-13 02:13:15,614 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: status_report
+2024-08-13 02:13:19,192 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:19,194 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:19,194 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:19,194 DEBUG   SenderThread:240628 [sender.py:send():382] send: history
+2024-08-13 02:13:19,194 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:19,195 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: summary_record
+2024-08-13 02:13:19,196 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:19,196 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:19,196 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:19,196 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:19,196 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:19,196 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:19,196 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:19,196 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:19,196 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:19,196 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: partial_history
+2024-08-13 02:13:19,197 INFO    SenderThread:240628 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-08-13 02:13:20,133 INFO    Thread-12 :240628 [dir_watcher.py:_on_file_created():271] file/dir created: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/wandb-summary.json
+2024-08-13 02:13:21,133 INFO    Thread-12 :240628 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/output.log
+2024-08-13 02:13:21,197 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: status_report
+2024-08-13 02:13:21,387 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: stop_status
+2024-08-13 02:13:21,387 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: internal_messages
+2024-08-13 02:13:21,387 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: stop_status
+2024-08-13 02:13:26,599 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: status_report
+2024-08-13 02:13:31,599 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: status_report
+2024-08-13 02:13:34,238 DEBUG   SystemMonitor:240628 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-08-13 02:13:34,240 DEBUG   SenderThread:240628 [sender.py:send():382] send: stats
+2024-08-13 02:13:34,873 DEBUG   SenderThread:240628 [sender.py:send():382] send: exit
+2024-08-13 02:13:34,873 INFO    SenderThread:240628 [sender.py:send_exit():589] handling exit code: 255
+2024-08-13 02:13:34,873 INFO    SenderThread:240628 [sender.py:send_exit():591] handling runtime: 60
+2024-08-13 02:13:34,874 INFO    SenderThread:240628 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-08-13 02:13:34,874 INFO    SenderThread:240628 [sender.py:send_exit():597] send defer
+2024-08-13 02:13:34,874 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: defer
+2024-08-13 02:13:34,874 INFO    HandlerThread:240628 [handler.py:handle_request_defer():172] handle defer: 0
+2024-08-13 02:13:34,874 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: defer
+2024-08-13 02:13:34,874 INFO    SenderThread:240628 [sender.py:send_request_defer():613] handle sender defer: 0
+2024-08-13 02:13:34,874 INFO    SenderThread:240628 [sender.py:transition_state():617] send defer: 1
+2024-08-13 02:13:34,875 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: defer
+2024-08-13 02:13:34,875 INFO    HandlerThread:240628 [handler.py:handle_request_defer():172] handle defer: 1
+2024-08-13 02:13:34,875 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: defer
+2024-08-13 02:13:34,875 INFO    SenderThread:240628 [sender.py:send_request_defer():613] handle sender defer: 1
+2024-08-13 02:13:34,875 INFO    SenderThread:240628 [sender.py:transition_state():617] send defer: 2
+2024-08-13 02:13:34,875 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: defer
+2024-08-13 02:13:34,875 INFO    HandlerThread:240628 [handler.py:handle_request_defer():172] handle defer: 2
+2024-08-13 02:13:34,875 INFO    HandlerThread:240628 [system_monitor.py:finish():203] Stopping system monitor
+2024-08-13 02:13:34,875 DEBUG   SystemMonitor:240628 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-08-13 02:13:34,875 DEBUG   SystemMonitor:240628 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-08-13 02:13:34,875 INFO    HandlerThread:240628 [interfaces.py:finish():202] Joined cpu monitor
+2024-08-13 02:13:34,877 INFO    HandlerThread:240628 [interfaces.py:finish():202] Joined disk monitor
+2024-08-13 02:13:34,992 INFO    HandlerThread:240628 [interfaces.py:finish():202] Joined gpu monitor
+2024-08-13 02:13:34,992 INFO    HandlerThread:240628 [interfaces.py:finish():202] Joined memory monitor
+2024-08-13 02:13:34,992 INFO    HandlerThread:240628 [interfaces.py:finish():202] Joined network monitor
+2024-08-13 02:13:34,993 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: defer
+2024-08-13 02:13:34,993 INFO    SenderThread:240628 [sender.py:send_request_defer():613] handle sender defer: 2
+2024-08-13 02:13:34,993 INFO    SenderThread:240628 [sender.py:transition_state():617] send defer: 3
+2024-08-13 02:13:34,993 DEBUG   SenderThread:240628 [sender.py:send():382] send: stats
+2024-08-13 02:13:34,993 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: defer
+2024-08-13 02:13:34,993 INFO    HandlerThread:240628 [handler.py:handle_request_defer():172] handle defer: 3
+2024-08-13 02:13:34,994 DEBUG   SenderThread:240628 [sender.py:send():382] send: history
+2024-08-13 02:13:34,994 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: summary_record
+2024-08-13 02:13:34,994 INFO    SenderThread:240628 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-08-13 02:13:34,994 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: defer
+2024-08-13 02:13:34,994 INFO    SenderThread:240628 [sender.py:send_request_defer():613] handle sender defer: 3
+2024-08-13 02:13:34,994 INFO    SenderThread:240628 [sender.py:transition_state():617] send defer: 4
+2024-08-13 02:13:34,994 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: defer
+2024-08-13 02:13:34,994 INFO    HandlerThread:240628 [handler.py:handle_request_defer():172] handle defer: 4
+2024-08-13 02:13:34,994 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: defer
+2024-08-13 02:13:34,995 INFO    SenderThread:240628 [sender.py:send_request_defer():613] handle sender defer: 4
+2024-08-13 02:13:34,995 INFO    SenderThread:240628 [sender.py:transition_state():617] send defer: 5
+2024-08-13 02:13:34,995 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: defer
+2024-08-13 02:13:34,995 INFO    HandlerThread:240628 [handler.py:handle_request_defer():172] handle defer: 5
+2024-08-13 02:13:34,995 DEBUG   SenderThread:240628 [sender.py:send():382] send: summary
+2024-08-13 02:13:34,995 INFO    SenderThread:240628 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-08-13 02:13:34,995 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: defer
+2024-08-13 02:13:34,995 INFO    SenderThread:240628 [sender.py:send_request_defer():613] handle sender defer: 5
+2024-08-13 02:13:34,995 INFO    SenderThread:240628 [sender.py:transition_state():617] send defer: 6
+2024-08-13 02:13:34,995 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: defer
+2024-08-13 02:13:34,995 INFO    HandlerThread:240628 [handler.py:handle_request_defer():172] handle defer: 6
+2024-08-13 02:13:34,996 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: defer
+2024-08-13 02:13:34,996 INFO    SenderThread:240628 [sender.py:send_request_defer():613] handle sender defer: 6
+2024-08-13 02:13:34,996 INFO    SenderThread:240628 [sender.py:transition_state():617] send defer: 7
+2024-08-13 02:13:34,996 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: status_report
+2024-08-13 02:13:34,996 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: defer
+2024-08-13 02:13:34,996 INFO    HandlerThread:240628 [handler.py:handle_request_defer():172] handle defer: 7
+2024-08-13 02:13:34,996 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: defer
+2024-08-13 02:13:34,996 INFO    SenderThread:240628 [sender.py:send_request_defer():613] handle sender defer: 7
+2024-08-13 02:13:35,137 INFO    Thread-12 :240628 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/wandb-summary.json
+2024-08-13 02:13:35,873 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: poll_exit
+2024-08-13 02:13:36,829 INFO    SenderThread:240628 [sender.py:transition_state():617] send defer: 8
+2024-08-13 02:13:36,829 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: poll_exit
+2024-08-13 02:13:36,829 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: defer
+2024-08-13 02:13:36,830 INFO    HandlerThread:240628 [handler.py:handle_request_defer():172] handle defer: 8
+2024-08-13 02:13:36,830 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: defer
+2024-08-13 02:13:36,830 INFO    SenderThread:240628 [sender.py:send_request_defer():613] handle sender defer: 8
+2024-08-13 02:13:36,830 INFO    SenderThread:240628 [job_builder.py:build():296] Attempting to build job artifact
+2024-08-13 02:13:36,831 INFO    SenderThread:240628 [job_builder.py:_get_source_type():426] is repo sourced job
+2024-08-13 02:13:36,852 INFO    SenderThread:240628 [job_builder.py:build():402] adding wandb-job metadata file
+2024-08-13 02:13:36,866 INFO    SenderThread:240628 [sender.py:transition_state():617] send defer: 9
+2024-08-13 02:13:36,866 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: defer
+2024-08-13 02:13:36,866 INFO    HandlerThread:240628 [handler.py:handle_request_defer():172] handle defer: 9
+2024-08-13 02:13:36,866 DEBUG   SenderThread:240628 [sender.py:send():382] send: artifact
+2024-08-13 02:13:36,874 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: poll_exit
+2024-08-13 02:13:37,138 INFO    Thread-12 :240628 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/output.log
+2024-08-13 02:13:38,169 INFO    SenderThread:240628 [sender.py:send_artifact():1494] sent artifact job-https___github.com_singforai_marl.git_onpolicy_train_grf.py - {'id': 'QXJ0aWZhY3Q6MTE0NDY1MDgzMQ==', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjI1OTEzNzk5Ng==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTE0NDY3Nzc2MQ==', 'versionIndex': 35}}}
+2024-08-13 02:13:38,169 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: defer
+2024-08-13 02:13:38,169 INFO    SenderThread:240628 [sender.py:send_request_defer():613] handle sender defer: 9
+2024-08-13 02:13:38,169 INFO    SenderThread:240628 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-08-13 02:13:39,138 INFO    SenderThread:240628 [dir_watcher.py:finish():388] scan: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files
+2024-08-13 02:13:39,139 INFO    SenderThread:240628 [dir_watcher.py:finish():402] scan save: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/conda-environment.yaml conda-environment.yaml
+2024-08-13 02:13:39,139 INFO    SenderThread:240628 [dir_watcher.py:finish():402] scan save: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/requirements.txt requirements.txt
+2024-08-13 02:13:39,142 INFO    SenderThread:240628 [dir_watcher.py:finish():402] scan save: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/config.yaml config.yaml
+2024-08-13 02:13:39,144 INFO    SenderThread:240628 [dir_watcher.py:finish():402] scan save: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/wandb-metadata.json wandb-metadata.json
+2024-08-13 02:13:39,144 INFO    SenderThread:240628 [dir_watcher.py:finish():402] scan save: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/output.log output.log
+2024-08-13 02:13:39,146 INFO    SenderThread:240628 [dir_watcher.py:finish():402] scan save: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/wandb-summary.json wandb-summary.json
+2024-08-13 02:13:39,147 INFO    SenderThread:240628 [sender.py:transition_state():617] send defer: 10
+2024-08-13 02:13:39,147 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: poll_exit
+2024-08-13 02:13:39,149 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: defer
+2024-08-13 02:13:39,149 INFO    HandlerThread:240628 [handler.py:handle_request_defer():172] handle defer: 10
+2024-08-13 02:13:39,149 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: defer
+2024-08-13 02:13:39,150 INFO    SenderThread:240628 [sender.py:send_request_defer():613] handle sender defer: 10
+2024-08-13 02:13:39,150 INFO    SenderThread:240628 [file_pusher.py:finish():175] shutting down file pusher
+2024-08-13 02:13:39,654 INFO    wandb-upload_1:240628 [upload_job.py:push():131] Uploaded file /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/requirements.txt
+2024-08-13 02:13:39,858 INFO    wandb-upload_4:240628 [upload_job.py:push():131] Uploaded file /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/wandb-summary.json
+2024-08-13 02:13:39,864 INFO    wandb-upload_3:240628 [upload_job.py:push():131] Uploaded file /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/output.log
+2024-08-13 02:13:39,873 INFO    wandb-upload_2:240628 [upload_job.py:push():131] Uploaded file /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/config.yaml
+2024-08-13 02:13:39,875 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: poll_exit
+2024-08-13 02:13:39,876 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: poll_exit
+2024-08-13 02:13:39,912 INFO    wandb-upload_0:240628 [upload_job.py:push():131] Uploaded file /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/files/conda-environment.yaml
+2024-08-13 02:13:40,113 INFO    Thread-11 :240628 [sender.py:transition_state():617] send defer: 11
+2024-08-13 02:13:40,113 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: defer
+2024-08-13 02:13:40,113 INFO    HandlerThread:240628 [handler.py:handle_request_defer():172] handle defer: 11
+2024-08-13 02:13:40,114 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: defer
+2024-08-13 02:13:40,114 INFO    SenderThread:240628 [sender.py:send_request_defer():613] handle sender defer: 11
+2024-08-13 02:13:40,114 INFO    SenderThread:240628 [file_pusher.py:join():181] waiting for file pusher
+2024-08-13 02:13:40,114 INFO    SenderThread:240628 [sender.py:transition_state():617] send defer: 12
+2024-08-13 02:13:40,114 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: defer
+2024-08-13 02:13:40,114 INFO    HandlerThread:240628 [handler.py:handle_request_defer():172] handle defer: 12
+2024-08-13 02:13:40,114 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: defer
+2024-08-13 02:13:40,114 INFO    SenderThread:240628 [sender.py:send_request_defer():613] handle sender defer: 12
+2024-08-13 02:13:40,114 INFO    SenderThread:240628 [file_stream.py:finish():595] file stream finish called
+2024-08-13 02:13:40,876 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: poll_exit
+2024-08-13 02:13:40,964 INFO    SenderThread:240628 [file_stream.py:finish():599] file stream finish is done
+2024-08-13 02:13:40,964 INFO    SenderThread:240628 [sender.py:transition_state():617] send defer: 13
+2024-08-13 02:13:40,964 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: poll_exit
+2024-08-13 02:13:40,964 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: defer
+2024-08-13 02:13:40,964 INFO    HandlerThread:240628 [handler.py:handle_request_defer():172] handle defer: 13
+2024-08-13 02:13:40,964 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: defer
+2024-08-13 02:13:40,964 INFO    SenderThread:240628 [sender.py:send_request_defer():613] handle sender defer: 13
+2024-08-13 02:13:40,964 INFO    SenderThread:240628 [sender.py:transition_state():617] send defer: 14
+2024-08-13 02:13:40,965 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: defer
+2024-08-13 02:13:40,965 DEBUG   SenderThread:240628 [sender.py:send():382] send: final
+2024-08-13 02:13:40,965 INFO    HandlerThread:240628 [handler.py:handle_request_defer():172] handle defer: 14
+2024-08-13 02:13:40,965 DEBUG   SenderThread:240628 [sender.py:send():382] send: footer
+2024-08-13 02:13:40,965 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: defer
+2024-08-13 02:13:40,965 INFO    SenderThread:240628 [sender.py:send_request_defer():613] handle sender defer: 14
+2024-08-13 02:13:40,965 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: poll_exit
+2024-08-13 02:13:40,965 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: poll_exit
+2024-08-13 02:13:40,966 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: poll_exit
+2024-08-13 02:13:40,966 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: poll_exit
+2024-08-13 02:13:40,966 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: server_info
+2024-08-13 02:13:40,966 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: server_info
+2024-08-13 02:13:40,966 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: get_summary
+2024-08-13 02:13:40,968 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: sampled_history
+2024-08-13 02:13:40,969 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: internal_messages
+2024-08-13 02:13:40,969 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: job_info
+2024-08-13 02:13:41,154 DEBUG   SenderThread:240628 [sender.py:send_request():409] send_request: job_info
+2024-08-13 02:13:41,155 INFO    MainThread:240628 [wandb_run.py:_footer_history_summary_info():3857] rendering history
+2024-08-13 02:13:41,155 INFO    MainThread:240628 [wandb_run.py:_footer_history_summary_info():3889] rendering summary
+2024-08-13 02:13:41,156 INFO    MainThread:240628 [wandb_run.py:_footer_sync_info():3816] logging synced files
+2024-08-13 02:13:41,156 DEBUG   HandlerThread:240628 [handler.py:handle_request():146] handle_request: shutdown
+2024-08-13 02:13:41,157 INFO    HandlerThread:240628 [handler.py:finish():869] shutting down handler
+2024-08-13 02:13:41,969 INFO    WriterThread:240628 [datastore.py:close():296] close: /home/uosai/Desktop/marl/results/Football/curriculum_learning/mat/MAT/wandb/run-20240813_021233-ab4nnpu6/run-ab4nnpu6.wandb
+2024-08-13 02:13:42,155 INFO    SenderThread:240628 [sender.py:finish():1572] shutting down sender
+2024-08-13 02:13:42,155 INFO    SenderThread:240628 [file_pusher.py:finish():175] shutting down file pusher
+2024-08-13 02:13:42,155 INFO    SenderThread:240628 [file_pusher.py:join():181] waiting for file pusher

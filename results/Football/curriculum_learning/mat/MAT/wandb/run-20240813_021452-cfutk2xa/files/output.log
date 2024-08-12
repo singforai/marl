@@ -1,0 +1,309 @@
+사용 가능한 CPU Thread: 24
+obs_dim:  330
+share_obs_dim:  220
+act_dim:  19
+mac_dec!!!!!
+reset complete
+{'value_loss': 0.4725524038076401, 'policy_loss': 0.046953155845403674, 'dist_entropy': 2.943200707435608, 'actor_grad_norm': tensor(156603.7969), 'critic_grad_norm': tensor(156603.7969), 'ratio': tensor(0.5717)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 816/10000000.0 steps in 18.73
+total episode rewards is -59.84800720214844
+reset complete
+{'value_loss': 0.45802995562553406, 'policy_loss': 0.07731256932020188, 'dist_entropy': 2.935245132446289, 'actor_grad_norm': tensor(0.1543), 'critic_grad_norm': tensor(0.1543), 'ratio': tensor(0.5407)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 1563/10000000.0 steps in 18.32
+total episode rewards is -37.723002115885414
+reset complete
+{'value_loss': 0.5122405856847763, 'policy_loss': 0.11844879314303398, 'dist_entropy': 2.912205719947815, 'actor_grad_norm': tensor(0.2785), 'critic_grad_norm': tensor(0.2785), 'ratio': tensor(0.5085)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 2215/10000000.0 steps in 18.67
+total episode rewards is -86.093017578125
+reset complete
+{'value_loss': 0.46133147478103637, 'policy_loss': 0.1313081704080105, 'dist_entropy': 2.8552478075027468, 'actor_grad_norm': tensor(0.2949), 'critic_grad_norm': tensor(0.2949), 'ratio': tensor(0.6541)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 3045/10000000.0 steps in 19.51
+total episode rewards is -57.115010579427086
+reset complete
+{'value_loss': 0.4033481776714325, 'policy_loss': 0.11664518713951111, 'dist_entropy': 2.70559675693512, 'actor_grad_norm': tensor(0.4108), 'critic_grad_norm': tensor(0.4108), 'ratio': tensor(0.7488)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 3917/10000000.0 steps in 18.54
+total episode rewards is -69.55500793457031
+reset complete
+{'value_loss': 0.32012927532196045, 'policy_loss': 0.038357917219400406, 'dist_entropy': 2.7075629472732543, 'actor_grad_norm': tensor(0.2175), 'critic_grad_norm': tensor(0.2175), 'ratio': tensor(0.9288)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 5136/10000000.0 steps in 17.78
+total episode rewards is -63.98900858561198
+reset complete
+{'value_loss': 0.3547617465257645, 'policy_loss': 0.03390200212597847, 'dist_entropy': 2.4573045492172243, 'actor_grad_norm': tensor(0.2431), 'critic_grad_norm': tensor(0.2431), 'ratio': tensor(0.9421)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 6242/10000000.0 steps in 18.05
+total episode rewards is -61.32500712076823
+reset complete
+{'value_loss': 0.38955730497837066, 'policy_loss': 0.015248061995953322, 'dist_entropy': 2.305903458595276, 'actor_grad_norm': tensor(0.1656), 'critic_grad_norm': tensor(0.1656), 'ratio': tensor(0.9651)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 7324/10000000.0 steps in 17.89
+total episode rewards is -69.24400838216145
+reset complete
+{'value_loss': 0.4139305591583252, 'policy_loss': 0.01358063630759716, 'dist_entropy': 1.9899020671844483, 'actor_grad_norm': tensor(0.1993), 'critic_grad_norm': tensor(0.1993), 'ratio': tensor(0.9712)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 8256/10000000.0 steps in 17.95
+total episode rewards is -70.42500813802083
+reset complete
+{'value_loss': 0.5126798450946808, 'policy_loss': 0.007917457073926926, 'dist_entropy': 1.4964442610740663, 'actor_grad_norm': tensor(0.1761), 'critic_grad_norm': tensor(0.1761), 'ratio': tensor(0.9718)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 8942/10000000.0 steps in 20.00
+total episode rewards is -36.649007161458336
+reset complete
+{'value_loss': 0.2726137042045593, 'policy_loss': 0.0026096160407178106, 'dist_entropy': 2.470180630683899, 'actor_grad_norm': tensor(0.1275), 'critic_grad_norm': tensor(0.1275), 'ratio': tensor(0.9937)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 10214/10000000.0 steps in 17.32
+total episode rewards is -54.49000549316406
+reset complete
+{'value_loss': 0.41904614865779877, 'policy_loss': 0.003380761935841292, 'dist_entropy': 1.909254539012909, 'actor_grad_norm': tensor(0.1793), 'critic_grad_norm': tensor(0.1793), 'ratio': tensor(0.9880)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 11162/10000000.0 steps in 18.99
+total episode rewards is -31.449007670084637
+reset complete
+{'value_loss': 0.26529757082462313, 'policy_loss': 0.0014734178272192366, 'dist_entropy': 2.3255299806594847, 'actor_grad_norm': tensor(0.1214), 'critic_grad_norm': tensor(0.1214), 'ratio': tensor(0.9938)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 12347/10000000.0 steps in 17.93
+total episode rewards is -53.08001200358073
+reset complete
+{'value_loss': 0.2934988230466843, 'policy_loss': 0.002359790273476392, 'dist_entropy': 2.2303529024124145, 'actor_grad_norm': tensor(0.0894), 'critic_grad_norm': tensor(0.0894), 'ratio': tensor(0.9937)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 13484/10000000.0 steps in 18.39
+total episode rewards is -32.920003255208336
+reset complete
+{'value_loss': 0.297276908159256, 'policy_loss': 0.001468469190149335, 'dist_entropy': 2.115773844718933, 'actor_grad_norm': tensor(0.1086), 'critic_grad_norm': tensor(0.1086), 'ratio': tensor(0.9935)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 14557/10000000.0 steps in 18.21
+total episode rewards is -53.98700968424479
+reset complete
+{'value_loss': 0.29914468228816987, 'policy_loss': 0.0006650987255852669, 'dist_entropy': 2.3034711837768556, 'actor_grad_norm': tensor(0.0913), 'critic_grad_norm': tensor(0.0913), 'ratio': tensor(0.9957)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 15738/10000000.0 steps in 17.92
+total episode rewards is -52.93000284830729
+reset complete
+{'value_loss': 0.34731213450431825, 'policy_loss': 0.001006074467295548, 'dist_entropy': 2.0948782205581664, 'actor_grad_norm': tensor(0.1289), 'critic_grad_norm': tensor(0.1289), 'ratio': tensor(0.9947)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 16805/10000000.0 steps in 17.68
+total episode rewards is -60.156005859375
+reset complete
+{'value_loss': 0.5176538705825806, 'policy_loss': 0.0014311961647763382, 'dist_entropy': 1.7578107357025146, 'actor_grad_norm': tensor(0.2267), 'critic_grad_norm': tensor(0.2267), 'ratio': tensor(0.9926)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 17688/10000000.0 steps in 18.29
+total episode rewards is -58.525004069010414
+reset complete
+{'value_loss': 0.6054524540901184, 'policy_loss': 0.0012154347015894019, 'dist_entropy': 1.3075331449508667, 'actor_grad_norm': tensor(0.1642), 'critic_grad_norm': tensor(0.1642), 'ratio': tensor(0.9908)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 18341/10000000.0 steps in 18.04
+total episode rewards is -56.879007975260414
+reset complete
+{'value_loss': 0.2405089944601059, 'policy_loss': 0.0011885858737514354, 'dist_entropy': 2.341502237319946, 'actor_grad_norm': tensor(0.1181), 'critic_grad_norm': tensor(0.1181), 'ratio': tensor(0.9972)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 19572/10000000.0 steps in 18.09
+total episode rewards is -43.949005126953125
+reset complete
+{'value_loss': 0.30563490390777587, 'policy_loss': 0.0002494684609700926, 'dist_entropy': 2.0298404932022094, 'actor_grad_norm': tensor(0.1083), 'critic_grad_norm': tensor(0.1083), 'ratio': tensor(0.9959)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 20638/10000000.0 steps in 18.25
+total episode rewards is -10.101003646850586
+reset complete
+{'value_loss': 0.5599198579788208, 'policy_loss': 0.0006223177646461408, 'dist_entropy': 1.4235729217529296, 'actor_grad_norm': tensor(0.2873), 'critic_grad_norm': tensor(0.2873), 'ratio': tensor(0.9935)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 21376/10000000.0 steps in 19.50
+total episode rewards is -67.45299784342448
+reset complete
+{'value_loss': 0.5066992521286011, 'policy_loss': 0.000817088151598, 'dist_entropy': 1.7583279013633728, 'actor_grad_norm': tensor(0.1969), 'critic_grad_norm': tensor(0.1969), 'ratio': tensor(0.9957)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 22310/10000000.0 steps in 19.13
+total episode rewards is -79.52201334635417
+reset complete
+{'value_loss': 0.37644427418708803, 'policy_loss': 0.0003211297902453225, 'dist_entropy': 1.8997011303901672, 'actor_grad_norm': tensor(0.1035), 'critic_grad_norm': tensor(0.1035), 'ratio': tensor(0.9964)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 23314/10000000.0 steps in 18.55
+total episode rewards is -20.285999298095703
+reset complete
+{'value_loss': 0.347984054684639, 'policy_loss': 0.0012285728313145227, 'dist_entropy': 1.8854724407196044, 'actor_grad_norm': tensor(0.0816), 'critic_grad_norm': tensor(0.0816), 'ratio': tensor(0.9965)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 24310/10000000.0 steps in 18.08
+total episode rewards is -31.81000264485677
+reset complete
+{'value_loss': 0.6788301348686219, 'policy_loss': 0.0011792020115535707, 'dist_entropy': 1.4909525036811828, 'actor_grad_norm': tensor(0.2580), 'critic_grad_norm': tensor(0.2580), 'ratio': tensor(0.9953)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 25099/10000000.0 steps in 18.64
+total episode rewards is -68.3300069173177
+reset complete
+{'value_loss': 0.32254518270492555, 'policy_loss': 0.0008729974433663301, 'dist_entropy': 2.1482317209243775, 'actor_grad_norm': tensor(0.0799), 'critic_grad_norm': tensor(0.0799), 'ratio': tensor(0.9979)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 26242/10000000.0 steps in 19.39
+total episode rewards is -50.88300577799479
+reset complete
+{'value_loss': 0.4812417298555374, 'policy_loss': 0.0005329686930053868, 'dist_entropy': 1.888445496559143, 'actor_grad_norm': tensor(0.1093), 'critic_grad_norm': tensor(0.1093), 'ratio': tensor(0.9972)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 27232/10000000.0 steps in 18.58
+total episode rewards is -31.94000752766927
+reset complete
+{'value_loss': 0.6621208429336548, 'policy_loss': 0.0006398507553967647, 'dist_entropy': 1.2741181015968324, 'actor_grad_norm': tensor(0.2335), 'critic_grad_norm': tensor(0.2335), 'ratio': tensor(0.9956)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 27887/10000000.0 steps in 19.40
+total episode rewards is -66.74800109863281
+reset complete
+{'value_loss': 0.42959130108356475, 'policy_loss': 0.0002120685211593809, 'dist_entropy': 2.185888242721558, 'actor_grad_norm': tensor(0.1461), 'critic_grad_norm': tensor(0.1461), 'ratio': tensor(0.9982)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 29039/10000000.0 steps in 19.57
+total episode rewards is -73.16499837239583
+reset complete
+{'value_loss': 0.6369369983673095, 'policy_loss': 0.0004689652239903808, 'dist_entropy': 1.3732087016105652, 'actor_grad_norm': tensor(0.2262), 'critic_grad_norm': tensor(0.2262), 'ratio': tensor(0.9965)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 29752/10000000.0 steps in 19.40
+total episode rewards is -67.84700012207031
+reset complete
+{'value_loss': 0.5042323231697082, 'policy_loss': 0.0006075414266888401, 'dist_entropy': 2.036683750152588, 'actor_grad_norm': tensor(0.2286), 'critic_grad_norm': tensor(0.2286), 'ratio': tensor(0.9982)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 30822/10000000.0 steps in 19.13
+total episode rewards is -71.55300903320312
+reset complete
+{'value_loss': 0.6760950267314911, 'policy_loss': -0.0002322912303498015, 'dist_entropy': 1.6083400249481201, 'actor_grad_norm': tensor(0.2346), 'critic_grad_norm': tensor(0.2346), 'ratio': tensor(0.9967)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 31671/10000000.0 steps in 20.87
+total episode rewards is -99.94100952148438
+reset complete
+{'value_loss': 0.41682033240795135, 'policy_loss': -6.361003688653e-05, 'dist_entropy': 2.1556471586227417, 'actor_grad_norm': tensor(0.1102), 'critic_grad_norm': tensor(0.1102), 'ratio': tensor(0.9989)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 32817/10000000.0 steps in 18.90
+total episode rewards is -72.41901143391927
+reset complete
+{'value_loss': 0.2574204206466675, 'policy_loss': -0.0003962243805744947, 'dist_entropy': 2.438313698768616, 'actor_grad_norm': tensor(0.1144), 'critic_grad_norm': tensor(0.1144), 'ratio': tensor(0.9990)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 34124/10000000.0 steps in 19.20
+total episode rewards is -52.399007161458336
+reset complete
+{'value_loss': 0.3369488388299942, 'policy_loss': -0.0001351743791019544, 'dist_entropy': 2.0277549743652346, 'actor_grad_norm': tensor(0.1186), 'critic_grad_norm': tensor(0.1186), 'ratio': tensor(0.9985)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 35215/10000000.0 steps in 19.03
+total episode rewards is -60.845001220703125
+reset complete
+{'value_loss': 0.42977988719940186, 'policy_loss': 5.776745638286229e-05, 'dist_entropy': 1.4883447885513306, 'actor_grad_norm': tensor(0.1767), 'critic_grad_norm': tensor(0.1767), 'ratio': tensor(0.9972)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 36008/10000000.0 steps in 18.59
+total episode rewards is -28.11900583902995
+reset complete
+{'value_loss': 0.39239734411239624, 'policy_loss': -0.0005299252094118856, 'dist_entropy': 1.7436901926994324, 'actor_grad_norm': tensor(0.1910), 'critic_grad_norm': tensor(0.1910), 'ratio': tensor(0.9979)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 36936/10000000.0 steps in 18.26
+total episode rewards is -59.8110097249349
+reset complete
+{'value_loss': 0.3501840740442276, 'policy_loss': -0.0006405049713066546, 'dist_entropy': 2.0527521848678587, 'actor_grad_norm': tensor(0.1345), 'critic_grad_norm': tensor(0.1345), 'ratio': tensor(0.9980)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 38040/10000000.0 steps in 18.60
+total episode rewards is -62.94200642903646
+reset complete
+{'value_loss': 0.4249087691307068, 'policy_loss': 4.4349872405291534e-05, 'dist_entropy': 1.9148067831993103, 'actor_grad_norm': tensor(0.1518), 'critic_grad_norm': tensor(0.1518), 'ratio': tensor(0.9984)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 39060/10000000.0 steps in 18.21
+total episode rewards is -71.28700764973958
+reset complete
+{'value_loss': 0.38552258908748627, 'policy_loss': -0.00046308002674777526, 'dist_entropy': 2.1256508111953734, 'actor_grad_norm': tensor(0.1633), 'critic_grad_norm': tensor(0.1633), 'ratio': tensor(0.9992)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 40182/10000000.0 steps in 18.14
+total episode rewards is -51.80400085449219
+reset complete
+{'value_loss': 0.2839602559804916, 'policy_loss': -0.00040875952472561037, 'dist_entropy': 2.21478066444397, 'actor_grad_norm': tensor(0.1114), 'critic_grad_norm': tensor(0.1114), 'ratio': tensor(0.9989)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 41356/10000000.0 steps in 19.15
+total episode rewards is -51.538004557291664
+reset complete
+{'value_loss': 0.32987388372421267, 'policy_loss': -0.0007004995401075576, 'dist_entropy': 2.2079548835754395, 'actor_grad_norm': tensor(0.1326), 'critic_grad_norm': tensor(0.1326), 'ratio': tensor(0.9988)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 42533/10000000.0 steps in 18.40
+total episode rewards is -61.55901082356771
+reset complete
+{'value_loss': 0.33806290924549104, 'policy_loss': -0.0006882666501041967, 'dist_entropy': 1.6940035343170166, 'actor_grad_norm': tensor(0.1148), 'critic_grad_norm': tensor(0.1148), 'ratio': tensor(0.9981)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 43436/10000000.0 steps in 17.96
+total episode rewards is -19.100001017252605
+reset complete
+{'value_loss': 0.27671930491924285, 'policy_loss': -0.0007259451347636058, 'dist_entropy': 2.1917760372161865, 'actor_grad_norm': tensor(0.1598), 'critic_grad_norm': tensor(0.1598), 'ratio': tensor(0.9987)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 44615/10000000.0 steps in 17.77
+total episode rewards is -57.50401306152344
+reset complete
+{'value_loss': 0.44766196310520173, 'policy_loss': -0.00014866564379190095, 'dist_entropy': 1.6918423652648926, 'actor_grad_norm': tensor(0.1739), 'critic_grad_norm': tensor(0.1739), 'ratio': tensor(0.9983)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 45521/10000000.0 steps in 19.20
+total episode rewards is -49.61400858561198
+reset complete
+{'value_loss': 0.4113819897174835, 'policy_loss': -0.0005197161219257396, 'dist_entropy': 1.8749650716781616, 'actor_grad_norm': tensor(0.2473), 'critic_grad_norm': tensor(0.2473), 'ratio': tensor(0.9982)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 46514/10000000.0 steps in 19.95
+total episode rewards is -72.66701253255208
+reset complete
+{'value_loss': 0.5419790804386139, 'policy_loss': -0.0007921437776531093, 'dist_entropy': 1.372640883922577, 'actor_grad_norm': tensor(0.2710), 'critic_grad_norm': tensor(0.2710), 'ratio': tensor(0.9979)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 47233/10000000.0 steps in 18.28
+total episode rewards is -67.25499979654948
+reset complete
+{'value_loss': 0.49401264190673827, 'policy_loss': -0.00028874941635876895, 'dist_entropy': 1.7236799359321595, 'actor_grad_norm': tensor(0.2486), 'critic_grad_norm': tensor(0.2486), 'ratio': tensor(0.9984)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 48146/10000000.0 steps in 18.07
+total episode rewards is -79.37600708007812
+reset complete
+{'value_loss': 0.491474649310112, 'policy_loss': -0.0002763202821370214, 'dist_entropy': 1.867258858680725, 'actor_grad_norm': tensor(0.1778), 'critic_grad_norm': tensor(0.1778), 'ratio': tensor(0.9985)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 49137/10000000.0 steps in 19.06
+total episode rewards is -58.287007649739586
+reset complete
+{'value_loss': 0.4114954680204391, 'policy_loss': -0.0006711496898788027, 'dist_entropy': 1.7627837419509889, 'actor_grad_norm': tensor(0.1114), 'critic_grad_norm': tensor(0.1114), 'ratio': tensor(0.9986)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 50073/10000000.0 steps in 18.47
+total episode rewards is -38.34100596110026
+reset complete
+{'value_loss': 0.3806023418903351, 'policy_loss': -0.00041761910033528694, 'dist_entropy': 1.9109856367111206, 'actor_grad_norm': tensor(0.1392), 'critic_grad_norm': tensor(0.1392), 'ratio': tensor(0.9989)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 51100/10000000.0 steps in 18.21
+total episode rewards is -59.72400410970052
+reset complete
+{'value_loss': 0.504622095823288, 'policy_loss': -0.0004141444886045065, 'dist_entropy': 1.684467327594757, 'actor_grad_norm': tensor(0.2402), 'critic_grad_norm': tensor(0.2402), 'ratio': tensor(0.9984)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 52001/10000000.0 steps in 18.50
+total episode rewards is -59.14801534016927
+reset complete
+{'value_loss': 0.28392786979675294, 'policy_loss': -0.0015385058701212983, 'dist_entropy': 2.121528148651123, 'actor_grad_norm': tensor(0.1308), 'critic_grad_norm': tensor(0.1308), 'ratio': tensor(0.9991)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 53128/10000000.0 steps in 17.90
+total episode rewards is -11.868006388346354
+reset complete
+{'value_loss': 0.37976290583610534, 'policy_loss': -0.000814837527286727, 'dist_entropy': 1.7736891984939576, 'actor_grad_norm': tensor(0.1271), 'critic_grad_norm': tensor(0.1271), 'ratio': tensor(0.9984)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 54073/10000000.0 steps in 18.59
+total episode rewards is -39.75900522867838
+reset complete
+{'value_loss': 0.2650881201028824, 'policy_loss': -0.0008176246468792669, 'dist_entropy': 2.176114726066589, 'actor_grad_norm': tensor(0.0760), 'critic_grad_norm': tensor(0.0760), 'ratio': tensor(0.9989)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 55239/10000000.0 steps in 18.27
+total episode rewards is -32.701001485188804
+reset complete
+{'value_loss': 0.27736385762691496, 'policy_loss': -0.0006752081641025143, 'dist_entropy': 1.9142733812332153, 'actor_grad_norm': tensor(0.1107), 'critic_grad_norm': tensor(0.1107), 'ratio': tensor(0.9985)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 56270/10000000.0 steps in 17.83
+total episode rewards is -33.50200653076172
+Traceback (most recent call last):
+  File "/home/uosai/Desktop/marl/onpolicy/train_grf.py", line 241, in <module>
+    main(args = sys.argv[1:])
+  File "/home/uosai/Desktop/marl/onpolicy/train_grf.py", line 232, in main
+    runner.run()
+  File "/home/uosai/Desktop/marl/onpolicy/runner/shared/football_runner.py", line 67, in run
+  File "/home/uosai/Desktop/marl/onpolicy/envs/env_wrappers.py", line 107, in step
+    return self.step_wait()
+  File "/home/uosai/Desktop/marl/onpolicy/envs/env_wrappers.py", line 263, in step_wait
+    results = [remote.recv() for remote in self.remotes]
+  File "/home/uosai/Desktop/marl/onpolicy/envs/env_wrappers.py", line 263, in <listcomp>
+    results = [remote.recv() for remote in self.remotes]
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
+    buf = self._recv(4)
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt

@@ -1,0 +1,561 @@
+
+사용 가능한 CPU Thread: 24
+reset complete
+{'value_loss': 0.7911010622978211, 'policy_loss': 0.013239166047424079, 'dist_entropy': 2.9436654329299925, 'actor_grad_norm': tensor(0.1077), 'critic_grad_norm': tensor(3.9577), 'ratio': tensor(0.6244)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 936/10000000.0 steps in 20.44
+total episode rewards is -78.23800659179688
+reset complete
+{'value_loss': 0.3894685208797455, 'policy_loss': -0.02560394424945116, 'dist_entropy': 2.94159882068634, 'actor_grad_norm': tensor(0.1124), 'critic_grad_norm': tensor(0.8188), 'ratio': tensor(0.7490)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 2056/10000000.0 steps in 20.04
+total episode rewards is -39.78900400797526
+reset complete
+{'value_loss': 0.5296375453472137, 'policy_loss': -0.0176517223007977, 'dist_entropy': 2.9402119636535646, 'actor_grad_norm': tensor(0.1354), 'critic_grad_norm': tensor(0.6395), 'ratio': tensor(0.5175)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 2829/10000000.0 steps in 20.78
+total episode rewards is -37.72900390625
+reset complete
+{'value_loss': 0.491967111825943, 'policy_loss': 0.032218753919005395, 'dist_entropy': 2.939719557762146, 'actor_grad_norm': tensor(0.1511), 'critic_grad_norm': tensor(0.7923), 'ratio': tensor(0.5027)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 3582/10000000.0 steps in 18.47
+total episode rewards is -56.99200439453125
+reset complete
+{'value_loss': 0.4718204468488693, 'policy_loss': 0.04793112874031067, 'dist_entropy': 2.9381529331207275, 'actor_grad_norm': tensor(0.1445), 'critic_grad_norm': tensor(0.7046), 'ratio': tensor(0.4499)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 4255/10000000.0 steps in 20.10
+total episode rewards is -38.13300323486328
+reset complete
+{'value_loss': 0.4233387619256973, 'policy_loss': 0.023537912964820863, 'dist_entropy': 2.9336350679397585, 'actor_grad_norm': tensor(0.1919), 'critic_grad_norm': tensor(0.7411), 'ratio': tensor(0.7699)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 5409/10000000.0 steps in 21.44
+total episode rewards is -72.20701090494792
+reset complete
+{'value_loss': 0.40994131565093994, 'policy_loss': 0.061802266910672185, 'dist_entropy': 2.932356667518616, 'actor_grad_norm': tensor(0.1576), 'critic_grad_norm': tensor(0.5006), 'ratio': tensor(0.6053)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 6319/10000000.0 steps in 21.11
+total episode rewards is -48.243011474609375
+reset complete
+{'value_loss': 0.5383563160896301, 'policy_loss': 0.10034254565834999, 'dist_entropy': 2.9338528871536256, 'actor_grad_norm': tensor(0.1614), 'critic_grad_norm': tensor(0.6747), 'ratio': tensor(0.4654)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 7018/10000000.0 steps in 20.09
+total episode rewards is -66.51601155598958
+reset complete
+{'value_loss': 0.2066015347838402, 'policy_loss': 0.08769109398126602, 'dist_entropy': 2.9270677089691164, 'actor_grad_norm': tensor(0.1243), 'critic_grad_norm': tensor(0.3280), 'ratio': tensor(0.7439)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 8136/10000000.0 steps in 18.88
+total episode rewards is -21.991004943847656
+reset complete
+{'value_loss': 0.5205406546592712, 'policy_loss': 0.09713976457715034, 'dist_entropy': 2.9324518918991087, 'actor_grad_norm': tensor(0.1546), 'critic_grad_norm': tensor(0.4783), 'ratio': tensor(0.4381)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 8794/10000000.0 steps in 19.19
+total episode rewards is -48.46100870768229
+reset complete
+{'value_loss': 0.46560847759246826, 'policy_loss': 0.09244481697678567, 'dist_entropy': 2.930142116546631, 'actor_grad_norm': tensor(0.1403), 'critic_grad_norm': tensor(0.3288), 'ratio': tensor(0.5179)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 9571/10000000.0 steps in 17.81
+total episode rewards is -17.788007100423176
+reset complete
+{'value_loss': 0.41524958312511445, 'policy_loss': 0.07120567038655282, 'dist_entropy': 2.9229737520217896, 'actor_grad_norm': tensor(0.1676), 'critic_grad_norm': tensor(0.5277), 'ratio': tensor(0.6996)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 10621/10000000.0 steps in 18.61
+total episode rewards is -70.74100240071614
+reset complete
+{'value_loss': 0.5669952988624573, 'policy_loss': 0.1336425334215164, 'dist_entropy': 2.922737646102905, 'actor_grad_norm': tensor(0.1615), 'critic_grad_norm': tensor(0.7696), 'ratio': tensor(0.5101)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 11389/10000000.0 steps in 18.95
+total episode rewards is -78.38000996907552
+reset complete
+{'value_loss': 0.22351539134979248, 'policy_loss': 0.07577719911932945, 'dist_entropy': 2.9147263050079344, 'actor_grad_norm': tensor(0.1587), 'critic_grad_norm': tensor(0.4850), 'ratio': tensor(0.8030)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 12595/10000000.0 steps in 18.63
+total episode rewards is -23.327006022135418
+reset complete
+{'value_loss': 0.40544155836105344, 'policy_loss': 0.1121128886938095, 'dist_entropy': 2.9123937845230103, 'actor_grad_norm': tensor(0.1572), 'critic_grad_norm': tensor(0.3849), 'ratio': tensor(0.6868)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 13627/10000000.0 steps in 18.38
+total episode rewards is -51.59600830078125
+reset complete
+{'value_loss': 0.6199865758419036, 'policy_loss': 0.11112560704350471, 'dist_entropy': 2.91248505115509, 'actor_grad_norm': tensor(0.1687), 'critic_grad_norm': tensor(1.0404), 'ratio': tensor(0.6232)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 14564/10000000.0 steps in 18.25
+total episode rewards is -90.77000935872395
+reset complete
+{'value_loss': 0.3186566561460495, 'policy_loss': 0.08949733078479767, 'dist_entropy': 2.909097456932068, 'actor_grad_norm': tensor(0.1653), 'critic_grad_norm': tensor(0.2932), 'ratio': tensor(0.6946)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 15608/10000000.0 steps in 18.80
+total episode rewards is -21.069006601969402
+reset complete
+{'value_loss': 0.38103884756565093, 'policy_loss': 0.10540145561099053, 'dist_entropy': 2.90927414894104, 'actor_grad_norm': tensor(0.1621), 'critic_grad_norm': tensor(0.5066), 'ratio': tensor(0.5802)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 16479/10000000.0 steps in 18.48
+total episode rewards is -71.34701029459636
+reset complete
+{'value_loss': 0.4857891291379929, 'policy_loss': 0.12869868874549867, 'dist_entropy': 2.907942366600037, 'actor_grad_norm': tensor(0.1716), 'critic_grad_norm': tensor(0.7558), 'ratio': tensor(0.5798)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 17352/10000000.0 steps in 19.25
+total episode rewards is -69.94101460774739
+reset complete
+{'value_loss': 0.3747844219207764, 'policy_loss': 0.17291689813137054, 'dist_entropy': 2.899531435966492, 'actor_grad_norm': tensor(0.2089), 'critic_grad_norm': tensor(0.5652), 'ratio': tensor(0.6539)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 18337/10000000.0 steps in 18.04
+total episode rewards is -62.472005208333336
+reset complete
+{'value_loss': 0.527904748916626, 'policy_loss': 0.13984913378953934, 'dist_entropy': 2.8940908193588255, 'actor_grad_norm': tensor(0.1980), 'critic_grad_norm': tensor(0.5581), 'ratio': tensor(0.6741)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 19353/10000000.0 steps in 18.58
+total episode rewards is -101.5280049641927
+reset complete
+{'value_loss': 0.31059369146823884, 'policy_loss': 0.15980345755815506, 'dist_entropy': 2.8932395458221434, 'actor_grad_norm': tensor(0.1590), 'critic_grad_norm': tensor(0.5480), 'ratio': tensor(0.6755)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 20372/10000000.0 steps in 18.44
+total episode rewards is -30.696011861165363
+reset complete
+{'value_loss': 0.4517675220966339, 'policy_loss': 0.15200646072626114, 'dist_entropy': 2.8945560455322266, 'actor_grad_norm': tensor(0.2067), 'critic_grad_norm': tensor(0.3405), 'ratio': tensor(0.5764)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 21240/10000000.0 steps in 19.14
+total episode rewards is -39.13700612386068
+reset complete
+{'value_loss': 0.35266117453575135, 'policy_loss': 0.07745105251669884, 'dist_entropy': 2.8835108995437624, 'actor_grad_norm': tensor(0.2379), 'critic_grad_norm': tensor(0.2475), 'ratio': tensor(0.7045)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 22298/10000000.0 steps in 19.00
+total episode rewards is -51.473002115885414
+reset complete
+{'value_loss': 0.2338895842432976, 'policy_loss': 0.09475456550717354, 'dist_entropy': 2.882028889656067, 'actor_grad_norm': tensor(0.1975), 'critic_grad_norm': tensor(0.2308), 'ratio': tensor(0.7366)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 23406/10000000.0 steps in 18.14
+total episode rewards is -31.215001424153645
+reset complete
+{'value_loss': 0.30334776639938354, 'policy_loss': 0.09660671949386597, 'dist_entropy': 2.8842851638793947, 'actor_grad_norm': tensor(0.2125), 'critic_grad_norm': tensor(0.3138), 'ratio': tensor(0.6842)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 24434/10000000.0 steps in 18.47
+total episode rewards is -10.523005803426107
+reset complete
+{'value_loss': 0.35313616394996644, 'policy_loss': 0.07282947599887848, 'dist_entropy': 2.8873916149139403, 'actor_grad_norm': tensor(0.1947), 'critic_grad_norm': tensor(0.3680), 'ratio': tensor(0.6611)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 25427/10000000.0 steps in 18.51
+total episode rewards is -53.64600626627604
+reset complete
+{'value_loss': 0.4761322498321533, 'policy_loss': 0.1163829930126667, 'dist_entropy': 2.9009252309799196, 'actor_grad_norm': tensor(0.1630), 'critic_grad_norm': tensor(0.5160), 'ratio': tensor(0.5168)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 26207/10000000.0 steps in 19.25
+total episode rewards is -67.76300048828125
+reset complete
+{'value_loss': 0.33818000853061675, 'policy_loss': 0.13436229079961776, 'dist_entropy': 2.8858432292938234, 'actor_grad_norm': tensor(0.1989), 'critic_grad_norm': tensor(0.2422), 'ratio': tensor(0.6799)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 27230/10000000.0 steps in 19.52
+total episode rewards is -41.64399973551432
+reset complete
+{'value_loss': 0.39160900712013247, 'policy_loss': 0.1407509058713913, 'dist_entropy': 2.884718418121338, 'actor_grad_norm': tensor(0.1933), 'critic_grad_norm': tensor(0.1762), 'ratio': tensor(0.6520)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 28210/10000000.0 steps in 18.63
+total episode rewards is -51.209004720052086
+reset complete
+{'value_loss': 0.43844015896320343, 'policy_loss': 0.14296860992908478, 'dist_entropy': 2.8918152332305906, 'actor_grad_norm': tensor(0.1573), 'critic_grad_norm': tensor(0.3486), 'ratio': tensor(0.5290)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 29009/10000000.0 steps in 19.52
+total episode rewards is -38.751007080078125
+reset complete
+{'value_loss': 0.29642238318920133, 'policy_loss': 0.15924008935689926, 'dist_entropy': 2.868003988265991, 'actor_grad_norm': tensor(0.1847), 'critic_grad_norm': tensor(0.1735), 'ratio': tensor(0.6960)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 30058/10000000.0 steps in 19.78
+total episode rewards is -51.99200948079427
+reset complete
+{'value_loss': 0.29292370975017545, 'policy_loss': 0.08775499537587166, 'dist_entropy': 2.8474554061889648, 'actor_grad_norm': tensor(0.2790), 'critic_grad_norm': tensor(0.2342), 'ratio': tensor(0.8201)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 31288/10000000.0 steps in 19.31
+total episode rewards is -64.02600606282552
+reset complete
+{'value_loss': 0.44041972756385805, 'policy_loss': 0.15290127843618392, 'dist_entropy': 2.8673303604125975, 'actor_grad_norm': tensor(0.2335), 'critic_grad_norm': tensor(0.2903), 'ratio': tensor(0.5273)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 32085/10000000.0 steps in 19.70
+total episode rewards is -56.34701029459635
+reset complete
+{'value_loss': 0.5924805104732513, 'policy_loss': 0.17310020178556443, 'dist_entropy': 2.8760765552520753, 'actor_grad_norm': tensor(0.2254), 'critic_grad_norm': tensor(0.4423), 'ratio': tensor(0.4687)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 32794/10000000.0 steps in 19.51
+total episode rewards is -27.5050048828125
+reset complete
+{'value_loss': 0.4735139667987823, 'policy_loss': 0.17848515808582305, 'dist_entropy': 2.86376416683197, 'actor_grad_norm': tensor(0.2115), 'critic_grad_norm': tensor(0.4984), 'ratio': tensor(0.5382)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 33607/10000000.0 steps in 19.00
+total episode rewards is -58.75200398763021
+reset complete
+{'value_loss': 0.44341049492359164, 'policy_loss': 0.1667642578482628, 'dist_entropy': 2.8467923164367677, 'actor_grad_norm': tensor(0.2558), 'critic_grad_norm': tensor(0.2383), 'ratio': tensor(0.6197)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 34541/10000000.0 steps in 20.04
+total episode rewards is -50.67900594075521
+reset complete
+{'value_loss': 0.4490968227386475, 'policy_loss': 0.15894244164228438, 'dist_entropy': 2.8331772804260256, 'actor_grad_norm': tensor(0.2375), 'critic_grad_norm': tensor(0.3490), 'ratio': tensor(0.5965)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 35438/10000000.0 steps in 19.89
+total episode rewards is -69.17500305175781
+reset complete
+{'value_loss': 0.3374813586473465, 'policy_loss': 0.12347696423530578, 'dist_entropy': 2.8162400484085084, 'actor_grad_norm': tensor(0.2301), 'critic_grad_norm': tensor(0.3186), 'ratio': tensor(0.7595)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 36579/10000000.0 steps in 19.98
+total episode rewards is -42.94500223795573
+reset complete
+{'value_loss': 0.21496458053588868, 'policy_loss': 0.15373194068670273, 'dist_entropy': 2.803201961517334, 'actor_grad_norm': tensor(0.2301), 'critic_grad_norm': tensor(0.2274), 'ratio': tensor(0.7798)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 37751/10000000.0 steps in 19.54
+total episode rewards is -43.13900248209635
+reset complete
+{'value_loss': 0.45254113972187043, 'policy_loss': 0.1516852408647537, 'dist_entropy': 2.697133755683899, 'actor_grad_norm': tensor(0.2117), 'critic_grad_norm': tensor(0.3432), 'ratio': tensor(0.5453)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 38552/10000000.0 steps in 20.87
+total episode rewards is 12.064996083577475
+reset complete
+{'value_loss': 0.4580207198858261, 'policy_loss': 0.1110589124262333, 'dist_entropy': 2.3094047784805296, 'actor_grad_norm': tensor(0.4124), 'critic_grad_norm': tensor(0.2664), 'ratio': tensor(0.5123)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 39166/10000000.0 steps in 20.95
+total episode rewards is -16.70299530029297
+reset complete
+{'value_loss': 0.4274745017290115, 'policy_loss': 0.04118637628853321, 'dist_entropy': 1.8239538311958312, 'actor_grad_norm': tensor(0.3881), 'critic_grad_norm': tensor(0.2964), 'ratio': tensor(0.7881)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 39891/10000000.0 steps in 19.32
+total episode rewards is -18.78400166829427
+reset complete
+{'value_loss': 0.4242444097995758, 'policy_loss': -0.0009750334662385285, 'dist_entropy': 1.5709614157676697, 'actor_grad_norm': tensor(0.1916), 'critic_grad_norm': tensor(0.3101), 'ratio': tensor(0.9404)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 40655/10000000.0 steps in 20.03
+total episode rewards is -58.400004069010414
+reset complete
+{'value_loss': 0.3597713202238083, 'policy_loss': -0.00758184125443222, 'dist_entropy': 2.030901885032654, 'actor_grad_norm': tensor(0.2276), 'critic_grad_norm': tensor(0.2402), 'ratio': tensor(0.9824)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 41721/10000000.0 steps in 18.79
+total episode rewards is -52.65900166829427
+reset complete
+{'value_loss': 0.47440358996391296, 'policy_loss': -0.006235013229888864, 'dist_entropy': 1.310180699825287, 'actor_grad_norm': tensor(0.2751), 'critic_grad_norm': tensor(0.3690), 'ratio': tensor(0.9777)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 42400/10000000.0 steps in 19.16
+total episode rewards is -46.978006998697914
+reset complete
+{'value_loss': 0.45475689470767977, 'policy_loss': -0.007189403686788864, 'dist_entropy': 1.3510537505149842, 'actor_grad_norm': tensor(0.2647), 'critic_grad_norm': tensor(0.2806), 'ratio': tensor(0.9815)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 43106/10000000.0 steps in 19.64
+total episode rewards is -37.282005310058594
+reset complete
+{'value_loss': 0.5285950779914856, 'policy_loss': -0.010289628780446947, 'dist_entropy': 1.7055987000465394, 'actor_grad_norm': tensor(0.2271), 'critic_grad_norm': tensor(0.5350), 'ratio': tensor(0.9878)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 44008/10000000.0 steps in 19.11
+total episode rewards is -79.31700134277344
+reset complete
+{'value_loss': 0.45402161180973055, 'policy_loss': -0.008464864490088075, 'dist_entropy': 1.5119261860847473, 'actor_grad_norm': tensor(0.2735), 'critic_grad_norm': tensor(0.2581), 'ratio': tensor(0.9871)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 44809/10000000.0 steps in 19.32
+total episode rewards is -37.58600362141927
+reset complete
+{'value_loss': 0.3305515229701996, 'policy_loss': -0.008703387109562755, 'dist_entropy': 1.8919033408164978, 'actor_grad_norm': tensor(0.4096), 'critic_grad_norm': tensor(0.2948), 'ratio': tensor(0.9911)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 45825/10000000.0 steps in 21.15
+total episode rewards is -43.18000284830729
+reset complete
+{'value_loss': 0.2069289430975914, 'policy_loss': -0.007850473350845277, 'dist_entropy': 2.1751235008239744, 'actor_grad_norm': tensor(0.2327), 'critic_grad_norm': tensor(0.3755), 'ratio': tensor(0.9931)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 46997/10000000.0 steps in 19.12
+total episode rewards is -1.9890003204345703
+reset complete
+{'value_loss': 0.193299800157547, 'policy_loss': -0.009501680411631241, 'dist_entropy': 2.386961841583252, 'actor_grad_norm': tensor(0.2584), 'critic_grad_norm': tensor(0.2346), 'ratio': tensor(1.0001)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 48284/10000000.0 steps in 18.80
+total episode rewards is -44.31700642903646
+reset complete
+{'value_loss': 0.38725351691246035, 'policy_loss': -0.010235458775423468, 'dist_entropy': 1.4595663905143739, 'actor_grad_norm': tensor(0.2107), 'critic_grad_norm': tensor(0.2982), 'ratio': tensor(0.9886)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 49060/10000000.0 steps in 19.68
+total episode rewards is -37.14000956217448
+reset complete
+{'value_loss': 0.25865450203418733, 'policy_loss': -0.008931646874407307, 'dist_entropy': 2.073932933807373, 'actor_grad_norm': tensor(0.2456), 'critic_grad_norm': tensor(0.2147), 'ratio': tensor(0.9940)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 50179/10000000.0 steps in 20.98
+total episode rewards is -32.17700703938802
+reset complete
+{'value_loss': 0.4153044015169144, 'policy_loss': -0.011536844435613602, 'dist_entropy': 1.6494891047477722, 'actor_grad_norm': tensor(0.2222), 'critic_grad_norm': tensor(0.4746), 'ratio': tensor(0.9924)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 51067/10000000.0 steps in 19.66
+total episode rewards is -81.49300130208333
+reset complete
+{'value_loss': 0.36908018887043, 'policy_loss': -0.008897336595691741, 'dist_entropy': 1.5546649932861327, 'actor_grad_norm': tensor(0.1978), 'critic_grad_norm': tensor(0.2170), 'ratio': tensor(0.9927)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 51904/10000000.0 steps in 18.34
+total episode rewards is -9.846003214518229
+reset complete
+{'value_loss': 0.37072405219078064, 'policy_loss': -0.01153999023954384, 'dist_entropy': 1.9833576321601867, 'actor_grad_norm': tensor(0.2862), 'critic_grad_norm': tensor(0.1428), 'ratio': tensor(0.9934)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 52980/10000000.0 steps in 17.94
+total episode rewards is -51.80900573730469
+reset complete
+{'value_loss': 0.47295964062213897, 'policy_loss': -0.01167947449721396, 'dist_entropy': 1.6763615965843202, 'actor_grad_norm': tensor(0.2397), 'critic_grad_norm': tensor(0.2815), 'ratio': tensor(0.9956)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 53896/10000000.0 steps in 20.60
+total episode rewards is -68.79800415039062
+reset complete
+{'value_loss': 0.33743514120578766, 'policy_loss': -0.007954957662150264, 'dist_entropy': 1.673254954814911, 'actor_grad_norm': tensor(0.2291), 'critic_grad_norm': tensor(0.2600), 'ratio': tensor(0.9930)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 54805/10000000.0 steps in 19.10
+total episode rewards is -1.5440009435017903
+reset complete
+{'value_loss': 0.2117815524339676, 'policy_loss': -0.008626776945311576, 'dist_entropy': 2.1354586124420165, 'actor_grad_norm': tensor(0.2395), 'critic_grad_norm': tensor(0.2635), 'ratio': tensor(0.9960)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 55977/10000000.0 steps in 18.49
+total episode rewards is -25.272005716959637
+reset complete
+{'value_loss': 0.29247221648693084, 'policy_loss': -0.007191638712538406, 'dist_entropy': 1.653098213672638, 'actor_grad_norm': tensor(0.1944), 'critic_grad_norm': tensor(0.1754), 'ratio': tensor(0.9957)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 56871/10000000.0 steps in 19.10
+total episode rewards is -2.672001520792643
+reset complete
+{'value_loss': 0.24934062361717224, 'policy_loss': -0.009413910942384973, 'dist_entropy': 2.051103043556213, 'actor_grad_norm': tensor(0.2803), 'critic_grad_norm': tensor(0.2201), 'ratio': tensor(0.9964)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 58001/10000000.0 steps in 18.12
+total episode rewards is -51.69500732421875
+reset complete
+{'value_loss': 0.2843171924352646, 'policy_loss': -0.007891246874351054, 'dist_entropy': 1.6661913633346557, 'actor_grad_norm': tensor(0.2252), 'critic_grad_norm': tensor(0.2062), 'ratio': tensor(0.9962)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 58909/10000000.0 steps in 18.40
+total episode rewards is -1.1529998779296875
+reset complete
+{'value_loss': 0.3897631734609604, 'policy_loss': -0.010957653721561655, 'dist_entropy': 1.9485968589782714, 'actor_grad_norm': tensor(0.3192), 'critic_grad_norm': tensor(0.4665), 'ratio': tensor(0.9966)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 59979/10000000.0 steps in 18.56
+total episode rewards is -79.79300435384114
+reset complete
+{'value_loss': 0.19174221754074097, 'policy_loss': -0.008782274604891427, 'dist_entropy': 2.191974139213562, 'actor_grad_norm': tensor(0.2099), 'critic_grad_norm': tensor(0.1303), 'ratio': tensor(0.9984)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 61160/10000000.0 steps in 18.30
+total episode rewards is -43.774007161458336
+reset complete
+{'value_loss': 0.4267324596643448, 'policy_loss': -0.008969600993441417, 'dist_entropy': 1.6225392937660217, 'actor_grad_norm': tensor(0.1851), 'critic_grad_norm': tensor(0.3413), 'ratio': tensor(0.9932)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 62033/10000000.0 steps in 22.30
+total episode rewards is -60.6499989827474
+reset complete
+{'value_loss': 0.3365114688873291, 'policy_loss': -0.007422681982279755, 'dist_entropy': 1.4812899827957153, 'actor_grad_norm': tensor(0.1854), 'critic_grad_norm': tensor(0.2524), 'ratio': tensor(0.9938)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 62834/10000000.0 steps in 20.82
+total episode rewards is 0.49199779828389484
+reset complete
+{'value_loss': 0.36693021953105925, 'policy_loss': -0.008722047838091385, 'dist_entropy': 1.3608064651489258, 'actor_grad_norm': tensor(0.2329), 'critic_grad_norm': tensor(0.1697), 'ratio': tensor(0.9977)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 63574/10000000.0 steps in 20.68
+total episode rewards is -27.225008646647137
+reset complete
+{'value_loss': 0.07791950106620789, 'policy_loss': -0.00901699828064011, 'dist_entropy': 2.625600981712341, 'actor_grad_norm': tensor(0.2281), 'critic_grad_norm': tensor(0.1880), 'ratio': tensor(1.0018)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 65014/10000000.0 steps in 21.35
+total episode rewards is -25.256001790364582
+reset complete
+{'value_loss': 0.18387364149093627, 'policy_loss': -0.009304769328446127, 'dist_entropy': 2.2907490015029905, 'actor_grad_norm': tensor(0.1975), 'critic_grad_norm': tensor(0.1340), 'ratio': tensor(0.9996)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 66272/10000000.0 steps in 22.50
+total episode rewards is -44.18799845377604
+reset complete
+{'value_loss': 0.36900061666965484, 'policy_loss': -0.010331738946842962, 'dist_entropy': 1.407332170009613, 'actor_grad_norm': tensor(0.2099), 'critic_grad_norm': tensor(0.1971), 'ratio': tensor(0.9966)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 67041/10000000.0 steps in 21.12
+total episode rewards is -29.204007466634113
+reset complete
+{'value_loss': 0.236703123152256, 'policy_loss': -0.009213211309543112, 'dist_entropy': 2.079076814651489, 'actor_grad_norm': tensor(0.2198), 'critic_grad_norm': tensor(0.0951), 'ratio': tensor(0.9997)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 68181/10000000.0 steps in 19.31
+total episode rewards is -33.59200795491537
+reset complete
+{'value_loss': 0.38322495520114896, 'policy_loss': -0.0099854402593337, 'dist_entropy': 1.8283355474472045, 'actor_grad_norm': tensor(0.2151), 'critic_grad_norm': tensor(0.2927), 'ratio': tensor(0.9966)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 69183/10000000.0 steps in 20.64
+total episode rewards is -50.00500996907552
+reset complete
+{'value_loss': 0.235085229575634, 'policy_loss': -0.008742410745253438, 'dist_entropy': 2.1394621610641478, 'actor_grad_norm': tensor(0.2082), 'critic_grad_norm': tensor(0.0834), 'ratio': tensor(0.9982)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 70354/10000000.0 steps in 20.81
+total episode rewards is -34.36601003011068
+reset complete
+{'value_loss': 0.3637277573347092, 'policy_loss': -0.007536883949069306, 'dist_entropy': 1.5287984132766723, 'actor_grad_norm': tensor(0.1744), 'critic_grad_norm': tensor(0.1544), 'ratio': tensor(0.9956)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 71187/10000000.0 steps in 19.73
+total episode rewards is -10.846009572347006
+reset complete
+{'value_loss': 0.19121372550725937, 'policy_loss': -0.007965159432205837, 'dist_entropy': 2.2667305707931518, 'actor_grad_norm': tensor(0.2108), 'critic_grad_norm': tensor(0.1209), 'ratio': tensor(0.9978)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 72427/10000000.0 steps in 19.67
+total episode rewards is -25.402002970377605
+reset complete
+{'value_loss': 0.3747674018144608, 'policy_loss': -0.00889796569244936, 'dist_entropy': 1.4044658899307252, 'actor_grad_norm': tensor(0.2322), 'critic_grad_norm': tensor(0.2476), 'ratio': tensor(0.9953)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 73191/10000000.0 steps in 20.77
+total episode rewards is -27.616002400716145
+reset complete
+{'value_loss': 0.32984688580036164, 'policy_loss': -0.009141904556599911, 'dist_entropy': 2.128545904159546, 'actor_grad_norm': tensor(0.2138), 'critic_grad_norm': tensor(0.1851), 'ratio': tensor(0.9991)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 74355/10000000.0 steps in 20.46
+total episode rewards is -41.677001953125
+reset complete
+{'value_loss': 0.3111554950475693, 'policy_loss': -0.00929791953531094, 'dist_entropy': 1.8142792105674743, 'actor_grad_norm': tensor(0.1958), 'critic_grad_norm': tensor(0.2428), 'ratio': tensor(0.9970)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 75349/10000000.0 steps in 21.84
+total episode rewards is -40.482007344563804
+reset complete
+{'value_loss': 0.39363149702548983, 'policy_loss': -0.00947880399908172, 'dist_entropy': 1.6049058556556701, 'actor_grad_norm': tensor(0.2373), 'critic_grad_norm': tensor(0.3167), 'ratio': tensor(0.9958)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 76227/10000000.0 steps in 22.10
+total episode rewards is -19.990008036295574
+reset complete
+{'value_loss': 0.3175995320081711, 'policy_loss': -0.010457295837113634, 'dist_entropy': 1.8744724154472352, 'actor_grad_norm': tensor(0.2742), 'critic_grad_norm': tensor(0.1989), 'ratio': tensor(0.9968)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 77262/10000000.0 steps in 19.12
+total episode rewards is -42.25000254313151
+reset complete
+{'value_loss': 0.3396064072847366, 'policy_loss': -0.007690464379265904, 'dist_entropy': 1.5418127536773683, 'actor_grad_norm': tensor(0.2549), 'critic_grad_norm': tensor(0.2435), 'ratio': tensor(0.9945)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 78115/10000000.0 steps in 21.49
+total episode rewards is 20.284998575846355
+reset complete
+{'value_loss': 0.21137507408857345, 'policy_loss': -0.008083069146960043, 'dist_entropy': 2.3492483854293824, 'actor_grad_norm': tensor(0.2050), 'critic_grad_norm': tensor(0.1322), 'ratio': tensor(0.9983)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 79411/10000000.0 steps in 19.64
+total episode rewards is -45.12700398763021
+reset complete
+{'value_loss': 0.37732858061790464, 'policy_loss': -0.009289325358986389, 'dist_entropy': 1.4424787044525147, 'actor_grad_norm': tensor(0.1873), 'critic_grad_norm': tensor(0.3151), 'ratio': tensor(0.9956)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 80205/10000000.0 steps in 21.99
+total episode rewards is -28.5800043741862
+reset complete
+{'value_loss': 0.32507493793964387, 'policy_loss': -0.009205274884880054, 'dist_entropy': 2.0027934312820435, 'actor_grad_norm': tensor(0.2109), 'critic_grad_norm': tensor(0.2130), 'ratio': tensor(0.9987)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 81311/10000000.0 steps in 20.79
+total episode rewards is -21.17700703938802
+reset complete
+{'value_loss': 0.1476448029279709, 'policy_loss': -0.007786423337529413, 'dist_entropy': 2.422701930999756, 'actor_grad_norm': tensor(0.2820), 'critic_grad_norm': tensor(0.3448), 'ratio': tensor(1.0000)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 82662/10000000.0 steps in 20.71
+total episode rewards is -15.560003916422525
+reset complete
+{'value_loss': 0.4781368613243103, 'policy_loss': -0.010920642054406926, 'dist_entropy': 1.170012652873993, 'actor_grad_norm': tensor(0.2000), 'critic_grad_norm': tensor(0.4001), 'ratio': tensor(0.9954)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 83304/10000000.0 steps in 21.22
+total episode rewards is -47.24300638834635
+reset complete
+{'value_loss': 0.19312828481197358, 'policy_loss': -0.008595914001489291, 'dist_entropy': 1.9965074181556701, 'actor_grad_norm': tensor(0.2199), 'critic_grad_norm': tensor(0.1504), 'ratio': tensor(0.9994)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 84417/10000000.0 steps in 20.03
+total episode rewards is -22.1530024210612
+reset complete
+{'value_loss': 0.32306318283081054, 'policy_loss': -0.008318125182995573, 'dist_entropy': 1.5732259035110474, 'actor_grad_norm': tensor(0.2060), 'critic_grad_norm': tensor(0.2519), 'ratio': tensor(0.9970)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 85277/10000000.0 steps in 20.76
+total episode rewards is -39.707008361816406
+reset complete
+{'value_loss': 0.18371180742979049, 'policy_loss': -0.008905241153843235, 'dist_entropy': 2.2737019538879393, 'actor_grad_norm': tensor(0.2105), 'critic_grad_norm': tensor(0.2064), 'ratio': tensor(1.0003)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 86555/10000000.0 steps in 20.88
+total episode rewards is -28.027002970377605
+reset complete
+{'value_loss': 0.31116833388805387, 'policy_loss': -0.008754861712804995, 'dist_entropy': 1.7795821905136109, 'actor_grad_norm': tensor(0.2177), 'critic_grad_norm': tensor(0.2096), 'ratio': tensor(0.9958)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 87563/10000000.0 steps in 20.37
+total episode rewards is -39.80500284830729
+reset complete
+{'value_loss': 0.2327579140663147, 'policy_loss': -0.007343002838024404, 'dist_entropy': 1.8987234473228454, 'actor_grad_norm': tensor(0.1945), 'critic_grad_norm': tensor(0.2170), 'ratio': tensor(0.9961)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 88628/10000000.0 steps in 21.31
+total episode rewards is -12.346000671386719
+reset complete
+{'value_loss': 0.33051627576351167, 'policy_loss': -0.008613730335491709, 'dist_entropy': 1.8377837777137755, 'actor_grad_norm': tensor(0.2064), 'critic_grad_norm': tensor(0.1860), 'ratio': tensor(0.9979)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 89664/10000000.0 steps in 21.27
+total episode rewards is -20.92400614420573
+reset complete
+{'value_loss': 0.38402499854564665, 'policy_loss': -0.009667071278090588, 'dist_entropy': 1.6796782732009887, 'actor_grad_norm': tensor(0.1983), 'critic_grad_norm': tensor(0.2073), 'ratio': tensor(0.9959)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 90599/10000000.0 steps in 19.56
+total episode rewards is -32.93200174967448
+reset complete
+{'value_loss': 0.5718946039676667, 'policy_loss': -0.010095304396236316, 'dist_entropy': 1.3051179885864257, 'actor_grad_norm': tensor(0.2059), 'critic_grad_norm': tensor(0.3315), 'ratio': tensor(0.9952)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 91334/10000000.0 steps in 20.45
+total episode rewards is -36.762003580729164
+reset complete
+{'value_loss': 0.20916661471128464, 'policy_loss': -0.006093291164143011, 'dist_entropy': 1.8984681963920593, 'actor_grad_norm': tensor(0.1843), 'critic_grad_norm': tensor(0.3262), 'ratio': tensor(0.9987)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 92394/10000000.0 steps in 19.97
+total episode rewards is 16.632996877034504
+reset complete
+{'value_loss': 0.4348361253738403, 'policy_loss': -0.010135257622096105, 'dist_entropy': 1.5808948040008546, 'actor_grad_norm': tensor(0.2454), 'critic_grad_norm': tensor(0.3014), 'ratio': tensor(0.9961)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 93286/10000000.0 steps in 20.09
+total episode rewards is -39.28400421142578
+reset complete
+{'value_loss': 0.1989803805947304, 'policy_loss': -0.0062617731164209545, 'dist_entropy': 2.2750680685043334, 'actor_grad_norm': tensor(0.4461), 'critic_grad_norm': tensor(0.1609), 'ratio': tensor(0.9652)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 94524/10000000.0 steps in 21.52
+total episode rewards is -24.235005696614582
+reset complete
+{'value_loss': 0.33677653074264524, 'policy_loss': -0.00548032894730568, 'dist_entropy': 1.6557246208190919, 'actor_grad_norm': tensor(0.1795), 'critic_grad_norm': tensor(0.1777), 'ratio': tensor(0.9700)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 95417/10000000.0 steps in 21.73
+total episode rewards is -20.444002787272137
+reset complete
+{'value_loss': 0.4394821792840958, 'policy_loss': -0.005616823483433109, 'dist_entropy': 1.0909227967262267, 'actor_grad_norm': tensor(0.1720), 'critic_grad_norm': tensor(0.3130), 'ratio': tensor(0.9819)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 96006/10000000.0 steps in 21.37
+total episode rewards is 24.168991088867188
+reset complete
+{'value_loss': 0.4496900737285614, 'policy_loss': -0.006018249876797199, 'dist_entropy': 1.1726489067077637, 'actor_grad_norm': tensor(0.1689), 'critic_grad_norm': tensor(0.3372), 'ratio': tensor(0.9712)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 96626/10000000.0 steps in 21.57
+total episode rewards is 4.365993181864421
+reset complete
+{'value_loss': 0.37432817220687864, 'policy_loss': -0.009451576531864703, 'dist_entropy': 1.42957204580307, 'actor_grad_norm': tensor(0.2276), 'critic_grad_norm': tensor(0.2305), 'ratio': tensor(0.9781)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 97405/10000000.0 steps in 20.69
+total episode rewards is -27.631009419759113
+reset complete
+{'value_loss': 0.4024826794862747, 'policy_loss': -0.00856497404165566, 'dist_entropy': 1.92566419839859, 'actor_grad_norm': tensor(0.2940), 'critic_grad_norm': tensor(0.3918), 'ratio': tensor(0.9901)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 98474/10000000.0 steps in 19.85
+total episode rewards is -71.41000366210938
+reset complete
+{'value_loss': 0.4145851254463196, 'policy_loss': -0.008953846426447854, 'dist_entropy': 1.5617599606513977, 'actor_grad_norm': tensor(0.2265), 'critic_grad_norm': tensor(0.2107), 'ratio': tensor(0.9923)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 99350/10000000.0 steps in 20.03
+total episode rewards is -40.201009114583336
+reset complete
+{'value_loss': 0.4196112483739853, 'policy_loss': -0.00708379793795757, 'dist_entropy': 1.4559613585472106, 'actor_grad_norm': tensor(0.1965), 'critic_grad_norm': tensor(0.2071), 'ratio': tensor(0.9914)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 100162/10000000.0 steps in 19.64
+total episode rewards is -7.6210072835286455
+reset complete
+{'value_loss': 0.5003948003053665, 'policy_loss': -0.007141915848478675, 'dist_entropy': 0.8760842978954315, 'actor_grad_norm': tensor(0.2223), 'critic_grad_norm': tensor(0.3647), 'ratio': tensor(0.9914)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 100650/10000000.0 steps in 20.67
+total episode rewards is 14.842002868652344
+reset complete
+{'value_loss': 0.3611449122428894, 'policy_loss': -0.00710220174951246, 'dist_entropy': 1.3585685729980468, 'actor_grad_norm': tensor(0.1932), 'critic_grad_norm': tensor(0.2500), 'ratio': tensor(0.9937)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 101407/10000000.0 steps in 20.88
+total episode rewards is 13.44799550374349
+reset complete
+{'value_loss': 0.2985132336616516, 'policy_loss': -0.005832331921556033, 'dist_entropy': 1.4787825703620912, 'actor_grad_norm': tensor(0.1518), 'critic_grad_norm': tensor(0.3043), 'ratio': tensor(0.9929)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 102213/10000000.0 steps in 19.98
+total episode rewards is 20.287996927897137
+reset complete
+{'value_loss': 0.5363457143306732, 'policy_loss': -0.009580317011568695, 'dist_entropy': 1.0160629034042359, 'actor_grad_norm': tensor(0.2479), 'critic_grad_norm': tensor(0.4357), 'ratio': tensor(0.9956)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 102781/10000000.0 steps in 20.71
+total episode rewards is -37.84900410970052
+reset complete
+{'value_loss': 0.33570641577243804, 'policy_loss': -0.007593605534202652, 'dist_entropy': 1.5227143883705139, 'actor_grad_norm': tensor(0.1730), 'critic_grad_norm': tensor(0.2426), 'ratio': tensor(0.9961)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 103621/10000000.0 steps in 20.22
+total episode rewards is -2.000004609425863
+reset complete
+{'value_loss': 0.3485740929841995, 'policy_loss': -0.008084726548258914, 'dist_entropy': 1.6750689268112182, 'actor_grad_norm': tensor(0.2464), 'critic_grad_norm': tensor(0.1557), 'ratio': tensor(0.9971)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 104557/10000000.0 steps in 19.35
+total episode rewards is -21.294002532958984
+reset complete
+{'value_loss': 0.39621751606464384, 'policy_loss': -0.006592753529548645, 'dist_entropy': 1.213379156589508, 'actor_grad_norm': tensor(0.1864), 'critic_grad_norm': tensor(0.2810), 'ratio': tensor(0.9964)}
+And I'm OK
+Env Football Algo tizero Exp tizero updates 105224/10000000.0 steps in 19.13

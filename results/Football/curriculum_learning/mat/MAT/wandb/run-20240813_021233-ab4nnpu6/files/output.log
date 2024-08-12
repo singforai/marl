@@ -1,0 +1,35 @@
+사용 가능한 CPU Thread: 24
+obs_dim:  330
+share_obs_dim:  220
+act_dim:  19
+mac_dec!!!!!
+reset complete
+{'value_loss': 0.4740144044160843, 'policy_loss': 0.040106387436389924, 'dist_entropy': 2.943214702606201, 'actor_grad_norm': tensor(134102.6250), 'critic_grad_norm': tensor(134102.6250), 'ratio': tensor(0.6266)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 905/10000000.0 steps in 20.59
+total episode rewards is -58.74300638834635
+reset complete
+{'value_loss': 0.5016905844211579, 'policy_loss': 0.06977534890174866, 'dist_entropy': 2.9354183673858643, 'actor_grad_norm': tensor(0.2234), 'critic_grad_norm': tensor(0.2234), 'ratio': tensor(0.6586)}
+And I'm OK
+Env Football Algo mat Exp MAT updates 1847/10000000.0 steps in 18.29
+total episode rewards is -70.05299886067708
+Traceback (most recent call last):
+  File "/home/uosai/Desktop/marl/onpolicy/train_grf.py", line 241, in <module>
+    main(args = sys.argv[1:])
+  File "/home/uosai/Desktop/marl/onpolicy/train_grf.py", line 232, in main
+    runner.run()
+  File "/home/uosai/Desktop/marl/onpolicy/runner/shared/football_runner.py", line 64, in run
+    values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env = self.collect(step)
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/uosai/Desktop/marl/onpolicy/runner/shared/football_runner.py", line 193, in collect
+    values, actions, action_log_probs, rnn_states, rnn_states_critic = self.trainer.policy.get_actions(
+  File "/home/uosai/Desktop/marl/onpolicy/algorithms/mat/algorithm/transformer_policy.py", line 108, in get_actions
+    actions, action_log_probs, values = self.transformer.get_actions(cent_obs,
+  File "/home/uosai/Desktop/marl/onpolicy/algorithms/mat/algorithm/ma_transformer.py", line 291, in get_actions
+    output_action, output_action_log = discrete_autoregreesive_act(self.decoder, obs_rep, obs, batch_size,
+  File "/home/uosai/Desktop/marl/onpolicy/algorithms/utils/transformer_act.py", line 19, in discrete_autoregreesive_act
+    action = distri.probs.argmax(dim=-1) if deterministic else distri.sample()
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/site-packages/torch/distributions/categorical.py", line 132, in sample
+    samples_2d = torch.multinomial(probs_2d, sample_shape.numel(), True).T
+KeyboardInterrupt

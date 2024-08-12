@@ -142,12 +142,10 @@ def main(args):
         all_args.use_additional_obs = True
 
     elif all_args.algorithm_name == "mat":
-        all_args.dec_actor = True
         all_args.share_actor = True
 
     elif all_args.algorithm_name == "mat_dec":
         all_args.dec_actor = True
-        all_args.share_actor = False
     
     else:
         raise NotImplementedError
