@@ -178,7 +178,7 @@ class Runner(object):
         train_infos = self.trainer.train(self.buffer)      
         self.buffer.after_update()
         print(train_infos)
-        return (train_infos,)
+        return train_infos
 
     def save(self, episode=0):
         """Save policy's actor and critic networks."""

@@ -104,6 +104,10 @@ def parse_args(args, parser):
 
 
 def main(args):
+    
+    level_file_path = "/home/uosai/Desktop/marl/onpolicy/level/level.json"
+    if os.path.exists(level_file_path):
+        os.remove(level_file_path)
         
     parser = get_config()
     all_args = parse_args(args, parser)
@@ -134,15 +138,6 @@ def main(args):
             raise ValueError("Tizero는 11 vs 11 simple115v2 관찰 환경에서만 실행가능합니다.")
         print("u are choosing to use Tizero, we set use_joint_action_loss to be True")
         all_args.use_joint_action_loss = True
-        all_args.use_recurrent_policy = True
-        all_args.use_additional_obs = True
-    elif all_args.algorithm_name == "mat":
-        all_args.dec_actor = True
-        all_args.share_actor = True
-    elif all_args.algorithm_name == "mat_dec":
-        all_args.dec_actor = True
-        all_args.share_actor = False
-    
     else:
         raise NotImplementedError
 

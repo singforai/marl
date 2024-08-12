@@ -32,6 +32,8 @@ class FootballRunner(Runner):
         scenario 파일에는 init_level 파일 경로를 넣어야 한다. 
         """
         self.level_file_path = self.all_args.level_dir
+        # if os.path.exists(self.level_file_path):
+        #     os.remove(self.level_file_path)
         
     def run(self):
 
@@ -64,7 +66,21 @@ class FootballRunner(Runner):
                 obs, rewards, dones, infos = self.envs.step(actions_env)
 
                 rewards = rewards / self.num_agents * 10
-                obs, share_obs, available_actions = additional_obs(infos = infos, num_agents = self.num_agents)
+                # reward
+                for idx, info in enumerate(infos):
+                    if info["ball_owned_team"] == 1:  # 상대 
+                        rewards[idx] -= 0.001
+                if self.use_xt:
+                    rewards = self.cal_xt.controller(
+                        step = step,
+                        rewards = rewards,
+                        obs = obs,
+                        score = np.array([info["score"] for info in infos]),
+                    )
+                
+                if self.use_additional_obs:
+                    obs, share_obs, available_actions = additional_obs(infos = infos, num_agents = self.num_agents, episode_length = self.episode_length)
+                    
                 infos = list(infos)
                 
                 for idx, done in enumerate(dones):
@@ -75,15 +91,14 @@ class FootballRunner(Runner):
                         dones[idx] = [True for _ in range(self.num_agents)]        
                         infos[idx] = infos_rollouts[idx]
                 
-                
-                
                 infos = tuple(infos)
-                data = step, obs, share_obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic
+
+                data = step, obs, share_obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic, available_actions
                 # insert data into buffer
                 self.insert(data)
                 
                 step += 1
-            print("train_part")
+
             done_steps = [self.episode_length if done_rollout == None else done_rollout for done_rollout in done_rollouts]
             total_num_steps += int(np.average(done_steps))
             render_stack += int(np.average(done_steps))
@@ -102,10 +117,13 @@ class FootballRunner(Runner):
                     self.buffer.masks[done_step+1: , roll_idx, :] = 0
             
             rewards_record = self.buffer.rewards 
+            
+            # for step_idx, roll_idx in enumerate(self.buffer.rewards):
+            #     print(step_idx, roll_idx[0][0], roll_idx[1][0])
+            
             self.compute()
             train_infos = self.train()
             print("And I'm OK")
-            train_infos = train_infos[0]
             # save model
             if render_stack >= self.save_interval:
                 self.save()
@@ -130,8 +148,8 @@ class FootballRunner(Runner):
 
             self.log_train(train_infos, total_num_steps)
             self.log_env(self.buffer.env_infos, total_num_steps)
-            
             self.buffer.env_infos = defaultdict(list)
+
 
 #            if interval_stack >= self.eval_interval:
 #                self.eval(total_num_steps)
@@ -142,14 +160,15 @@ class FootballRunner(Runner):
         self.buffer.step = 0
         default_obs = self.envs.reset()
         np.set_printoptions(threshold=np.inf)
-        
         if self.use_additional_obs:
-            obs, share_obs, available_actions = init_obs(obs = default_obs)
+            obs, share_obs, available_actions = init_obs(obs = default_obs, num_agents = self.num_agents, episode_length = self.episode_length)
             self.buffer.share_obs[0] = share_obs
             self.buffer.obs[0] = obs
             self.buffer.rnn_states[0] = 0
             self.buffer.rnn_states_critic[0] = 0
             self.buffer.masks[0] = 1
+            if self.all_args.use_available_actions:
+                self.buffer.available_actions[0] = available_actions
         else:
             self.buffer.share_obs[0] = default_obs.copy()
             self.buffer.obs[0] = default_obs.copy()
@@ -158,7 +177,7 @@ class FootballRunner(Runner):
             self.buffer.masks[0] = 1
 
     def supervisor(self, wdl, num_agents):
-        if np.mean(wdl) >= 0.6:
+        if np.mean(wdl) >= 0.8:
             self.level_up_stack += 1
             if self.level_up_stack >= 100:
                 self.difficulty_level += 1
@@ -196,7 +215,7 @@ class FootballRunner(Runner):
         return values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env
 
     def insert(self, data):
-        step, obs, share_obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic = data
+        step, obs, share_obs, rewards, dones, infos, values, actions, action_log_probs, rnn_states, rnn_states_critic, available_actions = data
         
         # update env_infos if done
         dones_env = np.all(dones, axis=-1)
@@ -222,6 +241,9 @@ class FootballRunner(Runner):
         rnn_states_critic[dones_env == True] = np.zeros(((dones_env == True).sum(), self.num_agents, self.recurrent_N, self.hidden_size), dtype=np.float32)
         masks = np.ones((self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
         masks[dones_env == True] = np.zeros(((dones_env == True).sum(), self.num_agents, 1), dtype=np.float32)
+        if not self.all_args.use_available_actions:
+            available_actions = None
+            
         self.buffer.insert(
             share_obs=share_obs,
             obs=obs,
@@ -232,7 +254,7 @@ class FootballRunner(Runner):
             value_preds=values,
             rewards=rewards,
             masks=masks,
-            available_actions = None #available_actions
+            available_actions = available_actions
         ) 
 
     @torch.no_grad()
@@ -297,10 +319,9 @@ class FootballRunner(Runner):
                         eval_goals[num_done] = scores[idx_env][0]
                         if eval_goal_diff[num_done] > 0:
                             eval_WDL[num_done] = 1
-                        elif eval_goal_diff[num_done] == 0:
-                            eval_WDL[num_done] = 0
                         else:
-                            eval_WDL[num_done] = -1
+                            eval_WDL[num_done] = 0
+                            
                         num_done += 1
                         done_episodes_per_thread[idx_env] += 1
             unfinished_thread = (done_episodes_per_thread != eval_episodes_per_thread)
@@ -352,7 +373,6 @@ class FootballRunner(Runner):
             
             render_rnn_states = np.zeros((self.n_render_rollout_threads, self.num_agents, self.recurrent_N, self.hidden_size), dtype=np.float32)
             render_masks = np.ones((self.n_render_rollout_threads, self.num_agents, 1), dtype=np.float32)
-
             # if self.all_args.save_gifs:        
             #     frames = []
             #     image = self.envs.envs[0].env.unwrapped.observation()[0]["frame"]
@@ -379,7 +399,7 @@ class FootballRunner(Runner):
                 render_obs, render_rewards, render_dones, render_infos = render_env.step(render_actions_env)
                 
                 if self.use_additional_obs:
-                    render_obs, _ , available_actions = init_obs(obs = render_obs)
+                    render_obs, _ = init_obs(obs = render_obs)
                     
                 # append frame
                 # if self.all_args.save_gifs:        

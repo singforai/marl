@@ -6,9 +6,9 @@ def get_config():
     parser = argparse.ArgumentParser(
         description='onpolicy', formatter_class=argparse.RawDescriptionHelpFormatter)
     
-    
-    parser.add_argument("--level_dir",type=str, default="/home/uosai/Desktop/marl/onpolicy/level/level.json", help="difficulty_storage_directory")
-    
+    parser.add_argument("--level_dir", type=str, default='/root/marl/onpolicy/level/level.json', help="directory for level change")
+    parser.add_argument("--use_available_actions", action='store_true', default=False, help="whether to use available action masking for performance")
+ 
     parser.add_argument("--render_mode", action='store_true', default=False, help="whether to use render mode using saved model")
     #JRPO
     parser.add_argument("--use_joint_action_loss", action='store_false', default=True, help="whether to use joint action loss for JRPO or TiZero")
@@ -44,7 +44,7 @@ def get_config():
 
     #학습을 위한 알고리즘 전처리
     parser.add_argument("--algorithm_name", type=str,
-                        default='tizero', choices=["rmappo", "mappo", "ippo", "tizero", "jrpo", "mat"])
+                        default='tizero', choices=["rmappo", "mappo", "ippo", "tizero", "jrpo"])
     parser.add_argument("--use_xt", action='store_true', default=False, help="xT score를 사용해 reward shaping을 수행할 것인가?")
     parser.add_argument("--xt_type", type=str, default='compound_xt', choices=["base_xt", "compound_xt"])
     parser.add_argument("--use_obs_instead_of_state", action='store_true',
@@ -159,7 +159,7 @@ def get_config():
     parser.add_argument("--n_embd", type=int, default=64)
     parser.add_argument("--n_head", type=int, default=1)
     parser.add_argument("--dec_actor", action='store_true', default=False)
-    parser.add_argument("--share_actor", action='store_false', default=True)
+    parser.add_argument("--share_actor", action='store_true', default=False)
 
     # add for online multi-task
     parser.add_argument("--train_maps", type=str, nargs='+', default=None)
