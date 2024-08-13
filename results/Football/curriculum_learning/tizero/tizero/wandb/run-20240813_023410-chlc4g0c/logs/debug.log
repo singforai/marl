@@ -25,3 +25,4 @@ config: {'level_dir': 'level/level.json', 'use_available_actions': False, 'rende
 2024-08-13 02:34:13,540 INFO    MainThread:269512 [wandb_run.py:_redirect():2153] Wrapping output streams.
 2024-08-13 02:34:13,540 INFO    MainThread:269512 [wandb_run.py:_redirect():2178] Redirects installed.
 2024-08-13 02:34:13,541 INFO    MainThread:269512 [wandb_init.py:init():847] run started, returning control to user process
+2024-08-13 12:55:14,355 WARNING MsgRouterThr:269512 [router.py:message_loop():77] message_loop has been closed

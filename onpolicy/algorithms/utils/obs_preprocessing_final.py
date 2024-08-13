@@ -466,17 +466,17 @@ def reward_shaping(info,roll_past_sh_obs, roll_action_env, num_agents):
     info_game_mode = int(info[276])
     
     "Holding-Ball reward"
-    if info_ball_owned_team == 0:
-        added_reward += 0.0001
+    if info_ball_owned_team == 1:
+        added_reward -= 0.0001
         
-    "Passing-Ball reward"
-    if info_game_mode == 0:
-        if roll_past_sh_obs[0][7] == 1: # 한 step 전에 우리팀이 공을 소유했는가
-            ball_owned_player_idx = np.nonzero(roll_past_sh_obs[0][12: 23])[0][0]
-            if ball_owned_player_idx != 0: # 골키퍼가 아닌 agent가 공을 소유하고 있었는가
-                if roll_action_env[ball_owned_player_idx - 1] in [9, 10, 11]: #agent가 pass action을 시도했는가
-                    if info_ball_owned_team == 0: # pass를 한 뒤에도 우리팀이 공을 소유하고 있는가
-                        added_reward += 0.05
+    # "Passing-Ball reward"
+    # if info_game_mode == 0:
+    #     if roll_past_sh_obs[0][7] == 1: # 한 step 전에 우리팀이 공을 소유했는가
+    #         ball_owned_player_idx = np.nonzero(roll_past_sh_obs[0][12: 23])[0][0]
+    #         if ball_owned_player_idx != 0: # 골키퍼가 아닌 agent가 공을 소유하고 있었는가
+    #             if roll_action_env[ball_owned_player_idx - 1] in [9, 10, 11]: #agent가 pass action을 시도했는가
+    #                 if info_ball_owned_team == 0: # pass를 한 뒤에도 우리팀이 공을 소유하고 있는가
+    #                     added_reward += 0.05
         
     "Grouping penalty"
     if info_game_mode == 0:

@@ -40,7 +40,7 @@ def get_config():
                         help='Number of environment steps to train (default: 10e6)')
     parser.add_argument("--num_gpu", type = int, default = 0, help = "사용할 gpu number")
     parser.add_argument("--episode_length", type=int,
-                        default = 1000, help="Max length for any episode, 전체 경기 지표를 확인하기 위해 이걸 3000으로 고정한다.")
+                        default = 1500, help="Max length for any episode, 전체 경기 지표를 확인하기 위해 이걸 3000으로 고정한다.")
 
     #학습을 위한 알고리즘 전처리
     parser.add_argument("--algorithm_name", type=str,

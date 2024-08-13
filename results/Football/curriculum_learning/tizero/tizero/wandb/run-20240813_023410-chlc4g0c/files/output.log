@@ -131,3 +131,65 @@ Env Football Algo tizero Exp tizero updates 64500/10000000.0 steps in 19.50
 total episode rewards is -87.74901326497395
 {'value_loss': 0.19348566681146623, 'policy_loss': -0.010322163693246011, 'dist_entropy': 2.8543183326721193, 'actor_grad_norm': tensor(0.2502), 'critic_grad_norm': tensor(0.2399), 'ratio': tensor(1.0004)}
 Env Football Algo tizero Exp tizero updates 66000/10000000.0 steps in 19.31
+total episode rewards is -53.3800048828125
+{'value_loss': 0.2787290155887604, 'policy_loss': -0.010776498875088691, 'dist_entropy': 2.863049340248108, 'actor_grad_norm': tensor(0.2245), 'critic_grad_norm': tensor(0.2735), 'ratio': tensor(1.0014)}
+Env Football Algo tizero Exp tizero updates 67500/10000000.0 steps in 19.07
+total episode rewards is -73.40401204427083
+{'value_loss': 0.15385105162858964, 'policy_loss': -0.009181294862821687, 'dist_entropy': 2.8564034700393677, 'actor_grad_norm': tensor(0.2385), 'critic_grad_norm': tensor(0.1695), 'ratio': tensor(1.0001)}
+Env Football Algo tizero Exp tizero updates 69000/10000000.0 steps in 21.03
+total episode rewards is -46.0530039469401
+{'value_loss': 0.35548812448978423, 'policy_loss': -0.011807347130479684, 'dist_entropy': 2.854241728782654, 'actor_grad_norm': tensor(0.2306), 'critic_grad_norm': tensor(0.2240), 'ratio': tensor(0.9993)}
+Env Football Algo tizero Exp tizero updates 70500/10000000.0 steps in 20.30
+total episode rewards is -45.73700968424479
+{'value_loss': 0.4407510727643967, 'policy_loss': -0.01185341729077436, 'dist_entropy': 2.855001926422119, 'actor_grad_norm': tensor(0.2506), 'critic_grad_norm': tensor(0.2884), 'ratio': tensor(1.0009)}
+Env Football Algo tizero Exp tizero updates 72000/10000000.0 steps in 19.75
+total episode rewards is -63.191019694010414
+{'value_loss': 0.39867034554481506, 'policy_loss': -0.011762566261018037, 'dist_entropy': 2.8524636030197144, 'actor_grad_norm': tensor(0.2415), 'critic_grad_norm': tensor(0.2621), 'ratio': tensor(1.0019)}
+Env Football Algo tizero Exp tizero updates 73500/10000000.0 steps in 19.16
+total episode rewards is -56.29800923665365
+{'value_loss': 0.2997464179992676, 'policy_loss': -0.011182552648460842, 'dist_entropy': 2.848570966720581, 'actor_grad_norm': tensor(0.2301), 'critic_grad_norm': tensor(0.1800), 'ratio': tensor(1.0007)}
+Env Football Algo tizero Exp tizero updates 75000/10000000.0 steps in 19.52
+total episode rewards is -54.69201151529948
+{'value_loss': 0.3885300546884537, 'policy_loss': -0.012282860606228496, 'dist_entropy': 2.8469685554504394, 'actor_grad_norm': tensor(0.2782), 'critic_grad_norm': tensor(0.3783), 'ratio': tensor(1.0012)}
+Env Football Algo tizero Exp tizero updates 76500/10000000.0 steps in 19.51
+total episode rewards is -94.50701904296875
+{'value_loss': 0.45747957229614256, 'policy_loss': -0.012504365213135315, 'dist_entropy': 2.8474634885787964, 'actor_grad_norm': tensor(0.2401), 'critic_grad_norm': tensor(0.2491), 'ratio': tensor(1.0001)}
+Env Football Algo tizero Exp tizero updates 78000/10000000.0 steps in 19.78
+total episode rewards is -63.55201212565104
+{'value_loss': 0.25300861299037936, 'policy_loss': -0.009946333903599225, 'dist_entropy': 2.8438727378845217, 'actor_grad_norm': tensor(0.2435), 'critic_grad_norm': tensor(0.1484), 'ratio': tensor(1.0012)}
+Env Football Algo tizero Exp tizero updates 79500/10000000.0 steps in 19.82
+total episode rewards is -64.50101216634114
+{'value_loss': 0.7353580534458161, 'policy_loss': -0.012008007800653786, 'dist_entropy': 2.843678045272827, 'actor_grad_norm': tensor(0.2508), 'critic_grad_norm': tensor(0.3872), 'ratio': tensor(0.9978)}
+Env Football Algo tizero Exp tizero updates 81000/10000000.0 steps in 19.73
+total episode rewards is -26.32201385498047
+{'value_loss': 0.3750713437795639, 'policy_loss': -0.011023444405768145, 'dist_entropy': 2.8466927766799928, 'actor_grad_norm': tensor(0.2043), 'critic_grad_norm': tensor(0.2935), 'ratio': tensor(0.9996)}
+Env Football Algo tizero Exp tizero updates 82500/10000000.0 steps in 19.89
+total episode rewards is -15.70801035563151
+{'value_loss': 0.7022586643695832, 'policy_loss': -0.014216057091357471, 'dist_entropy': 2.8492158889770507, 'actor_grad_norm': tensor(0.2416), 'critic_grad_norm': tensor(0.7178), 'ratio': tensor(1.0005)}
+Env Football Algo tizero Exp tizero updates 84000/10000000.0 steps in 20.17
+total episode rewards is -104.2720235188802
+{'value_loss': 0.2776129633188248, 'policy_loss': -0.011855059667378497, 'dist_entropy': 2.8469106435775755, 'actor_grad_norm': tensor(0.2159), 'critic_grad_norm': tensor(0.2877), 'ratio': tensor(1.0023)}
+Env Football Algo tizero Exp tizero updates 85500/10000000.0 steps in 19.70
+total episode rewards is -57.30901590983073
+{'value_loss': 0.5122686445713043, 'policy_loss': -0.012520954260753569, 'dist_entropy': 2.846428656578064, 'actor_grad_norm': tensor(0.2603), 'critic_grad_norm': tensor(0.3457), 'ratio': tensor(1.0001)}
+Env Football Algo tizero Exp tizero updates 87000/10000000.0 steps in 19.79
+total episode rewards is -63.318013509114586
+Traceback (most recent call last):
+  File "/home/uosai/Desktop/marl/onpolicy/train_grf.py", line 241, in <module>
+  File "/home/uosai/Desktop/marl/onpolicy/train_grf.py", line 232, in main
+    if all_args.use_wandb:
+  File "/home/uosai/Desktop/marl/onpolicy/runner/shared/football_runner.py", line 64, in run
+    values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env = self.collect(step)
+  File "/home/uosai/Desktop/marl/onpolicy/envs/env_wrappers.py", line 107, in step
+    return self.step_wait()
+  File "/home/uosai/Desktop/marl/onpolicy/envs/env_wrappers.py", line 263, in step_wait
+    results = [remote.recv() for remote in self.remotes]
+  File "/home/uosai/Desktop/marl/onpolicy/envs/env_wrappers.py", line 263, in <listcomp>
+    results = [remote.recv() for remote in self.remotes]
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/multiprocessing/connection.py", line 250, in recv
+    buf = self._recv_bytes()
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/multiprocessing/connection.py", line 414, in _recv_bytes
+    buf = self._recv(4)
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/multiprocessing/connection.py", line 379, in _recv
+    chunk = read(handle, remaining)
+KeyboardInterrupt
