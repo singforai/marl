@@ -73,7 +73,7 @@ def parse_args(args, parser):
         ],
         help="which scenario to run on.",
     )
-    parser.add_argument("--num_agents", type=int, default=3, help="number of controlled players. (must >= 3)")
+    parser.add_argument("--num_agents", type=int, default=10, help="number of controlled players. (must >= 3)")
     parser.add_argument(
         "--representation",
         type=str,
