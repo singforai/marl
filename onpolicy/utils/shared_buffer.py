@@ -202,7 +202,7 @@ class SharedReplayBuffer(object):
             self.available_actions = np.ones((self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.act_space_n),
                                              dtype=np.float32)
             
-        print("reset complete")
+        # print("reset complete")
 
     def chooseafter_update(self):
         """Copy last timestep data to first index. This method is used for Hanabi."""

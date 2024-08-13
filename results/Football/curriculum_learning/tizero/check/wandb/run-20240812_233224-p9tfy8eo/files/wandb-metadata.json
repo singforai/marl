@@ -1,0 +1,108 @@
+{
+    "os": "Linux-6.5.0-41-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "heartbeatAt": "2024-08-12T14:32:24.863565",
+    "startedAt": "2024-08-12T14:32:24.311767",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/uoscisai/Experiments/RL/marl/onpolicy/train_grf.py",
+    "codePathLocal": "train_grf.py",
+    "codePath": "onpolicy/train_grf.py",
+    "git": {
+        "remote": "https://github.com/singforai/marl",
+        "commit": "1a0eb370ba9b46bff14b97e5f6d48a4a20a85d75"
+    },
+    "email": "narame7@gmail.com",
+    "root": "/home/uoscisai/Experiments/RL/marl",
+    "host": "uoscisai-desktop",
+    "username": "uoscisai",
+    "executable": "/home/uoscisai/venv310/bin/python",
+    "cpu_count": 6,
+    "cpu_count_logical": 12,
+    "cpu_freq": {
+        "current": 3235.1174166666665,
+        "min": 800.0,
+        "max": 4700.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 4380.492,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4434.046,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4341.386,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4509.681,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4449.935,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4477.078,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4555.147,
+            "min": 800.0,
+            "max": 4700.0
+        },
+        {
+            "current": 4473.644,
+            "min": 800.0,
+            "max": 4700.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 519.6228103637695,
+            "used": 491.7085494995117
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory_total": 25757220864
+        }
+    ],
+    "memory": {
+        "total": 46.97189712524414
+    }
+}

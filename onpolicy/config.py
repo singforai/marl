@@ -14,7 +14,7 @@ def get_config():
     parser.add_argument(
         "--use_available_actions",
         action="store_true",
-        default=True,
+        default=False,
         help="whether to use available action masking for performance",
     )
 
@@ -124,7 +124,7 @@ def get_config():
     )
     parser.add_argument("--use_stacked_frames", action="store_true", default=True, help="Whether to use stacked_frames")
     parser.add_argument(
-        "--hidden_size", type=int, default=64, help="Dimension of hidden layers for actor/critic networks"
+        "--hidden_size", type=int, default=128, help="Dimension of hidden layers for actor/critic networks"
     )
     parser.add_argument("--layer_N", type=int, default=2, help="Number of layers for actor/critic networks")
     parser.add_argument("--use_ReLU", action="store_false", default=True, help="Whether to use ReLU")
@@ -134,7 +134,7 @@ def get_config():
     parser.add_argument(
         "--use_valuenorm",
         action="store_false",
-        default=True,
+        default=False,
         help="by default True, use running mean and std to normalize rewards.",
     )
     parser.add_argument(
@@ -161,7 +161,7 @@ def get_config():
     parser.add_argument("--use_recurrent_policy", action="store_false", default=True, help="use a recurrent policy")
     parser.add_argument("--recurrent_N", type=int, default=1, help="The number of recurrent layers.")
     parser.add_argument(
-        "--data_chunk_length", type=int, default=25, help="Time length of chunks used to train a recurrent_policy"
+        "--data_chunk_length", type=int, default=1, help="Time length of chunks used to train a recurrent_policy"
     )
 
     # optimizer parameters
@@ -227,7 +227,7 @@ def get_config():
 
     # run parameters
     parser.add_argument(
-        "--use_linear_lr_decay", action="store_true", default=True, help="use a linear schedule on the learning rate"
+        "--use_linear_lr_decay", action="store_true", default=False, help="use a linear schedule on the learning rate"
     )
     # save parameters
     parser.add_argument(

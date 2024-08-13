@@ -47,7 +47,7 @@ class FootballRunner(Runner):
         while self.num_env_steps >= total_num_steps:
             start_time = time.time()
 
-            self.warmup()
+            share_obs = self.warmup()
 
             if self.use_linear_lr_decay:
                 self.trainer.policy.lr_decay(total_num_steps, self.num_env_steps)
@@ -58,8 +58,9 @@ class FootballRunner(Runner):
             step = 0
 
             while (step < self.episode_length) and (None in done_rollouts):
-
                 # Sample actions
+                past_share_obs = share_obs
+
                 values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env = self.collect(step)
 
                 # Obser reward and next obs
@@ -68,9 +69,14 @@ class FootballRunner(Runner):
                 rewards = rewards / self.num_agents * 10
 
                 obs, share_obs, available_actions, added_rewards = additional_obs(
-                    infos=infos, num_agents=self.num_agents, episode_length=self.episode_length
+                    infos=infos,
+                    past_share_obs=past_share_obs,
+                    actions_env=actions_env,
+                    num_agents=self.num_agents,
+                    episode_length=self.episode_length,
                 )
                 rewards += added_rewards
+
                 infos = list(infos)
 
                 for idx, done in enumerate(dones):
@@ -101,17 +107,16 @@ class FootballRunner(Runner):
                 self.insert(data)
 
                 step += 1
-
             done_steps = [
                 self.episode_length if done_rollout == None else done_rollout for done_rollout in done_rollouts
             ]
+
             total_num_steps += int(np.average(done_steps))
             render_stack += int(np.average(done_steps))
 
             # print(done_steps)
             # for step_idx, roll_idx in enumerate(self.buffer.rewards):
             #     print(step_idx, roll_idx[0][0], roll_idx[1][0])
-
             for roll_idx, done_step in enumerate(done_steps):
                 if done_step < (self.episode_length - 1):
                     self.buffer.share_obs[done_step + 1 :, roll_idx, :] = 0
@@ -180,6 +185,8 @@ class FootballRunner(Runner):
             self.buffer.rnn_states[0] = 0
             self.buffer.rnn_states_critic[0] = 0
             self.buffer.masks[0] = 1
+
+        return share_obs
 
     def supervisor(self, wdl, num_agents):
         if np.mean(wdl) >= 0.8:
