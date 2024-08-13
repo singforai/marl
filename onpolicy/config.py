@@ -124,7 +124,7 @@ def get_config():
     )
     parser.add_argument("--use_stacked_frames", action="store_true", default=True, help="Whether to use stacked_frames")
     parser.add_argument(
-        "--hidden_size", type=int, default=128, help="Dimension of hidden layers for actor/critic networks"
+        "--hidden_size", type=int, default=256, help="Dimension of hidden layers for actor/critic networks"
     )
     parser.add_argument("--layer_N", type=int, default=2, help="Number of layers for actor/critic networks")
     parser.add_argument("--use_ReLU", action="store_false", default=True, help="Whether to use ReLU")
@@ -161,12 +161,12 @@ def get_config():
     parser.add_argument("--use_recurrent_policy", action="store_false", default=True, help="use a recurrent policy")
     parser.add_argument("--recurrent_N", type=int, default=1, help="The number of recurrent layers.")
     parser.add_argument(
-        "--data_chunk_length", type=int, default=1, help="Time length of chunks used to train a recurrent_policy"
+        "--data_chunk_length", type=int, default=25, help="Time length of chunks used to train a recurrent_policy"
     )
 
     # optimizer parameters
-    parser.add_argument("--lr", type=float, default=5e-4, help="learning rate (default: 5e-4)")
-    parser.add_argument("--critic_lr", type=float, default=5e-4, help="critic learning rate (default: 5e-4)")
+    parser.add_argument("--lr", type=float, default=1e-3, help="learning rate (default: 5e-4)")
+    parser.add_argument("--critic_lr", type=float, default=1e-3, help="critic learning rate (default: 5e-4)")
     parser.add_argument("--opti_eps", type=float, default=1e-5, help="RMSprop optimizer epsilon (default: 1e-5)")
     parser.add_argument("--weight_decay", type=float, default=0)
 
@@ -202,7 +202,7 @@ def get_config():
     parser.add_argument(
         "--use_proper_time_limits",
         action="store_true",
-        default=False,
+        default=True,
         help="compute returns taking into account time limits",
     )
     parser.add_argument(

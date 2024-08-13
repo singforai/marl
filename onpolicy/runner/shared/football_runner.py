@@ -66,7 +66,7 @@ class FootballRunner(Runner):
                 # Obser reward and next obs
                 obs, rewards, dones, infos = self.envs.step(actions_env)
 
-                rewards = rewards / self.num_agents * 10
+                # rewards = rewards / self.num_agents * 10
 
                 obs, share_obs, available_actions, added_rewards = additional_obs(
                     infos=infos,
@@ -131,7 +131,7 @@ class FootballRunner(Runner):
             # pdb.set_trace()
             self.compute()
             train_infos = self.train()
-            print("And I'm OK")
+            # print("And I'm OK")
             # save model
             if render_stack >= self.save_interval:
                 self.save()
@@ -191,7 +191,7 @@ class FootballRunner(Runner):
     def supervisor(self, wdl, num_agents):
         if np.mean(wdl) >= 0.8:
             self.level_up_stack += 1
-            if self.level_up_stack >= 100:
+            if self.level_up_stack >= 10:
                 self.difficulty_level += 1
                 self.level_up_stack = 0
         result = {

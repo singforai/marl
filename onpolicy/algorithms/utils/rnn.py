@@ -12,9 +12,9 @@ class RNNLayer(nn.Module):
 
         self.rnn = nn.GRU(inputs_dim, outputs_dim, num_layers=self._recurrent_N)
         for name, param in self.rnn.named_parameters():
-            if 'bias' in name:
+            if "bias" in name:
                 nn.init.constant_(param, 0)
-            elif 'weight' in name:
+            elif "weight" in name:
                 if self._use_orthogonal:
                     nn.init.orthogonal_(param)
                 else:
@@ -23,8 +23,9 @@ class RNNLayer(nn.Module):
 
     def forward(self, x, hxs, masks):
         if x.size(0) == hxs.size(0):
-            x, hxs = self.rnn(x.unsqueeze(0),
-                              (hxs * masks.repeat(1, self._recurrent_N).unsqueeze(-1)).transpose(0, 1).contiguous())
+            x, hxs = self.rnn(
+                x.unsqueeze(0), (hxs * masks.repeat(1, self._recurrent_N).unsqueeze(-1)).transpose(0, 1).contiguous()
+            )
             x = x.squeeze(0)
             hxs = hxs.transpose(0, 1)
         else:
@@ -40,11 +41,7 @@ class RNNLayer(nn.Module):
 
             # Let's figure out which steps in the sequence have a zero for any agent
             # We will always assume t=0 has a zero in it as that makes the logic cleaner
-            has_zeros = ((masks[1:] == 0.0)
-                         .any(dim=-1)
-                         .nonzero()
-                         .squeeze()
-                         .cpu())
+            has_zeros = (masks[1:] == 0.0).any(dim=-1).nonzero().squeeze().cpu()
 
             # +1 to correct the masks[1:]
             if has_zeros.dim() == 0:

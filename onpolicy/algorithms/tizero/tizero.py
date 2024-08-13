@@ -40,7 +40,7 @@ class TiZero:
         self._use_popart = args.use_popart
         self._use_valuenorm = args.use_valuenorm
         self._use_value_active_masks = args.use_value_active_masks
-        self._use_policy_active_masks = args.use_policy_active_masks
+        self._use_policy_active_ma`sks = args.use_policy_active_masks
 
         assert (
             self._use_popart and self._use_valuenorm

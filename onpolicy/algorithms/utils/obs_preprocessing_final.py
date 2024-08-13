@@ -30,6 +30,7 @@ RELEASE_SPRINT = 15
 SLIDING = 16
 DRIBBLE = 17
 RELEASE_DRIBBLE = 18
+
 STICKY_LEFT = 0
 STICKY_TOP_LEFT = 1
 STICKY_TOP = 2
@@ -62,6 +63,9 @@ def frobenius_norm_2d(d2_array):
 
 @numba.njit(Tuple((float32[:, :], float32[:, :], float32[:, :]))(float32[:], int32, int32))
 def thread_processing(info, num_agents, episode_length):  # 279
+
+    ALL_DIRECTION_VECS = [(-1, 0), (-1, -1), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 1)]
+    ALL_DIRECTION_ACTIONS = [LEFT, TOP_LEFT, TOP, TOP_RIGHT, RIGHT, BOTTOM_RIGHT, BOTTOM, BOTTOM_LEFT]
 
     num_teammate = num_agents + 1  # goal_keeper
 
@@ -104,7 +108,7 @@ def thread_processing(info, num_agents, episode_length):  # 279
 
     for idx in range(num_agents):
 
-        agent_id = int(idx + 1)
+        agent_id = idx + 1
         # left team 88
         left_position = np.ascontiguousarray(info_left_team).reshape(-1)
         left_direction = np.ascontiguousarray(info_left_direct).reshape(-1)
@@ -164,7 +168,7 @@ def thread_processing(info, num_agents, episode_length):  # 279
 
         # active 18
         active_id = agent_id
-        sticky_actions = info_sticky_actions[idx]
+        sticky_actions = info_sticky_actions[active_id]
         active_position = info_left_team[active_id]
         active_direction = info_left_direct[active_id]
         active_tired_factor = left_tired_factor[active_id]
@@ -347,18 +351,17 @@ def thread_processing(info, num_agents, episode_length):  # 279
 
         if abs(relative_ball_position[0]) > 0.75 or abs(relative_ball_position[1]) > 0.5:
             all_directions_vecs = np.zeros((8, 2), dtype=float32)
-            ALL_DIRECTION_VECS = [(-1, 0), (-1, -1), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 1)]
             for v_idx, v in enumerate(ALL_DIRECTION_VECS):
                 all_directions_vecs[v_idx, :] = np.array(v) / np.linalg.norm(np.array(v, dtype=float32))
             best_direction = np.zeros(8, dtype=float32)
             for v_idx, v in enumerate(all_directions_vecs):
                 best_direction[v_idx] = np.dot(np.ascontiguousarray(relative_ball_position), np.ascontiguousarray(v))
             best_direction = np.argmax(best_direction)
-            ALL_DIRECTION_ACTIONS = [LEFT, TOP_LEFT, TOP, TOP_RIGHT, RIGHT, BOTTOM_RIGHT, BOTTOM, BOTTOM_LEFT]
+
             target_direction = ALL_DIRECTION_ACTIONS[best_direction]
             forbidden_actions = np.array(ALL_DIRECTION_ACTIONS.copy(), dtype=int32)
             forbidden_actions = forbidden_actions[forbidden_actions != target_direction]
-            available_action = np.zeros(19, dtype=float32)
+            available_action = np.ones(19, dtype=float32)
             for action_idx in forbidden_actions:
                 available_action[action_idx] = 0
             available_action[target_direction] = 1
@@ -388,7 +391,7 @@ def thread_processing(info, num_agents, episode_length):  # 279
             out_action_index = BOTTOM_ACTIONS
             target_direction = TOP
 
-        elif active_y <= (-0.42 + no_ball_pos_offset) or (if_i_hold_ball and active_x <= (-0.42 + ball_pos_offset)):
+        elif active_y <= (-0.42 + no_ball_pos_offset) or (if_i_hold_ball and active_y <= (-0.42 + ball_pos_offset)):
             if_outside = True
             out_action_index = TOP_ACTIONS
             target_direction = BOTTOM
@@ -421,6 +424,7 @@ def thread_processing(info, num_agents, episode_length):  # 279
             available_action[RELEASE_SPRINT] = 0
         else:
             available_action[SPRINT] = 0
+
         if sticky_actions[9] == 0:
             available_action[RELEASE_DRIBBLE] = 0
         else:
@@ -429,20 +433,22 @@ def thread_processing(info, num_agents, episode_length):  # 279
         if active_position[0] < 0.4 or abs(active_position[1]) > 0.3:
             available_action[SHOT] = 0
 
+        available_action = np.ones(19, dtype=float32)
+
         if game_mode[0] == 1:
-            if info_ball_owned_team == -1:
+            if info_ball_owned_team == -1:  # When the ball is free
                 available_action[DRIBBLE] = 0
-                if distance2ball >= 0.05:
+                if distance2ball >= 0.05:  # If the ball is far away
                     for action_idx in [LONG_PASS, HIGH_PASS, SHORT_PASS, SHOT, SLIDING]:
                         available_action[action_idx] = 0
-            elif info_ball_owned_team == 0:
+            elif info_ball_owned_team == 0:  # When we have the ball
                 available_action[SLIDING] = 0
-                if distance2ball >= 0.05:
+                if distance2ball >= 0.05:  # If the ball is far away
                     for action_idx in [LONG_PASS, HIGH_PASS, SHORT_PASS, SHOT, DRIBBLE]:
                         available_action[action_idx] = 0
-            elif info_ball_owned_team == 1:
+            elif info_ball_owned_team == 1:  # When we don't have the ball
                 available_action[DRIBBLE] = 0
-                if distance2ball >= 0.05:
+                if distance2ball >= 0.05:  # If the ball is far away
                     for action_idx in [LONG_PASS, HIGH_PASS, SHORT_PASS, SHOT, SLIDING]:
                         available_action[action_idx] = 0
 
@@ -473,7 +479,12 @@ def thread_processing(info, num_agents, episode_length):  # 279
                 for action_idx in [LONG_PASS, HIGH_PASS, SHORT_PASS, SHOT, SLIDING, DRIBBLE, RELEASE_DRIBBLE]:
                     available_action[action_idx] = 0
 
+        # available_action = np.ones(19, dtype=float32)
+
         available_actions[idx] = available_action
+
+        assert available_actions[idx].sum() > 0
+
     return (observation, share_observation, available_actions)
 
 
@@ -502,18 +513,15 @@ def reward_shaping(info, roll_past_sh_obs, roll_action_env, num_agents):
     if info_game_mode == 0:
         for i in range(num_agents):
             for j in range(num_agents):
-                if i != j:
-                    if np.sqrt(np.sum((info_left_team[i] - info_left_team[j]) ** 2)) < 0.1:
+                if i > j:
+                    if np.sqrt(np.sum((info_left_team[i] - info_left_team[j]) ** 2)) < 0.03:
                         added_reward -= 0.001
 
     "Out-of-bounds penalty"
-    num_agent_oob = 0
     if info_game_mode == 0:
         for x_pos, y_pos in info_left_team:
             if np.abs(x_pos) > 1 or np.abs(y_pos) > 0.42:
-                num_agent_oob += 1
-    if num_agent_oob > 0:
-        added_reward -= 0.001 * num_agent_oob
+                added_reward -= 0.001
 
     return added_reward
 

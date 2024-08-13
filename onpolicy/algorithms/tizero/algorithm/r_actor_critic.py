@@ -42,7 +42,7 @@ class R_Actor(nn.Module):
 
         self.obs_encoder = ObsEncoder(
             InputEncoder(),
-            input_embedding_size=265,
+            input_embedding_size=320,
             hidden_size=self.hidden_size,
             _recurrent_N=1,
             _use_orthogonal=True,
@@ -53,9 +53,9 @@ class R_Actor(nn.Module):
         self.id_max = 11
 
         self.predict_id = get_fc(self.hidden_size + self.action_dim, self.id_max)
-        self.id_embedding = get_fc(self.id_max, self.id_max)
+        self.id_embedding = get_fc(self.id_max, self.hidden_size)
 
-        self.before_act_wrapper = FcEncoder(2, self.hidden_size + self.id_max, self.hidden_size)
+        self.before_act_wrapper = FcEncoder(2, self.hidden_size * 2, self.hidden_size)
 
         self.act = ACTLayer(action_space, self.hidden_size, self._use_orthogonal, self._gain)
         self.to(self.device)
@@ -164,7 +164,7 @@ class R_Critic(nn.Module):
 
         self.obs_encoder = ObsEncoder(
             InputEncoder_critic(),
-            input_embedding_size=128,
+            input_embedding_size=320,
             hidden_size=self.hidden_size,
             _recurrent_N=1,
             _use_orthogonal=True,
