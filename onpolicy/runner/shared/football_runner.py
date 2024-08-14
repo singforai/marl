@@ -39,6 +39,7 @@ class FootballRunner(Runner):
 
         total_num_steps = 0
         render_stack = 0
+        interval_stack = 0
 
         if self.render_mode == True:
             self.render()
@@ -113,6 +114,7 @@ class FootballRunner(Runner):
 
             total_num_steps += int(np.average(done_steps))
             render_stack += int(np.average(done_steps))
+            interval_stack += int(np.average(done_steps))
 
             # print(done_steps)
             # for step_idx, roll_idx in enumerate(self.buffer.rewards):
@@ -159,9 +161,9 @@ class FootballRunner(Runner):
             self.log_env(self.buffer.env_infos, total_num_steps)
             self.buffer.env_infos = defaultdict(list)
 
-    #            if interval_stack >= self.eval_interval:
-    #                self.eval(total_num_steps)
-    #                interval_stack = 0
+            if interval_stack >= self.eval_interval:
+                self.eval(total_num_steps)
+                interval_stack = 0
 
     def warmup(self):
         # reset env
@@ -289,7 +291,9 @@ class FootballRunner(Runner):
         # reset envs and init rnn and mask
         eval_obs = self.eval_envs.reset()
         if self.use_additional_obs:
-            eval_obs, _ = init_obs(obs=np.ascontiguousarray(eval_obs))
+            eval_obs, eval_share_obs, _ = init_obs(
+                obs=np.ascontiguousarray(eval_obs), num_agents=self.num_agents, episode_length=self.episode_length
+            )
 
         eval_rnn_states = np.zeros(
             (self.n_eval_rollout_threads, self.num_agents, self.recurrent_N, self.hidden_size), dtype=np.float32
@@ -312,6 +316,8 @@ class FootballRunner(Runner):
 
         # loop until enough episodes
         while num_done < self.eval_episode or step < self.episode_length:
+
+            past_share_obs = eval_share_obs
             # get actions
             self.trainer.prep_rollout()
 
@@ -335,8 +341,13 @@ class FootballRunner(Runner):
             scores = [info["score"] for info in eval_infos]
 
             if self.use_additional_obs:
-                observations, _ = additional_obs(infos=eval_infos, num_agents=self.num_agents)
-                eval_obs = observations
+                eval_obs, eval_share_obs, available_actions, added_rewards = additional_obs(
+                    infos=eval_infos,
+                    past_share_obs=past_share_obs,
+                    actions_env=eval_actions_env,
+                    num_agents=self.num_agents,
+                    episode_length=self.episode_length,
+                )
 
             # update goals if done
             eval_dones_env = np.all(eval_dones, axis=-1)
@@ -365,7 +376,6 @@ class FootballRunner(Runner):
             )
             step += 1
 
-        print(eval_goal)
         print(eval_WDL)
         print(eval_goal_diff)
 
@@ -400,7 +410,7 @@ class FootballRunner(Runner):
             render_obs = render_env.reset()
 
             if self.use_additional_obs:
-                render_obs, _ = init_obs(obs=render_obs)
+                render_obs, _, _ = init_obs(obs=render_obs)
 
             render_rnn_states = np.zeros(
                 (self.n_render_rollout_threads, self.num_agents, self.recurrent_N, self.hidden_size), dtype=np.float32

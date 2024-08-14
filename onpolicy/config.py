@@ -247,7 +247,7 @@ def get_config():
         help="by default, do not start evaluation. If set`, start evaluation alongside with training.",
     )
     parser.add_argument(
-        "--eval_interval", type=int, default=100000, help="time duration between contiunous twice evaluation progress."
+        "--eval_interval", type=int, default=10000, help="time duration between contiunous twice evaluation progress."
     )
     parser.add_argument("--eval_episodes", type=int, default=10, help="number of episodes of a single evaluation.")
 
