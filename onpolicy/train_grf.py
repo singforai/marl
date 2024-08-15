@@ -97,7 +97,7 @@ def parse_args(args, parser):
                         help="by default, do not save render video. If set, save video.")
     parser.add_argument("--video_dir", type=str, default="./render", 
                         help="directory to save videos.")
-                        
+    
     all_args = parser.parse_known_args(args)[0]
 
     return all_args
@@ -139,7 +139,6 @@ def main(args):
         print("u are choosing to use Tizero, we set use_joint_action_loss to be True")
         all_args.use_joint_action_loss = True
         all_args.use_recurrent_policy = True
-        all_args.use_additional_obs = True
 
     elif all_args.algorithm_name == "mat":
         all_args.share_actor = True

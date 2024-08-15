@@ -198,10 +198,11 @@ class TransformerPolicy:
 
         return actions, rnn_states_actor
 
-    def save(self, save_dir, episode):
-        torch.save(self.transformer.state_dict(), str(save_dir) + "/transformer_" + str(episode) + ".pt")
+    def save(self, save_dir, time):
+        torch.save(self.transformer.state_dict(), str(save_dir) + "/mat_" + str(time) + ".pt")
 
-    def restore(self, model_dir):
+    def restore(self, model_dir, time):
+        model_dir = f"{model_dir}/mat_{str(time)}"
         transformer_state_dict = torch.load(model_dir)
         self.transformer.load_state_dict(transformer_state_dict)
         # self.transformer.reset_std()

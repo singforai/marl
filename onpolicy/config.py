@@ -6,15 +6,13 @@ def get_config():
     parser = argparse.ArgumentParser(
         description='onpolicy', formatter_class=argparse.RawDescriptionHelpFormatter)
     
-    parser.add_argument("--level_dir", type=str, default='/home/uosai/Desktop/marl/onpolicy/level/level.json', help="directory for level change")
+    
+    parser.add_argument("--level_dir", type=str, default='level/level.json', help="directory for level change")
     parser.add_argument("--use_available_actions", action='store_true', default=False, help="whether to use available action masking for performance")
  
     parser.add_argument("--render_mode", action='store_true', default=False, help="whether to use render mode using saved model")
     #JRPO
     parser.add_argument("--use_joint_action_loss", action='store_false', default=True, help="whether to use joint action loss for JRPO or TiZero")
-    # Tizero
-    parser.add_argument("--use_additional_obs", action='store_false', default=True, help="whether to use addtional obs for replicating the TiZero")
-    
     # Wandb
     parser.add_argument("--use_wandb", action='store_true', default=False, help="[for wandb usage], by default True, will log date to wandb server. or else will use tensorboard to log data.")
     parser.add_argument("--user_name", type=str, default='singfor7012', help="[for wandb usage], to specify user's name for simply collecting training data.")
@@ -141,7 +139,7 @@ def get_config():
 
     # eval parameters
     parser.add_argument("--use_eval", action='store_false', default=True, help="by default, do not start evaluation. If set`, start evaluation alongside with training.")
-    parser.add_argument("--eval_interval", type=int, default=100000, help="time duration between contiunous twice evaluation progress.")
+    parser.add_argument("--eval_interval", type=int, default=5000, help="time duration between contiunous twice evaluation progress.")
     parser.add_argument("--eval_episodes", type=int, default=10, help="number of episodes of a single evaluation.")
 
     # render parameters

@@ -120,10 +120,8 @@ class Encoder(nn.Module):
         self.encode_state = encode_state
         # self.agent_id_emb = nn.Parameter(torch.zeros(1, n_agent, n_embd))
 
-        self.state_encoder = nn.Sequential(nn.LayerNorm(state_dim),
-                                           init_(nn.Linear(state_dim, n_embd), activate=True), nn.GELU())
-        self.obs_encoder = nn.Sequential(nn.LayerNorm(obs_dim),
-                                         init_(nn.Linear(obs_dim, n_embd), activate=True), nn.GELU())
+        self.state_encoder = nn.Sequential(init_(nn.Linear(state_dim, n_embd), activate=True), nn.GELU())
+        self.obs_encoder = nn.Sequential(init_(nn.Linear(obs_dim, n_embd), activate=True), nn.GELU())
 
         self.ln = nn.LayerNorm(n_embd)
         self.blocks = nn.Sequential(*[EncodeBlock(n_embd, n_head, n_agent) for _ in range(n_block)])
@@ -167,14 +165,14 @@ class Decoder(nn.Module):
         if self.dec_actor:
             if self.share_actor:
                 print("mac_dec!!!!!")
-                self.mlp = nn.Sequential(nn.LayerNorm(obs_dim),
+                self.mlp = nn.Sequential(
                                          init_(nn.Linear(obs_dim, n_embd), activate=True), nn.GELU(), nn.LayerNorm(n_embd),
                                          init_(nn.Linear(n_embd, n_embd), activate=True), nn.GELU(), nn.LayerNorm(n_embd),
                                          init_(nn.Linear(n_embd, action_dim)))
             else:
                 self.mlp = nn.ModuleList()
                 for n in range(n_agent):
-                    actor = nn.Sequential(nn.LayerNorm(obs_dim),
+                    actor = nn.Sequential(
                                           init_(nn.Linear(obs_dim, n_embd), activate=True), nn.GELU(), nn.LayerNorm(n_embd),
                                           init_(nn.Linear(n_embd, n_embd), activate=True), nn.GELU(), nn.LayerNorm(n_embd),
                                           init_(nn.Linear(n_embd, action_dim)))
@@ -186,7 +184,7 @@ class Decoder(nn.Module):
                                                     nn.GELU())
             else:
                 self.action_encoder = nn.Sequential(init_(nn.Linear(action_dim, n_embd), activate=True), nn.GELU())
-            self.obs_encoder = nn.Sequential(nn.LayerNorm(obs_dim),
+            self.obs_encoder = nn.Sequential(
                                              init_(nn.Linear(obs_dim, n_embd), activate=True), nn.GELU())
             self.ln = nn.LayerNorm(n_embd)
             self.blocks = nn.Sequential(*[DecodeBlock(n_embd, n_head, n_agent) for _ in range(n_block)])

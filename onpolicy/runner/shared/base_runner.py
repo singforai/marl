@@ -58,7 +58,6 @@ class Runner(object):
         self.render_mode = self.all_args.render_mode
         self.use_xt = self.all_args.use_xt
         self.eval_episode = self.all_args.eval_episodes
-        self.use_additional_obs = self.all_args.use_additional_obs
 
         if self.use_wandb:
             self.save_dir = str(wandb.run.dir)
@@ -87,16 +86,15 @@ class Runner(object):
         else:
             from algorithms.r_mappo.r_mappo import R_MAPPO as TrainAlgo
             from algorithms.r_mappo.algorithm.rMAPPOPolicy import R_MAPPOPolicy as Policy
-            
-        if self.use_additional_obs:
-            low = np.full((330,), -np.inf)
-            high = np.full((330,), np.inf)
-            observation_space = spaces.Box(low=low, high=high, dtype=np.float32)
+        
+        low = np.full((330,), -np.inf)
+        high = np.full((330,), np.inf)
+        observation_space = spaces.Box(low=low, high=high, dtype=np.float32)
 
-            low = np.full((220,), -np.inf)
-            high = np.full((220,), np.inf)
-            share_observation_space = spaces.Box(low=low, high=high, dtype=np.float32)
-            
+        low = np.full((220,), -np.inf)
+        high = np.full((220,), np.inf)
+        share_observation_space = spaces.Box(low=low, high=high, dtype=np.float32)
+        
         # policy network
         if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
             self.policy = Policy(
@@ -107,9 +105,24 @@ class Runner(object):
                 self.num_agents, 
                 device = self.device
             )
+            self.enem_policy = Policy(
+                self.all_args, 
+                observation_space,
+                share_observation_space, 
+                self.envs.action_space[0], 
+                self.num_agents, 
+                device = self.device
+            )
 
         else:
             self.policy = Policy(
+                self.all_args, 
+                observation_space, 
+                share_observation_space, 
+                self.envs.action_space[0], 
+                device = self.device
+            )
+            self.opponent_policy = Policy(
                 self.all_args, 
                 observation_space, 
                 share_observation_space, 
@@ -128,6 +141,14 @@ class Runner(object):
         
         # buffer
         self.buffer = SharedReplayBuffer(
+            self.all_args,
+            self.num_agents,
+            observation_space,
+            share_observation_space,
+            self.envs.action_space[0]
+        )
+        
+        self.opponent_buffer = SharedReplayBuffer(
             self.all_args,
             self.num_agents,
             observation_space,
@@ -180,9 +201,8 @@ class Runner(object):
         self.trainer.prep_training()
         train_infos = self.trainer.train(self.buffer)      
         self.buffer.after_update()
-        """
-        Segmentation Fault 에러를 막아보고자하는 필사의 노력.
-        """
+        self.opponent_buffer.after_update()
+
         for key, value in train_infos.items():
             if isinstance(value, torch.Tensor):
                 train_infos[key] = value.detach().cpu()
@@ -198,17 +218,6 @@ class Runner(object):
             torch.save(policy_actor.state_dict(), str(self.save_dir) + "/actor.pt")
             policy_critic = self.trainer.policy.critic
             torch.save(policy_critic.state_dict(), str(self.save_dir) + "/critic.pt")
-
-    def restore(self, model_dir):
-        """Restore policy's networks from a saved model."""
-        if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
-            self.policy.restore(model_dir)
-        else:
-            policy_actor_state_dict = torch.load(str(self.model_dir) + '/actor.pt')
-            self.policy.actor.load_state_dict(policy_actor_state_dict)
-            if not self.all_args.use_render:
-                policy_critic_state_dict = torch.load(str(self.model_dir) + '/critic.pt')
-                self.policy.critic.load_state_dict(policy_critic_state_dict)
 
     def log_train(self, train_infos, total_num_steps):
         """

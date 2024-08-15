@@ -51,54 +51,59 @@ ball_rotation_z_bound = 0.015
 
 @numba.njit((float32[:])(float32[:, :]))
 def frobenius_norm_2d(d2_array):
-
+    
     d1 = d2_array.shape[0]
     d1_array = np.zeros(d1, dtype = float32)
     for idx, element in enumerate(d2_array):
         d1_array[idx] = np.sqrt(np.sum(np.power(element, 2)))
     return d1_array
 
-@numba.njit(Tuple((float32[:,:], float32[:,:], float32[:,:]))(float32[:], int32, int32))
-def thread_processing(info, num_agents, episode_length): # 279
+@numba.njit(Tuple((float32[:,:], float32[:,:], float32[:,:]))(float32[:], float32[:], int32, int32))
+def additive_obs(left_info, right_info, num_agents, episode_length): 
     
-    num_teammate = num_agents + 1 # goal_keeper
+    num_self_agents = 2 * num_agents
+    num_teammate = num_agents + 1 
     
-    observation = np.zeros((num_agents, 330), dtype = float32)
-    share_observation = np.zeros((num_agents, 220), dtype = float32)
-    available_actions = np.ones((num_agents, 19), dtype = float32)
+    observation = np.zeros((num_self_agents, 330), dtype = float32)
+    share_observation = np.zeros((num_self_agents, 220), dtype = float32)
+    available_actions = np.ones((num_self_agents, 19), dtype = float32)
 
-    info_active = info[0:10] # [1. 2. 3. 0. 0. 0. 0. 0. 0. 0.]
+    for idx in range(num_self_agents):
+        self_agent_idx = idx
+        if idx < num_agents:
+            info = left_info
+        else:
+            info = right_info
+            idx = idx - num_agents
+        print(idx)
+        info_left_team = np.ascontiguousarray(info[10: 32]).reshape(11, 2)
+        info_left_direct = np.ascontiguousarray(info[32: 54]).reshape(11, 2)
+        info_left_team_tired_factor = info[54: 65]
+        info_left_yellow_card = info[65: 76]
+        info_left_team_active = info[76: 87] 
 
-    info_left_team = np.ascontiguousarray(info[10: 32]).reshape(11, 2)
-    info_left_direct = np.ascontiguousarray(info[32: 54]).reshape(11, 2)
-    info_left_team_tired_factor = info[54: 65]
-    info_left_yellow_card = info[65: 76]
-    info_left_team_active = info[76:87] # [1. 1. 1. 1. 0. 0. 0. 0. 0. 0. 0.]
+        info_right_team = np.ascontiguousarray(info[87: 109]).reshape(11, 2)
+        info_right_direct = np.ascontiguousarray(info[109: 131]).reshape(11, 2)
+        info_right_tired_factor = info[131: 142]
+        info_right_yellow_card = info[142: 153]
+        info_right_team_active = info[153: 164]
 
-    info_right_team = np.ascontiguousarray(info[87: 109]).reshape(11, 2)
-    info_right_direct = np.ascontiguousarray(info[109: 131]).reshape(11, 2)
-    info_right_tired_factor = info[131: 142]
-    info_right_yellow_card = info[142: 153]
-    info_right_team_active = info[153: 164]
-
-    info_sticky_actions = np.ascontiguousarray(info[164: 264]).reshape(10, 10)
-    info_score = info[264:266]
-
-    info_ball = info[266: 269]
-    info_ball_direction = info[269: 272]
-    info_ball_rotation = info[272: 275]
-
-    info_ball_owned_team = int(info[275])
-    info_game_mode = int(info[276])
-    info_steps_left = int(info[277])
-    info_ball_owned_player = int(info[278]) # left team, right team을 가리지 않고 0:골키퍼 N: 마지막 플레이어까지, -1: 무소유
+        info_sticky_actions = np.ascontiguousarray(info[164: 264]).reshape(10, 10)
+        info_score = info[264:266]
+        
+        info_ball = info[266: 269]
+        info_ball_direction = info[269: 272]
+        info_ball_rotation = info[272: 275]
+        info_ball_owned_team = int(info[275])
+        info_game_mode = int(info[276])
+        info_steps_left = int(info[277])
+        info_ball_owned_player = int(info[278]) # left team, right team을 가리지 않고 0:골키퍼 N: 마지막 플레이어까지, -1: 무소유
+        
+        RIGHT_ACTIONS = [TOP_RIGHT, RIGHT, BOTTOM_RIGHT, TOP, BOTTOM]  
+        LEFT_ACTIONS = [TOP_LEFT, LEFT, BOTTOM_LEFT, TOP, BOTTOM]
+        BOTTOM_ACTIONS = [BOTTOM_LEFT, BOTTOM, BOTTOM_RIGHT, LEFT, RIGHT]
+        TOP_ACTIONS = [TOP_LEFT, TOP, TOP_RIGHT, LEFT, RIGHT]
     
-    RIGHT_ACTIONS = [TOP_RIGHT, RIGHT, BOTTOM_RIGHT, TOP, BOTTOM]  
-    LEFT_ACTIONS = [TOP_LEFT, LEFT, BOTTOM_LEFT, TOP, BOTTOM]
-    BOTTOM_ACTIONS = [BOTTOM_LEFT, BOTTOM, BOTTOM_RIGHT, LEFT, RIGHT]
-    TOP_ACTIONS = [TOP_LEFT, TOP, TOP_RIGHT, LEFT, RIGHT]
-    
-    for idx in range(num_agents):
 
         agent_id = int(idx+ 1)
         # left team 88
@@ -216,7 +221,7 @@ def thread_processing(info, num_agents, episode_length): # 279
         ball_info[3:6] = new_ball_direction
         ball_info[6:9] = ball_owned_team
         ball_info[9:12] = new_ball_rotation
-
+        
         # ball owned player 23
         ball_owned_player = np.zeros(23, dtype =float32)
         if info_ball_owned_team == 1: # right_team 
@@ -284,19 +289,21 @@ def thread_processing(info, num_agents, episode_length): # 279
         match_state[7] =goal_diff_ratio
         match_state[8] = steps_left_ratio
 
-        observation[idx, 0] = active_id
-        observation[idx, 1  : 88] = active_info
-        observation[idx, 88 : 145] = ball_own_active_info
-        observation[idx, 145: 233] = left_team     
-        observation[idx, 233: 321] = right_team 
-        observation[idx, 321: 330] = match_state
+        observation[self_agent_idx, 0] = active_id
+        observation[self_agent_idx, 1  : 88] = active_info
+        observation[self_agent_idx, 88 : 145] = ball_own_active_info
+        observation[self_agent_idx, 145: 233] = left_team     
+        observation[self_agent_idx, 233: 321] = right_team 
+        observation[self_agent_idx, 321: 330] = match_state
 
-        share_observation[idx, 0  : 12] = ball_info
-        share_observation[idx, 12 : 35] = ball_owned_player
-        share_observation[idx, 35 : 123] = left_team     
-        share_observation[idx, 123: 211] = right_team 
-        share_observation[idx, 211: 220] = match_state  
+        share_observation[self_agent_idx, 0  : 12] = ball_info
+        share_observation[self_agent_idx, 12 : 35] = ball_owned_player
+        share_observation[self_agent_idx, 35 : 123] = left_team     
+        share_observation[self_agent_idx, 123: 211] = right_team 
+        share_observation[self_agent_idx, 211: 220] = match_state  
         
+
+    
         available_action = np.ones(19, dtype = float32)
         available_action[IDLE] = 0
         available_action[RELEASE_DIRECTION] = 0
@@ -351,6 +358,7 @@ def thread_processing(info, num_agents, episode_length): # 279
                 available_action[action_idx] = 0
             available_action[target_direction] = 1
             available_action[RELEASE_SPRINT] = 0
+            
             if sticky_actions[8] == 0:
                 available_action = np.zeros(19, dtype =float32)
                 available_action[SPRINT] = 1
@@ -376,7 +384,7 @@ def thread_processing(info, num_agents, episode_length): # 279
             out_action_index = BOTTOM_ACTIONS
             target_direction = TOP
             
-        elif active_y <= (-0.42 + no_ball_pos_offset) or (if_i_hold_ball and active_x <= (-0.42 + ball_pos_offset)):
+        elif active_y <= (-0.42 + no_ball_pos_offset) or (if_i_hold_ball and active_y <= (-0.42 + ball_pos_offset)):
             if_outside = True
             out_action_index = TOP_ACTIONS
             target_direction = BOTTOM
@@ -433,7 +441,7 @@ def thread_processing(info, num_agents, episode_length): # 279
                 if distance2ball >= 0.05:
                     for action_idx in [LONG_PASS, HIGH_PASS, SHORT_PASS, SHOT, SLIDING]:
                         available_action[action_idx] = 0
-         
+        
         elif (1 in game_mode[1:6]):
             left2ball = frobenius_norm_2d(info_left_team[0:num_teammate] - info_ball[:2])
             right2ball = frobenius_norm_2d(info_right_team[0:num_teammate] - info_ball[:2])
@@ -451,32 +459,33 @@ def thread_processing(info, num_agents, episode_length): # 279
             else:
                 for action_idx in [LONG_PASS, HIGH_PASS, SHORT_PASS, SHOT,SLIDING, DRIBBLE, RELEASE_DRIBBLE]:
                     available_action[action_idx] = 0
-              
-        available_actions[idx] = available_action
+        
+        available_actions[self_agent_idx, :] = available_action
+    print(share_observation) 
+    print("===")
     return (observation, share_observation, available_actions)
 
-@numba.njit(float32[:,:](float32[:],float32[:,:],int32[:], int32))
-def reward_shaping(info,roll_past_sh_obs, roll_action_env, num_agents):
-
+@numba.njit((float32[:,:])(float32[:],float32[:,:],int32[:], int32))
+def reward_shaping(left_info,roll_past_sh_obs, roll_action_env, num_agents):
                 
-        
+    info_ball = left_info[266: 269]
     added_reward = np.zeros((num_agents, 1), dtype = float32)
-    info_left_team = np.ascontiguousarray(info[10: 32]).reshape(11, 2)
-    info_ball_owned_team = int(info[275])
-    info_game_mode = int(info[276])
+    info_left_team = np.ascontiguousarray(left_info[10: 32]).reshape(11, 2)
+    info_ball_owned_team = int(left_info[275])
+    info_game_mode = int(left_info[276])
     
     "Holding-Ball reward"
     if info_ball_owned_team == 1:
-        added_reward -= 0.0001
+        added_reward -= 0.001
         
-    # "Passing-Ball reward"
-    # if info_game_mode == 0:
-    #     if roll_past_sh_obs[0][7] == 1: # 한 step 전에 우리팀이 공을 소유했는가
-    #         ball_owned_player_idx = np.nonzero(roll_past_sh_obs[0][12: 23])[0][0]
-    #         if ball_owned_player_idx != 0: # 골키퍼가 아닌 agent가 공을 소유하고 있었는가
-    #             if roll_action_env[ball_owned_player_idx - 1] in [9, 10, 11]: #agent가 pass action을 시도했는가
-    #                 if info_ball_owned_team == 0: # pass를 한 뒤에도 우리팀이 공을 소유하고 있는가
-    #                     added_reward += 0.05
+    "Passing-Ball reward"
+    if info_game_mode == 0:
+        if roll_past_sh_obs[0][7] == 1: # 한 step 전에 우리팀이 공을 소유했는가
+            ball_owned_player_idx = np.nonzero(roll_past_sh_obs[0][12: 23])[0][0]
+            if ball_owned_player_idx != 0: # 골키퍼가 아닌 agent가 공을 소유하고 있었는가
+                if roll_action_env[ball_owned_player_idx - 1] in [9, 10, 11]: #agent가 pass action을 시도했는가
+                    if info_ball_owned_team == 0: # pass를 한 뒤에도 우리팀이 공을 소유하고 있는가
+                        added_reward += 0.005
         
     "Grouping penalty"
     if info_game_mode == 0:
@@ -493,26 +502,30 @@ def reward_shaping(info,roll_past_sh_obs, roll_action_env, num_agents):
             if np.abs(x_pos) > 1 or np.abs(y_pos) > 0.42:
                 num_agent_oob += 1
     if num_agent_oob > 0:
-            added_reward -= 0.0001 * num_agent_oob
-
+            added_reward -= 0.001
+            
     return added_reward
 
 
-@numba.njit(Tuple((float32[:,:,:], float32[:,:,:], float32[:,:,:], float32[:,:,:]))(float32[:, :],float32[:,:,:],int32[:, :], int32, int32))
+@numba.njit(Tuple((float32[:,:,:], float32[:,:,:], float32[:,:,:], float32[:,:,:]))(float32[:, :, :],float32[:,:,:],int32[:, :], int32, int32))
 def preproc_obs(infos_array,past_share_obs, actions_env, num_agents, episode_length):
-    observations = np.zeros((infos_array.shape[0], num_agents, 330), dtype = float32)
-    share_observations =np.zeros((infos_array.shape[0], num_agents, 220), dtype = float32)
-    available_actions = np.zeros((infos_array.shape[0], num_agents, 19), dtype = float32)
+    
+    num_self_agents = 2 * num_agents
+    observations = np.zeros((infos_array.shape[0], num_self_agents, 330), dtype = float32)
+    share_observations =np.zeros((infos_array.shape[0], num_self_agents, 220), dtype = float32)
+    available_actions = np.zeros((infos_array.shape[0], num_self_agents, 19), dtype = float32)
     added_rewards =np.zeros((infos_array.shape[0], num_agents, 1), dtype = float32)
+    
     for idx, info_array in enumerate(infos_array):
         added_reward = reward_shaping(
-            info = np.ascontiguousarray(info_array),
+            left_info = np.ascontiguousarray(info_array[0, :]).reshape(-1),
             roll_past_sh_obs = past_share_obs[idx], 
             roll_action_env = actions_env[idx],
             num_agents =  num_agents
         )
-        obs, share_obs, available_action = thread_processing(
-            info = np.ascontiguousarray(info_array),
+        obs, share_obs, available_action = additive_obs(
+            left_info = np.ascontiguousarray(info_array[0, :]).reshape(-1),
+            right_info = np.ascontiguousarray(info_array[1, :]).reshape(-1),
             num_agents =  num_agents,
             episode_length = episode_length
         )
@@ -520,113 +533,203 @@ def preproc_obs(infos_array,past_share_obs, actions_env, num_agents, episode_len
         share_observations[idx, : , :] = share_obs
         available_actions[idx, :, :] = available_action
         added_rewards[idx, :, :] = added_reward
-    return (observations, share_observations, available_actions, added_rewards) # (num_Rollout, num_agents, 330) / (num_Rollout, num_agents, 220)
+    
+    return (observations, share_observations, available_actions, added_rewards)
 
 
-@numba.njit(Tuple((float32[:,:,:], float32[:,:,:], float32[:,:,:]))(float32[:, :], int32, int32))
+@numba.njit(Tuple((float32[:,:,:], float32[:,:,:], float32[:,:,:]))(float32[:, :, :], int32, int32))
 def preproc_obs_init(infos_array, num_agents, episode_length):
-    observations = np.zeros((infos_array.shape[0], num_agents, 330), dtype = float32)
-    share_observations =np.zeros((infos_array.shape[0], num_agents, 220), dtype = float32)
-    available_actions = np.zeros((infos_array.shape[0], num_agents, 19), dtype = float32)
+    num_self_agents = 2 * num_agents
+    
+    observations = np.zeros((infos_array.shape[0], num_self_agents, 330), dtype = float32)
+    share_observations =np.zeros((infos_array.shape[0], num_self_agents, 220), dtype = float32)
+    available_actions = np.zeros((infos_array.shape[0], num_self_agents, 19), dtype = float32)
+    
     for idx, info_array in enumerate(infos_array):
-        obs, share_obs, available_action = thread_processing(
-            info = np.ascontiguousarray(info_array),
+        obs, share_obs, available_action = additive_obs(
+            left_info = np.ascontiguousarray(info_array[0, :]).reshape(-1),
+            right_info = np.ascontiguousarray(info_array[1, :]).reshape(-1),
             num_agents =  num_agents,
             episode_length = episode_length
         )
         observations[idx, : , :] = obs
         share_observations[idx, : , :] = share_obs
         available_actions[idx, :, :] = available_action
-    return (observations, share_observations, available_actions) # (num_Rollout, num_agents, 330) / (num_Rollout, num_agents, 220)
+    return (observations, share_observations, available_actions) 
 
 
-def additional_obs(infos,past_share_obs, actions_env, num_agents, episode_length):
-    infos_list = []
-    
+@numba.njit((float32[:])(float32[:]))
+def cal_sticky_actions(action_env):
+    sticky_actions = np.zeros((len(action_env), 10), dtype = float32)
+    action_set = np.array([LEFT, TOP_LEFT, TOP, TOP_RIGHT, RIGHT, BOTTOM_RIGHT, BOTTOM, BOTTOM_LEFT, SPRINT, DRIBBLE])
+    for agent_idx, agent_action in enumerate(action_env):
+        action_idx = np.where(action_set == agent_action)
+        if len(action_idx[0]) != 0:
+            sticky_actions[agent_idx][action_idx[0][0]] = 1.0
+    return sticky_actions.reshape(-1) 
+
+
+def preprocessing(infos, obs, past_share_obs, actions_env, num_agents, episode_length):
+    print(obs.shape)
+    num_rollout = obs.shape[0]
     num_teammate = num_agents + 1
     num_player = num_teammate * 2
-        
-    for info in infos:
-        info_array = np.zeros(279, dtype=np.float32)
-        
-        info_array[0  : num_agents] = info["active"]
-        info_array[10 : 10 + num_player] = info["left_team"].reshape(-1)
-        info_array[32 : 32 + num_player] = info["left_team_direction"].reshape(-1)
-        info_array[54 : 54 + num_teammate] = info["left_team_tired_factor"]
-        info_array[65 : 65 + num_teammate] = info["left_team_yellow_card"]
-        info_array[76 : 76 + num_teammate] = info["left_team_active"]
-        info_array[87  : 87 + num_player] = info["right_team"].reshape(-1)
-        info_array[109 : 109 + num_player] = info["right_team_direction"].reshape(-1)
-        info_array[131 : 131 + num_teammate] = info["right_team_tired_factor"]
-        info_array[142 : 142 + num_teammate] = info["right_team_yellow_card"]
-        info_array[153 : 153 + num_teammate] = info["right_team_active"]
-        info_array[164 : 164 + 10*num_agents] = info["sticky_actions"].reshape(-1)
-        
-        info_array[264 : 266] = info["score"]
-        info_array[266 : 269] = info["ball"]
-        info_array[269 : 272] = info['ball_direction']
-        info_array[272 : 275] = info['ball_rotation']
-        info_array[275] = info["ball_owned_team"]
-        info_array[276] = info["game_mode"]
-        info_array[277] = info["steps_left"]
-        info_array[278] = info["ball_owned_player"]
-        infos_list.append(info_array)
+    
+    obs[:,:,0+2*num_teammate:22] = 0
+    obs[:,:,22+2*num_teammate:44] = 0
+    obs[:,:,44+2*num_teammate:66] = 0
+    obs[:,:,66+2*num_teammate:88] = 0
+    
+    infos_array = np.zeros((num_rollout, 2, 279), dtype=np.float32)
+    
+    for roll_id, info in enumerate(infos):
+        for team_idx in range(0, -2, -1):
+            info_array = np.zeros(279, dtype = np.float32)
+            if team_idx == 0:
+                active = info["active"]
+                left_tired_factor = info["left_team_tired_factor"]
+                left_team_yellow_card = info["left_team_yellow_card"]
+                left_team_active = info["left_team_active"]
+                
+                right_tired_factor =info["right_team_tired_factor"]
+                right_team_yellow_card = info["right_team_yellow_card"]
+                right_team_active = info["right_team_active"]
+                
+                sticky_actions = info["sticky_actions"].reshape(-1)
+                score = info["score"]
+                ball_rotation = info["ball_rotation"]
+                ball_owned_player = info["ball_owned_player"]
+            if team_idx == -1:
+                active = info["active"]
+                left_tired_factor = info["right_team_tired_factor"]
+                left_team_yellow_card = info["right_team_yellow_card"]
+                left_team_active = info["right_team_active"]
+                
+                right_tired_factor =info["left_team_tired_factor"]
+                right_team_yellow_card = info["left_team_yellow_card"]
+                right_team_active = info["left_team_active"]
+                
+                sticky_actions = cal_sticky_actions(action_env = np.array(actions_env[roll_id, num_agents:], dtype=np.float32).reshape(-1))
+                score = np.flip(info["score"])
+                ball_rotation = info["ball_rotation"]
+                ball_rotation[:2] = -ball_rotation[:2]
+                ball_owned_player = info["ball_owned_player"]
 
-    infos_array = np.array(infos_list, dtype=np.float32)
-    obs , share_obs, available_actions, added_rewards = preproc_obs(infos_array, past_share_obs, np.array(actions_env, np.int32), num_agents, episode_length)
-    return obs , share_obs, available_actions, added_rewards
+            left_position = obs[roll_id,team_idx,0:22]
+            left_direction = obs[roll_id,team_idx,22:44]
+            right_position = obs[roll_id,team_idx,44:66]
+            right_direction = obs[roll_id,team_idx,66:88]
+            ball_position = obs[roll_id,team_idx,88:91]
+            ball_direction = obs[roll_id,team_idx,91:94]
+            ball_ownership = np.nonzero(obs[roll_id,team_idx,94:97])[0][0] - 1.0
+            game_mode = np.nonzero(obs[roll_id,team_idx,108:115])[0][0]  
+            steps_left = info["steps_left"]
+
+            info_array[0  : num_agents] = active
+            info_array[10 : 32] = left_position
+            info_array[32 : 54] = left_direction
+            print(team_idx)
+            print(left_tired_factor)
+            info_array[54 : 54 + num_teammate] = left_tired_factor
+            info_array[65 : 65 + num_teammate] = left_team_yellow_card
+            info_array[76 : 76 + num_teammate] = left_team_active
+
+            info_array[87  : 109] = right_position
+            info_array[109 : 131] = right_direction
+            info_array[131 : 131 + num_teammate] = right_tired_factor
+            info_array[142 : 142 + num_teammate] = right_team_yellow_card
+            info_array[153 : 153 + num_teammate] = right_team_active
+                
+            info_array[164 : 164 + 10*num_agents] = sticky_actions
+            info_array[264 : 266] = score
+            info_array[266 : 269] = ball_position
+            info_array[269 : 272] = ball_direction
+            info_array[272 : 275] = ball_rotation
+            info_array[275] = ball_ownership
+            info_array[276] = game_mode
+            info_array[277] = steps_left 
+            info_array[278] = ball_owned_player
+            infos_array[roll_id, team_idx] = info_array
+    
+    observation, share_observation, available_actions, added_rewards = preproc_obs(
+        infos_array = infos_array, 
+        past_share_obs = past_share_obs, 
+        actions_env = np.array(actions_env[:, :num_agents], np.int32), 
+        num_agents = num_agents, 
+        episode_length = episode_length
+    )
+    return observation , share_observation, available_actions, added_rewards
 
 @numba.njit(Tuple((float32[:,:,:], float32[:,:,:], float32[:,:,:]))(float32[:, :, :], int32, int32))
-def init_obs(obs, num_agents, episode_length):
+def init_obs(obs , num_agents, episode_length):
+    
     num_rollout = obs.shape[0]
-    num_agents = obs.shape[1]
-    
-    left_position = obs[:, : , 0 : 22]
-    left_direction = obs[:, :, 22 : 44]
-    right_position = obs[:, : , 44 : 66]
-    right_direction = obs[:, : , 66 : 88]
-    ball_position = obs[:, :, 88 : 91]
-    ball_direction = obs[ : , : , 91 : 94]
-    ball_ownership = obs[ : , : , 94 : 97]
-    game_mode = obs[:, : , 108 : 115]
-    
-    left_position[:, :, (num_agents+1)*2: 22] = 0
-    left_direction[:, :, (num_agents+1)*2: 22]= 0
-    right_position[:, :, (num_agents+1)*2: 22]= 0
-    right_direction[:, :, (num_agents+1)*2: 22]= 0
-
     num_teammate = num_agents + 1
+    
+    obs[:,:,0+2*num_teammate:22] = 0
+    obs[:,:,22+2*num_teammate:44] = 0
+    obs[:,:,44+2*num_teammate:66] = 0
+    obs[:,:,66+2*num_teammate:88] = 0
 
     team_active = np.zeros(11, dtype = int32)
     team_active[:num_teammate] = 1
-    
-    obs_array = np.zeros((num_rollout, 279), dtype=np.float32)
+
+    infos_array = np.zeros((num_rollout, 2, 279), dtype=np.float32)
     
     for roll_id in range(num_rollout):
-        info_array = np.zeros(279, dtype=np.float32)
-        info_array[0  : num_agents] = np.arange(1, num_agents + 1)
-        info_array[10 : 32] = np.ascontiguousarray(left_position[roll_id, 0, :]).reshape(-1)
-        info_array[32 : 54] = np.ascontiguousarray(left_direction[roll_id, 0, :]).reshape(-1)
-        info_array[54 : 65] = 0
-        info_array[65 : 76] = 0
-        info_array[76 : 87] = team_active
-        info_array[87  : 109] = np.ascontiguousarray(right_position[roll_id, 0, :]).reshape(-1)
-        info_array[109 : 131] = np.ascontiguousarray(right_direction[roll_id, 0, :]).reshape(-1)
-        info_array[131 : 131 + num_teammate] = 0
-        info_array[142 : 142 + num_teammate] = 0
-        info_array[153 : 164] = team_active
-        info_array[164 : 164 + 10*num_agents] = 0
-        info_array[264 : 266] = 0
-        info_array[266 : 269] = ball_position[roll_id, 0, :]
-        info_array[269 : 272] = ball_direction[roll_id, 0, :]
-        info_array[272 : 275] = 0 # ball rotation
-        info_array[275] = np.nonzero(ball_ownership[roll_id, 0, :])[0][0] - 1.0
-        info_array[276] = np.nonzero(game_mode[roll_id, 0, :])[0][0]  
-        info_array[277] = episode_length  # steps_left
-        info_array[278] = -1 # ball_owned_player
-        
-        obs_array[roll_id] = info_array
+        for team_idx in range(0, -2, -1):
+            info_array = np.zeros(279, dtype = np.float32)
+            
+            active = np.arange(1, num_teammate)
+            
+            left_position = obs[roll_id,team_idx,0:22]
+            left_direction = obs[roll_id,team_idx,22:44]
+            left_tired_factor = 0
+            left_yellow_card = 0
+            left_team_active = team_active
+
+            right_position = obs[roll_id,team_idx,44:66]
+            right_direction = obs[roll_id,team_idx,66:88]
+            right_tired_factor = 0
+            right_yellow_card = 0
+            right_team_active = team_active
+            
+            sticky_actions = 0
+            score = 0
+            ball_position = obs[roll_id,team_idx,88:91]
+            ball_direction = obs[roll_id,team_idx,91:94]
+            ball_rotation = 0
+            ball_ownership = np.nonzero(obs[roll_id,team_idx,94:97])[0][0] - 1.0
+            game_mode = np.nonzero(obs[roll_id,team_idx,108:115])[0][0]  
+            
+            info_array[0  : num_agents] = active
+            info_array[10 : 32] = left_position
+            info_array[32 : 54] = left_direction
+            info_array[54 : 54 + num_teammate] = left_tired_factor
+            info_array[65 : 65 + num_teammate] = left_yellow_card
+            info_array[76 : 87] = left_team_active
+
+            info_array[87  : 109] = right_position
+            info_array[109 : 131] = right_direction
+            info_array[131 : 131 + num_teammate] = right_tired_factor
+            info_array[142 : 142 + num_teammate] = right_yellow_card
+            info_array[153 : 164] = right_team_active
+                
+            info_array[164 : 164 + 10*num_agents] = sticky_actions
+            info_array[264 : 266] = score
+            info_array[266 : 269] = ball_position
+            info_array[269 : 272] = ball_direction
+            info_array[272 : 275] = ball_rotation
+            info_array[275] = ball_ownership
+            info_array[276] = game_mode
+            info_array[277] = episode_length 
+            info_array[278] = -1
+            infos_array[roll_id, team_idx] = info_array
+            
+    observation, share_observation, available_actions = preproc_obs_init(
+        infos_array = infos_array, 
+        num_agents = num_agents, 
+        episode_length = episode_length
+    )
     
-    obs , share_obs, available_actions = preproc_obs_init(obs_array, num_agents, episode_length)
-    
-    return (obs , share_obs, available_actions)
+    return (observation , share_observation, available_actions) 

@@ -128,3 +128,15 @@ class TiZeroPolicy:
         """
         actions, _, rnn_states_actor = self.actor(obs, rnn_states_actor, masks, available_actions, deterministic)
         return actions, rnn_states_actor
+
+
+    def save(self,save_dir, policy_actor, time):
+        torch.save(policy_actor.state_dict(), str(save_dir) + f"/tizero_actor_{time}.pt")
+        
+
+    def restore(self, model_dir, time):
+        model_dir = f"{model_dir}/tizero_actor_{str(time)}"
+        tizero_actor_state_dict = torch.load(model_dir)
+        self.transformer.load_state_dict(tizero_actor_state_dict)
+        actor = torch.load(str(self.model_dir) + '/actor.pt')
+        return actor

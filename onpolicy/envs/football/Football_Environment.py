@@ -20,7 +20,7 @@ class FootballEnv(object):
                 representation=args.representation,
                 rewards=args.rewards,
                 number_of_left_players_agent_controls=args.num_agents,
-                number_of_right_players_agent_controls=0,
+                number_of_right_players_agent_controls=args.num_agents, # 0
                 channel_dimensions=(args.smm_width, args.smm_height),
                 render=(args.use_render and args.save_gifs)
             )
@@ -32,7 +32,7 @@ class FootballEnv(object):
                 representation=args.representation,
                 rewards=args.rewards,
                 number_of_left_players_agent_controls=args.num_agents,
-                number_of_right_players_agent_controls=0,
+                number_of_right_players_agent_controls=args.num_agents, # 
                 channel_dimensions=(args.smm_width, args.smm_height),
                 # video related params
                 write_full_episode_dumps=True,
@@ -81,7 +81,7 @@ class FootballEnv(object):
     def step(self, action):
         obs, reward, done, info = self.env.step(action)
         obs = self._obs_wrapper(obs)
-        reward = reward.reshape(self.num_agents, 1)
+        reward = reward[:self.num_agents].reshape(self.num_agents, 1)
         if self.share_reward:
             global_reward = np.sum(reward)
             reward = [[global_reward]] * self.num_agents
