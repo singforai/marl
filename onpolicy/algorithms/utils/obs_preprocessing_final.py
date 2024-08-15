@@ -75,7 +75,6 @@ def additive_obs(left_info, right_info, num_agents, episode_length):
         else:
             info = right_info
             idx = idx - num_agents
-        print(idx)
         info_left_team = np.ascontiguousarray(info[10: 32]).reshape(11, 2)
         info_left_direct = np.ascontiguousarray(info[32: 54]).reshape(11, 2)
         info_left_team_tired_factor = info[54: 65]
@@ -461,8 +460,7 @@ def additive_obs(left_info, right_info, num_agents, episode_length):
                     available_action[action_idx] = 0
         
         available_actions[self_agent_idx, :] = available_action
-    print(share_observation) 
-    print("===")
+        
     return (observation, share_observation, available_actions)
 
 @numba.njit((float32[:,:])(float32[:],float32[:,:],int32[:], int32))
@@ -570,7 +568,6 @@ def cal_sticky_actions(action_env):
 
 
 def preprocessing(infos, obs, past_share_obs, actions_env, num_agents, episode_length):
-    print(obs.shape)
     num_rollout = obs.shape[0]
     num_teammate = num_agents + 1
     num_player = num_teammate * 2
@@ -628,8 +625,7 @@ def preprocessing(infos, obs, past_share_obs, actions_env, num_agents, episode_l
             info_array[0  : num_agents] = active
             info_array[10 : 32] = left_position
             info_array[32 : 54] = left_direction
-            print(team_idx)
-            print(left_tired_factor)
+            
             info_array[54 : 54 + num_teammate] = left_tired_factor
             info_array[65 : 65 + num_teammate] = left_team_yellow_card
             info_array[76 : 76 + num_teammate] = left_team_active
