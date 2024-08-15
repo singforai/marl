@@ -1,0 +1,127 @@
+
+사용 가능한 CPU Thread: 24
+{'value_loss': 0.6529439923167228, 'policy_loss': 0.027472828639438375, 'dist_entropy': 2.944153485298157, 'actor_grad_norm': tensor(0.2128), 'critic_grad_norm': tensor(1.1653), 'ratio': tensor(0.7016)}
+Env Football Algo tizero Exp check updates 1052/100000000000.0 steps in 24.43
+total episode rewards is -20.478001912434895
+{'value_loss': 0.4316025353223085, 'policy_loss': 0.06268924250267446, 'dist_entropy': 2.943252534866333, 'actor_grad_norm': tensor(0.1978), 'critic_grad_norm': tensor(0.6766), 'ratio': tensor(0.7537)}
+Env Football Algo tizero Exp check updates 2183/100000000000.0 steps in 23.63
+total episode rewards is -20.35710271199544
+{'value_loss': 0.7449107971787453, 'policy_loss': 0.048268171591917056, 'dist_entropy': 2.9427894067764284, 'actor_grad_norm': tensor(0.2470), 'critic_grad_norm': tensor(0.8963), 'ratio': tensor(0.5775)}
+Env Football Algo tizero Exp check updates 3049/100000000000.0 steps in 23.45
+total episode rewards is 19.705994923909504
+{'value_loss': 0.2711882938444614, 'policy_loss': 0.01767846494913101, 'dist_entropy': 2.941080679893494, 'actor_grad_norm': tensor(0.2127), 'critic_grad_norm': tensor(0.4904), 'ratio': tensor(0.8441)}
+Env Football Algo tizero Exp check updates 4315/100000000000.0 steps in 24.31
+total episode rewards is 9.568898518880209
+{'value_loss': 0.5164312862604856, 'policy_loss': 0.024903804380446672, 'dist_entropy': 2.940428924560547, 'actor_grad_norm': tensor(0.2306), 'critic_grad_norm': tensor(0.5138), 'ratio': tensor(0.6203)}
+Env Football Algo tizero Exp check updates 5245/100000000000.0 steps in 24.59
+total episode rewards is 19.56009801228841
+| eval_goal 0.1 | eval_goal_diff 0.0 | eval_WDL 0.1 |
+{'value_loss': 0.5657450828701258, 'policy_loss': 0.03958735175663605, 'dist_entropy': 2.940310196876526, 'actor_grad_norm': tensor(0.2290), 'critic_grad_norm': tensor(0.6515), 'ratio': tensor(0.6359)}
+Env Football Algo tizero Exp check updates 6200/100000000000.0 steps in 25.62
+total episode rewards is -30.319302876790363
+{'value_loss': 0.26234397768974305, 'policy_loss': 0.041781392209231855, 'dist_entropy': 2.9398582935333253, 'actor_grad_norm': tensor(0.2103), 'critic_grad_norm': tensor(0.5051), 'ratio': tensor(0.7238)}
+Env Football Algo tizero Exp check updates 7285/100000000000.0 steps in 26.76
+total episode rewards is 29.468302408854168
+{'value_loss': 0.4934810511767864, 'policy_loss': 0.05298206885810942, 'dist_entropy': 2.9397722864151, 'actor_grad_norm': tensor(0.2336), 'critic_grad_norm': tensor(0.8640), 'ratio': tensor(0.5678)}
+Env Football Algo tizero Exp check updates 8136/100000000000.0 steps in 25.06
+total episode rewards is 19.606095631917317
+{'value_loss': 0.4783966279029846, 'policy_loss': 0.023583424002863465, 'dist_entropy': 2.9380705404281615, 'actor_grad_norm': tensor(0.2512), 'critic_grad_norm': tensor(0.7089), 'ratio': tensor(0.5590)}
+Env Football Algo tizero Exp check updates 8974/100000000000.0 steps in 26.48
+total episode rewards is 39.715599060058594
+{'value_loss': 0.3985427089780569, 'policy_loss': 0.024884680886752903, 'dist_entropy': 2.9363996410369873, 'actor_grad_norm': tensor(0.2256), 'critic_grad_norm': tensor(0.6059), 'ratio': tensor(0.5620)}
+Env Football Algo tizero Exp check updates 9815/100000000000.0 steps in 25.59
+total episode rewards is 9.544696172078451
+{'value_loss': 0.48263134352862835, 'policy_loss': 0.0011360515128762928, 'dist_entropy': 2.933914294242859, 'actor_grad_norm': tensor(0.2379), 'critic_grad_norm': tensor(0.7654), 'ratio': tensor(0.7229)}
+Env Football Algo tizero Exp check updates 10898/100000000000.0 steps in 26.09
+total episode rewards is 19.67479705810547
+| eval_goal 0.0 | eval_goal_diff 0.0 | eval_WDL 0.0 |
+{'value_loss': 0.39462533328682187, 'policy_loss': -0.002932460478041321, 'dist_entropy': 2.9327001905441286, 'actor_grad_norm': tensor(0.2409), 'critic_grad_norm': tensor(0.5950), 'ratio': tensor(0.7953)}
+Env Football Algo tizero Exp check updates 12090/100000000000.0 steps in 24.87
+total episode rewards is 29.51769510904948
+{'value_loss': 0.3159558659791946, 'policy_loss': 0.00970577242784202, 'dist_entropy': 2.9329823446273804, 'actor_grad_norm': tensor(0.2476), 'critic_grad_norm': tensor(0.5204), 'ratio': tensor(0.7482)}
+Env Football Algo tizero Exp check updates 13211/100000000000.0 steps in 26.39
+total episode rewards is 19.575795491536457
+{'value_loss': 0.41147801633924247, 'policy_loss': 0.0035425797058269383, 'dist_entropy': 2.931475491523743, 'actor_grad_norm': tensor(0.2411), 'critic_grad_norm': tensor(0.7329), 'ratio': tensor(0.7255)}
+Env Football Algo tizero Exp check updates 14298/100000000000.0 steps in 24.77
+total episode rewards is 29.687296549479168
+{'value_loss': 0.5516737531870604, 'policy_loss': 0.00323235321091488, 'dist_entropy': 2.9330127334594724, 'actor_grad_norm': tensor(0.2596), 'critic_grad_norm': tensor(0.6113), 'ratio': tensor(0.4950)}
+Env Football Algo tizero Exp check updates 15038/100000000000.0 steps in 25.05
+total episode rewards is 49.76539611816406
+{'value_loss': 0.40473926115781067, 'policy_loss': -0.015170696644927375, 'dist_entropy': 2.928470492362976, 'actor_grad_norm': tensor(0.2654), 'critic_grad_norm': tensor(0.7988), 'ratio': tensor(0.7503)}
+Env Football Algo tizero Exp check updates 16163/100000000000.0 steps in 27.10
+total episode rewards is 29.50550079345703
+| eval_goal 0.2 | eval_goal_diff 0.2 | eval_WDL 0.2 |
+{'value_loss': 0.3083091896027327, 'policy_loss': -0.0009136022580787539, 'dist_entropy': 2.9296059799194336, 'actor_grad_norm': tensor(0.2560), 'critic_grad_norm': tensor(0.6496), 'ratio': tensor(0.7368)}
+Env Football Algo tizero Exp check updates 17267/100000000000.0 steps in 25.06
+total episode rewards is 19.763904571533203
+{'value_loss': 0.6432758202403783, 'policy_loss': 0.008235233522718773, 'dist_entropy': 2.9320335578918457, 'actor_grad_norm': tensor(0.2673), 'critic_grad_norm': tensor(0.5591), 'ratio': tensor(0.5737)}
+Env Football Algo tizero Exp check updates 18126/100000000000.0 steps in 26.11
+total episode rewards is -20.333206176757812
+{'value_loss': 0.15425048952922224, 'policy_loss': 0.01437883430859074, 'dist_entropy': 2.9278885650634767, 'actor_grad_norm': tensor(0.2345), 'critic_grad_norm': tensor(0.4060), 'ratio': tensor(0.8402)}
+Env Football Algo tizero Exp check updates 19386/100000000000.0 steps in 25.23
+total episode rewards is 19.408499399820965
+{'value_loss': 0.3823804011940956, 'policy_loss': 0.006350509501062334, 'dist_entropy': 2.9322766304016112, 'actor_grad_norm': tensor(0.2589), 'critic_grad_norm': tensor(0.5140), 'ratio': tensor(0.6470)}
+Env Football Algo tizero Exp check updates 20355/100000000000.0 steps in 28.24
+total episode rewards is 29.57879638671875
+{'value_loss': 0.47585471853613853, 'policy_loss': -0.005831918752519414, 'dist_entropy': 2.932310314178467, 'actor_grad_norm': tensor(0.2555), 'critic_grad_norm': tensor(0.6625), 'ratio': tensor(0.6067)}
+Env Football Algo tizero Exp check updates 21263/100000000000.0 steps in 26.18
+total episode rewards is 39.64289855957031
+| eval_goal 0.0 | eval_goal_diff 0.0 | eval_WDL 0.0 |
+{'value_loss': 0.2839055199176073, 'policy_loss': -0.015552094012964517, 'dist_entropy': 2.929483699798584, 'actor_grad_norm': tensor(0.2191), 'critic_grad_norm': tensor(0.5612), 'ratio': tensor(0.8100)}
+Env Football Algo tizero Exp check updates 22477/100000000000.0 steps in 28.05
+total episode rewards is -10.618400573730469
+{'value_loss': 0.42865756116807463, 'policy_loss': -0.008097095238044858, 'dist_entropy': 2.931297860145569, 'actor_grad_norm': tensor(0.2643), 'critic_grad_norm': tensor(0.7332), 'ratio': tensor(0.7191)}
+Env Football Algo tizero Exp check updates 23555/100000000000.0 steps in 29.36
+total episode rewards is 9.594097773234049
+{'value_loss': 0.49178308971226214, 'policy_loss': 0.02796029258519411, 'dist_entropy': 2.932937207221985, 'actor_grad_norm': tensor(0.2598), 'critic_grad_norm': tensor(0.5361), 'ratio': tensor(0.6313)}
+Env Football Algo tizero Exp check updates 24500/100000000000.0 steps in 30.42
+total episode rewards is -20.2686030069987
+{'value_loss': 0.32992950789630415, 'policy_loss': 0.010093179340474307, 'dist_entropy': 2.930282859802246, 'actor_grad_norm': tensor(0.2475), 'critic_grad_norm': tensor(0.4997), 'ratio': tensor(0.7209)}
+Env Football Algo tizero Exp check updates 25581/100000000000.0 steps in 28.66
+total episode rewards is -0.6188011964162191
+{'value_loss': 0.5468054849654436, 'policy_loss': 0.0282665421197089, 'dist_entropy': 2.9314696311950685, 'actor_grad_norm': tensor(0.2760), 'critic_grad_norm': tensor(0.6242), 'ratio': tensor(0.5778)}
+Env Football Algo tizero Exp check updates 26446/100000000000.0 steps in 30.82
+total episode rewards is 29.607498168945312
+| eval_goal 0.0 | eval_goal_diff -0.1 | eval_WDL 0.0 |
+{'value_loss': 0.32595636539161205, 'policy_loss': 0.017039115570951252, 'dist_entropy': 2.929027404785156, 'actor_grad_norm': tensor(0.2649), 'critic_grad_norm': tensor(0.4824), 'ratio': tensor(0.7672)}
+Env Football Algo tizero Exp check updates 27597/100000000000.0 steps in 24.77
+total episode rewards is -20.301600138346355
+{'value_loss': 0.4787978356331587, 'policy_loss': -0.0009145699348300695, 'dist_entropy': 2.929479923248291, 'actor_grad_norm': tensor(0.2932), 'critic_grad_norm': tensor(0.5269), 'ratio': tensor(0.7095)}
+Env Football Algo tizero Exp check updates 28661/100000000000.0 steps in 25.67
+total episode rewards is 19.655096689860027
+{'value_loss': 0.24798709722235798, 'policy_loss': -0.005791964993113652, 'dist_entropy': 2.926716728210449, 'actor_grad_norm': tensor(0.2631), 'critic_grad_norm': tensor(0.5250), 'ratio': tensor(0.8758)}
+Env Football Algo tizero Exp check updates 29974/100000000000.0 steps in 30.29
+total episode rewards is 9.590696334838867
+{'value_loss': 0.47676069421693684, 'policy_loss': -0.0013262606062926351, 'dist_entropy': 2.9305076932907106, 'actor_grad_norm': tensor(0.2901), 'critic_grad_norm': tensor(0.5516), 'ratio': tensor(0.6276)}
+Env Football Algo tizero Exp check updates 30915/100000000000.0 steps in 27.37
+total episode rewards is 39.75439707438151
+{'value_loss': 0.4028919621370733, 'policy_loss': 0.008157893209718168, 'dist_entropy': 2.930602512359619, 'actor_grad_norm': tensor(0.2619), 'critic_grad_norm': tensor(0.3992), 'ratio': tensor(0.6317)}
+Env Football Algo tizero Exp check updates 31862/100000000000.0 steps in 29.65
+total episode rewards is 29.545193990071613
+| eval_goal 0.0 | eval_goal_diff 0.0 | eval_WDL 0.0 |
+{'value_loss': 0.32134274745360014, 'policy_loss': 0.02251643636263907, 'dist_entropy': 2.9272874546051026, 'actor_grad_norm': tensor(0.2492), 'critic_grad_norm': tensor(0.4580), 'ratio': tensor(0.7248)}
+Env Football Algo tizero Exp check updates 32948/100000000000.0 steps in 26.21
+total episode rewards is -0.4015003840128581
+{'value_loss': 0.25041918629780413, 'policy_loss': -0.0029512821463868024, 'dist_entropy': 2.9249451208114623, 'actor_grad_norm': tensor(0.3013), 'critic_grad_norm': tensor(0.5297), 'ratio': tensor(0.9470)}
+Env Football Algo tizero Exp check updates 34368/100000000000.0 steps in 30.73
+total episode rewards is 29.55369822184245
+{'value_loss': 0.33319952519610524, 'policy_loss': -0.006963520238059573, 'dist_entropy': 2.9262263059616087, 'actor_grad_norm': tensor(0.2615), 'critic_grad_norm': tensor(0.3218), 'ratio': tensor(0.8474)}
+Env Football Algo tizero Exp check updates 35640/100000000000.0 steps in 29.53
+total episode rewards is 19.529497782389324
+{'value_loss': 0.496124247405678, 'policy_loss': -0.010249949272256344, 'dist_entropy': 2.9285316705703734, 'actor_grad_norm': tensor(0.3143), 'critic_grad_norm': tensor(0.3905), 'ratio': tensor(0.7438)}
+Env Football Algo tizero Exp check updates 36756/100000000000.0 steps in 27.41
+total episode rewards is 39.628997802734375
+Traceback (most recent call last):
+  File "/home/uosai/Desktop/marl/onpolicy/train_grf.py", line 238, in <module>
+    main(args = sys.argv[1:])
+  File "/home/uosai/Desktop/marl/onpolicy/train_grf.py", line 229, in main
+    runner.run()
+  File "/home/uosai/Desktop/marl/onpolicy/runner/shared/football_runner.py", line 64, in run
+    values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env, enemy_rnn_states = self.collect(step)
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 114, in decorate_context
+    with ctx_factory():
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/site-packages/torch/autograd/grad_mode.py", line 80, in __enter__
+    torch.set_grad_enabled(False)
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/site-packages/torch/autograd/grad_mode.py", line 182, in __init__
+    def __init__(self, mode: bool) -> None:
+KeyboardInterrupt

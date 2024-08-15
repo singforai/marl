@@ -38,7 +38,7 @@ def get_config():
                         help='Number of environment steps to train (default: 10e6)')
     parser.add_argument("--num_gpu", type = int, default = 0, help = "사용할 gpu number")
     parser.add_argument("--episode_length", type=int,
-                        default = 1500, help="Max length for any episode, 전체 경기 지표를 확인하기 위해 이걸 3000으로 고정한다.")
+                        default = 500, help="Max length for any episode, 전체 경기 지표를 확인하기 위해 이걸 3000으로 고정한다.")
 
     #학습을 위한 알고리즘 전처리
     parser.add_argument("--algorithm_name", type=str,
@@ -55,7 +55,7 @@ def get_config():
                         help="Dimension of hidden layers for actor/critic networks")
     parser.add_argument("--use_stacked_frames", action='store_true',
                         default=False, help="Whether to use stacked_frames")
-    parser.add_argument("--hidden_size", type=int, default = 32,
+    parser.add_argument("--hidden_size", type=int, default = 256,
                         help="Dimension of hidden layers for actor/critic networks") 
     parser.add_argument("--layer_N", type=int, default=1,
                         help="Number of layers for actor/critic networks")
@@ -76,7 +76,7 @@ def get_config():
     parser.add_argument("--use_recurrent_policy", action='store_false',
                         default=True, help='use a recurrent policy')
     parser.add_argument("--recurrent_N", type=int, default=1, help="The number of recurrent layers.")
-    parser.add_argument("--data_chunk_length", type=int, default=10,
+    parser.add_argument("--data_chunk_length", type=int, default=25,
                         help="Time length of chunks used to train a recurrent_policy")
 
     # optimizer parameters
@@ -115,9 +115,9 @@ def get_config():
                         help='max norm of gradients (default: 0.5)')
     parser.add_argument("--use_gae", action='store_false',
                         default=True, help='use generalized advantage estimation')
-    parser.add_argument("--gamma", type=float, default=0.99,
+    parser.add_argument("--gamma", type=float, default=0.999,
                         help='discount factor for rewards (default: 0.99)')
-    parser.add_argument("--gae_lambda", type=float, default=0.95,
+    parser.add_argument("--gae_lambda", type=float, default=0.995,
                         help='gae lambda parameter (default: 0.95)')
     parser.add_argument("--use_proper_time_limits", action='store_true',
                         default=False, help='compute returns taking into account time limits')
@@ -139,7 +139,7 @@ def get_config():
 
     # eval parameters
     parser.add_argument("--use_eval", action='store_false', default=True, help="by default, do not start evaluation. If set`, start evaluation alongside with training.")
-    parser.add_argument("--eval_interval", type=int, default=5000, help="time duration between contiunous twice evaluation progress.")
+    parser.add_argument("--eval_interval", type=int, default=2500, help="time duration between contiunous twice evaluation progress.")
     parser.add_argument("--eval_episodes", type=int, default=10, help="number of episodes of a single evaluation.")
 
     # render parameters

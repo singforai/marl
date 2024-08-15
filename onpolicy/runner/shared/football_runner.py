@@ -27,7 +27,8 @@ class FootballRunner(Runner):
     def __init__(self, config):
         super(FootballRunner, self).__init__(config)
         self.difficulty_level = 1
-        self.level_up_stack = 0
+        self.cumulative_win_rate = 0
+        self.decay_rate = 0.8
         np.set_printoptions(threshold=np.inf)
         """
         scenario 파일에는 init_level 파일 경로를 넣어야 한다. 
@@ -65,7 +66,6 @@ class FootballRunner(Runner):
                 # Obser reward and next obs
                 obs, rewards, dones, infos = self.envs.step(actions_env)
                 rewards = rewards / self.num_agents * 10
-                print(infos[0])
                 obs , share_obs, available_actions, added_rewards = preprocessing(
                     infos = infos, 
                     obs = obs,
@@ -102,7 +102,7 @@ class FootballRunner(Runner):
             # for step_idx, roll_idx in enumerate(self.buffer.rewards):
             #     print(step_idx, roll_idx[0][0], roll_idx[1][0])
             for roll_idx, done_step in enumerate(done_steps):
-                if done_step < (self.episode_length - 1):
+                if done_step < self.episode_length:
                     self.buffer.share_obs[done_step+1: , roll_idx, :] = 0
                     self.buffer.obs[done_step+1: , roll_idx, :] = 0
                     self.buffer.rewards[done_step: , roll_idx, :] = 0
@@ -111,12 +111,9 @@ class FootballRunner(Runner):
                     self.buffer.masks[done_step+1: , roll_idx, :] = 0
             
             rewards_record = self.buffer.rewards 
-            self.opponent_policy.actor = self.policy.actor
             
             self.compute()
             train_infos = self.train()
-            # save model
-            
             
             train_infos["episode_length"] = np.average(done_steps)
             train_infos["total_episode_rewards"] = np.sum(rewards_record) / self.num_agents
@@ -127,12 +124,12 @@ class FootballRunner(Runner):
             print(f"\nEnv {self.env_name} Algo {self.algorithm_name} Exp {self.experiment_name} updates {total_num_steps}/{self.num_env_steps} steps in {(end_time - start_time):.2f}")  
             print("total episode rewards is {}".format(train_infos["total_episode_rewards"]))
 
-            difficulty_level, level_stack = self.supervisor(
-                wdl = self.buffer.env_infos["train_WDL"],
-                num_agents = self.num_agents,
-            )
-            train_infos["difficulty_level"] = difficulty_level
-            train_infos["level_stack"] = level_stack
+            # self.supervisor(
+            #     win_rate = self.buffer.env_infos["train_win_rate"],
+            #     num_agents = self.num_agents,
+            # )
+            train_infos["difficulty_level"] = self.difficulty_level
+            train_infos["cumulative_win_rate"] = self.cumulative_win_rate
 
             self.log_train(train_infos, total_num_steps)
             self.log_env(self.buffer.env_infos, total_num_steps)
@@ -149,7 +146,12 @@ class FootballRunner(Runner):
         self.opponent_buffer.step = 0
         default_obs = self.envs.reset()
         
-        obs , share_obs, available_actions  = init_obs(obs = default_obs, num_agents = self.num_agents, episode_length = self.episode_length)
+        obs , share_obs, available_actions  = init_obs(
+            obs = default_obs, 
+            num_agents = self.num_agents, 
+            episode_length = self.episode_length
+        )
+        
         self.buffer.share_obs[0] = share_obs[:, :self.num_agents, :]
         self.buffer.obs[0] = obs[:, :self.num_agents, :]
         self.buffer.rnn_states[0] = 0
@@ -166,19 +168,18 @@ class FootballRunner(Runner):
             self.buffer.available_actions[0] = available_actions[:, :self.num_agents, :]
             self.opponent_buffer.available_actions[0] = available_actions[:, self.num_agents:, :]
 
-    def supervisor(self, wdl, num_agents):
-        if np.mean(wdl) >= 0.5:
-            self.level_up_stack += 1
-            if self.level_up_stack >= 50:
+    def supervisor(self, win_rate, num_agents):
+        self.cumulative_win_rate =  self.decay_rate * self.cumulative_win_rate + (1-self.decay_rate) * np.mean(win_rate)
+        if self.cumulative_win_rate >= 0.6:
                 self.difficulty_level += 1
-                self.level_up_stack = 0
+                self.cumulative_win_rate = 0
+                self.opponent_policy.actor = self.policy.actor
         result = {
             "difficulty_level": self.difficulty_level,
             "num_agents": num_agents,
         }
         with open(self.level_file_path, 'w') as json_file:
             json.dump(result, json_file, indent=4)
-        return self.difficulty_level, self.level_up_stack
 
     @torch.no_grad()
     def collect(self, step):
@@ -223,7 +224,6 @@ class FootballRunner(Runner):
         dones_env = np.all(dones, axis=-1)
         
         if np.all(dones_env) or step == (self.episode_length - 1):
-            # print(dones, step)
             for _, info in zip(dones_env, infos):
                 goal_diff = info["score"][0] - info["score"][1]
                 
@@ -231,9 +231,9 @@ class FootballRunner(Runner):
                 
                 self.buffer.env_infos["train_goal"].append(info["score"][0])
                 if goal_diff > 0:
-                    self.buffer.env_infos["train_WDL"].append(1)
+                    self.buffer.env_infos["train_win_rate"].append(1)
                 else:
-                    self.buffer.env_infos["train_WDL"].append(0)
+                    self.buffer.env_infos["train_win_rate"].append(0)
                     
         # reset rnn and mask args for done envs
         
@@ -244,8 +244,8 @@ class FootballRunner(Runner):
         masks = np.ones((self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
         masks[dones_env == True] = np.zeros(((dones_env == True).sum(), self.num_agents, 1), dtype=np.float32)
         
-        enemy_available_actions = available_actions[: ,self.num_agents:, :]
         available_actions = available_actions[:,:self.num_agents, :]
+        enemy_available_actions = available_actions[: ,self.num_agents:, :]
         
         if not self.all_args.use_available_actions:
             enemy_available_actions = None
@@ -288,7 +288,7 @@ class FootballRunner(Runner):
         # init eval goals
         num_done = 0
         eval_goals = np.zeros(self.eval_episode)
-        eval_WDL = np.zeros(self.eval_episode)
+        eval_win_rate = np.zeros(self.eval_episode)
         eval_goal_diff = np.zeros(self.eval_episode)
 
         step = 0
@@ -360,9 +360,9 @@ class FootballRunner(Runner):
                         eval_goal_diff[num_done] = (scores[idx_env][0] - scores[idx_env][1])
                         eval_goals[num_done] = scores[idx_env][0]
                         if eval_goal_diff[num_done] > 0:
-                            eval_WDL[num_done] = 1
+                            eval_win_rate[num_done] = 1
                         else:
-                            eval_WDL[num_done] = 0
+                            eval_win_rate[num_done] = 0
                             
                         num_done += 1
                         done_episodes_per_thread[idx_env] += 1
@@ -383,18 +383,20 @@ class FootballRunner(Runner):
 
         # get expected goal
         eval_goal = np.mean(eval_goals)
-        eval_WDL = np.mean(eval_WDL)
+        eval_win_rate = np.mean(eval_win_rate)
         eval_goal_diff = np.mean(eval_goal_diff)
-
+        
+        self.supervisor(win_rate = eval_win_rate, num_agents = self.num_agents)
+        
         # log and print
-        print(f"| eval_goal {eval_goal} | eval_goal_diff {eval_goal_diff} | eval_WDL {eval_WDL} | ")
+        print(f"| eval_goal {eval_goal} | eval_goal_diff {eval_goal_diff} | eval_win_rate {eval_win_rate} | ")
         if self.use_wandb:
             wandb.log({"eval_goal": eval_goal}, step=total_num_steps)
-            wandb.log({"eval_WDL": eval_WDL}, step=total_num_steps)
+            wandb.log({"eval_win_rate": eval_win_rate}, step=total_num_steps)
             wandb.log({"eval_goal_diff": eval_goal_diff}, step=total_num_steps)
         else:
             self.writter.add_scalars("eval_goal", {"expected_goal": eval_goal}, total_num_steps)
-            self.writter.add_scalars("eval_WDL", {"eval_WDL": eval_WDL}, total_num_steps)
+            self.writter.add_scalars("eval_win_rate", {"eval_win_rate": eval_win_rate}, total_num_steps)
             self.writter.add_scalars("eval_goal_diff", {"eval_goal_diff": eval_goal_diff}, total_num_steps)
 
     # @torch.no_grad()

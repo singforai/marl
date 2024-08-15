@@ -1,0 +1,53 @@
+
+사용 가능한 CPU Thread: 24
+{'value_loss': 0.6222817400097846, 'policy_loss': 0.01853469423716888, 'dist_entropy': 2.944162201881409, 'actor_grad_norm': tensor(0.2026), 'critic_grad_norm': tensor(1.2380), 'ratio': tensor(0.7748)}
+Env Football Algo tizero Exp check updates 1162/100000000000.0 steps in 24.78
+total episode rewards is -10.598700841267904
+{'value_loss': 0.8440879981219769, 'policy_loss': 0.03322973978240043, 'dist_entropy': 2.9430785274505613, 'actor_grad_norm': tensor(0.2337), 'critic_grad_norm': tensor(1.0037), 'ratio': tensor(0.5877)}
+Env Football Algo tizero Exp check updates 2042/100000000000.0 steps in 25.12
+total episode rewards is 9.569894790649414
+{'value_loss': 0.32593427956104276, 'policy_loss': 0.020225246856716693, 'dist_entropy': 2.940794868469238, 'actor_grad_norm': tensor(0.2311), 'critic_grad_norm': tensor(0.7047), 'ratio': tensor(0.8937)}
+Env Football Algo tizero Exp check updates 3383/100000000000.0 steps in 25.27
+total episode rewards is -0.7725995381673177
+{'value_loss': 0.5336987179890275, 'policy_loss': 0.029126924292650073, 'dist_entropy': 2.9408925485610964, 'actor_grad_norm': tensor(0.2437), 'critic_grad_norm': tensor(0.6482), 'ratio': tensor(0.7734)}
+Env Football Algo tizero Exp check updates 4543/100000000000.0 steps in 25.09
+total episode rewards is -30.597803751627605
+{'value_loss': 0.17286478855647147, 'policy_loss': 0.002233061892911792, 'dist_entropy': 2.940912671089172, 'actor_grad_norm': tensor(0.2253), 'critic_grad_norm': tensor(0.4950), 'ratio': tensor(0.9296)}
+Env Football Algo tizero Exp check updates 5937/100000000000.0 steps in 24.37
+total episode rewards is 19.583099365234375
+Traceback (most recent call last):
+  File "/home/uosai/Desktop/marl/onpolicy/train_grf.py", line 238, in <module>
+    main(args = sys.argv[1:])
+  File "/home/uosai/Desktop/marl/onpolicy/train_grf.py", line 229, in main
+    runner.run()
+  File "/home/uosai/Desktop/marl/onpolicy/runner/shared/football_runner.py", line 142, in run
+    self.eval(total_num_steps)
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/uosai/Desktop/marl/onpolicy/runner/shared/football_runner.py", line 311, in eval
+    eval_actions, eval_rnn_states = self.trainer.policy.act(
+  File "/home/uosai/Desktop/marl/onpolicy/algorithms/tizero/algorithm/TiZeroPolicy.py", line 129, in act
+    actions, _, rnn_states_actor = self.actor(obs, rnn_states_actor, masks, available_actions, deterministic)
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/uosai/Desktop/marl/onpolicy/algorithms/tizero/algorithm/r_actor_critic.py", line 88, in forward
+    actions, action_log_probs = self.act(output, available_actions, deterministic)
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/uosai/Desktop/marl/onpolicy/algorithms/utils/input_encoder.py", line 205, in forward
+    action_logits = self.action_out(x, available_actions)
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/uosai/Desktop/marl/onpolicy/algorithms/utils/input_encoder.py", line 147, in forward
+    return FixedCategorical(logits=x)
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/site-packages/torch/distributions/categorical.py", line 70, in __init__
+    super().__init__(batch_shape, validate_args=validate_args)
+  File "/home/uosai/Desktop/miniconda3/envs/marl/lib/python3.9/site-packages/torch/distributions/distribution.py", line 67, in __init__
+    if not valid.all():
+KeyboardInterrupt
