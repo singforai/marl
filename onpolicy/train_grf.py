@@ -234,7 +234,7 @@ def main(args):
     )
     envs = make_train_env(all_args)
     eval_envs = make_eval_env(all_args) if all_args.use_eval else None
-    print(f"사용 가능한 CPU Thread: {os.cpu_count()}")
+    print(f"The number of available CPU Thread: {os.cpu_count()}")
 
     config = {"all_args": all_args, "device": device, "run_dir": run_dir}
 

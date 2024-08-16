@@ -433,7 +433,9 @@ def thread_processing(info, num_agents, episode_length):  # 279
         if active_position[0] < 0.4 or abs(active_position[1]) > 0.3:
             available_action[SHOT] = 0
 
-        available_action = np.ones(19, dtype=float32)
+        # available_action = np.ones(19, dtype=float32)
+
+        # print("Agent ID: ", agent_id, "Game Mode: ", game_mode, "Who Owns:", info_ball_owned_team, "Distance to Ball:", distance2ball)
 
         if game_mode[0] == 1:
             if info_ball_owned_team == -1:  # When the ball is free

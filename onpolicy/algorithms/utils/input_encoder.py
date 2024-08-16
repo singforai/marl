@@ -287,6 +287,7 @@ class InputEncoder(nn.Module):
         super(InputEncoder, self).__init__()
         fc_layer_num = 2
         fc_output_num = 64
+
         self.active_input_num = 87
         self.ball_owner_input_num = 57
         self.left_input_num = 88
@@ -392,13 +393,13 @@ class ObsEncoder(nn.Module):
         super(ObsEncoder, self).__init__()
         self.input_encoder = input_encoder
         self.input_embedding = get_fc(input_embedding_size, hidden_size)
-        self.rnn = RNNLayer(input_embedding_size, hidden_size, _recurrent_N, _use_orthogonal)
+        self.rnn = RNNLayer(hidden_size, hidden_size, _recurrent_N, _use_orthogonal)
         self.after_rnn_mlp = get_fc(hidden_size, hidden_size)
 
         self.to(device)
 
     def forward(self, obs, rnn_states, masks):
         actor_features = self.input_encoder(obs)
-        # actor_features = self.input_embedding(actor_features)
+        actor_features = self.input_embedding(actor_features)
         output, rnn_states = self.rnn(actor_features, rnn_states, masks)
         return output, rnn_states

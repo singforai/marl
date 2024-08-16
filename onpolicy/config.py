@@ -178,7 +178,7 @@ def get_config():
     parser.add_argument("--accept_ratio", type=float, default=0.5, help="accept ratio of loss improve (default: 0.5)")
 
     # ppo parameters
-    parser.add_argument("--ppo_epoch", type=int, default=10, help="number of ppo epochs (default: 10)")
+    parser.add_argument("--ppo_epoch", type=int, default=30, help="number of ppo epochs (default: 10)")
     parser.add_argument(
         "--use_clipped_value_loss",
         action="store_false",

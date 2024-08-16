@@ -9,11 +9,14 @@ from utils.util import get_shape_from_obs_space, get_shape_from_act_space
 def _flatten(T, N, x):
     return x.reshape(T * N, *x.shape[2:])
 
+
 def _cast(x):
     return x.transpose(1, 2, 0, 3).reshape(-1, *x.shape[3:])
 
+
 def _flatten_v3(T, N, agent_num, x):
     return x.reshape(T * N * agent_num, *x.shape[3:])
+
 
 def _cast_v3(x):
     return x.transpose(1, 0, 2, 3).reshape(-1, *x.shape[2:])
@@ -24,6 +27,7 @@ def _shuffle_agent_grid(x, y):
     # cols = np.stack([np.random.permutation(y) for _ in range(x)])
     cols = np.stack([np.arange(y) for _ in range(x)])
     return rows, cols
+
 
 class SharedReplayBuffer(object):
     """
@@ -52,7 +56,7 @@ class SharedReplayBuffer(object):
         self.act_space_n = act_space.n
 
         self.use_additional_obs = args.use_additional_obs
-        
+
         obs_shape = get_shape_from_obs_space(obs_space)
         share_obs_shape = get_shape_from_obs_space(cent_obs_space)
 
@@ -61,39 +65,45 @@ class SharedReplayBuffer(object):
 
         if type(share_obs_shape[-1]) == list:
             share_obs_shape = share_obs_shape[:1]
-        
+
         self.obs_shape = (*obs_shape,)[0]
         self.share_obs_shape = (*share_obs_shape,)[0]
 
-        self.share_obs = np.zeros((self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.share_obs_shape),
-                                  dtype=np.float32)
-        self.obs = np.zeros((self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.obs_shape), dtype=np.float32)
+        self.share_obs = np.zeros(
+            (self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.share_obs_shape), dtype=np.float32
+        )
+        self.obs = np.zeros(
+            (self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.obs_shape), dtype=np.float32
+        )
 
         self.rnn_states = np.zeros(
             (self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.recurrent_N, self.hidden_size),
-            dtype=np.float32)
+            dtype=np.float32,
+        )
         self.rnn_states_critic = np.zeros_like(self.rnn_states)
 
         self.value_preds = np.zeros(
-            (self.episode_length + 1, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
+            (self.episode_length + 1, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32
+        )
         self.returns = np.zeros_like(self.value_preds)
-        self.advantages = np.zeros(
-            (self.episode_length, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
-        
-        if act_space.__class__.__name__ == 'Discrete':
-            self.available_actions = np.ones((self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.act_space_n),
-                                             dtype=np.float32)
+        self.advantages = np.zeros((self.episode_length, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
+
+        if act_space.__class__.__name__ == "Discrete":
+            self.available_actions = np.ones(
+                (self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.act_space_n), dtype=np.float32
+            )
         else:
             self.available_actions = None
 
         self.act_shape = get_shape_from_act_space(act_space)
 
         self.actions = np.zeros(
-            (self.episode_length, self.n_rollout_threads, self.num_agents, self.act_shape), dtype=np.float32)
+            (self.episode_length, self.n_rollout_threads, self.num_agents, self.act_shape), dtype=np.float32
+        )
         self.action_log_probs = np.zeros(
-            (self.episode_length, self.n_rollout_threads, self.num_agents, self.act_shape), dtype=np.float32)
-        self.rewards = np.zeros(
-            (self.episode_length, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
+            (self.episode_length, self.n_rollout_threads, self.num_agents, self.act_shape), dtype=np.float32
+        )
+        self.rewards = np.zeros((self.episode_length, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
 
         self.masks = np.ones((self.episode_length + 1, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
         self.bad_masks = np.ones_like(self.masks)
@@ -104,8 +114,21 @@ class SharedReplayBuffer(object):
         # 박현우's 오리지널
         self.env_infos = defaultdict(list)
 
-    def insert(self, share_obs, obs, rnn_states_actor, rnn_states_critic, actions, action_log_probs,
-               value_preds, rewards, masks, bad_masks=None, active_masks=None, available_actions=None):
+    def insert(
+        self,
+        share_obs,
+        obs,
+        rnn_states_actor,
+        rnn_states_critic,
+        actions,
+        action_log_probs,
+        value_preds,
+        rewards,
+        masks,
+        bad_masks=None,
+        active_masks=None,
+        available_actions=None,
+    ):
         """
         Insert data into the buffer.
         :param share_obs: (argparse.Namespace) arguments containing relevant model, policy, and env information.
@@ -130,17 +153,30 @@ class SharedReplayBuffer(object):
         self.value_preds[self.step] = value_preds.copy()
         self.rewards[self.step] = rewards.copy()
         self.masks[self.step + 1] = masks.copy()
-        if bad_masks is not None: # None
+        if bad_masks is not None:  # None
             self.bad_masks[self.step + 1] = bad_masks.copy()
-        if active_masks is not None:# None
+        if active_masks is not None:  # None
             self.active_masks[self.step + 1] = active_masks.copy()
-        if available_actions is not None:# None
+        if available_actions is not None:  # None
             self.available_actions[self.step + 1] = available_actions.copy()
 
         self.step = self.step + 1
 
-    def chooseinsert(self, share_obs, obs, rnn_states, rnn_states_critic, actions, action_log_probs,
-                     value_preds, rewards, masks, bad_masks=None, active_masks=None, available_actions=None):
+    def chooseinsert(
+        self,
+        share_obs,
+        obs,
+        rnn_states,
+        rnn_states_critic,
+        actions,
+        action_log_probs,
+        value_preds,
+        rewards,
+        masks,
+        bad_masks=None,
+        active_masks=None,
+        available_actions=None,
+    ):
         """
         Insert data into the buffer. This insert function is used specifically for Hanabi, which is turn based.
         :param share_obs: (argparse.Namespace) arguments containing relevant model, policy, and env information.
@@ -175,33 +211,40 @@ class SharedReplayBuffer(object):
 
     def after_update(self):
         """Copy last timestep data to first index. Called after update to model."""
-        self.share_obs = np.zeros((self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.share_obs_shape),
-                                  dtype=np.float32)
-        self.obs = np.zeros((self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.obs_shape), dtype=np.float32)
-        self.rnn_states = np.zeros((self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.recurrent_N, self.hidden_size),dtype=np.float32)
+        self.share_obs = np.zeros(
+            (self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.share_obs_shape), dtype=np.float32
+        )
+        self.obs = np.zeros(
+            (self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.obs_shape), dtype=np.float32
+        )
+        self.rnn_states = np.zeros(
+            (self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.recurrent_N, self.hidden_size),
+            dtype=np.float32,
+        )
         self.rnn_states_critic = np.zeros_like(self.rnn_states)
 
         self.value_preds = np.zeros(
-            (self.episode_length + 1, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
+            (self.episode_length + 1, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32
+        )
         self.returns = np.zeros_like(self.value_preds)
-        self.advantages = np.zeros(
-            (self.episode_length, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
+        self.advantages = np.zeros((self.episode_length, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
 
         self.actions = np.zeros(
-            (self.episode_length, self.n_rollout_threads, self.num_agents, self.act_shape), dtype=np.float32)
+            (self.episode_length, self.n_rollout_threads, self.num_agents, self.act_shape), dtype=np.float32
+        )
         self.action_log_probs = np.zeros(
-            (self.episode_length, self.n_rollout_threads, self.num_agents, self.act_shape), dtype=np.float32)
-        self.rewards = np.zeros(
-            (self.episode_length, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
-
+            (self.episode_length, self.n_rollout_threads, self.num_agents, self.act_shape), dtype=np.float32
+        )
+        self.rewards = np.zeros((self.episode_length, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
 
         self.masks = np.ones((self.episode_length + 1, self.n_rollout_threads, self.num_agents, 1), dtype=np.float32)
         self.bad_masks = np.ones_like(self.masks)
         self.active_masks = np.ones_like(self.masks)
         if self.available_actions is not None:
-            self.available_actions = np.ones((self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.act_space_n),
-                                             dtype=np.float32)
-            
+            self.available_actions = np.ones(
+                (self.episode_length + 1, self.n_rollout_threads, self.num_agents, self.act_space_n), dtype=np.float32
+            )
+
         # print("reset complete")
 
     def chooseafter_update(self):
@@ -222,18 +265,24 @@ class SharedReplayBuffer(object):
                 self.value_preds[-1] = next_value
                 gae = 0
                 for step in reversed(range(self.rewards.shape[0])):
-                    
                     if self._use_popart or self._use_valuenorm:
                         # step + 1
-                        delta = self.rewards[step] + self.gamma * value_normalizer.denormalize(
-                            self.value_preds[step + 1]) * self.masks[step + 1] \
-                                - value_normalizer.denormalize(self.value_preds[step])
+                        delta = (
+                            self.rewards[step]
+                            + self.gamma
+                            * value_normalizer.denormalize(self.value_preds[step + 1])
+                            * self.masks[step + 1]
+                            - value_normalizer.denormalize(self.value_preds[step])
+                        )
                         gae = delta + self.gamma * self.gae_lambda * gae * self.masks[step + 1]
                         gae = gae * self.bad_masks[step + 1]
                         self.returns[step] = gae + value_normalizer.denormalize(self.value_preds[step])
                     else:
-                        delta = self.rewards[step] + self.gamma * self.value_preds[step + 1] * self.masks[step + 1] - \
-                                self.value_preds[step]
+                        delta = (
+                            self.rewards[step]
+                            + self.gamma * self.value_preds[step + 1] * self.masks[step + 1]
+                            - self.value_preds[step]
+                        )
                         gae = delta + self.gamma * self.gae_lambda * self.masks[step + 1] * gae
                         gae = gae * self.bad_masks[step + 1]
                         self.returns[step] = gae + self.value_preds[step]
@@ -241,14 +290,15 @@ class SharedReplayBuffer(object):
                 self.returns[-1] = next_value
                 for step in reversed(range(self.rewards.shape[0])):
                     if self._use_popart or self._use_valuenorm:
-                        self.returns[step] = (self.returns[step + 1] * self.gamma * self.masks[step + 1] + self.rewards[
-                            step]) * self.bad_masks[step + 1] \
-                                             + (1 - self.bad_masks[step + 1]) * value_normalizer.denormalize(
-                            self.value_preds[step])
+                        self.returns[step] = (
+                            self.returns[step + 1] * self.gamma * self.masks[step + 1] + self.rewards[step]
+                        ) * self.bad_masks[step + 1] + (1 - self.bad_masks[step + 1]) * value_normalizer.denormalize(
+                            self.value_preds[step]
+                        )
                     else:
-                        self.returns[step] = (self.returns[step + 1] * self.gamma * self.masks[step + 1] + self.rewards[
-                            step]) * self.bad_masks[step + 1] \
-                                             + (1 - self.bad_masks[step + 1]) * self.value_preds[step]
+                        self.returns[step] = (
+                            self.returns[step + 1] * self.gamma * self.masks[step + 1] + self.rewards[step]
+                        ) * self.bad_masks[step + 1] + (1 - self.bad_masks[step + 1]) * self.value_preds[step]
         else:
             if self._use_gae:
                 self.value_preds[-1] = next_value
@@ -269,9 +319,13 @@ class SharedReplayBuffer(object):
                             self.advantages[step] = gae
                             self.returns[step] = gae + value_t
                         else:
-                            delta = self.rewards[step] + self.gamma * value_normalizer.denormalize(
-                                self.value_preds[step + 1]) * self.masks[step + 1] \
-                                    - value_normalizer.denormalize(self.value_preds[step])
+                            delta = (
+                                self.rewards[step]
+                                + self.gamma
+                                * value_normalizer.denormalize(self.value_preds[step + 1])
+                                * self.masks[step + 1]
+                                - value_normalizer.denormalize(self.value_preds[step])
+                            )
                             gae = delta + self.gamma * self.gae_lambda * self.masks[step + 1] * gae
                             self.returns[step] = gae + value_normalizer.denormalize(self.value_preds[step])
                     else:
@@ -288,8 +342,11 @@ class SharedReplayBuffer(object):
                             self.returns[step] = gae + self.value_preds[step]
 
                         else:
-                            delta = self.rewards[step] + self.gamma * self.value_preds[step + 1] * \
-                                    self.masks[step + 1] - self.value_preds[step]
+                            delta = (
+                                self.rewards[step]
+                                + self.gamma * self.value_preds[step + 1] * self.masks[step + 1]
+                                - self.value_preds[step]
+                            )
                             gae = delta + self.gamma * self.gae_lambda * self.masks[step + 1] * gae
                             self.returns[step] = gae + self.value_preds[step]
             else:
@@ -312,13 +369,12 @@ class SharedReplayBuffer(object):
                 "PPO requires the number of processes ({}) "
                 "* number of steps ({}) = {} "
                 "to be greater than or equal to the number of PPO mini batches ({})."
-                "".format(n_rollout_threads, episode_length,
-                          n_rollout_threads * episode_length,
-                          num_mini_batch))
+                "".format(n_rollout_threads, episode_length, n_rollout_threads * episode_length, num_mini_batch)
+            )
             mini_batch_size = batch_size // num_mini_batch
 
         rand = torch.randperm(batch_size).numpy()
-        sampler = [rand[i * mini_batch_size:(i + 1) * mini_batch_size] for i in range(num_mini_batch)]
+        sampler = [rand[i * mini_batch_size : (i + 1) * mini_batch_size] for i in range(num_mini_batch)]
         rows, cols = _shuffle_agent_grid(batch_size, self.num_agents)
 
         # keep (num_agent, dim)
@@ -369,9 +425,7 @@ class SharedReplayBuffer(object):
             else:
                 adv_targ = advantages[indices].reshape(-1, *advantages.shape[2:])
 
-            yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, \
-                  value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, \
-                  adv_targ, available_actions_batch
+            yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, adv_targ, available_actions_batch
 
     def feed_forward_generator(self, advantages, num_mini_batch=None, mini_batch_size=None):
         """
@@ -388,13 +442,18 @@ class SharedReplayBuffer(object):
                 "PPO requires the number of processes ({}) "
                 "* number of steps ({}) * number of agents ({}) = {} "
                 "to be greater than or equal to the number of PPO mini batches ({})."
-                "".format(n_rollout_threads, episode_length, self.num_agents,
-                          n_rollout_threads * episode_length * self.num_agents,
-                          num_mini_batch))
+                "".format(
+                    n_rollout_threads,
+                    episode_length,
+                    self.num_agents,
+                    n_rollout_threads * episode_length * self.num_agents,
+                    num_mini_batch,
+                )
+            )
             mini_batch_size = batch_size // num_mini_batch
 
         rand = torch.randperm(batch_size).numpy()
-        sampler = [rand[i * mini_batch_size:(i + 1) * mini_batch_size] for i in range(num_mini_batch)]
+        sampler = [rand[i * mini_batch_size : (i + 1) * mini_batch_size] for i in range(num_mini_batch)]
 
         share_obs = self.share_obs[:-1].reshape(-1, *self.share_obs.shape[3:])
         obs = self.obs[:-1].reshape(-1, *self.obs.shape[3:])
@@ -431,9 +490,7 @@ class SharedReplayBuffer(object):
             else:
                 adv_targ = advantages[indices]
 
-            yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,\
-                  value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
-                  adv_targ, available_actions_batch
+            yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, adv_targ, available_actions_batch
 
     def naive_recurrent_generator(self, advantages, num_mini_batch):
         """
@@ -446,7 +503,8 @@ class SharedReplayBuffer(object):
         assert n_rollout_threads * self.num_agents >= num_mini_batch, (
             "PPO requires the number of processes ({})* number of agents ({}) "
             "to be greater than or equal to the number of "
-            "PPO mini batches ({}).".format(n_rollout_threads, self.num_agents, num_mini_batch))
+            "PPO mini batches ({}).".format(n_rollout_threads, self.num_agents, num_mini_batch)
+        )
         num_envs_per_batch = batch_size // num_mini_batch
         perm = torch.randperm(batch_size).numpy()
 
@@ -528,9 +586,7 @@ class SharedReplayBuffer(object):
             old_action_log_probs_batch = _flatten(T, N, old_action_log_probs_batch)
             adv_targ = _flatten(T, N, adv_targ)
 
-            yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,\
-                  value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
-                  adv_targ, available_actions_batch
+            yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, adv_targ, available_actions_batch
 
     def recurrent_generator(self, advantages, num_mini_batch, data_chunk_length):
         """
@@ -540,11 +596,11 @@ class SharedReplayBuffer(object):
         :param data_chunk_length: (int) length of sequence chunks with which to train RNN.
         """
         episode_length, n_rollout_threads, self.num_agents = self.rewards.shape[0:3]
-        batch_size = n_rollout_threads * episode_length * self.num_agents 
+        batch_size = n_rollout_threads * episode_length * self.num_agents
 
         data_chunks = batch_size // data_chunk_length  # [C=r*T*M/L]
         mini_batch_size = data_chunks // num_mini_batch
-        
+
         rand = torch.randperm(data_chunks).numpy()
         sampler = [rand[i * mini_batch_size : (i + 1) * mini_batch_size] for i in range(num_mini_batch)]
         if len(self.share_obs.shape) > 4:
@@ -564,9 +620,9 @@ class SharedReplayBuffer(object):
         # rnn_states = _cast(self.rnn_states[:-1])
         # rnn_states_critic = _cast(self.rnn_states_critic[:-1])
         rnn_states = self.rnn_states[:-1].transpose(1, 2, 0, 3, 4).reshape(-1, *self.rnn_states.shape[3:])
-        rnn_states_critic = self.rnn_states_critic[:-1].transpose(1, 2, 0, 3, 4).reshape(-1,
-                                                                                         *self.rnn_states_critic.shape[
-                                                                                          3:])
+        rnn_states_critic = (
+            self.rnn_states_critic[:-1].transpose(1, 2, 0, 3, 4).reshape(-1, *self.rnn_states_critic.shape[3:])
+        )
 
         if self.available_actions is not None:
             available_actions = _cast(self.available_actions[:-1])
@@ -589,24 +645,24 @@ class SharedReplayBuffer(object):
 
                 ind = index * data_chunk_length
                 # size [T+1 N M Dim]-->[T N M Dim]-->[N,M,T,Dim]-->[N*M*T,Dim]-->[L,Dim]
-                share_obs_batch.append(share_obs[ind:ind + data_chunk_length])
-                obs_batch.append(obs[ind:ind + data_chunk_length])
-                actions_batch.append(actions[ind:ind + data_chunk_length])
+                share_obs_batch.append(share_obs[ind : ind + data_chunk_length])
+                obs_batch.append(obs[ind : ind + data_chunk_length])
+                actions_batch.append(actions[ind : ind + data_chunk_length])
                 if self.available_actions is not None:
-                    available_actions_batch.append(available_actions[ind:ind + data_chunk_length])
-                value_preds_batch.append(value_preds[ind:ind + data_chunk_length])
-                return_batch.append(returns[ind:ind + data_chunk_length])
-                masks_batch.append(masks[ind:ind + data_chunk_length])
-                active_masks_batch.append(active_masks[ind:ind + data_chunk_length])
-                old_action_log_probs_batch.append(action_log_probs[ind:ind + data_chunk_length])
-                adv_targ.append(advantages[ind:ind + data_chunk_length])
+                    available_actions_batch.append(available_actions[ind : ind + data_chunk_length])
+                value_preds_batch.append(value_preds[ind : ind + data_chunk_length])
+                return_batch.append(returns[ind : ind + data_chunk_length])
+                masks_batch.append(masks[ind : ind + data_chunk_length])
+                active_masks_batch.append(active_masks[ind : ind + data_chunk_length])
+                old_action_log_probs_batch.append(action_log_probs[ind : ind + data_chunk_length])
+                adv_targ.append(advantages[ind : ind + data_chunk_length])
                 # size [T+1 N M Dim]-->[T N M Dim]-->[N M T Dim]-->[N*M*T,Dim]-->[1,Dim]
                 rnn_states_batch.append(rnn_states[ind])
                 rnn_states_critic_batch.append(rnn_states_critic[ind])
 
             L, N = data_chunk_length, mini_batch_size
 
-            # These are all from_numpys of size (L, N, Dim)           
+            # These are all from_numpys of size (L, N, Dim)
             share_obs_batch = np.stack(share_obs_batch, axis=1)
             obs_batch = np.stack(obs_batch, axis=1)
 
@@ -639,13 +695,7 @@ class SharedReplayBuffer(object):
             old_action_log_probs_batch = _flatten(L, N, old_action_log_probs_batch)
             adv_targ = _flatten(L, N, adv_targ)
 
-            yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch,\
-                  value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch,\
-                  adv_targ, available_actions_batch
-
-
-
-
+            yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, adv_targ, available_actions_batch
 
     def jrpo_recurrent_generator(self, advantages, num_mini_batch, data_chunk_length):
         episode_length, n_rollout_threads, self.num_agents = self.rewards.shape[0:3]
@@ -656,16 +706,11 @@ class SharedReplayBuffer(object):
         assert n_rollout_threads * episode_length >= data_chunk_length, (
             "PPO requires the nfumber of processes ({}) * episode length ({}) "
             "to be greater than or equal to the number of "
-            "data chunk length ({}).".format(
-                n_rollout_threads, episode_length, data_chunk_length
-            )
+            "data chunk length ({}).".format(n_rollout_threads, episode_length, data_chunk_length)
         )
 
         rand = torch.randperm(data_chunks).numpy()
-        sampler = [
-            rand[i * mini_batch_size : (i + 1) * mini_batch_size]
-            for i in range(num_mini_batch)
-        ]
+        sampler = [rand[i * mini_batch_size : (i + 1) * mini_batch_size] for i in range(num_mini_batch)]
 
         critic_obs = _cast_v3(self.share_obs[:-1])
         policy_obs = _cast_v3(self.obs[:-1])
@@ -678,15 +723,9 @@ class SharedReplayBuffer(object):
         masks = _cast_v3(self.masks[:-1])
         active_masks = _cast_v3(self.active_masks[:-1])
 
-        rnn_states = (
-            self.rnn_states[:-1]
-            .transpose(1, 0, 2, 3, 4)
-            .reshape(-1, *self.rnn_states.shape[2:])
-        )
+        rnn_states = self.rnn_states[:-1].transpose(1, 0, 2, 3, 4).reshape(-1, *self.rnn_states.shape[2:])
         rnn_states_critic = (
-            self.rnn_states_critic[:-1]
-            .transpose(1, 0, 2, 3, 4)
-            .reshape(-1, *self.rnn_states_critic.shape[2:])
+            self.rnn_states_critic[:-1].transpose(1, 0, 2, 3, 4).reshape(-1, *self.rnn_states_critic.shape[2:])
         )
 
         if self.available_actions is not None:
@@ -716,16 +755,12 @@ class SharedReplayBuffer(object):
 
                 actions_batch.append(actions[ind : ind + data_chunk_length])
                 if self.available_actions is not None:
-                    available_actions_batch.append(
-                        available_actions[ind : ind + data_chunk_length]
-                    )
+                    available_actions_batch.append(available_actions[ind : ind + data_chunk_length])
                 value_preds_batch.append(value_preds[ind : ind + data_chunk_length])
                 return_batch.append(returns[ind : ind + data_chunk_length])
                 masks_batch.append(masks[ind : ind + data_chunk_length])
                 active_masks_batch.append(active_masks[ind : ind + data_chunk_length])
-                old_action_log_probs_batch.append(
-                    action_log_probs[ind : ind + data_chunk_length]
-                )
+                old_action_log_probs_batch.append(action_log_probs[ind : ind + data_chunk_length])
                 adv_targ.append(advantages[ind : ind + data_chunk_length])
                 # size [T+1 N M Dim]-->[T N M Dim]-->[N M T Dim]-->[N*M*T,Dim]-->[1,Dim]
                 # [1,agent_num, Dim]
@@ -750,9 +785,7 @@ class SharedReplayBuffer(object):
             adv_targ = np.stack(adv_targ, axis=1)
 
             # States is just a (N, agent_num, -1) from_numpy
-            rnn_states_batch = np.stack(rnn_states_batch).reshape(
-                N * self.num_agents, *self.rnn_states.shape[3:]
-            )
+            rnn_states_batch = np.stack(rnn_states_batch).reshape(N * self.num_agents, *self.rnn_states.shape[3:])
             rnn_states_critic_batch = np.stack(rnn_states_critic_batch).reshape(
                 N * self.num_agents, *self.rnn_states_critic.shape[3:]
             )
@@ -769,8 +802,6 @@ class SharedReplayBuffer(object):
             return_batch = _flatten_v3(L, N, self.num_agents, return_batch)
             masks_batch = _flatten_v3(L, N, self.num_agents, masks_batch)
             active_masks_batch = _flatten_v3(L, N, self.num_agents, active_masks_batch)
-            old_action_log_probs_batch = _flatten_v3(
-                L, N, self.num_agents, old_action_log_probs_batch
-            )
+            old_action_log_probs_batch = _flatten_v3(L, N, self.num_agents, old_action_log_probs_batch)
             adv_targ = _flatten_v3(L, N, self.num_agents, adv_targ)
             yield share_obs_batch, obs_batch, rnn_states_batch, rnn_states_critic_batch, actions_batch, value_preds_batch, return_batch, masks_batch, active_masks_batch, old_action_log_probs_batch, adv_targ, available_actions_batch

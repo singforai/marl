@@ -55,9 +55,9 @@ class R_Actor(nn.Module):
         self.predict_id = get_fc(self.hidden_size + self.action_dim, self.id_max)
         self.id_embedding = get_fc(self.id_max, self.hidden_size)
 
-        self.before_act_wrapper = FcEncoder(2, self.hidden_size * 2, self.hidden_size)
+        # self.before_act_wrapper = FcEncoder(2, self.hidden_size * 2, self.hidden_size)
 
-        self.act = ACTLayer(action_space, self.hidden_size, self._use_orthogonal, self._gain)
+        self.act = ACTLayer(action_space, self.hidden_size * 2, self._use_orthogonal, self._gain)
         self.to(self.device)
 
     def forward(self, obs, rnn_states, masks, available_actions=None, deterministic=False):
@@ -91,7 +91,7 @@ class R_Actor(nn.Module):
 
         output = torch.cat([id_output, obs_output], 1)
 
-        output = self.before_act_wrapper(output)
+        # output = self.before_act_wrapper(output)
 
         actions, action_log_probs = self.act(output, available_actions, deterministic)
 
@@ -132,7 +132,7 @@ class R_Actor(nn.Module):
         id_prediction = self.predict_id(torch.cat([obs_output, action_onehot], 1))
         output = torch.cat([id_output, obs_output], 1)
 
-        output = self.before_act_wrapper(output)
+        # output = self.before_act_wrapper(output)
 
         action_log_probs, dist_entropy = self.act.evaluate_actions(
             output, action, available_actions, active_masks=active_masks if self._use_policy_active_masks else None
