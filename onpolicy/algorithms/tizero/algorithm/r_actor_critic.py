@@ -39,7 +39,12 @@ class R_Actor(nn.Module):
 
         obs_shape = get_shape_from_obs_space(obs_space)
 
-        self.obs_encoder = ObsEncoder(input_embedding_size = 265, hidden_size=self.hidden_size, _recurrent_N = 1, _use_orthogonal = True, device = self.device)
+        self.obs_encoder = ObsEncoder(
+            input_embedding_size = 265, 
+            hidden_size=self.hidden_size,
+            _recurrent_N = 1,
+            _use_orthogonal = True, 
+            device = self.device)
         self.action_dim = 19
         self.active_id_size = 1
         self.id_max = 11
@@ -158,7 +163,7 @@ class R_Critic(nn.Module):
         init_method = [nn.init.xavier_uniform_, nn.init.orthogonal_][self._use_orthogonal]
         
         self.obs_encoder = ObsEncoder_critic(
-            input_embedding_size = 128, 
+            input_embedding_size = 265, 
             hidden_size=self.hidden_size, 
             _recurrent_N = 1, 
             _use_orthogonal = True, 

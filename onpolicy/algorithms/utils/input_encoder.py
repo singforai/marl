@@ -327,18 +327,21 @@ class InputEncoder(nn.Module):
 class InputEncoder_critic(nn.Module):
     def __init__(self):
         super(InputEncoder_critic, self).__init__()
-        fc_layer_num = 1
+        fc_layer_num = 2
+        fc_output_num = 64
+        
         self.ball_info_num = 12
         self.ball_owner_num = 23
         self.left_input_num = 88
         self.right_input_num = 88
         self.match_state_input_num = 9
 
-        self.ball_info_encoder = FcEncoder(fc_layer_num, self.ball_info_num, 10)
-        self.ball_owner_encoder = FcEncoder(fc_layer_num, self.ball_owner_num, 20)
-        self.left_encoder = FcEncoder(fc_layer_num, self.left_input_num, 45)
-        self.right_encoder = FcEncoder(fc_layer_num, self.right_input_num, 45)
-        self.match_state_encoder = FcEncoder(fc_layer_num, self.match_state_input_num, 8)
+        self.ball_info_encoder = FcEncoder(fc_layer_num, self.ball_info_num, fc_output_num)
+        self.ball_owner_encoder = FcEncoder(fc_layer_num, self.ball_owner_num, fc_output_num)
+        self.left_encoder = FcEncoder(fc_layer_num, self.left_input_num, fc_output_num)
+        self.right_encoder = FcEncoder(fc_layer_num, self.right_input_num, fc_output_num)
+        self.match_state_encoder = FcEncoder(fc_layer_num, self.match_state_input_num, self.match_state_input_num)
+
 
     def forward(self, x):
         active_vec = x[:, :self.ball_info_num] # 87
