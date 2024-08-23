@@ -6,10 +6,16 @@ def get_config():
     parser = argparse.ArgumentParser(
         description='onpolicy', formatter_class=argparse.RawDescriptionHelpFormatter)
     
+    parser.add_argument(
+        "--save_model",
+        action="store_true",
+        default=False,
+        help="whether to save model",
+    )
     
-    parser.add_argument("--level_dir", type=str, default='level/level.json', help="directory for level change")
+    parser.add_argument("--level_dir", type=str, default='level/levelv2.json', help="directory for level change")
     parser.add_argument("--use_available_actions", action='store_true', default=False, help="whether to use available action masking for performance")
- 
+    
     parser.add_argument("--render_mode", action='store_true', default=False, help="whether to use render mode using saved model")
     #JRPO
      # JRPO
@@ -238,7 +244,7 @@ def get_config():
         help="by default, do not start evaluation. If set`, start evaluation alongside with training.",
     )
     parser.add_argument(
-        "--eval_interval", type=int, default=1000, help="time duration between contiunous twice evaluation progress."
+        "--eval_interval", type=int, default=2000, help="time duration between contiunous twice evaluation progress."
     )
     parser.add_argument("--eval_episodes", type=int, default=10, help="number of episodes of a single evaluation.")
 

@@ -3,10 +3,11 @@ import os
 from gym import spaces
 import numpy as np
 import torch
-from tensorboardX import SummaryWriter
+from utils.trueskill import TrueSkill
+from datetime import datetime
+
 from utils.shared_buffer import SharedReplayBuffer
-import pdb
-from runner.shared.xT.cal_xT import xT
+
 
 from copy import deepcopy
 
@@ -58,106 +59,108 @@ class Runner(object):
         self.render_mode = self.all_args.render_mode
         self.use_xt = self.all_args.use_xt
         self.eval_episode = self.all_args.eval_episodes
-
+        self.save_model = self.all_args.save_model
+        
+        if self.save_model:
+            self.save_dir = str(f"./models/{self.experiment_name}_{datetime.now().strftime('%Y%m%d%H%M%S')}")
+            if not os.path.exists(self.save_dir):
+                    os.makedirs(self.save_dir)
         if self.use_wandb:
-            self.save_dir = str(wandb.run.dir)
             self.run_dir = str(wandb.run.dir)
         else:
             self.run_dir = config["run_dir"]
-            self.log_dir = str(self.run_dir / 'logs')
-            if not os.path.exists(self.log_dir):
-                os.makedirs(self.log_dir)
-            self.writter = SummaryWriter(self.log_dir)
-            self.save_dir = str(self.run_dir / 'models')
-            if not os.path.exists(self.save_dir):
-                os.makedirs(self.save_dir)
 
-        observation_space = self.envs.observation_space[0]
-        share_observation_space = self.envs.share_observation_space[0] if self.use_centralized_V else observation_space
 
-        if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
-            from algorithms.mat.mat_trainer import MATTrainer as TrainAlgo
-            from algorithms.mat.algorithm.transformer_policy import TransformerPolicy as Policy
+        # observation_space = self.envs.observation_space[0]
+        # share_observation_space = self.envs.share_observation_space[0] if self.use_centralized_V else observation_space
 
-        elif self.algorithm_name == "tizero":
-                from algorithms.tizero.tizero import TiZero as TrainAlgo
-                from algorithms.tizero.algorithm.TiZeroPolicy import TiZeroPolicy as Policy
+        # if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
+        #     from algorithms.mat.mat_trainer import MATTrainer as TrainAlgo
+        #     from algorithms.mat.algorithm.transformer_policy import TransformerPolicy as Policy
+
+        # elif self.algorithm_name == "tizero":
+        #         from algorithms.tizero.tizero import TiZero as TrainAlgo
+        #         from algorithms.tizero.algorithm.TiZeroPolicy import TiZeroPolicy as Policy
                 
-        else:
-            from algorithms.r_mappo.r_mappo import R_MAPPO as TrainAlgo
-            from algorithms.r_mappo.algorithm.rMAPPOPolicy import R_MAPPOPolicy as Policy
+        # else:
+        #     from algorithms.r_mappo.r_mappo import R_MAPPO as TrainAlgo
+        #     from algorithms.r_mappo.algorithm.rMAPPOPolicy import R_MAPPOPolicy as Policy
         
-        low = np.full((330,), -np.inf)
-        high = np.full((330,), np.inf)
-        observation_space = spaces.Box(low=low, high=high, dtype=np.float32)
+        # low = np.full((330,), -np.inf)
+        # high = np.full((330,), np.inf)
+        # observation_space = spaces.Box(low=low, high=high, dtype=np.float32)
 
-        low = np.full((220,), -np.inf)
-        high = np.full((220,), np.inf)
-        share_observation_space = spaces.Box(low=low, high=high, dtype=np.float32)
+        # low = np.full((220,), -np.inf)
+        # high = np.full((220,), np.inf)
+        # share_observation_space = spaces.Box(low=low, high=high, dtype=np.float32)
         
-        # policy network
-        if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
-            self.policy = Policy(
-                self.all_args, 
-                observation_space,
-                share_observation_space, 
-                self.envs.action_space[0], 
-                self.num_agents, 
-                device = self.device
-            )
-            self.enem_policy = Policy(
-                self.all_args, 
-                observation_space,
-                share_observation_space, 
-                self.envs.action_space[0], 
-                self.num_agents, 
-                device = self.device
-            )
+        # # policy network
+        # if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
+        #     self.policy = Policy(
+        #         self.all_args, 
+        #         observation_space,
+        #         share_observation_space, 
+        #         self.envs.action_space[0], 
+        #         self.num_agents, 
+        #         device = self.device
+        #     )
+        #     self.enem_policy = Policy(
+        #         self.all_args, 
+        #         observation_space,
+        #         share_observation_space, 
+        #         self.envs.action_space[0], 
+        #         self.num_agents, 
+        #         device = self.device
+        #     )
 
-        else:
-            self.policy = Policy(
-                self.all_args, 
-                observation_space, 
-                share_observation_space, 
-                self.envs.action_space[0], 
-                device = self.device
-            )
-            self.opponent_policy = Policy(
-                self.all_args, 
-                observation_space, 
-                share_observation_space, 
-                self.envs.action_space[0], 
-                device = self.device
-            )
+        # else:
+        #     self.policy = Policy(
+        #         self.all_args, 
+        #         observation_space, 
+        #         share_observation_space, 
+        #         self.envs.action_space[0], 
+        #         device = self.device
+        #     )
+        #     self.opponent_policy = Policy(
+        #         self.all_args, 
+        #         observation_space, 
+        #         share_observation_space, 
+        #         self.envs.action_space[0], 
+        #         device = self.device
+        #     )
 
-        if self.model_dir is not None:
-            self.restore(self.model_dir)
+        # if self.model_dir is not None:
+        #     self.restore(self.model_dir)
 
-        # algorithm
-        if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
-            self.trainer = TrainAlgo(self.all_args, self.policy, self.num_agents, device = self.device)
-        else:
-            self.trainer = TrainAlgo(self.all_args, self.policy, device = self.device)
+        # # algorithm
+        # if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
+        #     self.trainer = TrainAlgo(self.all_args, self.policy, self.num_agents, device = self.device)
+        # else:
+        #     self.trainer = TrainAlgo(self.all_args, self.policy, device = self.device)
         
-        # buffer
-        self.buffer = SharedReplayBuffer(
-            self.all_args,
-            self.num_agents,
-            observation_space,
-            share_observation_space,
-            self.envs.action_space[0]
-        )
+        # # buffer
+        # self.buffer = SharedReplayBuffer(
+        #     self.all_args,
+        #     self.num_agents,
+        #     observation_space,
+        #     share_observation_space,
+        #     self.envs.action_space[0]
+        # )
         
-        self.opponent_buffer = SharedReplayBuffer(
-            self.all_args,
-            self.num_agents,
-            observation_space,
-            share_observation_space,
-            self.envs.action_space[0]
-        )
+        # self.opponent_buffer = SharedReplayBuffer(
+        #     self.all_args,
+        #     self.num_agents,
+        #     observation_space,
+        #     share_observation_space,
+        #     self.envs.action_space[0]
+        # )
         
-        if self.use_xt:
-            self.cal_xt = xT(args = self.all_args)
+        # self.trueskill = TrueSkill(
+        #     args = self.all_args,
+        #     num_agents = self.num_agents,
+        #     init_draw_prob = 0.9,
+        #     init_mu = 15, 
+        # )
         
 
     def run(self):
@@ -206,18 +209,21 @@ class Runner(object):
         for key, value in train_infos.items():
             if isinstance(value, torch.Tensor):
                 train_infos[key] = value.detach().cpu()
-        print(train_infos)
+
         return deepcopy(train_infos)
 
-    def save(self, episode=0):
+    def save(self, total_num_steps, difficulty_level):
         """Save policy's actor and critic networks."""
+        self.save_directory = f"{self.save_dir}/level_{difficulty_level}"
+        if not os.path.exists(self.save_directory):
+            os.makedirs(self.save_directory)
         if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
-            self.policy.save(self.save_dir, episode)
+            self.policy.save(self.save_directory, total_num_steps)
         else:
             policy_actor = self.trainer.policy.actor
-            torch.save(policy_actor.state_dict(), str(self.save_dir) + "/actor.pt")
+            torch.save(policy_actor.state_dict(), self.save_directory + f"/actor_{total_num_steps}.pt")
             policy_critic = self.trainer.policy.critic
-            torch.save(policy_critic.state_dict(), str(self.save_dir) + "/critic.pt")
+            torch.save(policy_critic.state_dict(), self.save_directory + f"/critic_{total_num_steps}.pt")
 
     def log_train(self, train_infos, total_num_steps):
         """
@@ -228,8 +234,6 @@ class Runner(object):
         for k, v in train_infos.items():
             if self.use_wandb:
                 wandb.log({k: v}, step=total_num_steps)
-            else:
-                self.writter.add_scalars(k, {k: v}, total_num_steps)
 
     def log_env(self, env_infos, total_num_steps):
         """
@@ -241,5 +245,3 @@ class Runner(object):
             if len(v)>0:
                 if self.use_wandb:
                     wandb.log({k: np.mean(v)}, step=total_num_steps)
-                else:
-                    self.writter.add_scalars(k, {k: np.mean(v)}, total_num_steps)

@@ -1,16 +1,11 @@
 from collections import defaultdict
-from itertools import chain
 import os
 import json
 import time
-from itertools import starmap
-import imageio
+
 import numpy as np
 import torch
 import wandb
-import importlib
-import pdb
-from pstats import SortKey
 
 from utils.util import update_linear_schedule
 from runner.shared.base_runner import Runner
@@ -28,7 +23,8 @@ class FootballRunner(Runner):
         super(FootballRunner, self).__init__(config)
         self.difficulty_level = 1
         self.cumulative_win_rate = 0
-        self.decay_rate = 0
+        # self.decay_rate = 0.5
+        self.level_stack = 0
         np.set_printoptions(threshold=np.inf)
         """
         scenario 파일에는 init_level 파일 경로를 넣어야 한다. 
@@ -42,14 +38,14 @@ class FootballRunner(Runner):
         total_num_steps = 0
         render_stack = 0
         eval_stack = 0
-        
+
         self.opponent_policy.actor.load_state_dict(self.policy.actor.state_dict())
         
         while self.num_env_steps >= total_num_steps:
             start_time = time.time()
-
-            self.warmup()  
             
+            self.warmup()  
+
             if self.use_linear_lr_decay:
                 self.trainer.policy.lr_decay(total_num_steps, self.num_env_steps)    
                 
@@ -64,7 +60,7 @@ class FootballRunner(Runner):
                 values, actions, action_log_probs, rnn_states, rnn_states_critic, actions_env, enemy_rnn_states = self.collect(step)
                 # Obser reward and next obs
                 obs, rewards, dones, infos = self.envs.step(actions_env)
-                rewards =(rewards / self.num_agents) * 10
+                # rewards =(rewards / self.num_agents) * 10
                 obs , share_obs, available_actions, added_rewards = preprocessing(
                     infos = infos, 
                     obs = obs,
@@ -73,13 +69,18 @@ class FootballRunner(Runner):
                     num_agents = self.num_agents, 
                     episode_length = self.episode_length
                 )
+                
                 rewards += added_rewards
                 infos = list(infos)
                 
                 for idx, done in enumerate(dones):
                     if (True in done) and (done_rollouts[idx] == None):
-                        done_rollouts[idx] = step+1
-                        infos_rollouts[idx] = infos[idx]
+                        done_rollouts[idx] = step + 1
+                        info = infos[idx]
+                        infos_rollouts[idx] = info
+                        if (info["score"][0] == info["score"][1]):
+                            rewards[idx] -= 0.5
+    
                     if done_rollouts[idx] != None:
                         dones[idx] = [True for _ in range(self.num_agents)]        
                         infos[idx] = infos_rollouts[idx]
@@ -92,15 +93,15 @@ class FootballRunner(Runner):
                 
                 step += 1
                 
-            done_steps = [self.episode_length if done_rollout == None else done_rollout for done_rollout in done_rollouts]
+            self.done_steps = [self.episode_length if done_rollout == None else done_rollout for done_rollout in done_rollouts]
             
-            total_num_steps += int(np.average(done_steps))
-            render_stack += int(np.average(done_steps))
-            eval_stack += int(np.average(done_steps))
+            total_num_steps += int(np.average(self.done_steps))
+            render_stack += int(np.average(self.done_steps))
+            eval_stack += int(np.average(self.done_steps))
             
             # for step_idx, roll_idx in enumerate(self.buffer.rewards):
             #     print(step_idx, roll_idx[0][0], roll_idx[1][0])
-            for roll_idx, done_step in enumerate(done_steps):
+            for roll_idx, done_step in enumerate(self.done_steps):
                 if done_step < self.episode_length:
                     self.buffer.share_obs[done_step+1: , roll_idx, :] = 0
                     self.buffer.obs[done_step+1: , roll_idx, :] = 0
@@ -113,30 +114,40 @@ class FootballRunner(Runner):
             self.compute()
             train_infos = self.train()
             
-            train_infos["episode_length"] = np.average(done_steps)
+            train_infos["episode_length"] = np.average(self.done_steps)
             train_infos["total_episode_rewards"] = np.sum(rewards_record) / self.num_agents
 
             end_time = time.time()
+            
+            
+            if eval_stack >= self.eval_interval:
+               self.eval(total_num_steps)
+               eval_stack = 0
+            
             train_infos["Episode_Time"] = end_time - start_time
             
             print(f"\nEnv {self.env_name} Algo {self.algorithm_name} Exp {self.experiment_name} updates {total_num_steps}/{self.num_env_steps} steps in {(end_time - start_time):.2f}")  
             print("total episode rewards is {}".format(train_infos["total_episode_rewards"]))
 
+
+            train_infos["difficulty_level"] = self.difficulty_level
+            # train_infos["cumulative_eval_win_rate"] = self.cumulative_win_rate
+            train_infos["level_stack"] = self.level_stack
+            train_infos["TrueSkill-ally"] = sum([player.mu for player in self.trueskill.ally_rating]) / len(self.trueskill.ally_rating)
+            train_infos["TrueSkill-opponent"] = sum([player.mu for player in self.trueskill.opponent_rating]) / len(self.trueskill.opponent_rating)
+
             # self.supervisor(
             #     win_rate = self.buffer.env_infos["train_win_rate"],
             #     num_agents = self.num_agents,
+            #     total_num_steps = total_num_steps,
             # )
-            train_infos["difficulty_level"] = self.difficulty_level
-            train_infos["cumulative_eval_win_rate"] = self.cumulative_win_rate
-
+            
             self.log_train(train_infos, total_num_steps)
             self.log_env(self.buffer.env_infos, total_num_steps)
             self.buffer.env_infos = defaultdict(list)
 
 
-            if eval_stack >= self.eval_interval:
-               self.eval(total_num_steps)
-               eval_stack = 0
+
 
     def warmup(self):
         # reset env
@@ -160,12 +171,19 @@ class FootballRunner(Runner):
             self.buffer.available_actions[0] = available_actions[:, :self.num_agents, :]
             self.opponent_buffer.available_actions[0] = available_actions[:, self.num_agents:, :]
 
-    def supervisor(self, win_rate, num_agents):
-        self.cumulative_win_rate =  self.decay_rate * self.cumulative_win_rate + (1-self.decay_rate) * np.mean(win_rate)
-        if self.cumulative_win_rate > 0.5:
+    def supervisor(self, win_rate, num_agents, total_num_steps):
+        # self.cumulative_win_rate =  self.decay_rate * self.cumulative_win_rate + (1-self.decay_rate) * np.mean(win_rate)
+        # if self.cumulative_win_rate > 0.5:
+        if np.mean(win_rate) >= 0.8:
+            self.level_stack += 1
+            if self.level_stack >= 10:
                 self.difficulty_level += 1
-                self.cumulative_win_rate = 0
+                # self.cumulative_win_rate = 0
+                self.level_stack = 0
+                self.trueskill.reset()
                 self.opponent_policy.actor.load_state_dict(self.policy.actor.state_dict())
+                if self.save_model:
+                    self.save(total_num_steps = total_num_steps, difficulty_level = self.difficulty_level) 
         result = {
             "difficulty_level": self.difficulty_level,
             "num_agents": num_agents,
@@ -216,20 +234,23 @@ class FootballRunner(Runner):
         dones_env = np.all(dones, axis=-1)
         
         if np.all(dones_env) or step == (self.episode_length - 1):
-            for _, info in zip(dones_env, infos):
+            for idx, info in enumerate(infos):
                 goal_diff = info["score"][0] - info["score"][1]   
                 if goal_diff > 0:
                     self.buffer.env_infos["train_win_rate"].append(1)
                     self.buffer.env_infos["train_draw_rate"].append(0)
                     self.buffer.env_infos["train_lose_rate"].append(0)
+                    
                 elif goal_diff == 0:
                     self.buffer.env_infos["train_win_rate"].append(0)
                     self.buffer.env_infos["train_draw_rate"].append(1)
                     self.buffer.env_infos["train_lose_rate"].append(0)
+
                 else:
                     self.buffer.env_infos["train_win_rate"].append(0)
                     self.buffer.env_infos["train_draw_rate"].append(0)
                     self.buffer.env_infos["train_lose_rate"].append(1)
+
         # reset rnn and mask args for done envs
         
         
@@ -294,6 +315,8 @@ class FootballRunner(Runner):
         eval_episodes_per_thread[:rem] += 1
         unfinished_thread = (done_episodes_per_thread != eval_episodes_per_thread)
 
+        
+        rollout_ranks = []
         # loop until enough episodes
         while num_done < self.eval_episode or step < self.episode_length:
             eval_obs = obs[:, :self.num_agents, :]
@@ -358,15 +381,18 @@ class FootballRunner(Runner):
                             eval_win_rate[num_done] = 1
                             eval_draw_rate[num_done] = 0
                             eval_lose_rate[num_done] = 0
+                            rollout_ranks.append([0, 1])
                             
                         elif eval_goal_diff == 0:
                             eval_win_rate[num_done] = 0
                             eval_draw_rate[num_done] = 1
                             eval_lose_rate[num_done] = 0
+                            rollout_ranks.append([0, 0])
                         else:
                             eval_win_rate[num_done] = 0
                             eval_draw_rate[num_done] = 0
                             eval_lose_rate[num_done] = 1
+                            rollout_ranks.append([1, 0])
                             
                         num_done += 1
                         done_episodes_per_thread[idx_env] += 1
@@ -382,91 +408,26 @@ class FootballRunner(Runner):
             eval_enemy_masks[eval_dones_env == True] = np.zeros(((eval_dones_env == True).sum(), self.num_agents, 1), dtype=np.float32)
 
             step += 1
-            
-
+        
+        self.trueskill.rating(rank_list = rollout_ranks)
 
         # get expected goal
         eval_win_rate = np.mean(eval_win_rate)
         eval_draw_rate = np.mean(eval_draw_rate)
         eval_lose_rate = np.mean(eval_lose_rate)
         
-        self.supervisor(win_rate = eval_win_rate, num_agents = self.num_agents)
+        # self.supervisor(
+        #     win_rate = self.buffer.env_infos["train_win_rate"],
+        #     num_agents = self.num_agents,
+        #     total_num_steps = total_num_steps,
+        # )
         
         # log and print
-        print(f"| eval_win_rate {eval_win_rate} | eval_draw_rate {eval_draw_rate} | eval_draw_rate {eval_lose_rate} | ")
+        print(f"| eval_win_rate {eval_win_rate} | eval_draw_rate {eval_draw_rate} | eval_lose_rate {eval_lose_rate} | ")
         if self.use_wandb:
             wandb.log({"eval_win_rate": eval_win_rate}, step=total_num_steps)
             wandb.log({"eval_draw_rate": eval_draw_rate}, step=total_num_steps)
             wandb.log({"eval_lose_rate": eval_lose_rate}, step=total_num_steps)
-        else:
-            self.writter.add_scalars("eval_win_rate", {"expected_goal": eval_win_rate}, total_num_steps)
-            self.writter.add_scalars("eval_draw_rate", {"eval_draw_rate": eval_draw_rate}, total_num_steps)
-            self.writter.add_scalars("eval_lose_rate", {"eval_goal_diff": eval_lose_rate}, total_num_steps)
-
-    # @torch.no_grad()
-    # def render(self):        
-    #     # reset envs and init rnn and mask
-    #     render_env = self.envs
-        
-    #     self.policy.actor.load_state_dict(torch.load('/home/uosai/Desktop/marl/onpolicy/render/actor.pt'))
-        
-    #     # self.policy
-
-    #     # init goal
-    #     render_goals = np.zeros(self.all_args.render_episodes)
-    #     for i_episode in range(self.all_args.render_episodes):
-    #         render_obs = render_env.reset()
             
-    #         render_obs, _ = init_obs(obs = render_obs)
-            
-    #         render_rnn_states = np.zeros((self.n_render_rollout_threads, self.num_agents, self.recurrent_N, self.hidden_size), dtype=np.float32)
-    #         render_masks = np.ones((self.n_render_rollout_threads, self.num_agents, 1), dtype=np.float32)
-    #         # if self.all_args.save_gifs:        
-    #         #     frames = []
-    #         #     image = self.envs.envs[0].env.unwrapped.observation()[0]["frame"]
-    #         #     frames.append(image)
-
-    #         render_dones = False
-    #         while not np.any(render_dones):
-    #             self.trainer.prep_rollout()
-    #             render_actions, render_rnn_states = self.trainer.policy.act(
-    #                 np.concatenate(render_obs),
-    #                 np.concatenate(render_rnn_states),
-    #                 np.concatenate(render_masks),
-    #                 deterministic=True
-    #             )
-
-    #             # [n_envs*n_agents, ...] -> [n_envs, n_agents, ...]
-    #             render_actions = np.array(np.split(_t2n(render_actions), self.n_render_rollout_threads))
-    #             render_rnn_states = np.array(np.split(_t2n(render_rnn_states), self.n_render_rollout_threads))
-
-    #             render_actions_env = [render_actions[idx, :, 0] for idx in range(self.n_render_rollout_threads)]
-
-    #             # step
-                
-    #             render_obs, render_rewards, render_dones, render_infos = render_env.step(render_actions_env)
-                
-    #             render_obs, _ = init_obs(obs = render_obs)
-                    
-    #             # append frame
-    #             # if self.all_args.save_gifs:        
-    #             #     image = render_infos[0]["frame"]
-    #             #     frames.append(image)
-            
-    #         # print goal
-    #         render_goals[i_episode] = render_rewards[0, 0]
-    #         print("goal in episode {}: {}".format(i_episode, render_rewards[0, 0]))
-
-    #         # save gif
-    #         # if self.all_args.save_gifs:
-    #         #     imageio.mimsave(
-    #         #         uri="{}/episode{}.gif".format(str(self.gif_dir), i_episode),
-    #         #         ims=frames,
-    #         #         format="GIF",
-    #         #         duration=self.all_args.ifi,
-    #         #     )
         
-    #     print("expected goal: {}".format(np.mean(render_goals)))
 
-
-    

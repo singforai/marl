@@ -59,7 +59,7 @@ def make_eval_env(all_args):
 
 def parse_args(args, parser):
     parser.add_argument("--scenario_name", type=str,
-                        default="curriculum_learning",
+                        default="curriculum_learningv2",
                         choices = [
                             "1_vs_1_easy",
                             "curriculum_learning_11vs11",

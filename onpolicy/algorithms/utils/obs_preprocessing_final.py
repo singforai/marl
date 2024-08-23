@@ -74,6 +74,7 @@ def additive_obs(left_info, right_info, num_agents, episode_length):
         else:
             info = right_info
             idx = idx - num_agents
+            
         info_left_team = np.ascontiguousarray(info[10: 32]).reshape(11, 2)
         info_left_direct = np.ascontiguousarray(info[32: 54]).reshape(11, 2)
         info_left_team_tired_factor = info[54: 65]
@@ -481,7 +482,7 @@ def reward_shaping(left_info,roll_past_sh_obs, roll_action_env, num_agents):
             if ball_owned_player_idx != 0: # 골키퍼가 아닌 agent가 공을 소유하고 있었는가
                 if roll_action_env[ball_owned_player_idx - 1] in [9, 10, 11]: #agent가 pass action을 시도했는가
                     if info_ball_owned_team == 0: # pass를 한 뒤에도 우리팀이 공을 소유하고 있는가
-                        added_reward += 0.005
+                        added_reward += 0.001
          
     "Grouping penalty"
     agent_grouping = False
@@ -673,7 +674,6 @@ def init_obs(obs , num_agents, episode_length):
     team_active[:num_teammate] = 1 
 
     infos_array = np.zeros((num_rollout, 2, 279), dtype=np.float32)
-    
     for roll_id in range(num_rollout):
         for team_idx in range(0, -2, -1):
             info_array = np.zeros(279, dtype = np.float32)

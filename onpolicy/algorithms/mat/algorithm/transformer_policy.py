@@ -198,8 +198,8 @@ class TransformerPolicy:
 
         return actions, rnn_states_actor
 
-    def save(self, save_dir, time):
-        torch.save(self.transformer.state_dict(), str(save_dir) + "/mat_" + str(time) + ".pt")
+    def save(self, save_dir, total_num_steps):
+        torch.save(self.transformer.state_dict(), str(save_dir) + "/mat_" + str(total_num_steps) + ".pt")
 
     def restore(self, model_dir, time):
         model_dir = f"{model_dir}/mat_{str(time)}"
