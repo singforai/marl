@@ -89,9 +89,7 @@ class R_Actor(nn.Module):
         output = torch.cat([id_output, obs_output], 1)
 
         output = self.before_act_wrapper(output)
-
         actions, action_log_probs = self.act(output, available_actions, deterministic)
-
         return actions, action_log_probs, rnn_states
 
     def evaluate_actions(self, obs, rnn_states, action, masks, available_actions=None, active_masks=None):

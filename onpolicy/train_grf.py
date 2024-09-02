@@ -59,11 +59,12 @@ def make_eval_env(all_args):
 
 def parse_args(args, parser):
     parser.add_argument("--scenario_name", type=str,
-                        default="curriculum_learningv2",
+                        default="curriculum_learning",
                         choices = [
                             "1_vs_1_easy",
-                            "curriculum_learning_11vs11",
                             "curriculum_learning",
+                            "curriculum_learning1",
+                            "curriculum_learning2",
                             "11_vs_11_easy_stochastic", 
                             "11_vs_11_stochastic",
                             "11_vs_11_hard_stochastic",
@@ -97,14 +98,14 @@ def parse_args(args, parser):
                         help="by default, do not save render video. If set, save video.")
     parser.add_argument("--video_dir", type=str, default="./render", 
                         help="directory to save videos.")
-    
+
     all_args = parser.parse_known_args(args)[0]
 
     return all_args
 
 
 def main(args):
-    
+
     level_file_path = "/home/uosai/Desktop/marl/onpolicy/level/level.json"
     if os.path.exists(level_file_path):
         os.remove(level_file_path)
@@ -145,6 +146,12 @@ def main(args):
 
     elif all_args.algorithm_name == "mat_dec":
         all_args.dec_actor = True
+        
+    elif all_args.algorithm_name == "newmodel":
+        all_args.use_recurrent_policy = False
+        all_args.use_naive_recurrent_policy = False
+        all_args.use_joint_action_loss = False
+        pass
     
     else:
         raise NotImplementedError
@@ -165,9 +172,6 @@ def main(args):
     torch.backends.cudnn.benchmark = False
     torch.backends.cudnn.deterministic = True
 
-    """
-    실험 기록을 저장할 디렉토리 생성
-    """
     run_dir = Path(os.path.split(os.path.dirname(os.path.abspath(__file__)))[
                    0] + "/results") / all_args.env_name / all_args.scenario_name / all_args.algorithm_name / all_args.experiment_name
     if not run_dir.exists():

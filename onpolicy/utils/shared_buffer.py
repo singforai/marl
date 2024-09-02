@@ -103,7 +103,7 @@ class SharedReplayBuffer(object):
         self.env_infos = defaultdict(list)
 
     def insert(self, share_obs = 0, obs = 0, rnn_states_actor = 0, rnn_states_critic = 0, actions = 0, action_log_probs = 0,
-               value_preds = 0, rewards = 0, masks = 0, bad_masks=None, active_masks=None, available_actions=None, enemy = False):
+               value_preds = 0, rewards = 0, masks = 0, bad_masks=None, active_masks=None, available_actions=None):
         """
         Insert data into the buffer.
         :param share_obs: (argparse.Namespace) arguments containing relevant model, policy, and env information.
@@ -119,32 +119,23 @@ class SharedReplayBuffer(object):
         :param active_masks: (np.ndarray) denotes whether an agent is active or dead in the env.
         :param available_actions: (np.ndarray) actions available to each agent. If None, all actions are available.
         """
-        if not enemy:
-            self.share_obs[self.step + 1] = share_obs.copy()
-            self.obs[self.step + 1] = obs.copy()
-            self.rnn_states[self.step + 1] = rnn_states_actor.copy()
-            self.rnn_states_critic[self.step + 1] = rnn_states_critic.copy()
-            self.actions[self.step] = actions.copy()
-            self.action_log_probs[self.step] = action_log_probs.copy()
-            self.value_preds[self.step] = value_preds.copy()
-            self.rewards[self.step] = rewards.copy()
-            self.masks[self.step + 1] = masks.copy()
-            if bad_masks is not None: # None
-                self.bad_masks[self.step + 1] = bad_masks.copy()
-            if active_masks is not None:# None
-                self.active_masks[self.step + 1] = active_masks.copy()
-            if available_actions is not None:# None
-                self.available_actions[self.step + 1] = available_actions.copy()
-        else:
-            self.obs[self.step + 1] = obs.copy()
-            self.rnn_states[self.step + 1] = rnn_states_actor.copy()
-            self.masks[self.step + 1] = masks.copy()
-            if bad_masks is not None: # None
-                self.bad_masks[self.step + 1] = bad_masks.copy()
-            if active_masks is not None:# None
-                self.active_masks[self.step + 1] = active_masks.copy()
-            if available_actions is not None:# None
-                self.available_actions[self.step + 1] = available_actions.copy()
+
+        self.share_obs[self.step + 1] = share_obs.copy()
+        self.obs[self.step + 1] = obs.copy()
+        self.rnn_states[self.step + 1] = rnn_states_actor.copy()
+        self.rnn_states_critic[self.step + 1] = rnn_states_critic.copy()
+        self.actions[self.step] = actions.copy()
+        self.action_log_probs[self.step] = action_log_probs.copy()
+        self.value_preds[self.step] = value_preds.copy()
+        self.rewards[self.step] = rewards.copy()
+        self.masks[self.step + 1] = masks.copy()
+        if bad_masks is not None: # None
+            self.bad_masks[self.step + 1] = bad_masks.copy()
+        if active_masks is not None:# None
+            self.active_masks[self.step + 1] = active_masks.copy()
+        if available_actions is not None:# None
+            self.available_actions[self.step + 1] = available_actions.copy()
+
         self.step = self.step + 1
 
     def chooseinsert(self, share_obs, obs, rnn_states, rnn_states_critic, actions, action_log_probs,

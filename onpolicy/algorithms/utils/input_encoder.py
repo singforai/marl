@@ -1,8 +1,6 @@
 import torch
 import torch.nn as nn
 
-from algorithms.utils.rnn import RNNLayer
-
 class InputRNNLayer(nn.Module):
     def __init__(self, inputs_dim, outputs_dim, recurrent_N, use_orthogonal,rnn_type='gru'):
         super(InputRNNLayer, self).__init__()
@@ -195,7 +193,7 @@ class ACTLayer(nn.Module):
 
             actions = torch.cat(actions, -1)
             action_log_probs = torch.cat(action_log_probs, -1)
-        
+
         elif self.continuous_action:
             action_logits = self.action_out(x)
             actions = action_logits.mode() if deterministic else action_logits.sample() 
@@ -375,7 +373,7 @@ class ObsEncoder(nn.Module):
         super(ObsEncoder, self).__init__()
         self.input_encoder = InputEncoder()     
         self.input_embedding = get_fc(input_embedding_size, hidden_size) 
-        self.rnn = RNNLayer(hidden_size, hidden_size, _recurrent_N, _use_orthogonal) 
+        self.rnn = InputRNNLayer(hidden_size, hidden_size, _recurrent_N, _use_orthogonal) 
         self.after_rnn_mlp = get_fc(hidden_size, hidden_size)   
         
         self.to(device)
@@ -392,7 +390,7 @@ class ObsEncoder_critic(nn.Module):
         super(ObsEncoder_critic, self).__init__()
         self.input_encoder = InputEncoder_critic()     
         self.input_embedding = get_fc(input_embedding_size, hidden_size) 
-        self.rnn = RNNLayer(hidden_size, hidden_size, _recurrent_N, _use_orthogonal) 
+        self.rnn = InputRNNLayer(hidden_size, hidden_size, _recurrent_N, _use_orthogonal) 
         self.after_rnn_mlp = get_fc(hidden_size, hidden_size)   
         
         self.to(device)

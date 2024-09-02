@@ -3,7 +3,6 @@ import os
 from gym import spaces
 import numpy as np
 import torch
-from utils.trueskill import TrueSkill
 from datetime import datetime
 
 from utils.shared_buffer import SharedReplayBuffer
@@ -71,97 +70,69 @@ class Runner(object):
             self.run_dir = config["run_dir"]
 
 
-        # observation_space = self.envs.observation_space[0]
-        # share_observation_space = self.envs.share_observation_space[0] if self.use_centralized_V else observation_space
+        observation_space = self.envs.observation_space[0]
+        share_observation_space = self.envs.share_observation_space[0] if self.use_centralized_V else observation_space
 
-        # if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
-        #     from algorithms.mat.mat_trainer import MATTrainer as TrainAlgo
-        #     from algorithms.mat.algorithm.transformer_policy import TransformerPolicy as Policy
+        if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
+            from algorithms.mat.mat_trainer import MATTrainer as TrainAlgo
+            from algorithms.mat.algorithm.transformer_policy import TransformerPolicy as Policy
 
-        # elif self.algorithm_name == "tizero":
-        #         from algorithms.tizero.tizero import TiZero as TrainAlgo
-        #         from algorithms.tizero.algorithm.TiZeroPolicy import TiZeroPolicy as Policy
-                
-        # else:
-        #     from algorithms.r_mappo.r_mappo import R_MAPPO as TrainAlgo
-        #     from algorithms.r_mappo.algorithm.rMAPPOPolicy import R_MAPPOPolicy as Policy
+        elif self.algorithm_name == "tizero":
+            from algorithms.tizero.tizero import TiZero as TrainAlgo
+            from algorithms.tizero.algorithm.TiZeroPolicy import TiZeroPolicy as Policy
+        elif self.algorithm_name == "newmodel":
+            from algorithms.newmodel.new_model import NewModel as TrainAlgo
+            from algorithms.newmodel.algorithm.newmodelPolicy import NewModelPolicy as Policy
+    
+        else:
+            from algorithms.r_mappo.r_mappo import R_MAPPO as TrainAlgo
+            from algorithms.r_mappo.algorithm.rMAPPOPolicy import R_MAPPOPolicy as Policy
         
-        # low = np.full((330,), -np.inf)
-        # high = np.full((330,), np.inf)
-        # observation_space = spaces.Box(low=low, high=high, dtype=np.float32)
+        low = np.full((330,), -np.inf)
+        high = np.full((330,), np.inf)
+        observation_space = spaces.Box(low=low, high=high, dtype=np.float32)
 
-        # low = np.full((220,), -np.inf)
-        # high = np.full((220,), np.inf)
-        # share_observation_space = spaces.Box(low=low, high=high, dtype=np.float32)
+        low = np.full((220,), -np.inf)
+        high = np.full((220,), np.inf)
+        share_observation_space = spaces.Box(low=low, high=high, dtype=np.float32)
         
-        # # policy network
-        # if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
-        #     self.policy = Policy(
-        #         self.all_args, 
-        #         observation_space,
-        #         share_observation_space, 
-        #         self.envs.action_space[0], 
-        #         self.num_agents, 
-        #         device = self.device
-        #     )
-        #     self.enem_policy = Policy(
-        #         self.all_args, 
-        #         observation_space,
-        #         share_observation_space, 
-        #         self.envs.action_space[0], 
-        #         self.num_agents, 
-        #         device = self.device
-        #     )
+        # policy network
+        if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
+            self.policy = Policy(
+                self.all_args, 
+                observation_space,
+                share_observation_space, 
+                self.envs.action_space[0], 
+                self.num_agents, 
+                device = self.device
+            )
+        else:
+            self.policy = Policy(
+                self.all_args, 
+                observation_space, 
+                share_observation_space, 
+                self.envs.action_space[0], 
+                device = self.device
+            )
 
-        # else:
-        #     self.policy = Policy(
-        #         self.all_args, 
-        #         observation_space, 
-        #         share_observation_space, 
-        #         self.envs.action_space[0], 
-        #         device = self.device
-        #     )
-        #     self.opponent_policy = Policy(
-        #         self.all_args, 
-        #         observation_space, 
-        #         share_observation_space, 
-        #         self.envs.action_space[0], 
-        #         device = self.device
-        #     )
+        if self.model_dir is not None:
+            self.restore(self.model_dir)
 
-        # if self.model_dir is not None:
-        #     self.restore(self.model_dir)
+        # algorithm
+        if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
+            self.trainer = TrainAlgo(self.all_args, self.policy, self.num_agents, device = self.device)
+        else:
+            self.trainer = TrainAlgo(self.all_args, self.policy, device = self.device)
+        
+        # buffer
+        self.buffer = SharedReplayBuffer(
+            self.all_args,
+            self.num_agents,
+            observation_space,
+            share_observation_space,
+            self.envs.action_space[0]
+        )     
 
-        # # algorithm
-        # if self.algorithm_name == "mat" or self.algorithm_name == "mat_dec":
-        #     self.trainer = TrainAlgo(self.all_args, self.policy, self.num_agents, device = self.device)
-        # else:
-        #     self.trainer = TrainAlgo(self.all_args, self.policy, device = self.device)
-        
-        # # buffer
-        # self.buffer = SharedReplayBuffer(
-        #     self.all_args,
-        #     self.num_agents,
-        #     observation_space,
-        #     share_observation_space,
-        #     self.envs.action_space[0]
-        # )
-        
-        # self.opponent_buffer = SharedReplayBuffer(
-        #     self.all_args,
-        #     self.num_agents,
-        #     observation_space,
-        #     share_observation_space,
-        #     self.envs.action_space[0]
-        # )
-        
-        # self.trueskill = TrueSkill(
-        #     args = self.all_args,
-        #     num_agents = self.num_agents,
-        #     init_draw_prob = 0.9,
-        #     init_mu = 15, 
-        # )
-        
 
     def run(self):
         """Collect training data, perform training updates, and evaluate policy."""
@@ -191,6 +162,9 @@ class Runner(object):
                                                         np.concatenate(self.buffer.obs[-1]),
                                                         np.concatenate(self.buffer.rnn_states_critic[-1]),
                                                         np.concatenate(self.buffer.masks[-1]))
+        elif self.algorithm_name == "newmodel":
+            next_values = self.trainer.policy.get_values(np.concatenate(self.buffer.obs[-1]),
+                                                        np.concatenate(self.buffer.masks[-1]))
         else:
             next_values = self.trainer.policy.get_values(np.concatenate(self.buffer.share_obs[-1]),
                                                         np.concatenate(self.buffer.rnn_states_critic[-1]),
@@ -204,7 +178,6 @@ class Runner(object):
         self.trainer.prep_training()
         train_infos = self.trainer.train(self.buffer)      
         self.buffer.after_update()
-        self.opponent_buffer.after_update()
 
         for key, value in train_infos.items():
             if isinstance(value, torch.Tensor):
